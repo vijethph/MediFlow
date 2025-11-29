@@ -103,7 +103,6 @@ Appointment Service creates appointment:
 
 **Deferred because**:
 
-- Too complex for a 3-week project timeline
 - Steep learning curve for students
 - Overkill for the current requirements
 - Can be considered as a future enhancement
