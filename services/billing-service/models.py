@@ -1,23 +1,26 @@
 """
-SQLAlchemy Database Models for Billing Service.
+Database Models for Billing Service.
 
-This module defines all database models for invoices, payments, and claims.
+This module defines SQLAlchemy ORM models for invoices, payments, and claims.
 """
 
 import uuid
 from datetime import datetime
 from decimal import Decimal
+
 from sqlalchemy import (
     Column,
-    String,
     DateTime,
-    Numeric,
-    Text,
+    Enum as SQLAlchemyEnum,
     ForeignKey,
     Integer,
+    Numeric,
+    String,
+    Text,
 )
-from sqlalchemy.dialects.postgresql import UUID, JSONB
+from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import relationship
+
 from database import Base
 
 

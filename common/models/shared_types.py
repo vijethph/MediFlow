@@ -5,8 +5,9 @@ This module defines shared types used across multiple services.
 """
 
 from decimal import Decimal
-from pydantic import BaseModel, Field
 from enum import Enum
+
+from pydantic import BaseModel, Field
 
 
 class Money(BaseModel):

@@ -5,6 +5,7 @@ This module sets up structured logging for the healthcare system.
 """
 
 from typing import Any
+
 import structlog
 
 

@@ -6,10 +6,12 @@ This module provides utilities for consuming events from RabbitMQ asynchronously
 
 import json
 import os
-from typing import Callable, Dict, Any
+from typing import Any, Callable, Dict
+
 import aio_pika
 from aio_pika import ExchangeType
 from tenacity import retry, stop_after_attempt, wait_exponential
+
 from common.logging.logger_config import get_logger
 
 

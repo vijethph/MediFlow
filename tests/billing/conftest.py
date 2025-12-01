@@ -4,25 +4,21 @@ Test Configuration and Fixtures for Billing Service.
 This module provides shared fixtures for testing.
 """
 
-import pytest
-from datetime import datetime, date, timezone
+import os
+import sys
+from datetime import date, datetime, timezone
 from decimal import Decimal
+
+import pytest
+from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from fastapi.testclient import TestClient
-import sys
-import os
 
-# Add project root to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(
     0,
     os.path.join(os.path.dirname(__file__), "..", "..", "services", "billing-service"),
 )
-
-import sys
-
-sys.path.insert(
     0,
     os.path.join(os.path.dirname(__file__), "..", "..", "services", "billing-service"),
 )

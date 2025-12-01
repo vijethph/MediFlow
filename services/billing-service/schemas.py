@@ -1,14 +1,16 @@
 """
-Pydantic Schemas for Billing Service (FHIR R4 Compatible).
+Pydantic Schemas for Billing Service.
 
-This module defines all request/response schemas for the billing service.
+This module defines request/response schemas for invoices, payments, and claims.
 """
 
-from typing import Optional, List, Dict, Any
-from datetime import datetime, date, timezone
+from datetime import date, datetime, timezone
 from decimal import Decimal
-from pydantic import BaseModel, Field, field_validator, model_validator
 from enum import Enum
+from typing import Any, Dict, List, Optional
+
+from pydantic import BaseModel, Field, field_validator, model_validator
+
 from common.models.shared_types import Money
 
 

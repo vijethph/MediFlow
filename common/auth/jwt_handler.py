@@ -5,11 +5,12 @@ This module provides utilities for JWT token validation and user context extract
 """
 
 import os
-from typing import Optional, Dict, Any
 from datetime import datetime, timedelta, timezone
+from typing import Any, Dict, Optional
+
+from fastapi import HTTPException, Request, status
+from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jose import JWTError, jwt
-from fastapi import HTTPException, status, Request
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
 
 JWT_SECRET = os.getenv(

@@ -6,10 +6,12 @@ This module provides utilities for publishing events to RabbitMQ asynchronously.
 
 import json
 import os
-from typing import Dict, Any
+from typing import Any, Dict
+
 import aio_pika
-from aio_pika import ExchangeType, DeliveryMode
+from aio_pika import DeliveryMode, ExchangeType
 from tenacity import retry, stop_after_attempt, wait_exponential
+
 from common.logging.logger_config import get_logger
 
 

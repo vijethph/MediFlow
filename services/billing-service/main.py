@@ -4,24 +4,32 @@ Billing Service FastAPI Application.
 This module initializes the FastAPI application with all middleware, routers, and configuration.
 """
 
+import asyncio
+import os
+import sys
+import time
 from contextlib import asynccontextmanager
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
 from fastapi import FastAPI
+from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from prometheus_client import Counter, Histogram, make_asgi_app
-import time
+from sqlalchemy import text
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from config import get_settings
-from database import init_db
 import api
-from common.logging import setup_logging, get_logger
+from common.exceptions import HealthcareException
+from common.logging import get_logger, setup_logging
+from common.messaging.rabbitmq_publisher import RabbitMQPublisher
 from common.middleware import (
     healthcare_exception_handler,
-    validation_exception_handler,
     http_exception_handler,
+    validation_exception_handler,
 )
-from common.exceptions import HealthcareException
-from fastapi.exceptions import RequestValidationError
-from starlette.exceptions import HTTPException as StarletteHTTPException
+from config import get_settings
+from database import engine, init_db
 
 
 settings = get_settings()
@@ -148,11 +156,6 @@ async def health_check():
 
     :return: Service health status
     """
-    from database import engine
-    from common.messaging.rabbitmq_publisher import RabbitMQPublisher
-    import asyncio
-    from sqlalchemy import text
-
     # Check database connection
     try:
         with engine.connect() as conn:

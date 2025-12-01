@@ -1,11 +1,13 @@
 """
-FastAPI Dependencies for Billing Service.
+FastAPI Dependencies.
 
-This module provides reusable dependencies for route handlers.
+This module defines reusable dependencies for authentication and authorization.
 """
 
+from typing import Any, Dict
+
 from fastapi import Depends, Request
-from typing import Dict, Any
+
 from common.auth.jwt_handler import JWTBearer, get_current_user
 from config import get_settings
 

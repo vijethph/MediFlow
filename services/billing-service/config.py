@@ -1,10 +1,11 @@
 """
-Configuration Management for Billing Service.
+Configuration Management.
 
-This module defines environment-based configuration for the billing service.
+This module handles application configuration using pydantic-settings.
 """
 
 from functools import lru_cache
+
 from pydantic_settings import BaseSettings
 
 

@@ -4,7 +4,7 @@ Custom Exception Classes for Healthcare System.
 This module defines custom exceptions for better error handling across services.
 """
 
-from typing import Optional, Dict, Any
+from typing import Any, Dict, Optional
 
 
 class HealthcareException(Exception):

@@ -5,9 +5,10 @@ This module provides centralized error handling middleware.
 """
 
 from fastapi import Request, status
-from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
+
 from common.exceptions import HealthcareException
 from common.logging.logger_config import get_logger
 

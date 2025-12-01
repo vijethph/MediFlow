@@ -1,13 +1,15 @@
 """
 Database Configuration and Session Management.
 
-This module handles SQLAlchemy database connection and session creation.
+This module manages SQLAlchemy database connections and sessions.
 """
+
+from typing import Generator
 
 from sqlalchemy import create_engine, text
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, Session
-from typing import Generator
+from sqlalchemy.orm import Session, sessionmaker
+
 from config import get_settings
 
 
