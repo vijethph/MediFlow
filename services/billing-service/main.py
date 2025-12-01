@@ -69,6 +69,7 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
     openapi_url="/openapi.json",
+    root_path="/api/v1/billing",
     lifespan=lifespan,
 )
 
@@ -149,21 +150,26 @@ async def health_check():
     """
     from database import engine
     from common.messaging.rabbitmq_publisher import RabbitMQPublisher
+    import asyncio
+    from sqlalchemy import text
 
     # Check database connection
     try:
         with engine.connect() as conn:
-            conn.execute("SELECT 1")
+            conn.execute(text("SELECT 1"))
         db_status = "connected"
     except Exception:
         db_status = "disconnected"
 
-    # Check RabbitMQ connection
+    # Check RabbitMQ connection with timeout
+    rabbitmq_status = "disconnected"
     try:
         publisher = RabbitMQPublisher()
-        await publisher.connect()
+        await asyncio.wait_for(publisher.connect(), timeout=2.0)
         await publisher.close()
         rabbitmq_status = "connected"
+    except asyncio.TimeoutError:
+        rabbitmq_status = "timeout"
     except Exception:
         rabbitmq_status = "disconnected"
 

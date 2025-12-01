@@ -101,13 +101,14 @@ PF_BILLING=$!
 kubectl port-forward -n "$NAMESPACE_KONG" svc/kong-admin 8001:8001 >/dev/null 2>&1 &
 PF_KONG=$!
 
-sleep 3
+sleep 5
 
 test_endpoint "http://localhost:8004/health" "Billing Service Health" || BILLING_FAILED=1
 test_endpoint "http://localhost:8004/metrics" "Billing Service Metrics" || METRICS_FAILED=1
 test_endpoint "http://localhost:8001/status" "Kong Admin API" || KONG_FAILED=1
 
 kill $PF_BILLING $PF_KONG 2>/dev/null
+wait $PF_BILLING $PF_KONG 2>/dev/null
 echo ""
 
 echo "Step 6: Resource Utilization"

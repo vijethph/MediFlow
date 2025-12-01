@@ -20,7 +20,9 @@ spec:
           image: healthcare/billing-service:latest
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8004
+            - name: http
+              containerPort: 8004
+              protocol: TCP
           envFrom:
             - configMapRef:
                 name: billing-service-config
@@ -39,12 +41,16 @@ spec:
               port: 8004
             initialDelaySeconds: 30
             periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
           readinessProbe:
             httpGet:
               path: /health
               port: 8004
-            initialDelaySeconds: 10
+            initialDelaySeconds: 15
             periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 3
           securityContext:
             runAsNonRoot: true
             runAsUser: 1000

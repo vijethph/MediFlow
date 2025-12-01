@@ -79,18 +79,18 @@ case "${1:-}" in
         fi
 
         echo "Port-forwarding to localhost:8004..."
-        kubectl port-forward -n ${NAMESPACE} svc/billing-service 8004:8004 &
+        kubectl port-forward -n ${NAMESPACE} svc/billing-service 8004:8004 >/dev/null 2>&1 &
         PF_PID=$!
-        sleep 3
+        sleep 5
 
         echo "Testing health endpoint..."
-        curl -f http://localhost:8004/health || { kill $PF_PID; exit 1; }
+        curl -f http://localhost:8004/health || { kill $PF_PID 2>/dev/null; exit 1; }
 
         echo ""
         echo "Testing root endpoint..."
-        curl -f http://localhost:8004/ || { kill $PF_PID; exit 1; }
+        curl -f http://localhost:8004/ || { kill $PF_PID 2>/dev/null; exit 1; }
 
-        kill $PF_PID
+        kill $PF_PID 2>/dev/null
         echo ""
         echo "All tests passed!"
         ;;

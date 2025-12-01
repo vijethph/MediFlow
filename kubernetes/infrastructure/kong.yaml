@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
         - name: kong
-          image: kong:3.4-alpine
+          image: kong:3.3.1-alpine
           env:
             - name: KONG_DATABASE
               value: "off"
@@ -74,6 +74,10 @@ spec:
               value: "0.0.0.0:8001"
             - name: KONG_PROXY_LISTEN
               value: "0.0.0.0:8000, 0.0.0.0:8443 ssl"
+            - name: KONG_NGINX_WORKER_PROCESSES
+              value: "1"
+            - name: KONG_MEM_CACHE_SIZE
+              value: "64m"
           ports:
             - name: proxy
               containerPort: 8000
@@ -91,21 +95,25 @@ spec:
             httpGet:
               path: /status
               port: 8001
-            initialDelaySeconds: 30
+            initialDelaySeconds: 60
             periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 6
           readinessProbe:
             httpGet:
               path: /status
               port: 8001
-            initialDelaySeconds: 10
-            periodSeconds: 5
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
           resources:
             requests:
               cpu: "100m"
-              memory: "128Mi"
+              memory: "512Mi"
             limits:
-              cpu: "250m"
-              memory: "256Mi"
+              cpu: "500m"
+              memory: "1Gi"
       volumes:
         - name: kong-config
           configMap:
@@ -123,7 +131,10 @@ data:
       - name: billing-service
         url: http://billing-service.healthcare.svc.cluster.local:8004
         routes:
-          - name: billing-route
+          - name: billing-route-api
             paths:
               - /api/v1/billing
-            strip_path: false
+            strip_path: true
+            protocols:
+              - http
+              - https
