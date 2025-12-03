@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: billing-service
+  namespace: healthcare
+  labels:
+    app: billing-service
+    component: microservice
+spec:
+  type: ClusterIP
+  selector:
+    app: billing-service
+  ports:
+    - name: http
+      port: 8004
+      targetPort: http
+      protocol: TCP
+  sessionAffinity: None
