@@ -1,0 +1,433 @@
+services:
+  # RabbitMQ Message Broker
+  rabbitmq:
+    image: rabbitmq:4.0-management-alpine
+    container_name: healthcare-rabbitmq
+    ports:
+      - "5672:5672" # AMQP port
+      - "15672:15672" # Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER:-admin}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-rabbitmq_secure_password}
+      RABBITMQ_DEFAULT_VHOST: /
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    networks:
+      - healthcare-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Redis Cache
+  redis:
+    image: redis:8-alpine
+    container_name: healthcare-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-redis_secure_password}
+    volumes:
+      - redis-data:/data
+    networks:
+      - healthcare-network
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "redis-cli",
+          "-a",
+          "${REDIS_PASSWORD:-redis_secure_password}",
+          "ping",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # PATIENT SERVICE
+
+  patient-db:
+    image: postgres:17-alpine
+    container_name: healthcare-patient-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${PATIENT_DB_PASSWORD:-patient_secure_password}
+      POSTGRES_DB: patient_db
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - patient-db-data:/var/lib/postgresql/data
+      # Uncomment when init script is ready
+      # - ./scripts/init_patient_db.sh:/docker-entrypoint-initdb.d/init_patient_db.sh
+    ports:
+      - "5433:5432"
+    networks:
+      - healthcare-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d patient_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+# Patient Service
+  patient-service:
+    build:
+      dockerfile: services/patient-service/Dockerfile
+    container_name: healthcare-patient-service
+    ports:
+      - "8001:8001"
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:${PATIENT_DB_PASSWORD:-patient_secure_password}@patient-db:5432/patient_db
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_ALGORITHM: ${JWT_ALGORITHM:-HS256}
+      RABBITMQ_URL: amqp://${RABBITMQ_USER:-admin}:${RABBITMQ_PASSWORD:-rabbitmq_secure_password}@rabbitmq:5672/
+      RABBITMQ_EXCHANGE: healthcare
+      RABBITMQ_QUEUE: patient_queue
+      REDIS_ENABLED: ${REDIS_ENABLED:-false}
+      REDIS_URL: redis://:${REDIS_PASSWORD:-redis_secure_password}@redis:6379/0
+      SERVICE_NAME: patient-service
+      SERVICE_PORT: "8001"
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+    depends_on:
+      patient-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - healthcare-network
+    restart: unless-stopped
+    volumes:
+      - ./services/patient-service:/app
+      - ./common:/app/common
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # APPOINTMENT SERVICE
+
+  appointment-db:
+    image: postgres:17-alpine
+    container_name: healthcare-appointment-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${APPOINTMENT_DB_PASSWORD:-appointment_secure_password}
+      POSTGRES_DB: appointment_db
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - appointment-db-data:/var/lib/postgresql/data
+      # Uncomment when init script is ready
+      # - ./scripts/init_appointment_db.sh:/docker-entrypoint-initdb.d/init_appointment_db.sh
+    ports:
+      - "5434:5432"
+    networks:
+      - healthcare-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d appointment_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  appointment-service:
+    build:
+      context: .
+      dockerfile: services/appointment-service/Dockerfile
+    container_name: healthcare-appointment-service
+    ports:
+      - "8002:8002"
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:${APPOINTMENT_DB_PASSWORD:-appointment_secure_password}@appointment-db:5432/appointment_db
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_ALGORITHM: ${JWT_ALGORITHM:-HS256}
+      PATIENT_SERVICE_URL: http://patient-service:8001
+      RABBITMQ_URL: amqp://${RABBITMQ_USER:-admin}:${RABBITMQ_PASSWORD:-rabbitmq_secure_password}@rabbitmq:5672/
+      REDIS_URL: redis://:${REDIS_PASSWORD:-redis_secure_password}@redis:6379/1
+      SERVICE_NAME: appointment-service
+      SERVICE_PORT: "8002"
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+    depends_on:
+      appointment-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - healthcare-network
+    restart: unless-stopped
+    volumes:
+      - ./services/appointment-service:/app
+      - ./common:/app/common
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # PRESCRIPTION/CLINICAL SERVICE
+
+  prescription-db:
+    image: mongo:6
+    container_name: healthcare-prescription-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME:-admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-mongo_secure_password}
+      MONGO_INITDB_DATABASE: prescription_db
+    volumes:
+      - prescription-db-data:/data/db
+      # Uncomment when init script is ready
+      # - ./scripts/init_prescription_db.js:/docker-entrypoint-initdb.d/init_prescription_db.js
+    ports:
+      - "27017:27017"
+    networks:
+      - healthcare-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Prescription Service - Placeholder
+  # Uncomment when service is implemented
+  # prescription-service:
+  #   build:
+  #     context: .
+  #     dockerfile: services/prescription-service/Dockerfile
+  #   container_name: healthcare-prescription-service
+  #   ports:
+  #     - "8003:8003"
+  #   environment:
+  #     MONGO_URL: mongodb://${MONGO_USERNAME:-admin}:${MONGO_PASSWORD:-mongo_secure_password}@prescription-db:27017/prescription_db?authSource=admin
+  #     JWT_SECRET: ${JWT_SECRET}
+  #     JWT_ALGORITHM: ${JWT_ALGORITHM:-HS256}
+  #     PATIENT_SERVICE_URL: http://patient-service:8001
+  #     APPOINTMENT_SERVICE_URL: http://appointment-service:8002
+  #     RABBITMQ_URL: amqp://${RABBITMQ_USER:-admin}:${RABBITMQ_PASSWORD:-rabbitmq_secure_password}@rabbitmq:5672/
+  #     REDIS_URL: redis://:${REDIS_PASSWORD:-redis_secure_password}@redis:6379/2
+  #     SERVICE_NAME: prescription-service
+  #     SERVICE_PORT: "8003"
+  #     LOG_LEVEL: ${LOG_LEVEL:-INFO}
+  #     ENVIRONMENT: ${ENVIRONMENT:-development}
+  #   depends_on:
+  #     prescription-db:
+  #       condition: service_healthy
+  #     rabbitmq:
+  #       condition: service_healthy
+  #     redis:
+  #       condition: service_healthy
+  #   networks:
+  #     - healthcare-network
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./services/prescription-service:/app
+  #     - ./common:/app/common
+
+  # BILLING SERVICE
+
+  billing-db:
+    image: postgres:17-alpine
+    container_name: healthcare-billing-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${BILLING_DB_PASSWORD:-billing_secure_password}
+      POSTGRES_DB: billing_db
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - billing-db-data:/var/lib/postgresql/data
+      - ./scripts/init_billing_db.sh:/docker-entrypoint-initdb.d/init_billing_db.sh:ro
+    ports:
+      - "5432:5432"
+    networks:
+      - healthcare-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d billing_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  billing-service:
+    build:
+      context: .
+      dockerfile: services/billing-service/Dockerfile
+    container_name: healthcare-billing-service
+    ports:
+      - "8004:8004"
+    environment:
+      DATABASE_URL: postgresql://postgres:${BILLING_DB_PASSWORD:-billing_secure_password}@billing-db:5432/billing_db
+      JWT_SECRET: ${JWT_SECRET:-your-super-secret-jwt-key-change-this-in-production}
+      JWT_ALGORITHM: ${JWT_ALGORITHM:-HS256}
+      PATIENT_SERVICE_URL: http://patient-service:8001
+      APPOINTMENT_SERVICE_URL: http://appointment-service:8002
+      RABBITMQ_URL: amqp://${RABBITMQ_USER:-admin}:${RABBITMQ_PASSWORD:-rabbitmq_secure_password}@rabbitmq:5672/
+      RABBITMQ_EXCHANGE: healthcare
+      RABBITMQ_QUEUE: billing_queue
+      REDIS_URL: redis://:${REDIS_PASSWORD:-redis_secure_password}@redis:6379/3
+      SERVICE_NAME: billing-service
+      SERVICE_PORT: "8004"
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+    depends_on:
+      billing-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - healthcare-network
+    restart: unless-stopped
+    volumes:
+      - ./services/billing-service:/app
+      - ./common:/app/common
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8004/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # API GATEWAY (Kong)
+  # Kong Database
+  kong-db:
+    image: postgres:17-alpine
+    container_name: healthcare-kong-db
+    environment:
+      POSTGRES_USER: kong
+      POSTGRES_PASSWORD: ${KONG_DB_PASSWORD:-kong_secure_password}
+      POSTGRES_DB: kong
+    volumes:
+      - kong-db-data:/var/lib/postgresql/data
+    ports:
+      - "5435:5432"
+    networks:
+      - healthcare-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kong -d kong"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Kong Migrations
+  kong-migrations:
+    image: kong:3.3.1-alpine
+    container_name: healthcare-kong-migrations
+    command: kong migrations bootstrap
+    environment:
+      KONG_DATABASE: postgres
+      KONG_PG_HOST: kong-db
+      KONG_PG_PORT: 5432
+      KONG_PG_USER: kong
+      KONG_PG_PASSWORD: ${KONG_DB_PASSWORD:-kong_secure_password}
+      KONG_PG_DATABASE: kong
+    depends_on:
+      kong-db:
+        condition: service_healthy
+    networks:
+      - healthcare-network
+    restart: on-failure
+
+  # Kong API Gateway - Placeholder for configuration
+  # Uncomment when services are implemented
+  # kong:
+  #   image: kong:3.8-alpine
+  #   container_name: healthcare-kong
+  #   environment:
+  #     KONG_DATABASE: postgres
+  #     KONG_PG_HOST: kong-db
+  #     KONG_PG_PORT: 5432
+  #     KONG_PG_USER: kong
+  #     KONG_PG_PASSWORD: ${KONG_DB_PASSWORD:-kong_secure_password}
+  #     KONG_PG_DATABASE: kong
+  #     KONG_PROXY_ACCESS_LOG: /dev/stdout
+  #     KONG_ADMIN_ACCESS_LOG: /dev/stdout
+  #     KONG_PROXY_ERROR_LOG: /dev/stderr
+  #     KONG_ADMIN_ERROR_LOG: /dev/stderr
+  #     KONG_ADMIN_LISTEN: 0.0.0.0:8001
+  #     KONG_DECLARATIVE_CONFIG: /kong/declarative/kong.yml
+  #   depends_on:
+  #     kong-db:
+  #       condition: service_healthy
+  #     kong-migrations:
+  #       condition: service_completed_successfully
+  #   ports:
+  #     - "8000:8000"   # Proxy
+  #     - "8443:8443"   # Proxy SSL
+  #     - "8001:8001"   # Admin API
+  #     - "8444:8444"   # Admin API SSL
+  #   volumes:
+  #     - ./kong/kong.yml:/kong/declarative/kong.yml:ro
+  #   networks:
+  #     - healthcare-network
+  #   restart: unless-stopped
+
+  # MONITORING (Prometheus & Grafana)
+
+  # Prometheus - Placeholder
+  # prometheus:
+  #   image: prom/prometheus:latest
+  #   container_name: healthcare-prometheus
+  #   ports:
+  #     - "9090:9090"
+  #   volumes:
+  #     - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+  #     - prometheus-data:/prometheus
+  #   networks:
+  #     - healthcare-network
+  #   restart: unless-stopped
+
+  # Grafana - Placeholder
+  # grafana:
+  #   image: grafana/grafana:latest
+  #   container_name: healthcare-grafana
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-admin}
+  #   volumes:
+  #     - grafana-data:/var/lib/grafana
+  #   networks:
+  #     - healthcare-network
+  #   restart: unless-stopped
+
+# NETWORKS
+
+networks:
+  healthcare-network:
+    driver: bridge
+    name: healthcare-network
+
+# VOLUMES
+
+volumes:
+  rabbitmq-data:
+    driver: local
+  redis-data:
+    driver: local
+  patient-db-data:
+    driver: local
+  appointment-db-data:
+    driver: local
+  prescription-db-data:
+    driver: local
+  billing-db-data:
+    driver: local
+  kong-db-data:
+    driver: local
+  # prometheus-data:
+  #   driver: local
+  # grafana-data:
+  #   driver: local
