@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: appointment-service
+  namespace: healthcare
+  labels:
+    app: appointment-service
+    component: microservice
+spec:
+  type: ClusterIP
+  selector:
+    app: appointment-service
+  ports:
+    - name: http
+      port: 8002
+      targetPort: http
+      protocol: TCP
+  sessionAffinity: None
+

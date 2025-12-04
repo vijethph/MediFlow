@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: appointment-service-config
+  namespace: healthcare
+data:
+  SERVICE_NAME: "appointment-service"
+  SERVICE_PORT: "8002"
+  LOG_LEVEL: "INFO"
+  ENVIRONMENT: "production"
+  RABBITMQ_EXCHANGE: "healthcare"
+  RABBITMQ_QUEUE: "appointment_queue"
+  API_V1_PREFIX: "/api/v1"
+  PATIENT_SERVICE_URL: "http://patient-service.healthcare.svc.cluster.local:8001"
+  REDIS_ENABLED: "false"
+
