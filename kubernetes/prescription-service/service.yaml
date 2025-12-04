@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prescription-service
+  namespace: healthcare
+  labels:
+    app: prescription-service
+    component: microservice
+spec:
+  type: ClusterIP
+  selector:
+    app: prescription-service
+  ports:
+    - name: http
+      port: 8003
+      targetPort: http
+      protocol: TCP
+  sessionAffinity: None

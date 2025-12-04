@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prescription-service
+  namespace: healthcare
+  labels:
+    app: prescription-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: prescription-service
+  template:
+    metadata:
+      labels:
+        app: prescription-service
+    spec:
+      containers:
+        - name: prescription-service
+          image: healthcare/prescription-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8003
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: prescription-service-config
+            - secretRef:
+                name: prescription-service-secret
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8003
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8003
+            initialDelaySeconds: 15
+            periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 3
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1000
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL

@@ -1,0 +1,94 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prescription-mongo-pvc
+  namespace: healthcare
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prescription-mongo
+  namespace: healthcare
+  labels:
+    app: prescription-mongo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prescription-mongo
+  template:
+    metadata:
+      labels:
+        app: prescription-mongo
+    spec:
+      containers:
+        - name: mongo
+          image: mongo:6
+          env:
+            - name: MONGO_INITDB_DATABASE
+              value: "prescription_db"
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: prescription-mongo-secret
+                  key: MONGO_INITDB_ROOT_USERNAME
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: prescription-mongo-secret
+                  key: MONGO_INITDB_ROOT_PASSWORD
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: mongo-storage
+              mountPath: /data/db
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          livenessProbe:
+            exec:
+              command:
+                - mongosh
+                - --eval
+                - "db.adminCommand('ping')"
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            exec:
+              command:
+                - mongosh
+                - --eval
+                - "db.adminCommand('ping')"
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 3
+      volumes:
+        - name: mongo-storage
+          persistentVolumeClaim:
+            claimName: prescription-mongo-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prescription-mongo
+  namespace: healthcare
+spec:
+  selector:
+    app: prescription-mongo
+  ports:
+    - port: 27017
+      targetPort: 27017
+      protocol: TCP
