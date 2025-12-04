@@ -1,0 +1,284 @@
+# Kong Declarative Configuration for Healthcare Patient Management System
+# Format Version: 3.0
+# This configuration defines routes, services, and plugins for the API Gateway
+
+_format_version: "3.0"
+
+# ============================================================================
+# SERVICES & ROUTES
+# ============================================================================
+
+services:
+  # Patient Service
+  - name: patient-service
+    url: http://patient-service:8001
+    tags:
+      - patient
+      - healthcare
+    routes:
+      - name: patient-routes
+        paths:
+          - /api/v1/patients
+          - /api/v1/auth
+        strip_path: false
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+        tags:
+          - patient-api
+    # Plugins will be added when service is implemented
+
+  # Appointment Service
+  - name: appointment-service
+    url: http://appointment-service:8002
+    tags:
+      - appointment
+      - healthcare
+    routes:
+      - name: appointment-routes
+        paths:
+          - /api/v1/appointments
+          - /api/v1/schedules
+        strip_path: false
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+        tags:
+          - appointment-api
+    # Plugins will be added when service is implemented
+
+  # Prescription/Clinical Service
+  - name: prescription-service
+    url: http://prescription-service:8003
+    tags:
+      - prescription
+      - clinical
+      - healthcare
+    routes:
+      - name: prescription-routes
+        paths:
+          - /api/v1/prescriptions
+          - /api/v1/medical-records
+          - /api/v1/lab-results
+        strip_path: false
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+        tags:
+          - prescription-api
+    # Plugins will be added when service is implemented
+
+  # Billing Service
+  - name: billing-service
+    url: http://billing-service:8004
+    tags:
+      - billing
+      - healthcare
+    routes:
+      - name: billing-routes
+        paths:
+          - /api/v1/invoices
+          - /api/v1/payments
+          - /api/v1/claims
+          - /api/v1/reports
+        strip_path: false
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+        tags:
+          - billing-api
+      - name: billing-health
+        paths:
+          - /health
+          - /metrics
+        strip_path: false
+        methods:
+          - GET
+        tags:
+          - billing-health
+    plugins:
+      # JWT Authentication (validate tokens from Patient Service)
+      - name: jwt
+        config:
+          secret_is_base64: false
+          key_claim_name: kid
+          anonymous: null
+        enabled: true
+
+      # Rate Limiting (prevent API abuse)
+      - name: rate-limiting
+        config:
+          minute: 100
+          hour: 1000
+          policy: local
+          fault_tolerant: true
+          hide_client_headers: false
+          redis_ssl: false
+        enabled: true
+
+      # Request Size Limiting
+      - name: request-size-limiting
+        config:
+          allowed_payload_size: 10
+          size_unit: megabytes
+        enabled: true
+
+      # CORS (for frontend integration)
+      - name: cors
+        config:
+          origins:
+            - "*"
+          methods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
+            - PATCH
+            - OPTIONS
+          headers:
+            - Authorization
+            - Content-Type
+            - Accept
+          exposed_headers:
+            - X-Auth-Token
+          credentials: true
+          max_age: 3600
+        enabled: true
+
+      # Response Transformer (add standardized headers)
+      - name: response-transformer
+        config:
+          add:
+            headers:
+              - "X-Service:billing-service"
+        enabled: true
+
+# ============================================================================
+# GLOBAL PLUGINS
+# ============================================================================
+
+plugins:
+  # Request ID (for distributed tracing)
+  - name: correlation-id
+    config:
+      header_name: X-Request-ID
+      generator: uuid#counter
+      echo_downstream: true
+    enabled: true
+
+  # Request Logging
+  - name: file-log
+    config:
+      path: /dev/stdout
+      reopen: true
+    enabled: true
+
+  # Response Compression
+  - name: gzip
+    config:
+      threshold: 1000
+      min_version: 1.1
+    enabled: true
+
+# ============================================================================
+# UPSTREAMS (Load Balancing - Future Phase)
+# ============================================================================
+
+# Uncomment when implementing horizontal scaling
+
+# upstreams:
+#   - name: billing-service-upstream
+#     algorithm: round-robin
+#     hash_on: none
+#     hash_fallback: none
+#     healthchecks:
+#       active:
+#         type: http
+#         http_path: /health
+#         timeout: 10
+#         concurrency: 10
+#         healthy:
+#           interval: 30
+#           successes: 2
+#         unhealthy:
+#           interval: 10
+#           http_failures: 3
+#           timeouts: 3
+#     targets:
+#       - target: billing-service:8004
+#         weight: 100
+
+# ============================================================================
+# CONSUMERS & CREDENTIALS (JWT Configuration)
+# ============================================================================
+
+# Consumers represent authenticated users or services
+# JWT credentials will be managed by Patient Service auth module
+
+consumers:
+  # System/Internal Service Consumer
+  - username: system-internal
+    custom_id: system-001
+    tags:
+      - internal
+      - system
+
+  # Example Patient Consumer (for testing)
+  - username: test-patient
+    custom_id: patient-test-001
+    tags:
+      - patient
+      - test
+
+  # Example Doctor Consumer (for testing)
+  - username: test-doctor
+    custom_id: doctor-test-001
+    tags:
+      - doctor
+      - test
+
+  # Example Admin Consumer (for testing)
+  - username: test-admin
+    custom_id: admin-test-001
+    tags:
+      - admin
+      - test
+# ============================================================================
+# NOTES
+# ============================================================================
+
+# 1. JWT Authentication:
+#    - JWT tokens are issued by Patient Service
+#    - Kong validates the token signature using the JWT_SECRET
+#    - Token must include: sub, email, role, patient_id, exp
+#
+# 2. Rate Limiting:
+#    - 100 requests per minute per client IP
+#    - 1000 requests per hour per client IP
+#    - Can be adjusted based on load testing results
+#
+# 3. Service URLs:
+#    - Internal Docker network: http://<service-name>:<port>
+#    - Kong proxy: http://localhost:8000/api/v1/<resource>
+#
+# 4. Health Checks:
+#    - All services must expose /health endpoint
+#    - Kong will not route to unhealthy services
+#
+# 5. Future Enhancements:
+#    - OAuth2 plugin for more complex auth flows
+#    - Redis-based rate limiting for distributed environments
+#    - Advanced load balancing with circuit breakers
+#    - mTLS for service-to-service communication

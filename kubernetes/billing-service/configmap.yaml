@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: billing-service-config
+  namespace: healthcare
+data:
+  SERVICE_NAME: "billing-service"
+  SERVICE_PORT: "8004"
+  LOG_LEVEL: "INFO"
+  ENVIRONMENT: "production"
+  RABBITMQ_EXCHANGE: "healthcare"
+  RABBITMQ_QUEUE: "billing_queue"
+  API_V1_PREFIX: "/api/v1"
+  PATIENT_SERVICE_URL: "http://patient-service.healthcare.svc.cluster.local:8001"
+  APPOINTMENT_SERVICE_URL: "http://appointment-service.healthcare.svc.cluster.local:8002"
