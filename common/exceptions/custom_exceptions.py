@@ -260,3 +260,10 @@ class PaymentProcessingError(HealthcareException):
             error_details["payment_method"] = payment_method
 
         super().__init__(message, status_code=402, details=error_details)
+        
+class ResourceNotFoundError(HealthcareException):
+    """Generic exception for missing resources."""
+
+    def __init__(self, resource_type: str, identifier: str, details=None):
+        message = f"{resource_type} with ID '{identifier}' not found"
+        super().__init__(message, status_code=404, details=details)
