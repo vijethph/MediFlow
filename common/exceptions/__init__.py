@@ -15,6 +15,7 @@ from common.exceptions.custom_exceptions import (
     DatabaseError,
     InvalidStatusTransitionError,
     PaymentProcessingError,
+    ResourceNotFoundError, 
 )
 
 __all__ = [
@@ -32,4 +33,5 @@ __all__ = [
     "DatabaseError",
     "InvalidStatusTransitionError",
     "PaymentProcessingError",
+    "ResourceNotFoundError",
 ]

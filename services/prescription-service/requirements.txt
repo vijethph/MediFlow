@@ -10,3 +10,4 @@ aio-pika==9.5.2
 tenacity==9.0.0
 prometheus-client==0.21.0
 python-multipart==0.0.20
+structlog
