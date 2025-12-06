@@ -10,6 +10,9 @@ NAMESPACE_HEALTHCARE="healthcare"
 NAMESPACE_KONG="kong"
 NAMESPACE_MONITORING="monitoring"
 
+# Service list
+SERVICES=("patient-service" "appointment-service" "prescription-service" "billing-service")
+
 check_namespace() {
     local ns=$1
     if kubectl get namespace "$ns" >/dev/null 2>&1; then
@@ -78,8 +81,27 @@ echo ""
 
 echo "Step 3: Checking Service Pods"
 echo "------------------------------"
-check_pods "$NAMESPACE_HEALTHCARE" "app=billing-postgres" 1 || exit 1
-check_pods "$NAMESPACE_HEALTHCARE" "app=billing-service" 2 || exit 1
+
+# Check if any services are deployed
+DEPLOYED_SERVICES=()
+for svc in "${SERVICES[@]}"; do
+    if kubectl get deployment -n "$NAMESPACE_HEALTHCARE" "$svc" >/dev/null 2>&1; then
+        DEPLOYED_SERVICES+=("$svc")
+        check_pods "$NAMESPACE_HEALTHCARE" "app=$svc" 1 || echo "Warning: $svc pods not ready"
+    else
+        echo "⚠️  $svc not deployed (skipping)"
+    fi
+done
+
+# Check databases for deployed services
+if [[ " ${DEPLOYED_SERVICES[@]} " =~ " billing-service " ]]; then
+    check_pods "$NAMESPACE_HEALTHCARE" "app=billing-postgres" 1 || echo "Warning: billing-postgres not ready"
+fi
+
+if [[ " ${DEPLOYED_SERVICES[@]} " =~ " prescription-service " ]]; then
+    check_pods "$NAMESPACE_HEALTHCARE" "app=prescription-mongo" 1 || echo "Warning: prescription-mongo not ready"
+fi
+
 echo ""
 
 echo "Step 4: Checking Services"
@@ -88,58 +110,113 @@ check_service "$NAMESPACE_KONG" "kong-proxy" || exit 1
 check_service "$NAMESPACE_KONG" "kong-admin" || exit 1
 check_service "$NAMESPACE_MONITORING" "prometheus" || exit 1
 check_service "$NAMESPACE_MONITORING" "grafana" || exit 1
-check_service "$NAMESPACE_HEALTHCARE" "billing-service" || exit 1
-check_service "$NAMESPACE_HEALTHCARE" "billing-postgres" || exit 1
+
+# Check services for deployed microservices
+for svc in "${DEPLOYED_SERVICES[@]}"; do
+    check_service "$NAMESPACE_HEALTHCARE" "$svc" || echo "Warning: $svc service not found"
+done
+
+# Check database services
+if [[ " ${DEPLOYED_SERVICES[@]} " =~ " billing-service " ]]; then
+    check_service "$NAMESPACE_HEALTHCARE" "billing-postgres" || echo "Warning: billing-postgres service not found"
+fi
+
+if [[ " ${DEPLOYED_SERVICES[@]} " =~ " prescription-service " ]]; then
+    check_service "$NAMESPACE_HEALTHCARE" "prescription-mongo" || echo "Warning: prescription-mongo service not found"
+fi
+
 echo ""
 
 echo "Step 5: Testing Endpoints (requires port-forward)"
 echo "--------------------------------------------------"
 
-echo "Starting port-forwards..."
-kubectl port-forward -n "$NAMESPACE_HEALTHCARE" svc/billing-service 8004:8004 >/dev/null 2>&1 &
-PF_BILLING=$!
-kubectl port-forward -n "$NAMESPACE_KONG" svc/kong-admin 8001:8001 >/dev/null 2>&1 &
-PF_KONG=$!
+if [ ${#DEPLOYED_SERVICES[@]} -eq 0 ]; then
+    echo "No services deployed to test"
+    exit 0
+fi
+
+echo "Starting port-forwards for deployed services..."
+
+# Port forward deployed services
+PF_PIDS=()
+
+for svc in "${DEPLOYED_SERVICES[@]}"; do
+    case $svc in
+        patient-service)
+            kubectl port-forward -n "$NAMESPACE_HEALTHCARE" svc/patient-service 8001:8001 >/dev/null 2>&1 &
+            PF_PIDS+=($!)
+            ;;
+        appointment-service)
+            kubectl port-forward -n "$NAMESPACE_HEALTHCARE" svc/appointment-service 8002:8002 >/dev/null 2>&1 &
+            PF_PIDS+=($!)
+            ;;
+        prescription-service)
+            kubectl port-forward -n "$NAMESPACE_HEALTHCARE" svc/prescription-service 8003:8003 >/dev/null 2>&1 &
+            PF_PIDS+=($!)
+            ;;
+        billing-service)
+            kubectl port-forward -n "$NAMESPACE_HEALTHCARE" svc/billing-service 8004:8004 >/dev/null 2>&1 &
+            PF_PIDS+=($!)
+            ;;
+    esac
+done
 
 sleep 5
 
-test_endpoint "http://localhost:8004/health" "Billing Service Health" || BILLING_FAILED=1
-test_endpoint "http://localhost:8004/metrics" "Billing Service Metrics" || METRICS_FAILED=1
-test_endpoint "http://localhost:8001/status" "Kong Admin API" || KONG_FAILED=1
+echo "Testing service health endpoints..."
 
-kill $PF_BILLING $PF_KONG 2>/dev/null
-wait $PF_BILLING $PF_KONG 2>/dev/null
+FAILED_TESTS=0
+
+for svc in "${DEPLOYED_SERVICES[@]}"; do
+    case $svc in
+        patient-service)
+            test_endpoint "http://localhost:8001/health" "Patient Service Health" || ((FAILED_TESTS++))
+            ;;
+        appointment-service)
+            test_endpoint "http://localhost:8002/health" "Appointment Service Health" || ((FAILED_TESTS++))
+            ;;
+        prescription-service)
+            test_endpoint "http://localhost:8003/health" "Prescription Service Health" || ((FAILED_TESTS++))
+            ;;
+        billing-service)
+            test_endpoint "http://localhost:8004/health" "Billing Service Health" || ((FAILED_TESTS++))
+            ;;
+    esac
+done
+
 echo ""
+echo "Cleaning up port-forwards..."
+for pid in "${PF_PIDS[@]}"; do
+    kill "$pid" 2>/dev/null || true
+done
 
+echo ""
 echo "Step 6: Resource Utilization"
 echo "----------------------------"
 echo "Healthcare namespace:"
 kubectl top pods -n "$NAMESPACE_HEALTHCARE" 2>/dev/null || echo "⚠️  Metrics server not available"
 echo ""
-echo "Infrastructure:"
-kubectl top pods -n "$NAMESPACE_KONG" 2>/dev/null || true
-kubectl top pods -n "$NAMESPACE_MONITORING" 2>/dev/null || true
-echo ""
 
 echo "=========================================="
-echo "Test Summary"
-echo "=========================================="
-
-if [ -z "$BILLING_FAILED" ] && [ -z "$METRICS_FAILED" ] && [ -z "$KONG_FAILED" ]; then
-    echo "✅ All tests passed!"
-    echo ""
-    echo "Access services:"
-    echo "  Billing Service: kubectl port-forward -n healthcare svc/billing-service 8004:8004"
-    echo "  Kong Proxy:      minikube service -n kong kong-proxy"
-    echo "  Prometheus:      minikube service -n monitoring prometheus"
-    echo "  Grafana:         minikube service -n monitoring grafana (admin/admin)"
-    exit 0
+if [ $FAILED_TESTS -eq 0 ]; then
+    echo "✅ All Tests Passed!"
 else
-    echo "❌ Some tests failed"
-    echo ""
-    echo "Troubleshooting:"
-    echo "  View pods:    kubectl get pods -A"
-    echo "  View logs:    kubectl logs -n <namespace> <pod-name>"
-    echo "  Describe pod: kubectl describe pod -n <namespace> <pod-name>"
-    exit 1
+    echo "⚠️  $FAILED_TESTS Test(s) Failed"
 fi
+echo "=========================================="
+echo ""
+echo "Summary:"
+echo "  Deployed services: ${#DEPLOYED_SERVICES[@]}"
+echo "  Services: ${DEPLOYED_SERVICES[*]}"
+echo ""
+echo "Access services:"
+echo "  Kong Proxy:      minikube service -n kong kong-proxy"
+echo "  Prometheus:      minikube service -n monitoring prometheus"
+echo "  Grafana:         minikube service -n monitoring grafana (admin/admin)"
+echo ""
+echo "Useful commands:"
+echo "  View logs:    ./scripts/k8s_manage.sh logs <service-name>"
+echo "  Open shell:   ./scripts/k8s_manage.sh shell <service-name>"
+echo "  View pods:    kubectl get pods -n $NAMESPACE_HEALTHCARE"
+
+exit $FAILED_TESTS

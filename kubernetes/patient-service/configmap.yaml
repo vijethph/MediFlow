@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: patient-service-config
+  namespace: healthcare
+data:
+  SERVICE_NAME: "patient-service"
+  SERVICE_PORT: "8001"
+  LOG_LEVEL: "INFO"
+  ENVIRONMENT: "production"
+  RABBITMQ_EXCHANGE: "healthcare"
+  RABBITMQ_QUEUE: "patient_queue"
+  API_V1_PREFIX: "/api/v1"
+  REDIS_ENABLED: "false"

@@ -69,3 +69,51 @@ minikube addons enable metrics-server
 ## stop and clean up everything ##
 ./scripts/k8s_manage.sh clean
 ```
+
+### Quick testing of entire application
+
+```bash
+# docker compose
+./scripts/docker_manage.sh start patient-service # individual service
+
+./scripts/docker_manage.sh start all # all services
+
+./scripts/docker_manage.sh test all # test all services
+
+## Access API docs: https://localhost:8000/billing/docs  - billing service
+
+./scripts/docker_manage.sh logs patient-service  # Specific service logs
+
+./scripts/docker_manage.sh clean # clean up everything
+
+
+
+# kubernetes
+
+minikube start --cpus=4 --memory=8192
+minikube docker-env
+eval $(minikube -p minikube docker-env)
+minikube addons enable metrics-server
+
+./scripts/k8s_manage.sh infra
+
+# Build service image
+./scripts/k8s_manage.sh build
+
+# Deploy billing service
+./scripts/k8s_manage.sh deploy
+./scripts/k8s_manage.sh test
+
+## Access Kong gateway
+minikube service -n kong kong-proxy --url
+
+## Open the URL shown in terminal output (example: http://127.0.0.1:45389/billing/docs) with the suffix "<service-name>/docs" to access Swagger)
+
+## Access services:
+
+./scripts/test_k8s_deployment.sh
+
+## stop and clean up everything ##
+./scripts/k8s_manage.sh clean
+
+```

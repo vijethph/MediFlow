@@ -1,0 +1,111 @@
+# Prometheus configuration for Healthcare Patient Management System
+# Scrapes metrics from all microservices and infrastructure components
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: "healthcare-system"
+    environment: "docker-compose"
+
+# Alertmanager configuration (optional, can be added later)
+# alerting:
+#   alertmanagers:
+#     - static_configs:
+#         - targets:
+#           - alertmanager:9093
+
+# Rule files (optional, can be added later for alerting rules)
+# rule_files:
+#   - "rules/*.yml"
+
+scrape_configs:
+  # Prometheus self-monitoring
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+        labels:
+          service: "prometheus"
+
+  # Patient Service
+  - job_name: "patient-service"
+    static_configs:
+      - targets: ["patient-service:8001"]
+        labels:
+          service: "patient-service"
+          tier: "microservice"
+    metrics_path: "/metrics"
+    scrape_interval: 10s
+
+  # Appointment Service
+  - job_name: "appointment-service"
+    static_configs:
+      - targets: ["appointment-service:8002"]
+        labels:
+          service: "appointment-service"
+          tier: "microservice"
+    metrics_path: "/metrics"
+    scrape_interval: 10s
+
+  # Prescription Service
+  - job_name: "prescription-service"
+    static_configs:
+      - targets: ["prescription-service:8003"]
+        labels:
+          service: "prescription-service"
+          tier: "microservice"
+    metrics_path: "/metrics"
+    scrape_interval: 10s
+
+  # Billing Service
+  - job_name: "billing-service"
+    static_configs:
+      - targets: ["billing-service:8004"]
+        labels:
+          service: "billing-service"
+          tier: "microservice"
+    metrics_path: "/metrics"
+    scrape_interval: 10s
+
+  # RabbitMQ Prometheus Metrics
+  - job_name: "rabbitmq"
+    static_configs:
+      - targets: ["rabbitmq:15692"]
+        labels:
+          service: "rabbitmq"
+          tier: "infrastructure"
+    metrics_path: "/metrics"
+    scrape_interval: 30s
+
+  # Redis Exporter (if enabled)
+  # - job_name: 'redis'
+  #   static_configs:
+  #     - targets: ['redis-exporter:9121']
+  #       labels:
+  #         service: 'redis'
+  #         tier: 'infrastructure'
+
+  # Kong Gateway Metrics (if exposed)
+  # - job_name: 'kong'
+  #   static_configs:
+  #     - targets: ['kong:8001']
+  #       labels:
+  #         service: 'kong'
+  #         tier: 'gateway'
+  #   metrics_path: '/metrics'
+
+  # PostgreSQL Exporter (if enabled)
+  # - job_name: 'postgres'
+  #   static_configs:
+  #     - targets: ['postgres-exporter:9187']
+  #       labels:
+  #         service: 'postgres'
+  #         tier: 'database'
+
+  # MongoDB Exporter (if enabled)
+  # - job_name: 'mongodb'
+  #   static_configs:
+  #     - targets: ['mongodb-exporter:9216']
+  #       labels:
+  #         service: 'mongodb'
+  #         tier: 'database'

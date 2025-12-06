@@ -77,8 +77,15 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
     openapi_url="/openapi.json",
-    root_path="/api/v1/billing",
     lifespan=lifespan,
+    swagger_ui_parameters={
+        "deepLinking": True,
+        "displayRequestDuration": True,
+        "filter": True,
+        "showExtensions": True,
+        "syntaxHighlight.theme": "monokai",
+        "url": "./openapi.json",  # Relative path for Kong proxy compatibility
+    },
 )
 
 
