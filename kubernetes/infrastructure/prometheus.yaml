@@ -17,6 +17,76 @@ data:
       evaluation_interval: 15s
 
     scrape_configs:
+      # Patient Service
+      - job_name: 'patient-service'
+        kubernetes_sd_configs:
+          - role: pod
+            namespaces:
+              names:
+                - healthcare
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_pod_label_app]
+            action: keep
+            regex: patient-service
+          - source_labels: [__meta_kubernetes_pod_ip]
+            action: replace
+            target_label: __address__
+            replacement: $1:8001
+          - source_labels: [__meta_kubernetes_pod_name]
+            action: replace
+            target_label: pod
+          - source_labels: [__meta_kubernetes_namespace]
+            action: replace
+            target_label: namespace
+        metrics_path: /metrics
+
+      # Appointment Service
+      - job_name: 'appointment-service'
+        kubernetes_sd_configs:
+          - role: pod
+            namespaces:
+              names:
+                - healthcare
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_pod_label_app]
+            action: keep
+            regex: appointment-service
+          - source_labels: [__meta_kubernetes_pod_ip]
+            action: replace
+            target_label: __address__
+            replacement: $1:8002
+          - source_labels: [__meta_kubernetes_pod_name]
+            action: replace
+            target_label: pod
+          - source_labels: [__meta_kubernetes_namespace]
+            action: replace
+            target_label: namespace
+        metrics_path: /metrics
+
+      # Prescription Service
+      - job_name: 'prescription-service'
+        kubernetes_sd_configs:
+          - role: pod
+            namespaces:
+              names:
+                - healthcare
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_pod_label_app]
+            action: keep
+            regex: prescription-service
+          - source_labels: [__meta_kubernetes_pod_ip]
+            action: replace
+            target_label: __address__
+            replacement: $1:8003
+          - source_labels: [__meta_kubernetes_pod_name]
+            action: replace
+            target_label: pod
+          - source_labels: [__meta_kubernetes_namespace]
+            action: replace
+            target_label: namespace
+        metrics_path: /metrics
+
+      # Billing Service
       - job_name: 'billing-service'
         kubernetes_sd_configs:
           - role: pod

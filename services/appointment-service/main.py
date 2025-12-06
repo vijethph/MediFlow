@@ -10,7 +10,9 @@ import sys
 import time
 from contextlib import asynccontextmanager
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
+sys.path.insert(
+    0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+)
 
 from fastapi import FastAPI, Request, status
 from fastapi.exceptions import RequestValidationError
@@ -35,6 +37,7 @@ from routers import appointments, advanced_search, batch_operations, analytics
 # Try to import FHIR router (optional)
 try:
     from routers import fhir_appointments
+
     FHIR_AVAILABLE = True
 except ImportError:
     FHIR_AVAILABLE = False
@@ -89,8 +92,15 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
     openapi_url="/openapi.json",
-    root_path="/api/v1/appointments",
     lifespan=lifespan,
+    swagger_ui_parameters={
+        "deepLinking": True,
+        "displayRequestDuration": True,
+        "filter": True,
+        "showExtensions": True,
+        "syntaxHighlight.theme": "monokai",
+        "url": "./openapi.json",  # Relative path for Kong proxy compatibility
+    },
 )
 
 
@@ -215,6 +225,7 @@ async def health_check():
     try:
         from database import engine
         from sqlalchemy import text
+
         async with engine.begin() as conn:
             await conn.execute(text("SELECT 1"))
         db_status = "connected"
@@ -238,4 +249,3 @@ if __name__ == "__main__":
         reload=True,
         log_level=settings.log_level.lower(),
     )
-

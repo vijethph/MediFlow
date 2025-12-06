@@ -127,14 +127,263 @@ metadata:
 data:
   kong.yml: |
     _format_version: "3.0"
+
     services:
+      # Patient Service
+      - name: patient-service
+        url: http://patient-service.healthcare.svc.cluster.local:8001
+        routes:
+          - name: patient-route-api
+            paths:
+              - /api/v1/patients
+              - /api/v1/auth
+            strip_path: false
+            protocols:
+              - http
+              - https
+          - name: patient-route-docs
+            paths:
+              - ~/patient/docs$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /docs
+          - name: patient-route-redoc
+            paths:
+              - ~/patient/redoc$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /redoc
+          - name: patient-route-openapi
+            paths:
+              - ~/patient/openapi.json$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /openapi.json
+          - name: patient-route-health
+            paths:
+              - ~/patient/health$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /health
+
+      # Appointment Service
+      - name: appointment-service
+        url: http://appointment-service.healthcare.svc.cluster.local:8002
+        routes:
+          - name: appointment-route-api
+            paths:
+              - /api/v1/appointments
+              - /api/v1/schedules
+            strip_path: false
+            protocols:
+              - http
+              - https
+          - name: appointment-route-docs
+            paths:
+              - ~/appointment/docs$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /docs
+          - name: appointment-route-redoc
+            paths:
+              - ~/appointment/redoc$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /redoc
+          - name: appointment-route-openapi
+            paths:
+              - ~/appointment/openapi.json$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /openapi.json
+          - name: appointment-route-health
+            paths:
+              - ~/appointment/health$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /health
+
+      # Prescription Service
+      - name: prescription-service
+        url: http://prescription-service.healthcare.svc.cluster.local:8003
+        routes:
+          - name: prescription-route-api
+            paths:
+              - /api/v1/prescriptions
+              - /api/v1/medical-records
+              - /api/v1/lab-results
+            strip_path: false
+            protocols:
+              - http
+              - https
+          - name: prescription-route-docs
+            paths:
+              - ~/prescription/docs$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /docs
+          - name: prescription-route-redoc
+            paths:
+              - ~/prescription/redoc$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /redoc
+          - name: prescription-route-openapi
+            paths:
+              - ~/prescription/openapi.json$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /openapi.json
+          - name: prescription-route-health
+            paths:
+              - ~/prescription/health$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /health
+
+      # Billing Service
       - name: billing-service
         url: http://billing-service.healthcare.svc.cluster.local:8004
         routes:
           - name: billing-route-api
             paths:
-              - /api/v1/billing
-            strip_path: true
+              - /api/v1/invoices
+              - /api/v1/payments
+              - /api/v1/claims
+              - /api/v1/reports
+            strip_path: false
             protocols:
               - http
               - https
+          - name: billing-route-docs
+            paths:
+              - ~/billing/docs$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /docs
+          - name: billing-route-redoc
+            paths:
+              - ~/billing/redoc$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /redoc
+          - name: billing-route-openapi
+            paths:
+              - ~/billing/openapi.json$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /openapi.json
+          - name: billing-route-health
+            paths:
+              - ~/billing/health$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /health
+          - name: billing-route-metrics
+            paths:
+              - ~/billing/metrics$
+            strip_path: false
+            protocols:
+              - http
+              - https
+            plugins:
+              - name: request-transformer
+                config:
+                  replace:
+                    uri: /metrics
