@@ -9,9 +9,9 @@ This repository will be renamed later.
 3. Use any tool to build your service, but at the end of the day anyone in the team should be able to clone it and run it. Start with simple features, and then move on to writing tests, and containerize it in Docker.
 4. Use Zoom whiteboard for architecture diagrams, and shared Google doc to draft project report for your service
 
-### Draft architecture diagram
+### Architecture diagram
 
-![Healthcare Patient Management System](/docs/healthcare-architecture.drawio.png "Draft architecture for the system")
+![Healthcare Patient Management System](/docs/architecture.drawio.png)
 
 #### Quick testing of billing-service
 
