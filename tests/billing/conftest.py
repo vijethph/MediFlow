@@ -19,9 +19,6 @@ sys.path.insert(
     0,
     os.path.join(os.path.dirname(__file__), "..", "..", "services", "billing-service"),
 )
-    0,
-    os.path.join(os.path.dirname(__file__), "..", "..", "services", "billing-service"),
-)
 
 import database
 import models

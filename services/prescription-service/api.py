@@ -6,7 +6,7 @@ This module defines REST API endpoints for prescriptions, medical records, and l
 
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 from pymongo.database import Database
 
 import schemas
@@ -39,6 +39,7 @@ logger = get_logger(__name__)
 )
 async def create_prescription(
     prescription_data: schemas.PrescriptionCreate,
+    request: Request,
     current_user: dict = Depends(require_authentication),
     db: Database = Depends(get_db),
 ):
@@ -46,6 +47,7 @@ async def create_prescription(
     Create a new prescription for a patient.
 
     :param prescription_data: Prescription creation data
+    :param request: FastAPI request object
     :param current_user: Authenticated user from JWT
     :param db: Database session
     :return: Created prescription
@@ -58,14 +60,20 @@ async def create_prescription(
 
     try:
         # Verify patient exists
-        jwt_token = current_user.get("token")
-        await service.verify_patient_exists(prescription_data.patient_id, jwt_token)
+        auth_header = request.headers.get("Authorization", "")
+        jwt_token = (
+            auth_header.replace("Bearer ", "")
+            if auth_header.startswith("Bearer ")
+            else None
+        )
+        if jwt_token:
+            await service.verify_patient_exists(prescription_data.patient_id, jwt_token)
 
         prescription = service.create_prescription(db, prescription_data)
-        
+
         response_dict = prescription.model_dump(by_alias=True)
         response_dict["_id"] = str(response_dict["_id"])
-        
+
         return schemas.PrescriptionResponse(**response_dict)
     except PatientNotFoundError as e:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e)) from e
@@ -98,10 +106,10 @@ def get_prescription(
 
     try:
         prescription = service.get_prescription_by_id(db, prescription_id)
-        
+
         response_dict = prescription.model_dump(by_alias=True)
         response_dict["_id"] = str(response_dict["_id"])
-        
+
         return schemas.PrescriptionResponse(**response_dict)
     except ResourceNotFoundError as e:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e)) from e
@@ -170,11 +178,13 @@ def update_prescription(
     logger.info("api_update_prescription", prescription_id=prescription_id)
 
     try:
-        prescription = service.update_prescription(db, prescription_id, prescription_update)
-        
+        prescription = service.update_prescription(
+            db, prescription_id, prescription_update
+        )
+
         response_dict = prescription.model_dump(by_alias=True)
         response_dict["_id"] = str(response_dict["_id"])
-        
+
         return schemas.PrescriptionResponse(**response_dict)
     except ResourceNotFoundError as e:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e)) from e
@@ -196,11 +206,13 @@ async def create_medical_record(
     record_data: schemas.MedicalRecordCreate,
     current_user: dict = Depends(require_authentication),
     db: Database = Depends(get_db),
+    request: Request = None,
 ):
     """
     Create a new medical record for a patient.
 
     :param record_data: Medical record creation data
+    :param request: FastAPI request object
     :param current_user: Authenticated user from JWT
     :param db: Database session
     :return: Created medical record
@@ -213,14 +225,20 @@ async def create_medical_record(
 
     try:
         # Verify patient exists
-        jwt_token = current_user.get("token")
-        await service.verify_patient_exists(record_data.patient_id, jwt_token)
+        auth_header = request.headers.get("Authorization", "")
+        jwt_token = (
+            auth_header.replace("Bearer ", "")
+            if auth_header.startswith("Bearer ")
+            else None
+        )
+        if jwt_token:
+            await service.verify_patient_exists(record_data.patient_id, jwt_token)
 
         record = service.create_medical_record(db, record_data)
-        
+
         response_dict = record.model_dump(by_alias=True)
         response_dict["_id"] = str(response_dict["_id"])
-        
+
         return schemas.MedicalRecordResponse(**response_dict)
     except PatientNotFoundError as e:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e)) from e
@@ -249,10 +267,10 @@ def get_medical_record(
 
     try:
         record = service.get_medical_record_by_id(db, record_id)
-        
+
         response_dict = record.model_dump(by_alias=True)
         response_dict["_id"] = str(response_dict["_id"])
-        
+
         return schemas.MedicalRecordResponse(**response_dict)
     except ResourceNotFoundError as e:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e)) from e
@@ -281,7 +299,9 @@ def list_medical_records(
     :param db: Database session
     :return: List of medical records
     """
-    logger.info("api_list_medical_records", patient_id=patient_id, skip=skip, limit=limit)
+    logger.info(
+        "api_list_medical_records", patient_id=patient_id, skip=skip, limit=limit
+    )
 
     records = service.get_medical_records_by_patient(db, patient_id, skip, limit)
 
@@ -322,10 +342,10 @@ def update_medical_record(
 
     try:
         record = service.update_medical_record(db, record_id, record_update)
-        
+
         response_dict = record.model_dump(by_alias=True)
         response_dict["_id"] = str(response_dict["_id"])
-        
+
         return schemas.MedicalRecordResponse(**response_dict)
     except ResourceNotFoundError as e:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e)) from e
@@ -347,11 +367,13 @@ async def create_lab_result(
     result_data: schemas.LabResultCreate,
     current_user: dict = Depends(require_authentication),
     db: Database = Depends(get_db),
+    request: Request = None,
 ):
     """
     Create new lab result for a patient.
 
     :param result_data: Lab result creation data
+    :param request: FastAPI request object
     :param current_user: Authenticated user from JWT
     :param db: Database session
     :return: Created lab result
@@ -364,14 +386,20 @@ async def create_lab_result(
 
     try:
         # Verify patient exists
-        jwt_token = current_user.get("token")
-        await service.verify_patient_exists(result_data.patient_id, jwt_token)
+        auth_header = request.headers.get("Authorization", "")
+        jwt_token = (
+            auth_header.replace("Bearer ", "")
+            if auth_header.startswith("Bearer ")
+            else None
+        )
+        if jwt_token:
+            await service.verify_patient_exists(result_data.patient_id, jwt_token)
 
         result = service.create_lab_result(db, result_data)
-        
+
         response_dict = result.model_dump(by_alias=True)
         response_dict["_id"] = str(response_dict["_id"])
-        
+
         return schemas.LabResultResponse(**response_dict)
     except PatientNotFoundError as e:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e)) from e
@@ -400,10 +428,10 @@ def get_lab_result(
 
     try:
         result = service.get_lab_result_by_id(db, result_id)
-        
+
         response_dict = result.model_dump(by_alias=True)
         response_dict["_id"] = str(response_dict["_id"])
-        
+
         return schemas.LabResultResponse(**response_dict)
     except ResourceNotFoundError as e:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e)) from e
@@ -473,43 +501,10 @@ def update_lab_result(
 
     try:
         result = service.update_lab_result(db, result_id, result_update)
-        
+
         response_dict = result.model_dump(by_alias=True)
         response_dict["_id"] = str(response_dict["_id"])
-        
+
         return schemas.LabResultResponse(**response_dict)
     except ResourceNotFoundError as e:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e)) from e
-
-
-# ============================================
-# Health Check Endpoint
-# ============================================
-
-
-@router.get(
-    "/health",
-    response_model=schemas.HealthCheckResponse,
-    tags=["System"],
-    summary="Health check",
-)
-async def health_check_detailed(db: Database = Depends(get_db)):
-    """
-    Detailed health check endpoint.
-
-    :param db: Database session
-    :return: Health status
-    """
-    try:
-        db.command("ping")
-        database_status = "healthy"
-    except Exception as e:
-        logger.error("database_unhealthy", error=str(e))
-        database_status = "unhealthy"
-
-    return schemas.HealthCheckResponse(
-        service="prescription-service",
-        status="healthy" if database_status == "healthy" else "degraded",
-        timestamp=datetime.now(timezone.utc),
-        database=database_status,
-    )

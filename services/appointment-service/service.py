@@ -1,371 +1,276 @@
-"""Database CRUD operations for appointments."""
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, and_, or_, func
-from sqlalchemy.exc import IntegrityError
-from typing import Optional, List
-from datetime import datetime, timedelta
+"""
+Business Logic Layer for Appointment Service.
+
+This module contains all business logic for appointment management.
+"""
+
 import uuid
+from datetime import datetime
+from typing import List, Optional, Tuple
 
-from models import Appointment, DoctorAvailability, AppointmentStatus, AppointmentPriority
-from schemas import AppointmentCreate, AppointmentUpdate
+import httpx
+from sqlalchemy import func
+from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy.orm import Session
+
+import models
+import schemas
+from common.exceptions import (
+    AppointmentNotFoundError,
+    PatientNotFoundError,
+    ServiceUnavailableError,
+)
+from common.logging import get_logger
+from common.utils import retry_on_api_error
+from config import get_settings
 
 
-def generate_appointment_id() -> str:
-    """Generate unique appointment ID in format APT-XXXXX."""
-    unique_id = str(uuid.uuid4()).replace("-", "").upper()[:8]
-    return f"APT-{unique_id}"
+settings = get_settings()
+logger = get_logger(__name__)
 
 
-async def create_appointment(db: AsyncSession, appointment: AppointmentCreate, created_by: Optional[str] = None) -> Appointment:
+@retry_on_api_error(
+    max_attempts=3, exceptions=(httpx.RequestError, httpx.HTTPStatusError)
+)
+async def verify_patient_exists(patient_id: str, jwt_token: str) -> bool:
     """
-    Create a new appointment record.
-    
-    Args:
-        db: Database session
-        appointment: Appointment creation data
-        created_by: User who created the appointment
-        
-    Returns:
-        Appointment: Created appointment object
-        
-    Raises:
-        IntegrityError: If appointment conflicts with existing appointment
+    Verify patient exists in Patient Service.
+
+    :param patient_id: Patient identifier
+    :param jwt_token: JWT authentication token
+    :return: True if patient exists
+    :raises PatientNotFoundError: If patient not found
+    :raises ServiceUnavailableError: If Patient Service unavailable
     """
-    appointment_data = appointment.model_dump()
-    appointment_data["appointment_id"] = generate_appointment_id()
-    appointment_data["created_by"] = created_by
-    
-    # Calculate end time
-    appointment_date = appointment_data["appointment_date"]
-    duration = appointment_data.get("duration_minutes", 30)
-    appointment_data["end_time"] = appointment_date + timedelta(minutes=duration)
-    
-    db_appointment = Appointment(**appointment_data)
-    db.add(db_appointment)
     try:
-        await db.commit()
-        await db.refresh(db_appointment)
-        return db_appointment
-    except IntegrityError as e:
-        await db.rollback()
-        raise e
+        async with httpx.AsyncClient() as client:
+            response = await client.get(
+                f"{settings.patient_service_url}/api/v1/patients/{patient_id}",
+                headers={"Authorization": f"Bearer {jwt_token}"},
+                timeout=10.0,
+            )
+
+            if response.status_code == 404:
+                raise PatientNotFoundError(patient_id)
+            elif response.status_code != 200:
+                raise ServiceUnavailableError("Patient Service")
+
+            logger.info("patient_verified", patient_id=patient_id)
+            return True
+    except httpx.RequestError as e:
+        logger.error("patient_service_unavailable", error=str(e))
+        raise ServiceUnavailableError("Patient Service") from e
 
 
-async def get_appointment(db: AsyncSession, appointment_id: str) -> Optional[Appointment]:
+def create_appointment(
+    db: Session, appointment_data: schemas.AppointmentCreate
+) -> models.Appointment:
     """
-    Get appointment by appointment_id.
-    
-    Args:
-        db: Database session
-        appointment_id: Appointment ID (format: APT-XXXXX)
-        
-    Returns:
-        Appointment or None if not found
+    Create new appointment.
+
+    :param db: Database session
+    :param appointment_data: Appointment creation data
+    :return: Created appointment
+    :raises ValidationError: If validation fails
     """
-    result = await db.execute(
-        select(Appointment).where(
-            Appointment.appointment_id == appointment_id,
-            Appointment.is_active == True
+    logger.info("creating_appointment", patient_id=appointment_data.patient_id)
+
+    minute_duration = appointment_data.minute_duration
+    if not minute_duration:
+        minute_duration = int(
+            (appointment_data.end - appointment_data.start).total_seconds() / 60
         )
-    )
-    return result.scalar_one_or_none()
 
+    participant_data = [
+        {
+            "type": ["patient"],
+            "actor": appointment_data.patient_id,
+            "required": "required",
+            "status": "accepted",
+        }
+    ]
 
-async def get_appointments_by_patient(
-    db: AsyncSession,
-    patient_id: str,
-    skip: int = 0,
-    limit: int = 100
-) -> List[Appointment]:
-    """
-    Get appointments for a specific patient.
-    
-    Args:
-        db: Database session
-        patient_id: Patient ID
-        skip: Number of records to skip
-        limit: Maximum number of records to return
-        
-    Returns:
-        List of Appointment objects
-    """
-    result = await db.execute(
-        select(Appointment)
-        .where(
-            Appointment.patient_id == patient_id,
-            Appointment.is_active == True
+    if appointment_data.practitioner_id:
+        participant_data.append(
+            {
+                "type": ["practitioner"],
+                "actor": appointment_data.practitioner_id,
+                "required": "required",
+                "status": "accepted",
+            }
         )
-        .offset(skip)
-        .limit(limit)
-        .order_by(Appointment.appointment_date.desc())
+
+    appointment = models.Appointment(
+        status=appointment_data.status.value,
+        service_category=appointment_data.service_category,
+        service_type=appointment_data.service_type,
+        specialty=appointment_data.specialty,
+        appointment_type=appointment_data.appointment_type,
+        reason_code=appointment_data.reason_code,
+        reason_reference=appointment_data.reason_reference,
+        priority=appointment_data.priority,
+        description=appointment_data.description,
+        start=appointment_data.start,
+        end=appointment_data.end,
+        minute_duration=minute_duration,
+        slot=appointment_data.slot,
+        created=appointment_data.created or datetime.utcnow(),
+        comment=appointment_data.comment,
+        requested_period=appointment_data.requested_period,
+        participant=participant_data,
+        location=appointment_data.location,
+        identifier=appointment_data.identifier,
+        meta={"created_by": "appointment-service"},
     )
-    return list(result.scalars().all())
+
+    db.add(appointment)
+    db.commit()
+    db.refresh(appointment)
+
+    logger.info("appointment_created", appointment_id=str(appointment.id))
+
+    return appointment
 
 
-async def get_appointments_by_doctor(
-    db: AsyncSession,
-    doctor_id: str,
-    skip: int = 0,
-    limit: int = 100
-) -> List[Appointment]:
+def get_appointment_by_id(db: Session, appointment_id: str) -> models.Appointment:
     """
-    Get appointments for a specific doctor.
-    
-    Args:
-        db: Database session
-        doctor_id: Doctor ID
-        skip: Number of records to skip
-        limit: Maximum number of records to return
-        
-    Returns:
-        List of Appointment objects
+    Get appointment by ID.
+
+    :param db: Database session
+    :param appointment_id: Appointment identifier
+    :return: Appointment
+    :raises AppointmentNotFoundError: If appointment not found
     """
-    result = await db.execute(
-        select(Appointment)
-        .where(
-            Appointment.doctor_id == doctor_id,
-            Appointment.is_active == True
-        )
-        .offset(skip)
-        .limit(limit)
-        .order_by(Appointment.appointment_date.desc())
+    appointment = (
+        db.query(models.Appointment)
+        .filter(models.Appointment.id == uuid.UUID(appointment_id))
+        .first()
     )
-    return list(result.scalars().all())
+
+    if not appointment:
+        raise AppointmentNotFoundError(appointment_id)
+
+    return appointment
 
 
-async def get_appointments(
-    db: AsyncSession,
+def list_appointments(
+    db: Session,
+    patient_id: Optional[str] = None,
+    practitioner_id: Optional[str] = None,
+    status: Optional[str] = None,
+    start_date: Optional[datetime] = None,
+    end_date: Optional[datetime] = None,
     skip: int = 0,
     limit: int = 100,
-    status: Optional[AppointmentStatus] = None,
-    date_from: Optional[datetime] = None,
-    date_to: Optional[datetime] = None
-) -> List[Appointment]:
+) -> Tuple[List[models.Appointment], int]:
     """
-    Get list of appointments with filters.
-    
-    Args:
-        db: Database session
-        skip: Number of records to skip
-        limit: Maximum number of records to return
-        status: Filter by status
-        date_from: Filter by date from
-        date_to: Filter by date to
-        
-    Returns:
-        List of Appointment objects
-    """
-    conditions = [Appointment.is_active == True]
-    
-    if status:
-        conditions.append(Appointment.status == status)
-    
-    if date_from:
-        conditions.append(Appointment.appointment_date >= date_from)
-    
-    if date_to:
-        conditions.append(Appointment.appointment_date <= date_to)
-    
-    result = await db.execute(
-        select(Appointment)
-        .where(and_(*conditions))
-        .offset(skip)
-        .limit(limit)
-        .order_by(Appointment.appointment_date.desc())
-    )
-    return list(result.scalars().all())
+    List appointments with filters.
 
+    :param db: Database session
+    :param patient_id: Patient identifier
+    :param practitioner_id: Practitioner identifier
+    :param status: Appointment status
+    :param start_date: Start date filter
+    :param end_date: End date filter
+    :param skip: Number of records to skip
+    :param limit: Maximum records to return
+    :return: Tuple of (appointments list, total count)
+    """
+    query = db.query(models.Appointment)
 
-async def update_appointment(
-    db: AsyncSession,
-    appointment_id: str,
-    appointment_update: AppointmentUpdate,
-    updated_by: Optional[str] = None
-) -> Optional[Appointment]:
-    """
-    Update appointment information.
-    
-    Args:
-        db: Database session
-        appointment_id: Appointment ID to update
-        appointment_update: Appointment update data
-        updated_by: User who updated the appointment
-        
-    Returns:
-        Updated Appointment or None if not found
-    """
-    db_appointment = await get_appointment(db, appointment_id)
-    if not db_appointment:
-        return None
-    
-    update_data = appointment_update.model_dump(exclude_unset=True)
-    if not update_data:
-        return db_appointment
-    
-    # Update end_time if appointment_date or duration_minutes changed
-    if "appointment_date" in update_data or "duration_minutes" in update_data:
-        appointment_date = update_data.get("appointment_date", db_appointment.appointment_date)
-        duration = update_data.get("duration_minutes", db_appointment.duration_minutes)
-        update_data["end_time"] = appointment_date + timedelta(minutes=duration)
-    
-    # Update fields
-    for field, value in update_data.items():
-        setattr(db_appointment, field, value)
-    
-    db_appointment.updated_by = updated_by
-    db_appointment.updated_at = datetime.utcnow()
-    
-    try:
-        await db.commit()
-        await db.refresh(db_appointment)
-        return db_appointment
-    except IntegrityError as e:
-        await db.rollback()
-        raise e
-
-
-async def cancel_appointment(
-    db: AsyncSession,
-    appointment_id: str,
-    cancellation_reason: Optional[str] = None,
-    cancelled_by: Optional[str] = None
-) -> Optional[Appointment]:
-    """
-    Cancel an appointment.
-    
-    Args:
-        db: Database session
-        appointment_id: Appointment ID to cancel
-        cancellation_reason: Reason for cancellation
-        cancelled_by: User who cancelled
-        
-    Returns:
-        Cancelled Appointment or None if not found
-    """
-    db_appointment = await get_appointment(db, appointment_id)
-    if not db_appointment:
-        return None
-    
-    db_appointment.status = AppointmentStatus.CANCELLED
-    db_appointment.cancelled_at = datetime.utcnow()
-    db_appointment.cancellation_reason = cancellation_reason
-    db_appointment.cancelled_by = cancelled_by
-    db_appointment.updated_at = datetime.utcnow()
-    
-    await db.commit()
-    await db.refresh(db_appointment)
-    return db_appointment
-
-
-async def check_doctor_availability(
-    db: AsyncSession,
-    doctor_id: str,
-    appointment_date: datetime,
-    duration_minutes: int = 30,
-    exclude_appointment_id: Optional[str] = None
-) -> bool:
-    """
-    Check if doctor is available at the specified time.
-    
-    Args:
-        db: Database session
-        doctor_id: Doctor ID
-        appointment_date: Proposed appointment date and time
-        duration_minutes: Appointment duration in minutes
-        exclude_appointment_id: Appointment ID to exclude from conflict check
-        
-    Returns:
-        True if available, False if conflict exists
-    """
-    end_time = appointment_date + timedelta(minutes=duration_minutes)
-    
-    # Check for conflicting appointments
-    conditions = [
-        Appointment.doctor_id == doctor_id,
-        Appointment.is_active == True,
-        Appointment.status.in_([AppointmentStatus.PENDING, AppointmentStatus.CONFIRMED]),
-        or_(
-            and_(
-                Appointment.appointment_date <= appointment_date,
-                Appointment.end_time > appointment_date
-            ),
-            and_(
-                Appointment.appointment_date < end_time,
-                Appointment.end_time >= end_time
-            ),
-            and_(
-                Appointment.appointment_date >= appointment_date,
-                Appointment.end_time <= end_time
+    if patient_id:
+        query = query.filter(
+            models.Appointment.participant.op("@>")(
+                func.cast([{"actor": patient_id}], JSONB)
             )
         )
-    ]
-    
-    if exclude_appointment_id:
-        conditions.append(Appointment.appointment_id != exclude_appointment_id)
-    
-    result = await db.execute(
-        select(func.count(Appointment.id)).where(and_(*conditions))
-    )
-    conflict_count = result.scalar() or 0
-    
-    return conflict_count == 0
 
-
-async def get_upcoming_appointments(
-    db: AsyncSession,
-    patient_id: Optional[str] = None,
-    doctor_id: Optional[str] = None,
-    limit: int = 10
-) -> List[Appointment]:
-    """
-    Get upcoming appointments.
-    
-    Args:
-        db: Database session
-        patient_id: Optional patient ID filter
-        doctor_id: Optional doctor ID filter
-        limit: Maximum number of records
-        
-    Returns:
-        List of upcoming Appointment objects
-    """
-    conditions = [
-        Appointment.is_active == True,
-        Appointment.appointment_date >= datetime.utcnow(),
-        Appointment.status.in_([AppointmentStatus.PENDING, AppointmentStatus.CONFIRMED])
-    ]
-    
-    if patient_id:
-        conditions.append(Appointment.patient_id == patient_id)
-    
-    if doctor_id:
-        conditions.append(Appointment.doctor_id == doctor_id)
-    
-    result = await db.execute(
-        select(Appointment)
-        .where(and_(*conditions))
-        .order_by(Appointment.appointment_date.asc())
-        .limit(limit)
-    )
-    return list(result.scalars().all())
-
-
-async def count_appointments_by_status(db: AsyncSession, status: AppointmentStatus) -> int:
-    """
-    Count appointments by status.
-    
-    Args:
-        db: Database session
-        status: Appointment status
-        
-    Returns:
-        Number of appointments with the status
-    """
-    result = await db.execute(
-        select(func.count(Appointment.id)).where(
-            Appointment.status == status,
-            Appointment.is_active == True
+    if practitioner_id:
+        query = query.filter(
+            models.Appointment.participant.op("@>")(
+                func.cast([{"actor": practitioner_id}], JSONB)
+            )
         )
-    )
-    return result.scalar() or 0
 
+    if status:
+        query = query.filter(models.Appointment.status == status)
+
+    if start_date:
+        query = query.filter(models.Appointment.start >= start_date)
+
+    if end_date:
+        query = query.filter(models.Appointment.end <= end_date)
+
+    total = query.count()
+    appointments = query.offset(skip).limit(limit).all()
+
+    return appointments, total
+
+
+def update_appointment(
+    db: Session, appointment_id: str, appointment_update: schemas.AppointmentUpdate
+) -> models.Appointment:
+    """
+    Update appointment.
+
+    :param db: Database session
+    :param appointment_id: Appointment identifier
+    :param appointment_update: Appointment update data
+    :return: Updated appointment
+    :raises AppointmentNotFoundError: If appointment not found
+    """
+    appointment = get_appointment_by_id(db, appointment_id)
+
+    update_data = appointment_update.model_dump(exclude_unset=True)
+
+    for field, value in update_data.items():
+        if hasattr(appointment, field):
+            if isinstance(value, schemas.AppointmentStatusEnum):
+                setattr(appointment, field, value.value)
+            else:
+                setattr(appointment, field, value)
+
+    db.commit()
+    db.refresh(appointment)
+
+    logger.info("appointment_updated", appointment_id=appointment_id)
+
+    return appointment
+
+
+def delete_appointment(db: Session, appointment_id: str) -> None:
+    """
+    Delete appointment.
+
+    :param db: Database session
+    :param appointment_id: Appointment identifier
+    :raises AppointmentNotFoundError: If appointment not found
+    """
+    appointment = get_appointment_by_id(db, appointment_id)
+
+    db.delete(appointment)
+    db.commit()
+
+    logger.info("appointment_deleted", appointment_id=appointment_id)
+
+
+def cancel_appointment(db: Session, appointment_id: str) -> models.Appointment:
+    """
+    Cancel appointment.
+
+    :param db: Database session
+    :param appointment_id: Appointment identifier
+    :return: Cancelled appointment
+    :raises AppointmentNotFoundError: If appointment not found
+    """
+    appointment = get_appointment_by_id(db, appointment_id)
+
+    appointment.status = schemas.AppointmentStatusEnum.CANCELLED.value
+    appointment.updated_at = datetime.utcnow()
+
+    db.commit()
+    db.refresh(appointment)
+
+    logger.info("appointment_cancelled", appointment_id=appointment_id)
+
+    return appointment

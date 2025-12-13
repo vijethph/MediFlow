@@ -13,4 +13,5 @@ data:
   API_V1_PREFIX: "/api/v1"
   PATIENT_SERVICE_URL: "http://patient-service.healthcare.svc.cluster.local:8001"
   REDIS_ENABLED: "false"
-
+  JWT_ACCESS_TOKEN_EXPIRE_MINUTES: "1440"
+  JWT_ALGORITHM: "HS256"

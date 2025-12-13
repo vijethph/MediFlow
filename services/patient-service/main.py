@@ -1,76 +1,79 @@
-"""FastAPI application main entry point."""
+"""
+Patient Service FastAPI Application.
 
-from fastapi import FastAPI, Request, status
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
-from prometheus_client import make_asgi_app
-from contextlib import asynccontextmanager
+This module initializes the FastAPI application with all middleware, routers, and configuration.
+"""
+
+import asyncio
+import os
+import sys
 import time
-import logging
+from contextlib import asynccontextmanager
 
-from config import settings
-from database import init_db, close_db
-from patients import router as patients_router
-from cache import init_redis, close_redis
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
-# Optional FHIR support
-try:
-    from fhir_patients import router as fhir_patients_router
+from fastapi import FastAPI
+from fastapi.exceptions import RequestValidationError
+from fastapi.middleware.cors import CORSMiddleware
+from prometheus_client import Counter, Gauge, Histogram, make_asgi_app
+from sqlalchemy import text
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
-    FHIR_ENABLED = True
-except ImportError as e:
-    FHIR_ENABLED = False
-    import logging
-
-    logger = logging.getLogger(__name__)
-    logger.warning(f"FHIR support disabled: {e}")
-from middleware.security import SecurityHeadersMiddleware
-from middleware.correlation import CorrelationIDMiddleware
-from middleware.rate_limit import limiter, rate_limit_exceeded_handler
-from slowapi.errors import RateLimitExceeded
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+import api
+from common.exceptions import HealthcareException
+from common.logging import get_logger, setup_logging
+from common.middleware import (
+    healthcare_exception_handler,
+    http_exception_handler,
+    validation_exception_handler,
 )
-logger = logging.getLogger(__name__)
+from config import get_settings
+from database import engine, init_db
+
+
+settings = get_settings()
+setup_logging()
+logger = get_logger(__name__)
+
+
+REQUEST_COUNT = Counter(
+    "patient_service_requests_total",
+    "Total HTTP requests",
+    ["method", "endpoint", "status"],
+)
+
+REQUEST_LATENCY = Histogram(
+    "patient_service_request_duration_seconds",
+    "HTTP request latency",
+    ["method", "endpoint"],
+)
+
+ACTIVE_PATIENTS_GAUGE = Gauge(
+    "patient_service_active_patients", "Number of active patients"
+)
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI):
-    """Lifespan context manager for startup and shutdown events."""
-    # Startup
-    logger.info("Starting Patient Management Service...")
-    try:
-        await init_db()
-        logger.info("Database initialized successfully")
-    except Exception as e:
-        logger.error(f"Failed to initialize database: {e}")
+async def lifespan(_app: FastAPI):
+    """
+    Application lifespan handler.
 
-    # Initialize Redis if enabled
-    if settings.redis_enabled:
-        try:
-            await init_redis()
-        except Exception as e:
-            logger.warning(f"Redis initialization failed: {e}")
+    :param _app: FastAPI application instance
+    """
+    logger.info("patient_service_starting")
+
+    await asyncio.to_thread(init_db)
+    logger.info("database_initialized")
 
     yield
 
-    # Shutdown
-    logger.info("Shutting down Patient Management Service...")
-    await close_db()
-    logger.info("Database connections closed")
-
-    # Close Redis connection
-    if settings.redis_enabled:
-        await close_redis()
+    logger.info("patient_service_shutting_down")
 
 
-# Create FastAPI application
 app = FastAPI(
-    title=settings.service_name,
+    title="Patient Service",
+    description="Healthcare Patient Management System - Patient Microservice",
     version="1.0.0",
-    description="Patient Management Service - Microservice #1 for Healthcare Patient Management System",
     docs_url="/docs",
     redoc_url="/redoc",
     openapi_url="/openapi.json",
@@ -81,11 +84,11 @@ app = FastAPI(
         "filter": True,
         "showExtensions": True,
         "syntaxHighlight.theme": "monokai",
-        "url": "./openapi.json",  # Relative path for Kong proxy compatibility
+        "url": "./openapi.json",
     },
 )
 
-# CORS middleware
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -94,88 +97,88 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Security headers middleware
-app.add_middleware(SecurityHeadersMiddleware)
 
-# Correlation ID middleware
-app.add_middleware(CorrelationIDMiddleware)
-
-# Rate limiting
-if True:
-    app.state.limiter = limiter
-    app.add_exception_handler(RateLimitExceeded, rate_limit_exceeded_handler)
-
-
-# Request logging middleware
 @app.middleware("http")
-async def log_requests(request: Request, call_next):
-    """Log all incoming requests."""
+async def metrics_middleware(request, call_next):
+    """
+    Middleware to collect Prometheus metrics.
+
+    :param request: HTTP request
+    :param call_next: Next middleware in chain
+    :return: HTTP response
+    """
     start_time = time.time()
 
-    # Log request
-    logger.info(f"{request.method} {request.url.path}")
-
-    # Process request
     response = await call_next(request)
 
-    # Calculate duration
-    process_time = time.time() - start_time
-    response.headers["X-Process-Time"] = str(process_time)
+    duration = time.time() - start_time
 
-    # Log response
-    logger.info(
-        f"{request.method} {request.url.path} - "
-        f"Status: {response.status_code} - "
-        f"Time: {process_time:.4f}s"
+    REQUEST_COUNT.labels(
+        method=request.method, endpoint=request.url.path, status=response.status_code
+    ).inc()
+
+    REQUEST_LATENCY.labels(method=request.method, endpoint=request.url.path).observe(
+        duration
     )
 
     return response
 
 
-# Exception handlers
-@app.exception_handler(Exception)
-async def global_exception_handler(request: Request, exc: Exception):
-    """Global exception handler."""
-    logger.error(f"Unhandled exception: {exc}", exc_info=True)
-    return JSONResponse(
-        status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-        content={"detail": "Internal server error"},
-    )
+app.add_exception_handler(HealthcareException, healthcare_exception_handler)
+app.add_exception_handler(RequestValidationError, validation_exception_handler)
+app.add_exception_handler(StarletteHTTPException, http_exception_handler)
 
 
-# Include routers
-app.include_router(patients_router)
-
-# Include FHIR router if available
-if FHIR_ENABLED:
-    app.include_router(fhir_patients_router)
-
-# Include advanced search router
-from advanced_search import router as advanced_search_router
-
-app.include_router(advanced_search_router)
+app.include_router(api.router, prefix="/api/v1/patients", tags=["Patient Service"])
 
 
-# Health check endpoint (simple, no auth required)
-@app.get("/health", tags=["health"])
-async def health():
-    """Simple health check endpoint."""
-    return {"status": "healthy", "service": settings.service_name}
-
-
-# Metrics endpoint
 metrics_app = make_asgi_app()
 app.mount("/metrics", metrics_app)
 
 
-# Root endpoint
-@app.get("/", tags=["root"])
-async def root():
-    """Root endpoint."""
+@app.get("/", tags=["Root"])
+def root():
+    """
+    Root endpoint.
+
+    :return: Welcome message
+    """
     return {
         "service": settings.service_name,
         "version": "1.0.0",
         "status": "running",
         "docs": "/docs",
-        "health": "/health",
     }
+
+
+@app.get("/health", tags=["Health"])
+def health():
+    """
+    Health check endpoint.
+
+    :return: Service health status
+    """
+    try:
+        with engine.connect() as conn:
+            conn.execute(text("SELECT 1"))
+        db_status = "healthy"
+    except Exception as e:
+        logger.error("health_check_failed", error=str(e))
+        db_status = "unhealthy"
+
+    return {
+        "status": "healthy" if db_status == "healthy" else "degraded",
+        "service": settings.service_name,
+        "database": db_status,
+    }
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(
+        "main:app",
+        host="0.0.0.0",
+        port=settings.service_port,
+        reload=settings.environment == "development",
+    )

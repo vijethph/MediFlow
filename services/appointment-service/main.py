@@ -10,40 +10,30 @@ import sys
 import time
 from contextlib import asynccontextmanager
 
-sys.path.insert(
-    0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-)
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
-from fastapi import FastAPI, Request, status
+from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
 from prometheus_client import Counter, Histogram, make_asgi_app
+from sqlalchemy import text
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
+import api
 from common.exceptions import HealthcareException
 from common.logging import get_logger, setup_logging
+from common.messaging.rabbitmq_publisher import RabbitMQPublisher
 from common.middleware import (
     healthcare_exception_handler,
     http_exception_handler,
     validation_exception_handler,
 )
 from config import get_settings
-from database import init_db, close_db
+from database import engine, init_db
 
-# Import all routers
-from routers import appointments, advanced_search, batch_operations, analytics
-
-# Try to import FHIR router (optional)
-try:
-    from routers import fhir_appointments
-
-    FHIR_AVAILABLE = True
-except ImportError:
-    FHIR_AVAILABLE = False
 
 settings = get_settings()
-setup_logging(service_name=settings.service_name, log_level=settings.log_level)
+setup_logging()
 logger = get_logger(__name__)
 
 
@@ -70,18 +60,13 @@ async def lifespan(_app: FastAPI):
     """
     logger.info("appointment_service_starting")
 
-    # Initialize database
-    try:
-        await init_db()
-        logger.info("database_initialized")
-    except Exception as e:
-        logger.error("database_initialization_failed", error=str(e))
-        raise
+    # Initialize database in thread pool to avoid async context issues
+    await asyncio.to_thread(init_db)
+    logger.info("database_initialized")
 
     yield
 
     logger.info("appointment_service_shutting_down")
-    await close_db()
 
 
 # Initialize FastAPI application
@@ -99,7 +84,7 @@ app = FastAPI(
         "filter": True,
         "showExtensions": True,
         "syntaxHighlight.theme": "monokai",
-        "url": "./openapi.json",  # Relative path for Kong proxy compatibility
+        "url": "./openapi.json",
     },
 )
 
@@ -116,7 +101,7 @@ app.add_middleware(
 
 # Metrics Middleware
 @app.middleware("http")
-async def metrics_middleware(request: Request, call_next):
+async def metrics_middleware(request, call_next):
     """
     Middleware to collect Prometheus metrics.
 
@@ -141,55 +126,14 @@ async def metrics_middleware(request: Request, call_next):
     return response
 
 
-# Request Logging Middleware
-@app.middleware("http")
-async def log_requests(request: Request, call_next):
-    """Log all incoming requests."""
-    start_time = time.time()
-    correlation_id = getattr(request.state, "correlation_id", None)
-
-    logger.info(
-        "request_received",
-        method=request.method,
-        path=request.url.path,
-        correlation_id=correlation_id,
-    )
-
-    response = await call_next(request)
-
-    process_time = time.time() - start_time
-    response.headers["X-Process-Time"] = str(process_time)
-
-    logger.info(
-        "request_completed",
-        method=request.method,
-        path=request.url.path,
-        status_code=response.status_code,
-        duration_seconds=round(process_time, 4),
-        correlation_id=correlation_id,
-    )
-
-    return response
-
-
 # Exception Handlers
 app.add_exception_handler(HealthcareException, healthcare_exception_handler)
 app.add_exception_handler(RequestValidationError, validation_exception_handler)
 app.add_exception_handler(StarletteHTTPException, http_exception_handler)
 
 
-# Include all routers
-app.include_router(appointments.router)
-app.include_router(advanced_search.router)
-app.include_router(batch_operations.router)
-app.include_router(analytics.router)
-
-# Include FHIR router if available
-if FHIR_AVAILABLE:
-    app.include_router(fhir_appointments.router)
-    logger.info("fhir_router_enabled")
-else:
-    logger.warning("fhir_router_disabled")
+# Include API Router
+app.include_router(api.router, prefix="/api/v1", tags=["Appointment Service"])
 
 
 # Mount Prometheus Metrics
@@ -209,7 +153,6 @@ def root():
         "version": "1.0.0",
         "status": "running",
         "docs": "/docs",
-        "health": "/health",
     }
 
 
@@ -221,21 +164,30 @@ async def health_check():
     :return: Service health status
     """
     # Check database connection
-    db_status = "disconnected"
     try:
-        from database import engine
-        from sqlalchemy import text
-
-        async with engine.begin() as conn:
-            await conn.execute(text("SELECT 1"))
+        with engine.connect() as conn:
+            conn.execute(text("SELECT 1"))
         db_status = "connected"
-    except Exception as e:
-        logger.warning("database_health_check_failed", error=str(e))
+    except Exception:
+        db_status = "disconnected"
+
+    # Check RabbitMQ connection with timeout
+    rabbitmq_status = "disconnected"
+    try:
+        publisher = RabbitMQPublisher()
+        await asyncio.wait_for(publisher.connect(), timeout=2.0)
+        await publisher.close()
+        rabbitmq_status = "connected"
+    except asyncio.TimeoutError:
+        rabbitmq_status = "timeout"
+    except Exception:
+        rabbitmq_status = "disconnected"
 
     return {
         "service": "appointment-service",
         "status": "healthy",
         "database": db_status,
+        "rabbitmq": rabbitmq_status,
     }
 
 

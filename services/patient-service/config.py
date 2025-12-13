@@ -20,14 +20,13 @@ class Settings(BaseSettings):
 
     # Database Configuration
     database_url: str = (
-        "postgresql+asyncpg://postgres:patient_secure_password@localhost:5432/patient_db"
+        "postgresql://postgres:patient_secure_password@localhost:5432/patient_db"
     )
 
     # JWT Configuration
-    jwt_secret: str = "your-super-secret-jwt-key-change-this-in-production"
-    jwt_algorithm: str = "HS256"
-    jwt_expiration_hours: int = 24
-    JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440  # 24 hours in minutes
+    JWT_SECRET: str = "your-super-secret-jwt-key-change-this-in-production"
+    JWT_ALGORITHM: str = "HS256"
+    JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440
 
     # RabbitMQ Configuration
     rabbitmq_url: str = "amqp://admin:rabbitmq_secure_password@localhost:5672/"

@@ -60,8 +60,8 @@ async def lifespan(_app: FastAPI):
     """
     logger.info("billing_service_starting")
 
-    # Initialize database
-    init_db()
+    # Initialize database in thread pool to avoid async context issues
+    await asyncio.to_thread(init_db)
     logger.info("database_initialized")
 
     yield

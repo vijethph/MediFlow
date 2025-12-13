@@ -144,7 +144,7 @@ services:
     ports:
       - "8002:8002"
     environment:
-      DATABASE_URL: postgresql+asyncpg://postgres:${APPOINTMENT_DB_PASSWORD:-appointment_secure_password}@appointment-db:5432/appointment_db
+      DATABASE_URL: postgresql+psycopg://postgres:${APPOINTMENT_DB_PASSWORD:-appointment_secure_password}@appointment-db:5432/appointment_db
       JWT_SECRET: ${JWT_SECRET}
       JWT_ALGORITHM: ${JWT_ALGORITHM:-HS256}
       PATIENT_SERVICE_URL: http://patient-service:8001
@@ -230,6 +230,12 @@ services:
     volumes:
       - ./services/prescription-service:/app
       - ./common:/app/common
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
   # BILLING SERVICE
 

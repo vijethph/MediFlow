@@ -6,7 +6,7 @@ This module defines reusable dependencies for authentication and authorization.
 
 from typing import Any, Dict
 
-from fastapi import Request
+from fastapi import Depends, Request
 
 from common.auth.jwt_handler import JWTBearer, get_current_user
 from config import get_settings
@@ -31,4 +31,4 @@ def require_authentication():
 
     :return: JWTBearer dependency
     """
-    return JWTBearer()
+    return Depends(JWTBearer())
