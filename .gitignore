@@ -434,3 +434,10 @@ $RECYCLE.BIN/
 
 # Snyk Security Extension - AI Rules (auto-generated)
 .github/instructions/snyk_rules.instructions.md
+
+# custom files that will be ignored later
+.github/
+*.txt
+**/*.md
+!README.md
+!docs/adr/*.md

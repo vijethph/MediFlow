@@ -19,13 +19,11 @@ sys.path.insert(
     0,
     os.path.join(os.path.dirname(__file__), "..", "..", "services", "billing-service"),
 )
-    0,
-    os.path.join(os.path.dirname(__file__), "..", "..", "services", "billing-service"),
-)
 
 import database
 import models
 import schemas
+from common.models.shared_types import Money
 from database import Base, get_db
 from main import app
 
@@ -118,15 +116,15 @@ def sample_invoice_create():
     """
     return schemas.InvoiceCreate(
         subject="pat-123",
-        date=date.today(),
+        date=datetime.now(timezone.utc),
         line_items=[
             schemas.InvoiceLineItemCreate(
                 sequence=1,
                 code="CONSULT-001",
                 description="General Consultation",
-                quantity=1,
-                unit_price=schemas.Money(value=Decimal("100.00"), currency="USD"),
-                line_total=schemas.Money(value=Decimal("100.00"), currency="USD"),
+                quantity=Decimal("1.0"),
+                unit_price=Money(value=Decimal("100.00"), currency="USD"),
+                line_total=Money(value=Decimal("100.00"), currency="USD"),
             )
         ],
         payment_terms="Payment due within 30 days",
@@ -187,7 +185,7 @@ def sample_payment_create(sample_invoice):
     """
     return schemas.PaymentRecordCreate(
         invoice_id=str(sample_invoice.id),
-        amount=schemas.Money(value=Decimal("100.00"), currency="USD"),
+        amount=Money(value=Decimal("100.00"), currency="USD"),
         payment_method="credit_card",
         payment_date=datetime.now(timezone.utc),
         reference_number="PAY-001",
@@ -208,17 +206,17 @@ def sample_claim_create():
         provider_id="prov-123",
         insurer_name="Test Insurance Co",
         policy_number="POL-123456",
-        created_date=date.today(),
-        billable_period_start=date.today(),
-        billable_period_end=date.today(),
+        created_date=datetime.now(timezone.utc),
+        billable_period_start=datetime.now(timezone.utc),
+        billable_period_end=datetime.now(timezone.utc),
         items=[
-            schemas.ClaimItem(
+            schemas.ClaimItemCreate(
                 sequence=1,
                 code="CONSULT-001",
                 description="General Consultation",
-                quantity=1,
-                unit_price=schemas.Money(value=Decimal("100.00"), currency="USD"),
-                net_amount=schemas.Money(value=Decimal("100.00"), currency="USD"),
+                quantity=Decimal("1.0"),
+                unit_price=Money(value=Decimal("100.00"), currency="USD"),
+                net_amount=Money(value=Decimal("100.00"), currency="USD"),
             )
         ],
     )

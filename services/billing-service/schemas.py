@@ -63,9 +63,13 @@ class InvoiceLineItemCreate(BaseModel):
     def validate_line_total(self) -> "InvoiceLineItemCreate":
         """Validate line total matches quantity * unit_price."""
         if self.quantity and self.unit_price and self.line_total:
-            expected_total = self.quantity * float(self.unit_price.value)
-            actual_total = float(self.line_total.value)
-            if abs(actual_total - expected_total) > 0.01:
+            from decimal import Decimal
+
+            expected_total = Decimal(str(self.quantity)) * Decimal(
+                str(self.unit_price.value)
+            )
+            actual_total = Decimal(str(self.line_total.value))
+            if abs(actual_total - expected_total) > Decimal("0.01"):
                 raise ValueError("Line total must equal quantity * unit_price")
         return self
 
@@ -94,6 +98,22 @@ class InvoiceLineItemResponse(BaseModel):
     line_total: Money
     created_at: datetime
 
+    @field_validator("id", mode="before")
+    @classmethod
+    def convert_uuid_to_str(cls, v):
+        """Convert UUID to string."""
+        if hasattr(v, "hex"):
+            return str(v)
+        return v
+
+    @field_validator("unit_price", "line_total", mode="before")
+    @classmethod
+    def convert_decimal_to_money(cls, v):
+        """Convert Decimal to Money object."""
+        if isinstance(v, Decimal):
+            return Money(value=v, currency="USD")
+        return v
+
     class Config:
         from_attributes = True
 
@@ -113,9 +133,9 @@ class InvoiceCreate(BaseModel):
 
     @field_validator("date")
     @classmethod
-    def validate_date(cls, v: date) -> date:
+    def validate_date(cls, v: datetime) -> datetime:
         """Ensure date is not in future."""
-        if v > datetime.now(timezone.utc).date():
+        if v > datetime.now(timezone.utc):
             raise ValueError("Invoice date cannot be in the future")
         return v
 
@@ -172,6 +192,14 @@ class InvoiceResponse(BaseModel):
     meta: Dict[str, Any] = Field(default_factory=dict)
     created_at: datetime
     updated_at: datetime
+
+    @field_validator("id", mode="before")
+    @classmethod
+    def convert_uuid_to_str(cls, v):
+        """Convert UUID to string."""
+        if hasattr(v, "hex"):
+            return str(v)
+        return v
 
     class Config:
         from_attributes = True
@@ -264,6 +292,22 @@ class PaymentRecordResponse(BaseModel):
     notes: Optional[str]
     created_at: datetime
     updated_at: datetime
+
+    @field_validator("id", "invoice_id", mode="before")
+    @classmethod
+    def convert_uuid_to_str(cls, v):
+        """Convert UUID to string."""
+        if hasattr(v, "hex"):
+            return str(v)
+        return v
+
+    @field_validator("amount", mode="before")
+    @classmethod
+    def convert_decimal_to_money(cls, v):
+        """Convert Decimal to Money object."""
+        if isinstance(v, Decimal):
+            return Money(value=v, currency="USD")
+        return v
 
     class Config:
         from_attributes = True
@@ -386,6 +430,14 @@ class InsuranceClaimResponse(BaseModel):
     meta: Dict[str, Any] = Field(default_factory=dict)
     created_at: datetime
     updated_at: datetime
+
+    @field_validator("id", mode="before")
+    @classmethod
+    def convert_uuid_to_str(cls, v):
+        """Convert UUID to string."""
+        if hasattr(v, "hex"):
+            return str(v)
+        return v
 
     class Config:
         from_attributes = True

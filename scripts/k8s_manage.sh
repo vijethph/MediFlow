@@ -12,21 +12,54 @@ SERVICES=("patient-service" "appointment-service" "prescription-service" "billin
 
 case "${1:-}" in
     infra)
-        echo "Deploying infrastructure (Kong, Prometheus, Grafana)..."
+        echo "Deploying infrastructure (RabbitMQ, Redis, Kong, Prometheus, Grafana)..."
 
+        echo "Creating healthcare namespace..."
+        kubectl apply -f "${K8S_DIR}/namespace.yaml"
+
+        echo ""
+        echo "--- Deploying RabbitMQ---"
+        kubectl apply -f "${INFRA_DIR}/rabbitmq.yaml"
+        echo "Waiting for RabbitMQ to be ready..."
+        kubectl wait --for=condition=ready pod -l app=rabbitmq -n ${NAMESPACE} --timeout=180s || true
+
+        echo ""
+        echo "--- Deploying Redis---"
+        kubectl apply -f "${INFRA_DIR}/redis.yaml"
+        echo "Waiting for Redis to be ready..."
+        kubectl wait --for=condition=ready pod -l app=redis -n ${NAMESPACE} --timeout=180s || true
+
+        echo ""
+        echo "---Deploying Kong API Gateway---"
         kubectl apply -f "${INFRA_DIR}/kong.yaml"
-        kubectl apply -f "${INFRA_DIR}/prometheus.yaml"
-        kubectl apply -f "${INFRA_DIR}/grafana.yaml"
-
-        echo "Waiting for infrastructure to be ready..."
+        echo "Waiting for Kong to be ready..."
         kubectl wait --for=condition=ready pod -l app=kong -n kong --timeout=180s || true
+
+        echo ""
+        echo "---Deploying Prometheus---"
+        kubectl apply -f "${INFRA_DIR}/prometheus.yaml"
+        echo "Waiting for Prometheus to be ready..."
         kubectl wait --for=condition=ready pod -l app=prometheus -n monitoring --timeout=180s || true
+
+        echo ""
+        echo "---Deploying Grafana---"
+        # Copy dashboards to Minikube for hostPath mount
+        echo "Copying Grafana dashboards to Minikube..."
+        minikube ssh "sudo mkdir -p /mnt/grafana-dashboards"
+        for dashboard in "${REPO_ROOT}"/monitoring/grafana/dashboards/*.json; do
+            dashboard_name=$(basename "$dashboard")
+            minikube cp "$dashboard" /mnt/grafana-dashboards/"$dashboard_name"
+        done
+
+        kubectl apply -f "${INFRA_DIR}/grafana.yaml"
+        echo "Waiting for Grafana to be ready..."
         kubectl wait --for=condition=ready pod -l app=grafana -n monitoring --timeout=180s || true
 
         echo ""
         echo "Infrastructure deployed!"
         echo ""
         echo "Access UIs:"
+        echo "  RabbitMQ Mgmt: kubectl port-forward -n ${NAMESPACE} svc/rabbitmq 15672:15672"
         echo "  Kong Admin:    kubectl port-forward -n kong svc/kong-admin 8445:8001"
         echo "  Kong Proxy:    minikube service -n kong kong-proxy"
         echo "  Prometheus:    minikube service -n monitoring prometheus"
@@ -64,6 +97,9 @@ case "${1:-}" in
         echo "Deploying services to Kubernetes..."
 
         echo "Ensuring infrastructure is deployed..."
+        kubectl get namespace healthcare >/dev/null 2>&1 || kubectl apply -f "${K8S_DIR}/namespace.yaml"
+        kubectl get statefulset rabbitmq -n healthcare >/dev/null 2>&1 || echo "WARNING: RabbitMQ not found. Run './scripts/k8s_manage.sh infra' first"
+        kubectl get statefulset redis -n healthcare >/dev/null 2>&1 || echo "WARNING: Redis not found. Run './scripts/k8s_manage.sh infra' first"
         kubectl get namespace kong >/dev/null 2>&1 || echo "WARNING: Kong namespace not found. Run './scripts/k8s_manage.sh infra' first"
         kubectl get namespace monitoring >/dev/null 2>&1 || echo "WARNING: Monitoring namespace not found. Run './scripts/k8s_manage.sh infra' first"
 

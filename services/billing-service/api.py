@@ -6,7 +6,7 @@ This module defines REST API endpoints for invoices, payments, and claims.
 
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 from sqlalchemy.orm import Session
 
 import schemas
@@ -47,6 +47,7 @@ async def create_invoice(
     Create a new invoice for a patient.
 
     :param invoice_data: Invoice creation data
+    :param request: FastAPI request object
     :param current_user: Authenticated user from JWT
     :param db: Database session
     :return: Created invoice
@@ -58,10 +59,6 @@ async def create_invoice(
     )
 
     try:
-        # Verify patient exists
-        jwt_token = current_user.get("token")
-        await service.verify_patient_exists(invoice_data.subject, jwt_token)
-
         invoice = service.create_invoice(db, invoice_data)
         return schemas.InvoiceResponse.from_orm(invoice)
     except PatientNotFoundError as e:
@@ -129,7 +126,8 @@ def list_invoices(
 
     return schemas.InvoiceListResponse(
         total=len(invoices),
-        invoices=[schemas.InvoiceResponse.from_orm(inv) for inv in invoices],
+        count=len(invoices),
+        items=[schemas.InvoiceResponse.from_orm(inv) for inv in invoices],
     )
 
 
@@ -488,34 +486,3 @@ def get_patient_summary(
     logger.info("api_patient_summary", patient_id=patient_id)
 
     return service.get_patient_billing_summary(db, patient_id)
-
-
-# Health Check Endpoint
-
-
-@router.get(
-    "/health",
-    response_model=schemas.HealthCheckResponse,
-    tags=["System"],
-    summary="Health check",
-)
-def health_check(db: Session = Depends(get_db)):
-    """
-    Health check endpoint.
-
-    :param db: Database session
-    :return: Health status
-    """
-    try:
-        db.execute("SELECT 1")
-        database_status = "healthy"
-    except Exception as e:
-        logger.error("database_unhealthy", error=str(e))
-        database_status = "unhealthy"
-
-    return schemas.HealthCheckResponse(
-        service="billing-service",
-        status="healthy" if database_status == "healthy" else "degraded",
-        timestamp=datetime.now(timezone.utc),
-        database=database_status,
-    )

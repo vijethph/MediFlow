@@ -138,6 +138,7 @@ def create_prescription(
         "diagnosis": prescription_data.diagnosis,
         "notes": prescription_data.notes,
         "status": models.PrescriptionStatus.ACTIVE.value,
+        "prescription_date": datetime.now(timezone.utc),
         "prescribed_date": datetime.now(timezone.utc),
         "valid_until": valid_until,
         "lab_tests_ordered": prescription_data.lab_tests_ordered,
@@ -277,14 +278,17 @@ def create_medical_record(
     record_dict = {
         "record_id": record_id,
         "patient_id": record_data.patient_id,
-        "record_type": record_data.record_type.value,
+        "record_type": record_data.record_type,
+        "record_date": datetime.now(timezone.utc),
         "title": record_data.title,
         "description": record_data.description,
         "doctor_name": record_data.doctor_name,
         "doctor_id": record_data.doctor_id,
         "appointment_id": record_data.appointment_id,
         "prescription_id": record_data.prescription_id,
-        "vital_signs": record_data.vital_signs.model_dump() if record_data.vital_signs else None,
+        "vital_signs": (
+            record_data.vital_signs.model_dump() if record_data.vital_signs else None
+        ),
         "symptoms": record_data.symptoms,
         "diagnosis_codes": record_data.diagnosis_codes,
         "attachments": [],
@@ -409,6 +413,7 @@ def create_lab_result(
     result_dict = {
         "result_id": result_id,
         "patient_id": result_data.patient_id,
+        "test_name": result_data.test_panel_name,
         "test_panel_name": result_data.test_panel_name,
         "test_category": result_data.test_category,
         "tests": [test.model_dump() for test in result_data.tests],

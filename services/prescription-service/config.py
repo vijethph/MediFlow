@@ -26,9 +26,9 @@ class Settings(BaseSettings):
     mongo_database: str = "prescription_db"
 
     # JWT Configuration
-    jwt_secret: str = "your-super-secret-jwt-key-change-this-in-production"
-    jwt_algorithm: str = "HS256"
-    jwt_expiration_hours: int = 24
+    JWT_SECRET: str = "your-super-secret-jwt-key-change-this-in-production"
+    JWT_ALGORITHM: str = "HS256"
+    JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440
 
     # External Service URLs
     patient_service_url: str = "http://localhost:8001"

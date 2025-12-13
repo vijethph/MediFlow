@@ -6,6 +6,7 @@ metadata:
 data:
   datasources.yml: |
     apiVersion: 1
+
     datasources:
       - name: Prometheus
         type: prometheus
@@ -13,96 +14,31 @@ data:
         url: http://prometheus.monitoring.svc.cluster.local:9090
         isDefault: true
         editable: true
+        jsonData:
+          httpMethod: POST
+          timeInterval: 15s
+        version: 1
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: grafana-dashboard-billing
+  name: grafana-dashboard-provider
   namespace: monitoring
 data:
-  billing-dashboard.json: |
-    {
-      "dashboard": {
-        "title": "Billing Service Metrics",
-        "panels": [
-          {
-            "id": 1,
-            "title": "Request Rate",
-            "type": "graph",
-            "targets": [
-              {
-                "expr": "rate(billing_service_requests_total[5m])"
-              }
-            ]
-          },
-          {
-            "id": 2,
-            "title": "Request Duration (95th percentile)",
-            "type": "graph",
-            "targets": [
-              {
-                "expr": "histogram_quantile(0.95, rate(billing_service_request_duration_seconds_bucket[5m]))"
-              }
-            ]
-          }
-        ]
-      }
-    }
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: grafana-dashboard-prescription
-  namespace: monitoring
-data:
-  prescription-dashboard.json: |
-    {
-      "dashboard": {
-        "title": "Prescription Service Metrics",
-        "panels": [
-          {
-            "id": 1,
-            "title": "Request Rate",
-            "type": "graph",
-            "targets": [
-              {
-                "expr": "rate(prescription_service_requests_total[5m])"
-              }
-            ]
-          },
-          {
-            "id": 2,
-            "title": "Request Duration (95th percentile)",
-            "type": "graph",
-            "targets": [
-              {
-                "expr": "histogram_quantile(0.95, rate(prescription_service_request_duration_seconds_bucket[5m]))"
-              }
-            ]
-          },
-          {
-            "id": 3,
-            "title": "Total Requests by Endpoint",
-            "type": "graph",
-            "targets": [
-              {
-                "expr": "sum(rate(prescription_service_requests_total[5m])) by (endpoint)"
-              }
-            ]
-          },
-          {
-            "id": 4,
-            "title": "Error Rate",
-            "type": "graph",
-            "targets": [
-              {
-                "expr": "sum(rate(prescription_service_requests_total{status=~\"5..\"}[5m]))"
-              }
-            ]
-          }
-        ]
-      }
-    }
+  dashboards.yml: |
+    apiVersion: 1
+
+    providers:
+      - name: 'Healthcare Dashboards'
+        orgId: 1
+        folder: 'Healthcare System'
+        type: file
+        disableDeletion: false
+        editable: true
+        updateIntervalSeconds: 30
+        allowUiUpdates: true
+        options:
+          path: /var/lib/grafana/dashboards
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -134,6 +70,10 @@ spec:
           volumeMounts:
             - name: datasources
               mountPath: /etc/grafana/provisioning/datasources
+            - name: dashboard-provider
+              mountPath: /etc/grafana/provisioning/dashboards
+            - name: dashboards
+              mountPath: /var/lib/grafana/dashboards
             - name: storage
               mountPath: /var/lib/grafana
           resources:
@@ -159,6 +99,13 @@ spec:
         - name: datasources
           configMap:
             name: grafana-datasources
+        - name: dashboard-provider
+          configMap:
+            name: grafana-dashboard-provider
+        - name: dashboards
+          hostPath:
+            path: /mnt/grafana-dashboards
+            type: DirectoryOrCreate
         - name: storage
           emptyDir: {}
 ---

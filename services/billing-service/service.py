@@ -11,7 +11,7 @@ from typing import Any, Dict, List, Optional
 
 import httpx
 from sqlalchemy import and_
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 
 import models
 import schemas
@@ -27,6 +27,7 @@ from common.exceptions import (
 )
 from common.logging import get_logger
 from common.messaging import publish_event
+from common.models.shared_types import Money
 from common.utils import retry_on_api_error
 from config import get_settings
 
@@ -119,7 +120,12 @@ def create_invoice(db: Session, invoice_data: schemas.InvoiceCreate) -> models.I
     logger.info("creating_invoice", patient_id=invoice_data.subject)
 
     # Calculate totals
-    total_amount = sum(item.line_total.value for item in invoice_data.line_items)
+    total_amount = Decimal("0.00")
+    for item in invoice_data.line_items:
+        if isinstance(item.line_total, Money):
+            total_amount += item.line_total.value
+        else:
+            total_amount += Decimal(str(item.line_total))
 
     # Create invoice
     invoice = models.Invoice(
@@ -209,6 +215,7 @@ def get_invoices_by_patient(
     """
     invoices = (
         db.query(models.Invoice)
+        .options(joinedload(models.Invoice.line_items))
         .filter(models.Invoice.subject == patient_id)
         .offset(skip)
         .limit(limit)
@@ -508,7 +515,43 @@ def create_claim(
         raise DuplicateResourceError("Claim", claim_data.claim_number)
 
     # Calculate total amount
-    total_amount = sum(item.net_amount.value for item in claim_data.items)
+    total_amount = Decimal("0.00")
+    for item in claim_data.items:
+        if isinstance(item.net_amount, Money):
+            total_amount += item.net_amount.value
+        else:
+            total_amount += Decimal(str(item.net_amount))
+
+    # Convert items to JSON-serializable format
+    claim_items_list = []
+    for item in claim_data.items:
+        item_dict = item.dict()
+        # Convert all Decimal and Money objects to floats for JSON serialization
+        if "quantity" in item_dict and isinstance(item_dict["quantity"], Decimal):
+            item_dict["quantity"] = float(item_dict["quantity"])
+        if "unit_price" in item_dict:
+            if (
+                isinstance(item_dict["unit_price"], dict)
+                and "value" in item_dict["unit_price"]
+            ):
+                if isinstance(item_dict["unit_price"]["value"], Decimal):
+                    item_dict["unit_price"]["value"] = float(
+                        item_dict["unit_price"]["value"]
+                    )
+            elif isinstance(item_dict["unit_price"], (Decimal, int)):
+                item_dict["unit_price"] = float(item_dict["unit_price"])
+        if "net_amount" in item_dict:
+            if (
+                isinstance(item_dict["net_amount"], dict)
+                and "value" in item_dict["net_amount"]
+            ):
+                if isinstance(item_dict["net_amount"]["value"], Decimal):
+                    item_dict["net_amount"]["value"] = float(
+                        item_dict["net_amount"]["value"]
+                    )
+            elif isinstance(item_dict["net_amount"], (Decimal, int)):
+                item_dict["net_amount"] = float(item_dict["net_amount"])
+        claim_items_list.append(item_dict)
 
     # Create claim
     claim = models.InsuranceClaim(
@@ -524,7 +567,7 @@ def create_claim(
         billable_period_end=claim_data.billable_period_end,
         total_amount=total_amount,
         currency="USD",
-        claim_items={"items": [item.dict() for item in claim_data.items]},
+        claim_items={"items": claim_items_list},
         meta={"created_by": "billing-service"},
     )
 

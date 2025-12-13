@@ -1,0 +1,105 @@
+groups:
+  - name: healthcare_service_alerts
+    rules:
+      - alert: HighErrorRate
+        expr: service:http_error_rate:5m > 0.05
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate detected in {{ $labels.service }}"
+          description: "{{ $labels.service }} has error rate of {{ $value | humanizePercentage }} over the last 5 minutes"
+
+      - alert: HighRequestLatency
+        expr: service:http_request_duration_seconds:p95 > 2
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High request latency in {{ $labels.service }}"
+          description: "{{ $labels.service }} p95 latency is {{ $value }}s for {{ $labels.method }} {{ $labels.endpoint }}"
+
+      - alert: ServiceDown
+        expr: up{job=~".*-service"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Service {{ $labels.job }} is down"
+          description: "{{ $labels.job }} has been down for more than 2 minutes"
+
+      - alert: LowRequestRate
+        expr: job:http_requests:rate5m < 0.01
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Low request rate in {{ $labels.service }}"
+          description: "{{ $labels.service }} is receiving very few requests ({{ $value }} req/s)"
+
+  - name: rabbitmq_alerts
+    rules:
+      - alert: RabbitMQDown
+        expr: up{job="rabbitmq"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "RabbitMQ is down"
+          description: "RabbitMQ has been unreachable for more than 2 minutes"
+
+      - alert: RabbitMQHighQueueSize
+        expr: rabbitmq:queue_messages:total > 1000
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "RabbitMQ queue {{ $labels.queue }} has high message count"
+          description: "Queue {{ $labels.queue }} has {{ $value }} messages pending"
+
+      - alert: RabbitMQNoConsumers
+        expr: rabbitmq_queue_consumers == 0 and rabbitmq_queue_messages > 0
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "RabbitMQ queue {{ $labels.queue }} has no consumers"
+          description: "Queue {{ $labels.queue }} has messages but no active consumers"
+
+      - alert: RabbitMQHighUnackedMessages
+        expr: rabbitmq:queue_messages_unacknowledged:total > 500
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "RabbitMQ queue {{ $labels.queue }} has high unacknowledged messages"
+          description: "Queue {{ $labels.queue }} has {{ $value }} unacknowledged messages"
+
+  - name: infrastructure_alerts
+    rules:
+      - alert: PrometheusDown
+        expr: up{job="prometheus"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Prometheus is down"
+          description: "Prometheus monitoring system is unreachable"
+
+      - alert: HighMemoryUsage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) > 0.9
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage on {{ $labels.instance }}"
+          description: "Memory usage is above 90% on {{ $labels.instance }}"
+
+      - alert: HighCPUUsage
+        expr: (100 - (avg by(instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)) > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage on {{ $labels.instance }}"
+          description: "CPU usage is above 80% on {{ $labels.instance }}"

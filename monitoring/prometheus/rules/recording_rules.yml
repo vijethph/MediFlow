@@ -1,0 +1,81 @@
+groups:
+  - name: healthcare_recording_rules
+    interval: 30s
+    rules:
+      - record: job:http_requests:rate5m
+        expr: sum(rate(patient_service_requests_total[5m])) by (job)
+        labels:
+          service: patient-service
+
+      - record: job:http_requests:rate5m
+        expr: sum(rate(appointment_service_requests_total[5m])) by (job)
+        labels:
+          service: appointment-service
+
+      - record: job:http_requests:rate5m
+        expr: sum(rate(prescription_service_requests_total[5m])) by (job)
+        labels:
+          service: prescription-service
+
+      - record: job:http_requests:rate5m
+        expr: sum(rate(billing_service_requests_total[5m])) by (job)
+        labels:
+          service: billing-service
+
+      - record: service:http_request_duration_seconds:p95
+        expr: histogram_quantile(0.95, sum(rate(patient_service_request_duration_seconds_bucket[5m])) by (le, method, endpoint))
+        labels:
+          service: patient-service
+
+      - record: service:http_request_duration_seconds:p95
+        expr: histogram_quantile(0.95, sum(rate(appointment_service_request_duration_seconds_bucket[5m])) by (le, method, endpoint))
+        labels:
+          service: appointment-service
+
+      - record: service:http_request_duration_seconds:p95
+        expr: histogram_quantile(0.95, sum(rate(prescription_service_request_duration_seconds_bucket[5m])) by (le, method, endpoint))
+        labels:
+          service: prescription-service
+
+      - record: service:http_request_duration_seconds:p95
+        expr: histogram_quantile(0.95, sum(rate(billing_service_request_duration_seconds_bucket[5m])) by (le, method, endpoint))
+        labels:
+          service: billing-service
+
+      - record: service:http_error_rate:5m
+        expr: sum(rate(patient_service_requests_total{status=~"5.."}[5m])) / sum(rate(patient_service_requests_total[5m]))
+        labels:
+          service: patient-service
+
+      - record: service:http_error_rate:5m
+        expr: sum(rate(appointment_service_requests_total{status=~"5.."}[5m])) / sum(rate(appointment_service_requests_total[5m]))
+        labels:
+          service: appointment-service
+
+      - record: service:http_error_rate:5m
+        expr: sum(rate(prescription_service_requests_total{status=~"5.."}[5m])) / sum(rate(prescription_service_requests_total[5m]))
+        labels:
+          service: prescription-service
+
+      - record: service:http_error_rate:5m
+        expr: sum(rate(billing_service_requests_total{status=~"5.."}[5m])) / sum(rate(billing_service_requests_total[5m]))
+        labels:
+          service: billing-service
+
+  - name: rabbitmq_recording_rules
+    interval: 30s
+    rules:
+      - record: rabbitmq:queue_messages:total
+        expr: sum(rabbitmq_queue_messages) by (queue)
+
+      - record: rabbitmq:queue_messages_ready:total
+        expr: sum(rabbitmq_queue_messages_ready) by (queue)
+
+      - record: rabbitmq:queue_messages_unacknowledged:total
+        expr: sum(rabbitmq_queue_messages_unacknowledged) by (queue)
+
+      - record: rabbitmq:message_rate:5m
+        expr: sum(rate(rabbitmq_queue_messages_published_total[5m])) by (queue)
+
+      - record: rabbitmq:consumer_utilisation:avg
+        expr: avg(rabbitmq_queue_consumer_utilisation) by (queue)

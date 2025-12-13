@@ -12,3 +12,5 @@ data:
   RABBITMQ_QUEUE: "patient_queue"
   API_V1_PREFIX: "/api/v1"
   REDIS_ENABLED: "false"
+  JWT_ACCESS_TOKEN_EXPIRE_MINUTES: "1440"
+  JWT_ALGORITHM: "HS256"

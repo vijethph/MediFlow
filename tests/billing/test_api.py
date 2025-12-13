@@ -18,14 +18,14 @@ sys.path.insert(
     os.path.join(os.path.dirname(__file__), "..", "..", "services", "billing-service"),
 )
 
-from services.billing_service import schemas
+import schemas
 
 
 class TestInvoiceEndpoints:
     """Tests for invoice API endpoints."""
 
-    @patch("services.billing_service.service.verify_patient_exists")
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("service.verify_patient_exists")
+    @patch("dependencies.require_authentication")
     def test_create_invoice_success(
         self, mock_auth, mock_verify, client, sample_invoice_create, mock_user
     ):
@@ -44,7 +44,7 @@ class TestInvoiceEndpoints:
         assert data["subject"] == "pat-123"
         assert data["status"] == "draft"
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_get_invoice_success(self, mock_auth, client, sample_invoice, mock_user):
         """Test retrieving invoice by ID."""
         mock_auth.return_value = mock_user
@@ -58,7 +58,7 @@ class TestInvoiceEndpoints:
         data = response.json()
         assert data["id"] == str(sample_invoice.id)
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_get_invoice_not_found(self, mock_auth, client, mock_user):
         """Test retrieving non-existent invoice."""
         mock_auth.return_value = mock_user
@@ -70,7 +70,7 @@ class TestInvoiceEndpoints:
 
         assert response.status_code == 404
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_list_invoices(self, mock_auth, client, sample_invoice, mock_user):
         """Test listing invoices by patient."""
         mock_auth.return_value = mock_user
@@ -84,7 +84,7 @@ class TestInvoiceEndpoints:
         data = response.json()
         assert data["total"] >= 1
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_update_invoice(self, mock_auth, client, sample_invoice, mock_user):
         """Test updating invoice."""
         mock_auth.return_value = mock_user
@@ -101,7 +101,7 @@ class TestInvoiceEndpoints:
         data = response.json()
         assert data["status"] == "issued"
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_cancel_invoice(self, mock_auth, client, sample_invoice, mock_user):
         """Test cancelling invoice."""
         mock_auth.return_value = mock_user
@@ -122,7 +122,7 @@ class TestInvoiceEndpoints:
 class TestPaymentEndpoints:
     """Tests for payment API endpoints."""
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_create_payment_success(
         self, mock_auth, client, sample_invoice, sample_payment_create, mock_user
     ):
@@ -140,7 +140,7 @@ class TestPaymentEndpoints:
         assert data["invoice_id"] == str(sample_invoice.id)
         assert data["payment_status"] == "paid"
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_create_payment_exceeds_balance(
         self, mock_auth, client, sample_invoice, mock_user
     ):
@@ -163,7 +163,7 @@ class TestPaymentEndpoints:
 
         assert response.status_code == 400
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_get_payment(
         self,
         mock_auth,
@@ -177,7 +177,7 @@ class TestPaymentEndpoints:
         mock_auth.return_value = mock_user
 
         # Create payment first
-        from services.billing_service import service
+        import service
 
         payment = service.create_payment(db_session, sample_payment_create)
 
@@ -190,7 +190,7 @@ class TestPaymentEndpoints:
         data = response.json()
         assert data["id"] == str(payment.id)
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_list_payments(self, mock_auth, client, sample_invoice, mock_user):
         """Test listing payments by invoice."""
         mock_auth.return_value = mock_user
@@ -208,7 +208,7 @@ class TestPaymentEndpoints:
 class TestClaimEndpoints:
     """Tests for insurance claim API endpoints."""
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_create_claim_success(
         self, mock_auth, client, sample_claim_create, mock_user
     ):
@@ -226,7 +226,7 @@ class TestClaimEndpoints:
         assert data["claim_number"] == "CLM-2024-001"
         assert data["status"] == "draft"
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_create_duplicate_claim(
         self, mock_auth, client, sample_claim_create, mock_user, db_session
     ):
@@ -234,7 +234,7 @@ class TestClaimEndpoints:
         mock_auth.return_value = mock_user
 
         # Create first claim
-        from services.billing_service import service
+        import service
 
         service.create_claim(db_session, sample_claim_create)
 
@@ -247,7 +247,7 @@ class TestClaimEndpoints:
 
         assert response.status_code == 409
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_get_claim(
         self, mock_auth, client, sample_claim_create, mock_user, db_session
     ):
@@ -255,7 +255,7 @@ class TestClaimEndpoints:
         mock_auth.return_value = mock_user
 
         # Create claim
-        from services.billing_service import service
+        import service
 
         claim = service.create_claim(db_session, sample_claim_create)
 
@@ -267,7 +267,7 @@ class TestClaimEndpoints:
         data = response.json()
         assert data["id"] == str(claim.id)
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_list_claims(self, mock_auth, client, mock_user):
         """Test listing claims by patient."""
         mock_auth.return_value = mock_user
@@ -285,7 +285,7 @@ class TestClaimEndpoints:
 class TestReportEndpoints:
     """Tests for report API endpoints."""
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_revenue_report(self, mock_auth, client, mock_user):
         """Test revenue report generation."""
         mock_auth.return_value = mock_user
@@ -300,7 +300,7 @@ class TestReportEndpoints:
         assert "total_revenue" in data
         assert "total_paid" in data
 
-    @patch("services.billing_service.dependencies.require_authentication")
+    @patch("dependencies.require_authentication")
     def test_patient_summary(self, mock_auth, client, mock_user):
         """Test patient billing summary."""
         mock_auth.return_value = mock_user
@@ -321,7 +321,7 @@ class TestHealthEndpoint:
 
     def test_health_check(self, client):
         """Test health check endpoint."""
-        response = client.get("/api/v1/health")
+        response = client.get("/health")
 
         assert response.status_code == 200
         data = response.json()
