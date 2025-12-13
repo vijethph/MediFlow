@@ -204,6 +204,14 @@ class AppointmentResponse(BaseModel):
     created_at: datetime
     updated_at: datetime
 
+    @field_validator("id", mode="before")
+    @classmethod
+    def convert_uuid_to_str(cls, v):
+        """Convert UUID to string."""
+        if hasattr(v, "hex"):
+            return str(v)
+        return v
+
     class Config:
         from_attributes = True
         json_schema_extra = {

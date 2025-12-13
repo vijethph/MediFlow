@@ -375,8 +375,8 @@ test_appointment_service() {
     log_info "8. Update appointment"
     if [[ -n "$APPOINTMENT_ID" && "$APPOINTMENT_ID" != "null" ]]; then
         local update_data='{
-            "notes": "Updated notes - patient confirmed attendance",
-            "status": "confirmed"
+            "comment": "Updated notes - patient confirmed attendance",
+            "status": "booked"
         }'
         test_endpoint "PUT" "/api/v1/appointments/$APPOINTMENT_ID" "appointment-service" "200" "$update_data" "Update Appointment"
     fi
@@ -699,7 +699,7 @@ test_billing_service() {
     log_info "11. Update claim status"
     if [[ -n "$CLAIM_ID" && "$CLAIM_ID" != "null" ]]; then
         local claim_update_data='{
-            "status": "submitted",
+            "status": "active",
             "notes": "Claim submitted to insurance"
         }'
         test_endpoint "PUT" "/api/v1/claims/$CLAIM_ID" "billing-service" "200" "$claim_update_data" "Update Claim"

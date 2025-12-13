@@ -39,7 +39,6 @@ logger = get_logger(__name__)
 )
 async def create_prescription(
     prescription_data: schemas.PrescriptionCreate,
-    request: Request,
     current_user: dict = Depends(require_authentication),
     db: Database = Depends(get_db),
 ):
@@ -59,16 +58,6 @@ async def create_prescription(
     )
 
     try:
-        # Verify patient exists
-        auth_header = request.headers.get("Authorization", "")
-        jwt_token = (
-            auth_header.replace("Bearer ", "")
-            if auth_header.startswith("Bearer ")
-            else None
-        )
-        if jwt_token:
-            await service.verify_patient_exists(prescription_data.patient_id, jwt_token)
-
         prescription = service.create_prescription(db, prescription_data)
 
         response_dict = prescription.model_dump(by_alias=True)
@@ -206,13 +195,11 @@ async def create_medical_record(
     record_data: schemas.MedicalRecordCreate,
     current_user: dict = Depends(require_authentication),
     db: Database = Depends(get_db),
-    request: Request = None,
 ):
     """
     Create a new medical record for a patient.
 
     :param record_data: Medical record creation data
-    :param request: FastAPI request object
     :param current_user: Authenticated user from JWT
     :param db: Database session
     :return: Created medical record
@@ -224,16 +211,6 @@ async def create_medical_record(
     )
 
     try:
-        # Verify patient exists
-        auth_header = request.headers.get("Authorization", "")
-        jwt_token = (
-            auth_header.replace("Bearer ", "")
-            if auth_header.startswith("Bearer ")
-            else None
-        )
-        if jwt_token:
-            await service.verify_patient_exists(record_data.patient_id, jwt_token)
-
         record = service.create_medical_record(db, record_data)
 
         response_dict = record.model_dump(by_alias=True)
@@ -367,13 +344,11 @@ async def create_lab_result(
     result_data: schemas.LabResultCreate,
     current_user: dict = Depends(require_authentication),
     db: Database = Depends(get_db),
-    request: Request = None,
 ):
     """
     Create new lab result for a patient.
 
     :param result_data: Lab result creation data
-    :param request: FastAPI request object
     :param current_user: Authenticated user from JWT
     :param db: Database session
     :return: Created lab result
@@ -385,16 +360,6 @@ async def create_lab_result(
     )
 
     try:
-        # Verify patient exists
-        auth_header = request.headers.get("Authorization", "")
-        jwt_token = (
-            auth_header.replace("Bearer ", "")
-            if auth_header.startswith("Bearer ")
-            else None
-        )
-        if jwt_token:
-            await service.verify_patient_exists(result_data.patient_id, jwt_token)
-
         result = service.create_lab_result(db, result_data)
 
         response_dict = result.model_dump(by_alias=True)

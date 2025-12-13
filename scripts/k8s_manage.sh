@@ -43,6 +43,14 @@ case "${1:-}" in
 
         echo ""
         echo "---Deploying Grafana---"
+        # Copy dashboards to Minikube for hostPath mount
+        echo "Copying Grafana dashboards to Minikube..."
+        minikube ssh "sudo mkdir -p /mnt/grafana-dashboards"
+        for dashboard in "${REPO_ROOT}"/monitoring/grafana/dashboards/*.json; do
+            dashboard_name=$(basename "$dashboard")
+            minikube cp "$dashboard" /mnt/grafana-dashboards/"$dashboard_name"
+        done
+
         kubectl apply -f "${INFRA_DIR}/grafana.yaml"
         echo "Waiting for Grafana to be ready..."
         kubectl wait --for=condition=ready pod -l app=grafana -n monitoring --timeout=180s || true

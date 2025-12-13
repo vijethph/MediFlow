@@ -6,7 +6,7 @@ This module defines REST API endpoints for appointment management.
 
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 from sqlalchemy.orm import Session
 
 import schemas
@@ -33,7 +33,6 @@ logger = get_logger(__name__)
 )
 async def create_appointment(
     appointment_data: schemas.AppointmentCreate,
-    request: Request,
     current_user: dict = Depends(require_authentication),
     db: Session = Depends(get_db),
 ):
@@ -53,15 +52,6 @@ async def create_appointment(
     )
 
     try:
-        auth_header = request.headers.get("Authorization", "")
-        jwt_token = (
-            auth_header.replace("Bearer ", "")
-            if auth_header.startswith("Bearer ")
-            else ""
-        )
-        if jwt_token:
-            await service.verify_patient_exists(appointment_data.patient_id, jwt_token)
-
         appointment = service.create_appointment(db, appointment_data)
         return schemas.AppointmentResponse.from_orm(appointment)
     except PatientNotFoundError as e:

@@ -42,7 +42,6 @@ async def create_invoice(
     invoice_data: schemas.InvoiceCreate,
     current_user: dict = Depends(require_authentication),
     db: Session = Depends(get_db),
-    request: Request = None,
 ):
     """
     Create a new invoice for a patient.
@@ -60,16 +59,6 @@ async def create_invoice(
     )
 
     try:
-        # Verify patient exists
-        auth_header = request.headers.get("Authorization", "")
-        jwt_token = (
-            auth_header.replace("Bearer ", "")
-            if auth_header.startswith("Bearer ")
-            else None
-        )
-        if jwt_token:
-            await service.verify_patient_exists(invoice_data.subject, jwt_token)
-
         invoice = service.create_invoice(db, invoice_data)
         return schemas.InvoiceResponse.from_orm(invoice)
     except PatientNotFoundError as e:

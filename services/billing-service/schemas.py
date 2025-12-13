@@ -98,6 +98,22 @@ class InvoiceLineItemResponse(BaseModel):
     line_total: Money
     created_at: datetime
 
+    @field_validator("id", mode="before")
+    @classmethod
+    def convert_uuid_to_str(cls, v):
+        """Convert UUID to string."""
+        if hasattr(v, "hex"):
+            return str(v)
+        return v
+
+    @field_validator("unit_price", "line_total", mode="before")
+    @classmethod
+    def convert_decimal_to_money(cls, v):
+        """Convert Decimal to Money object."""
+        if isinstance(v, Decimal):
+            return Money(value=v, currency="USD")
+        return v
+
     class Config:
         from_attributes = True
 
@@ -176,6 +192,14 @@ class InvoiceResponse(BaseModel):
     meta: Dict[str, Any] = Field(default_factory=dict)
     created_at: datetime
     updated_at: datetime
+
+    @field_validator("id", mode="before")
+    @classmethod
+    def convert_uuid_to_str(cls, v):
+        """Convert UUID to string."""
+        if hasattr(v, "hex"):
+            return str(v)
+        return v
 
     class Config:
         from_attributes = True
@@ -268,6 +292,22 @@ class PaymentRecordResponse(BaseModel):
     notes: Optional[str]
     created_at: datetime
     updated_at: datetime
+
+    @field_validator("id", "invoice_id", mode="before")
+    @classmethod
+    def convert_uuid_to_str(cls, v):
+        """Convert UUID to string."""
+        if hasattr(v, "hex"):
+            return str(v)
+        return v
+
+    @field_validator("amount", mode="before")
+    @classmethod
+    def convert_decimal_to_money(cls, v):
+        """Convert Decimal to Money object."""
+        if isinstance(v, Decimal):
+            return Money(value=v, currency="USD")
+        return v
 
     class Config:
         from_attributes = True
@@ -390,6 +430,14 @@ class InsuranceClaimResponse(BaseModel):
     meta: Dict[str, Any] = Field(default_factory=dict)
     created_at: datetime
     updated_at: datetime
+
+    @field_validator("id", mode="before")
+    @classmethod
+    def convert_uuid_to_str(cls, v):
+        """Convert UUID to string."""
+        if hasattr(v, "hex"):
+            return str(v)
+        return v
 
     class Config:
         from_attributes = True

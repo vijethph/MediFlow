@@ -526,13 +526,29 @@ def create_claim(
     claim_items_list = []
     for item in claim_data.items:
         item_dict = item.dict()
-        # Convert Money objects and Decimals to floats
+        # Convert all Decimal and Money objects to floats for JSON serialization
+        if "quantity" in item_dict and isinstance(item_dict["quantity"], Decimal):
+            item_dict["quantity"] = float(item_dict["quantity"])
+        if "unit_price" in item_dict:
+            if (
+                isinstance(item_dict["unit_price"], dict)
+                and "value" in item_dict["unit_price"]
+            ):
+                if isinstance(item_dict["unit_price"]["value"], Decimal):
+                    item_dict["unit_price"]["value"] = float(
+                        item_dict["unit_price"]["value"]
+                    )
+            elif isinstance(item_dict["unit_price"], (Decimal, int)):
+                item_dict["unit_price"] = float(item_dict["unit_price"])
         if "net_amount" in item_dict:
             if (
                 isinstance(item_dict["net_amount"], dict)
                 and "value" in item_dict["net_amount"]
             ):
-                item_dict["net_amount"] = float(item_dict["net_amount"]["value"])
+                if isinstance(item_dict["net_amount"]["value"], Decimal):
+                    item_dict["net_amount"]["value"] = float(
+                        item_dict["net_amount"]["value"]
+                    )
             elif isinstance(item_dict["net_amount"], (Decimal, int)):
                 item_dict["net_amount"] = float(item_dict["net_amount"])
         claim_items_list.append(item_dict)

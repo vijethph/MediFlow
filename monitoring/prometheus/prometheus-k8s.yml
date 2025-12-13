@@ -8,6 +8,9 @@ global:
     cluster: "healthcare-system"
     environment: "kubernetes"
 
+rule_files:
+  - "rules/*.yml"
+
 scrape_configs:
   # Patient Service
   - job_name: "patient-service"

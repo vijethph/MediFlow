@@ -8,16 +8,8 @@ global:
     cluster: "healthcare-system"
     environment: "docker-compose"
 
-# Alertmanager configuration (optional, can be added later)
-# alerting:
-#   alertmanagers:
-#     - static_configs:
-#         - targets:
-#           - alertmanager:9093
-
-# Rule files (optional, can be added later for alerting rules)
-# rule_files:
-#   - "rules/*.yml"
+rule_files:
+  - "rules/*.yml"
 
 scrape_configs:
   # Prometheus self-monitoring

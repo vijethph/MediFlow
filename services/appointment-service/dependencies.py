@@ -6,29 +6,44 @@ This module defines reusable dependencies for authentication and authorization.
 
 from typing import Any, Dict
 
-from fastapi import Request
+from fastapi import Depends, HTTPException, status
+from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 
-from common.auth.jwt_handler import JWTBearer, get_current_user
+from common.auth.jwt_handler import decode_jwt
 from config import get_settings
 
 
 settings = get_settings()
+security = HTTPBearer()
 
 
-def get_current_user_from_request(request: Request) -> Dict[str, Any]:
-    """
-    Dependency to get current user from request.
-
-    :param request: FastAPI request object
-    :return: User payload from JWT token
-    """
-    return get_current_user(request)
-
-
-def require_authentication():
+async def require_authentication(
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+) -> Dict[str, Any]:
     """
     Dependency to require authentication.
 
-    :return: JWTBearer dependency
+    :param credentials: HTTP Bearer credentials
+    :return: Decoded JWT payload
+    :raises HTTPException: If token is invalid
     """
-    return JWTBearer()
+    if not credentials:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Invalid authorization code",
+        )
+
+    if credentials.scheme != "Bearer":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Invalid authentication scheme",
+        )
+
+    payload = decode_jwt(credentials.credentials)
+    if not payload:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Invalid token or expired token",
+        )
+
+    return payload

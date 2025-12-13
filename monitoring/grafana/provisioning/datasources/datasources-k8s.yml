@@ -7,8 +7,8 @@ datasources:
   - name: Prometheus
     type: prometheus
     access: proxy
-    url: http://prometheus.monitoring.svc.cluster.local:9090
-    isDefault: true
+    url: http://prometheus.healthcare.svc.cluster.local:9090
+    isDefault: false
     editable: true
     jsonData:
       httpMethod: POST

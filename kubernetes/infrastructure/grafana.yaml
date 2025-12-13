@@ -5,9 +5,6 @@ metadata:
   namespace: monitoring
 data:
   datasources.yml: |
-    # Grafana Datasource Provisioning for Kubernetes
-    # This file automatically configures Prometheus as a datasource in Grafana
-
     apiVersion: 1
 
     datasources:
@@ -21,6 +18,27 @@ data:
           httpMethod: POST
           timeInterval: 15s
         version: 1
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboard-provider
+  namespace: monitoring
+data:
+  dashboards.yml: |
+    apiVersion: 1
+
+    providers:
+      - name: 'Healthcare Dashboards'
+        orgId: 1
+        folder: 'Healthcare System'
+        type: file
+        disableDeletion: false
+        editable: true
+        updateIntervalSeconds: 30
+        allowUiUpdates: true
+        options:
+          path: /var/lib/grafana/dashboards
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -52,6 +70,10 @@ spec:
           volumeMounts:
             - name: datasources
               mountPath: /etc/grafana/provisioning/datasources
+            - name: dashboard-provider
+              mountPath: /etc/grafana/provisioning/dashboards
+            - name: dashboards
+              mountPath: /var/lib/grafana/dashboards
             - name: storage
               mountPath: /var/lib/grafana
           resources:
@@ -77,6 +99,13 @@ spec:
         - name: datasources
           configMap:
             name: grafana-datasources
+        - name: dashboard-provider
+          configMap:
+            name: grafana-dashboard-provider
+        - name: dashboards
+          hostPath:
+            path: /mnt/grafana-dashboards
+            type: DirectoryOrCreate
         - name: storage
           emptyDir: {}
 ---
