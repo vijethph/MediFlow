@@ -137,7 +137,7 @@ Choose one deployment method:
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/healthcare-patient-management-system.git
+git clone https://github.com/vijethph/healthcare-patient-management-system.git
 cd healthcare-patient-management-system
 ```
 
@@ -456,7 +456,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Project Link: [https://github.com/yourusername/healthcare-patient-management-system](https://github.com/yourusername/healthcare-patient-management-system)
+Project Link: [https://github.com/vijethph/healthcare-patient-management-system](https://github.com/vijethph/healthcare-patient-management-system)
 
 ## Acknowledgments
 

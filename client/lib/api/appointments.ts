@@ -108,7 +108,7 @@ export const appointmentsApi = {
     }
     
     // Use list endpoint with patient_id query parameter (more reliable than path parameter)
-    const response = await apiClient.get<any>(`/api/v1/appointments/`, {
+    const response = await apiClient.get<any>(`/api/v1/appointments`, {
       params: backendParams,
     });
     
