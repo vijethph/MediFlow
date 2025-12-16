@@ -24,12 +24,12 @@ export function Header() {
         </Link>
 
         <div className="flex items-center gap-4">
-          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors">
+          <Link href="/profile#notifications" className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors" title="Notifications">
             <Bell className="w-5 h-5" />
-          </button>
-          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors">
+          </Link>
+          <Link href="/profile" className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors" title="Settings">
             <Settings className="w-5 h-5" />
-          </button>
+          </Link>
           
           <div className="relative">
             <button

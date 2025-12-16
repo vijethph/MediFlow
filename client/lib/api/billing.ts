@@ -161,25 +161,33 @@ export const billingApi = {
       notes: data.description || "",
     };
     
-    const response = await apiClient.post<Invoice>("/api/v1/invoices", backendData);
+    const response = await apiClient.post<any>("/api/v1/invoices", backendData);
     const responseData = response.data;
     
     // Transform backend response to frontend format
-    const responseDataAny = responseData as any; // Type assertion for backend response
+    // Backend returns total_gross_amount as Decimal (may be string or number)
+    const totalGross = responseData.total_gross_amount;
+    const totalDue = responseData.total_due_amount;
+    
+    // Convert Decimal/string/number to number
+    const totalValue = typeof totalGross === "object" && totalGross !== null
+      ? (totalGross.value || parseFloat(totalGross.toString()) || data.total)
+      : (typeof totalGross === "string" ? parseFloat(totalGross) : (totalGross || data.total));
+    
+    const dueValue = typeof totalDue === "object" && totalDue !== null
+      ? (totalDue.value || parseFloat(totalDue.toString()) || data.total)
+      : (typeof totalDue === "string" ? parseFloat(totalDue) : (totalDue || data.total));
+    
     return {
       ...responseData,
       id: responseData.id || "",
       subject: responseData.subject || data.subject,
       date: responseData.date || new Date().toISOString(),
-      total: typeof responseDataAny.total_gross_amount === "object" 
-        ? responseDataAny.total_gross_amount.value 
-        : responseDataAny.total_gross_amount || data.total,
-      amount_due: typeof responseDataAny.total_due_amount === "object"
-        ? responseDataAny.total_due_amount.value
-        : responseDataAny.total_due_amount || data.total,
+      total: totalValue,
+      amount_due: dueValue,
       issue_date: responseData.date ? new Date(responseData.date).toISOString().split("T")[0] : "",
       due_date: data.due_date,
-      description: responseDataAny.notes || data.description || "",
+      description: responseData.notes || data.description || "",
       line_items: responseData.line_items || [],
     };
   },

@@ -138,13 +138,29 @@ export default function CreatePrescriptionPage() {
                     error={errors.medications?.[index]?.dosage?.message}
                     placeholder="e.g., 500mg"
                   />
-                  <Input
-                    label="Frequency"
-                    required
-                    {...register(`medications.${index}.frequency`)}
-                    error={errors.medications?.[index]?.frequency?.message}
-                    placeholder="e.g., Twice daily"
-                  />
+                  <div>
+                    <label className="label">
+                      Frequency <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                      className={`input ${errors.medications?.[index]?.frequency ? "border-red-500" : ""}`}
+                      {...register(`medications.${index}.frequency`)}
+                    >
+                      <option value="">Select frequency</option>
+                      <option value="once_daily">Once Daily</option>
+                      <option value="twice_daily">Twice Daily</option>
+                      <option value="three_times_daily">Three Times Daily</option>
+                      <option value="four_times_daily">Four Times Daily</option>
+                      <option value="as_needed">As Needed</option>
+                      <option value="every_morning">Every Morning</option>
+                      <option value="every_evening">Every Evening</option>
+                    </select>
+                    {errors.medications?.[index]?.frequency && (
+                      <p className="text-sm text-red-600 mt-1">
+                        {errors.medications[index]?.frequency?.message}
+                      </p>
+                    )}
+                  </div>
                   <Input
                     label="Duration (days)"
                     type="number"

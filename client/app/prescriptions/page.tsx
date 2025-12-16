@@ -179,7 +179,7 @@ export default function PrescriptionsPage() {
       {/* Search Bar */}
       <Card className="mb-6">
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="flex-1 relative">
+          <div className="flex-1 relative min-w-0">
             <Search 
               className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" 
               aria-hidden="true" 
@@ -194,7 +194,7 @@ export default function PrescriptionsPage() {
             />
           </div>
           <select
-            className="input md:w-48 w-full md:w-auto"
+            className="input md:w-40 w-full shrink-0"
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
             aria-label="Filter by status"
@@ -252,10 +252,6 @@ export default function PrescriptionsPage() {
                       {requestRefill.isPending ? "Requesting..." : "Request Refill"}
                     </Button>
                   )}
-                  <Button variant="secondary">
-                    <Download className="w-4 h-4" aria-hidden="true" />
-                    <span className="sr-only">Download</span>
-                  </Button>
                 </div>
               </div>
             </Card>

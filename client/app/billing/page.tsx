@@ -231,25 +231,29 @@ export default function BillingPage() {
         </div>
         {filteredInvoices.length > 0 ? (
           <div className="overflow-x-auto">
-            <table className="table" role="table">
+            <table className="w-full border-collapse" role="table">
               <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Description</th>
-                  <th>Amount</th>
-                  <th>Status</th>
-                  <th>Actions</th>
+                <tr className="border-b border-gray-200 bg-gray-50">
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Date</th>
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Description</th>
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Amount</th>
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Status</th>
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Actions</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="bg-white divide-y divide-gray-200">
                 {filteredInvoices.map((invoice) => (
-                  <tr key={invoice.id}>
-                    <td>{formatDate(invoice.issue_date || invoice.date || "")}</td>
-                    <td>{invoice.description || invoice.notes || "Invoice"}</td>
-                    <td className="font-semibold">
+                  <tr key={invoice.id} className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {formatDate(invoice.issue_date || invoice.date || "")}
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-900">
+                      {invoice.description || invoice.notes || "Invoice"}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">
                       €{(typeof invoice.total === "number" ? invoice.total : invoice.total?.value || 0).toFixed(2)}
                     </td>
-                    <td>
+                    <td className="px-6 py-4 whitespace-nowrap">
                       <StatusBadge status={getStatusColor(invoice.status)}>
                         {invoice.status === "balanced" ? "Paid" :
                          invoice.status === "issued" ? "Awaiting Payment" :
@@ -257,16 +261,17 @@ export default function BillingPage() {
                          invoice.status}
                       </StatusBadge>
                     </td>
-                    <td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm">
                       <div className="flex gap-2">
                         <Link href={`/billing/${invoice.id}`}>
-                          <Button variant="ghost">View</Button>
+                          <Button variant="ghost" className="text-xs">View</Button>
                         </Link>
                         {(invoice.status === "issued" || invoice.status === "balanced") && (invoice.amount_due || 0) > 0 && (
                           <Button
                             variant="primary"
                             onClick={() => handlePayNow(invoice.id, invoice.amount_due || 0)}
                             disabled={createPayment.isPending}
+                            className="text-xs"
                           >
                             {createPayment.isPending ? "Processing..." : "Pay Now"}
                           </Button>

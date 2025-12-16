@@ -14,7 +14,7 @@ import { User, Shield, Bell, FileText } from "lucide-react";
 import { usePatient, useUpdatePatient } from "@/lib/hooks/usePatient";
 import { authApi } from "@/lib/api/auth";
 import { useNotificationContext } from "@/components/providers/NotificationProvider";
-import { profileUpdateSchema, changePasswordSchema, allergiesUpdateSchema, type ProfileUpdateFormData, type ChangePasswordFormData, type AllergiesUpdateFormData } from "@/lib/validations/profile";
+import { profileUpdateSchema, changePasswordSchema, type ProfileUpdateFormData, type ChangePasswordFormData } from "@/lib/validations/profile";
 
 export default function ProfilePage() {
   const router = useRouter();
@@ -45,10 +45,6 @@ export default function ProfilePage() {
     resolver: zodResolver(changePasswordSchema),
   });
   
-  // Allergies form
-  const allergiesForm = useForm<AllergiesUpdateFormData>({
-    resolver: zodResolver(allergiesUpdateSchema),
-  });
   
   useEffect(() => {
     const authenticated = authApi.isAuthenticated();
@@ -139,25 +135,6 @@ export default function ProfilePage() {
     }
   };
   
-  const handleAllergiesSubmit = async (data: AllergiesUpdateFormData) => {
-    try {
-      const patientId = authApi.getPatientId();
-      if (!patientId) {
-        showError("Error", "Patient ID not found. Please log in again.");
-        return;
-      }
-      
-      await updatePatient.mutateAsync({
-        allergies: data.allergies || "",
-      });
-      
-      setShowAllergiesModal(false);
-      success("Allergies Updated", "Your allergies have been updated successfully.");
-      router.refresh();
-    } catch (err: any) {
-      showError("Update Failed", err.message || "Failed to update allergies. Please try again.");
-    }
-  };
   
   const handleNotificationToggle = async (key: keyof typeof notificationPrefs) => {
     const newValue = !notificationPrefs[key];
@@ -372,25 +349,14 @@ export default function ProfilePage() {
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Medical History</h2>
             <div className="mb-4">
               <h3 className="text-lg font-semibold text-danger mb-2">Allergies</h3>
-              <div className="bg-red-50 border border-red-200 rounded-sm p-3 mb-2">
+              <div className="bg-red-50 border border-red-200 rounded-sm p-3">
                 <p className="text-base text-gray-700">
                   {patient?.allergies || "No known allergies"}
                 </p>
               </div>
-              <Button variant="secondary" onClick={() => {
-                allergiesForm.reset({ allergies: patient?.allergies || "" });
-                setShowAllergiesModal(true);
-              }}>
-                Edit Allergies
-              </Button>
-            </div>
-            <div className="mb-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Chronic Conditions</h3>
-              <div className="bg-gray-50 border border-gray-200 rounded-sm p-3">
-                <p className="text-base text-gray-700">
-                  {patient?.medical_history || "None recorded"}
-                </p>
-              </div>
+              <p className="text-sm text-gray-500 mt-2">
+                Note: Allergy updates require backend support. Contact your healthcare provider to update this information.
+              </p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Current Medications</h3>
@@ -420,7 +386,11 @@ export default function ProfilePage() {
                     checked={notificationPrefs.appointmentReminders}
                     onChange={() => handleNotificationToggle("appointmentReminders")}
                   />
-                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                  <div className={`w-11 h-6 rounded-full transition-colors duration-200 ${
+                    notificationPrefs.appointmentReminders ? "bg-blue-600" : "bg-gray-200"
+                  } peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all ${
+                    notificationPrefs.appointmentReminders ? "after:translate-x-full" : ""
+                  }`}></div>
                 </label>
               </div>
               <div className="flex items-center justify-between">
@@ -437,7 +407,11 @@ export default function ProfilePage() {
                     checked={notificationPrefs.prescriptionRefills}
                     onChange={() => handleNotificationToggle("prescriptionRefills")}
                   />
-                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                  <div className={`w-11 h-6 rounded-full transition-colors duration-200 ${
+                    notificationPrefs.prescriptionRefills ? "bg-blue-600" : "bg-gray-200"
+                  } peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all ${
+                    notificationPrefs.prescriptionRefills ? "after:translate-x-full" : ""
+                  }`}></div>
                 </label>
               </div>
               <div className="flex items-center justify-between">
@@ -454,7 +428,11 @@ export default function ProfilePage() {
                     checked={notificationPrefs.billingNotifications}
                     onChange={() => handleNotificationToggle("billingNotifications")}
                   />
-                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                  <div className={`w-11 h-6 rounded-full transition-colors duration-200 ${
+                    notificationPrefs.billingNotifications ? "bg-blue-600" : "bg-gray-200"
+                  } peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all ${
+                    notificationPrefs.billingNotifications ? "after:translate-x-full" : ""
+                  }`}></div>
                 </label>
               </div>
             </div>
@@ -570,69 +548,6 @@ export default function ProfilePage() {
         </form>
       </Modal>
       
-      {/* Edit Allergies Modal */}
-      <Modal
-        isOpen={showAllergiesModal}
-        onClose={() => {
-          setShowAllergiesModal(false);
-          allergiesForm.reset();
-        }}
-        title="Edit Allergies"
-        size="md"
-      >
-        <form onSubmit={allergiesForm.handleSubmit(handleAllergiesSubmit)} className="space-y-4">
-          {allergiesForm.formState.errors.root && (
-            <div className="p-3 bg-red-50 border border-red-200 rounded-md">
-              <p className="text-sm text-red-800">{allergiesForm.formState.errors.root.message}</p>
-            </div>
-          )}
-          
-          <div>
-            <label htmlFor="allergies" className="label">
-              Allergies
-            </label>
-            <textarea
-              id="allergies"
-              className="input min-h-[120px]"
-              {...allergiesForm.register("allergies")}
-              placeholder="List any known allergies, separated by commas (e.g., Penicillin, Peanuts, Latex)"
-            />
-            {allergiesForm.formState.errors.allergies && (
-              <p className="text-sm text-red-600 mt-1">
-                {allergiesForm.formState.errors.allergies.message}
-              </p>
-            )}
-          </div>
-          
-          <div className="flex gap-2 pt-4">
-            <Button
-              type="submit"
-              variant="primary"
-              className="flex-1"
-              disabled={updatePatient.isPending}
-            >
-              {updatePatient.isPending ? (
-                <>
-                  <LoadingSpinner size="sm" />
-                  Saving...
-                </>
-              ) : (
-                "Save Allergies"
-              )}
-            </Button>
-            <Button
-              type="button"
-              variant="secondary"
-              onClick={() => {
-                setShowAllergiesModal(false);
-                allergiesForm.reset();
-              }}
-            >
-              Cancel
-            </Button>
-          </div>
-        </form>
-      </Modal>
     </div>
   );
 }
