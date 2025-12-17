@@ -1,8 +1,8 @@
 <div align="center">
-  <h1>Healthcare Patient Management System</h1>
+  <h1>MediFlow - a Healthcare Patient Management System</h1>
 
   <p>
-    A distributed microservices-based healthcare platform managing patient records, appointments, prescriptions, and billing with FHIR R4 compatibility considerations.
+    MediFlow is a distributed microservices-based healthcare platform managing patient records, appointments, prescriptions, and billing with FHIR R4 compatibility considerations.
   </p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -30,13 +30,26 @@ This is a **distributed healthcare management system** built with 4 independent 
 - Prometheus + Grafana for metrics and monitoring
 - FHIR R4-compatible schemas (Patient, Appointment, Invoice, MedicationRequest resources)
 
-See [Architecture Decision Records](docs/adr) for detailed trade-off analysis.
+See [Architecture Decision Records](docs/adr) for detailed trade-off analysis.    
+
+## Project Report and Video
+
+The full project report is available in the root folder: [Project Report](MediFlowReport.pdf)   
+Watch the video showcasing the project here:     
+
+[Project Demo Video](https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE4blrBgRb5rHcqcVn8.OGhG3Sa4Z9UAOcaQ?startTime=1765910669000)    
+```
+https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE4blrBgRb5rHcqcVn8.OGhG3Sa4Z9UAOcaQ?startTime=1765910669000
+```
+
+**Passcode**: `=8+*&l97`
 
 ### Project Structure
 
 ```
-healthcare-patient-management-system/
-├── services/                    # Microservices
+mediflow/
+├── client/                     # Next.js 14 frontend (port 3001)
+├── services/                   # Microservices
 │   ├── patient-service/        # Patient management (port 8001)
 │   ├── appointment-service/    # Appointment scheduling (port 8002)
 │   ├── prescription-service/   # Medication records (port 8003)
@@ -97,6 +110,13 @@ healthcare-patient-management-system/
 - **Databases**: PostgreSQL 17, MongoDB 6
 - **Package Manager**: pipenv
 
+**Frontend:**
+
+- **Framework**: Next.js 14 with TypeScript
+- **Styling**: Tailwind CSS v4
+- **State Management**: React Query (TanStack Query)
+- **Validation**: Zod schemas
+
 ## Getting Started
 
 ### Recommended Deployment Approach
@@ -137,8 +157,8 @@ Choose one deployment method:
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/healthcare-patient-management-system.git
-cd healthcare-patient-management-system
+git clone https://github.com/vijethph/mediflow.git
+cd mediflow
 ```
 
 2. Install dependencies
@@ -210,6 +230,34 @@ Repeat steps 3-7 for other services (ports: 8002 appointment, 8003 prescription,
 ./scripts/docker_manage.sh clean
 ```
 
+**Running Frontend (Client Application):**
+
+The frontend runs separately and connects to backend services via Kong API Gateway.
+
+```bash
+# Navigate to client directory
+cd client
+
+# Install dependencies
+npm install
+
+# Create environment file
+cat > .env.local << EOF
+NEXT_PUBLIC_API_URL=http://localhost:8000
+EOF
+
+# Start development server
+npm run dev
+# Frontend runs on http://localhost:3001
+
+# For production build
+npm run build
+npm start
+```
+
+**Prerequisites**: Backend services and Kong Gateway must be running (use Docker Compose or Kubernetes for easy setup).
+
+
 **Manual approach:**
 
 1. Clone repository (same as above)
@@ -231,6 +279,7 @@ docker-compose up -d
 
 5. Access services:
 
+- Frontend Application: `http://localhost:3001`
 - Patient API: `http://localhost:8001/docs`
 - Appointment API: `http://localhost:8002/docs`
 - Prescription API: `http://localhost:8003/docs`
@@ -442,21 +491,13 @@ This is an academic project for COMP41720. For educational purposes:
 6. Commit with conventional commit format (`feat(service): description`)
 7. Push and create a Pull Request
 
-**Code Quality Standards:**
-
-- No code comments unless essential
-- JSON logging via structlog (no emojis)
-- Non-root containers (UID 1000)
-- Multi-stage Docker builds
-- Health checks on all services
-
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the Apache 2.0 License. See `LICENSE` for more information.
 
 ## Contact
 
-Project Link: [https://github.com/yourusername/healthcare-patient-management-system](https://github.com/yourusername/healthcare-patient-management-system)
+Project Link: [https://github.com/vijethph/mediflow](https://github.com/vijethph/mediflow)
 
 ## Acknowledgments
 

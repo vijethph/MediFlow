@@ -21,12 +21,14 @@ services:
           - /api/v1/patients
           - /api/v1/auth
         strip_path: false
+        preserve_host: false
         methods:
           - GET
           - POST
           - PUT
           - DELETE
           - PATCH
+          - OPTIONS
       - name: patient-docs
         paths:
           - ~/patient/docs$
@@ -84,12 +86,14 @@ services:
           - /api/v1/appointments
           - /api/v1/schedules
         strip_path: false
+        preserve_host: false
         methods:
           - GET
           - POST
           - PUT
           - DELETE
           - PATCH
+          - OPTIONS
       - name: appointment-docs
         paths:
           - ~/appointment/docs$
@@ -149,12 +153,14 @@ services:
           - /api/v1/medical-records
           - /api/v1/lab-results
         strip_path: false
+        preserve_host: false
         methods:
           - GET
           - POST
           - PUT
           - DELETE
           - PATCH
+          - OPTIONS
       - name: prescription-docs
         paths:
           - ~/prescription/docs$
@@ -214,12 +220,14 @@ services:
           - /api/v1/claims
           - /api/v1/reports
         strip_path: false
+        preserve_host: false
         methods:
           - GET
           - POST
           - PUT
           - DELETE
           - PATCH
+          - OPTIONS
       - name: billing-docs
         paths:
           - ~/billing/docs$
@@ -304,6 +312,7 @@ plugins:
         - Authorization
         - Content-Type
         - Accept
+        - X-Request-ID
       exposed_headers:
         - X-Request-ID
       credentials: true
