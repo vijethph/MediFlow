@@ -34,12 +34,15 @@ See [Architecture Decision Records](docs/adr) for detailed trade-off analysis.
 
 ## Project Report and Video
 
-The full project report is available in the root folder: [Project Report]()   
+The full project report is available in the root folder: [Project Report](MediFlowReport.pdf)   
 Watch the video showcasing the project here:     
+
+[Project Demo Video](https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE4blrBgRb5rHcqcVn8.OGhG3Sa4Z9UAOcaQ?startTime=1765910669000)    
 ```
 https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE4blrBgRb5rHcqcVn8.OGhG3Sa4Z9UAOcaQ?startTime=1765910669000
-Passcode: =8+*&l97
 ```
+
+**Passcode**: `=8+*&l97`
 
 ### Project Structure
 
