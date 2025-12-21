@@ -27,17 +27,19 @@ This is a **distributed healthcare management system** built with 4 independent 
 - Database-per-Service pattern with PostgreSQL (Patient, Appointment, Billing) and MongoDB (Prescription)
 - Hybrid communication: Synchronous REST APIs for queries, Asynchronous RabbitMQ for event-driven workflows
 - Kong API Gateway for centralized routing and JWT validation
+- **Circuit Breaker Pattern** for fault tolerance and cascading failure prevention
 - Prometheus + Grafana for metrics and monitoring
 - FHIR R4-compatible schemas (Patient, Appointment, Invoice, MedicationRequest resources)
 
-See [Architecture Decision Records](docs/adr) for detailed trade-off analysis.    
+See [Architecture Decision Records](docs/adr) for detailed trade-off analysis.
 
 ## Project Report and Video
 
-The full project report is available in the root folder: [Project Report](MediFlowReport.pdf)   
-Watch the video showcasing the project here:     
+The full project report is available in the root folder: [Project Report](MediFlowReport.pdf)
+Watch the video showcasing the project here:
 
-[Project Demo Video](https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE4blrBgRb5rHcqcVn8.OGhG3Sa4Z9UAOcaQ?startTime=1765910669000)    
+[Project Demo Video](https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE4blrBgRb5rHcqcVn8.OGhG3Sa4Z9UAOcaQ?startTime=1765910669000)
+
 ```
 https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE4blrBgRb5rHcqcVn8.OGhG3Sa4Z9UAOcaQ?startTime=1765910669000
 ```
@@ -107,7 +109,7 @@ mediflow/
 
 - **Containerization**: Docker with multi-stage builds
 - **Orchestration**: Kubernetes (tested with Minikube)
-- **Databases**: PostgreSQL 17, MongoDB 6
+- **Databases**: PostgreSQL 17, MongoDB 8.2
 - **Package Manager**: pipenv
 
 **Frontend:**
@@ -136,7 +138,7 @@ Choose one deployment method:
 
 - Python 3.11+
 - pipenv
-- PostgreSQL 17 / MongoDB 6 (or use Docker for databases)
+- PostgreSQL 17 / MongoDB 8.2 (or use Docker for databases)
 - RabbitMQ, Redis (or use Docker)
 
 **Docker Compose:**
@@ -256,7 +258,6 @@ npm start
 ```
 
 **Prerequisites**: Backend services and Kong Gateway must be running (use Docker Compose or Kubernetes for easy setup).
-
 
 **Manual approach:**
 

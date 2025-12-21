@@ -6,10 +6,12 @@ export interface Invoice {
   subject: string; // patient_id
   status: "draft" | "issued" | "balanced" | "cancelled" | "entered-in-error";
   date: string; // Invoice date
-  total?: {
-    value: number;
-    currency: string;
-  };
+  total?:
+    | number
+    | {
+        value: number;
+        currency: string;
+      };
   totalGross?: {
     value: number;
     currency: string;
@@ -18,20 +20,26 @@ export interface Invoice {
     value: number;
     currency: string;
   };
+  total_gross_amount?: number | string | { value: number; currency: string };
+  total_due_amount?: number | string | { value: number; currency: string };
   line_items?: Array<{
     id: string;
     sequence: number;
     code: string;
     description?: string;
     quantity: number;
-    unit_price: {
-      value: number;
-      currency: string;
-    };
-    line_total: {
-      value: number;
-      currency: string;
-    };
+    unit_price:
+      | number
+      | {
+          value: number;
+          currency: string;
+        };
+    line_total:
+      | number
+      | {
+          value: number;
+          currency: string;
+        };
   }>;
   payment_terms?: string;
   notes?: string;
@@ -76,8 +84,40 @@ export interface PaymentCreate {
 
 export const billingApi = {
   getInvoice: async (invoiceId: string): Promise<Invoice> => {
-    const response = await apiClient.get<Invoice>(`/api/v1/invoices/${invoiceId}`);
-    return response.data;
+    const response = await apiClient.get<any>(`/api/v1/invoices/${invoiceId}`);
+    const inv = response.data;
+
+    // Helper function to extract numeric value from Decimal/Money object
+    const extractValue = (val: any): number => {
+      if (val === null || val === undefined) return 0;
+      if (typeof val === "number") return val;
+      if (typeof val === "string") return parseFloat(val) || 0;
+      if (typeof val === "object" && val !== null) {
+        if (val.value !== undefined) {
+          return typeof val.value === "number"
+            ? val.value
+            : parseFloat(val.value) || 0;
+        }
+      }
+      return 0;
+    };
+
+    // Transform response to ensure numeric values
+    const totalGross = extractValue(
+      inv.total_gross_amount || inv.totalGross || inv.total
+    );
+    const totalDue = extractValue(inv.total_due_amount || inv.totalDue);
+
+    return {
+      ...inv,
+      total: totalGross,
+      amount_due: totalDue,
+      line_items: inv.line_items?.map((item: any) => ({
+        ...item,
+        unit_price: extractValue(item.unit_price),
+        line_total: extractValue(item.line_total),
+      })),
+    };
   },
 
   listInvoices: async (params?: {
@@ -100,24 +140,40 @@ export const billingApi = {
     // Transform response
     const data = response.data;
     const invoices = (data.items || []).map((inv: any) => {
-      const totalGross = inv.total_gross_amount || inv.totalGross || 0;
-      const totalDue = inv.total_due_amount || inv.totalDue || 0;
+      // Helper function to extract numeric value from Decimal/Money object
+      const extractValue = (val: any): number => {
+        if (val === null || val === undefined) return 0;
+        if (typeof val === "number") return val;
+        if (typeof val === "string") return parseFloat(val) || 0;
+        if (typeof val === "object" && val !== null) {
+          // Handle Money type {value: X, currency: "EUR"}
+          if (val.value !== undefined) {
+            return typeof val.value === "number"
+              ? val.value
+              : parseFloat(val.value) || 0;
+          }
+        }
+        return 0;
+      };
+
+      const totalGross = extractValue(inv.total_gross_amount || inv.totalGross);
+      const totalDue = extractValue(inv.total_due_amount || inv.totalDue);
       const date = inv.date ? new Date(inv.date) : new Date();
-      const dueDate = inv.payment_terms 
+      const dueDate = inv.payment_terms
         ? new Date(date.getTime() + 30 * 24 * 60 * 60 * 1000) // Default 30 days
         : date;
-      
+
       return {
         ...inv,
         id: inv.id || inv.invoice_id,
-        total: typeof totalGross === "object" ? totalGross.value : totalGross,
-        amount_due: typeof totalDue === "object" ? totalDue.value : totalDue,
+        total: totalGross,
+        amount_due: totalDue,
         issue_date: date.toISOString().split("T")[0],
         due_date: dueDate.toISOString().split("T")[0],
         description: inv.line_items?.[0]?.description || inv.notes || "Invoice",
       };
     });
-    
+
     return {
       total: data.total || invoices.length,
       count: invoices.length,
@@ -160,24 +216,32 @@ export const billingApi = {
       payment_terms: `Net 30`, // Default payment terms
       notes: data.description || "",
     };
-    
+
     const response = await apiClient.post<any>("/api/v1/invoices", backendData);
     const responseData = response.data;
-    
-    // Transform backend response to frontend format
-    // Backend returns total_gross_amount as Decimal (may be string or number)
-    const totalGross = responseData.total_gross_amount;
-    const totalDue = responseData.total_due_amount;
-    
-    // Convert Decimal/string/number to number
-    const totalValue = typeof totalGross === "object" && totalGross !== null
-      ? (totalGross.value || parseFloat(totalGross.toString()) || data.total)
-      : (typeof totalGross === "string" ? parseFloat(totalGross) : (totalGross || data.total));
-    
-    const dueValue = typeof totalDue === "object" && totalDue !== null
-      ? (totalDue.value || parseFloat(totalDue.toString()) || data.total)
-      : (typeof totalDue === "string" ? parseFloat(totalDue) : (totalDue || data.total));
-    
+
+    // Helper function to extract numeric value from Decimal/Money object
+    const extractValue = (val: any, fallback: number = 0): number => {
+      if (val === null || val === undefined) return fallback;
+      if (typeof val === "number") return val;
+      if (typeof val === "string") return parseFloat(val) || fallback;
+      if (typeof val === "object" && val !== null) {
+        // Handle Money type {value: X, currency: "EUR"}
+        if (val.value !== undefined) {
+          return typeof val.value === "number"
+            ? val.value
+            : parseFloat(val.value) || fallback;
+        }
+      }
+      return fallback;
+    };
+
+    const totalValue = extractValue(
+      responseData.total_gross_amount,
+      data.total
+    );
+    const dueValue = extractValue(responseData.total_due_amount, data.total);
+
     return {
       ...responseData,
       id: responseData.id || "",
@@ -185,7 +249,9 @@ export const billingApi = {
       date: responseData.date || new Date().toISOString(),
       total: totalValue,
       amount_due: dueValue,
-      issue_date: responseData.date ? new Date(responseData.date).toISOString().split("T")[0] : "",
+      issue_date: responseData.date
+        ? new Date(responseData.date).toISOString().split("T")[0]
+        : "",
       due_date: data.due_date,
       description: responseData.notes || data.description || "",
       line_items: responseData.line_items || [],
@@ -197,9 +263,10 @@ export const billingApi = {
     // Backend expects PaymentRecordCreate with amount: Money, payment_date: datetime
     const paymentData = {
       invoice_id: data.invoice_id,
-      amount: typeof data.amount === "number" 
-        ? { value: data.amount, currency: "EUR" } // Use EUR as per user's request
-        : { ...data.amount, currency: data.amount.currency || "EUR" },
+      amount:
+        typeof data.amount === "number"
+          ? { value: data.amount, currency: "EUR" } // Use EUR as per user's request
+          : { ...data.amount, currency: data.amount.currency || "EUR" },
       payment_method: data.payment_method,
       payment_date: data.payment_date || new Date().toISOString(),
       reference_number: data.transaction_id, // Backend uses reference_number
@@ -210,16 +277,25 @@ export const billingApi = {
     return {
       id: payment.id || payment.payment_id || "",
       invoice_id: payment.invoice_id || data.invoice_id,
-      amount: typeof payment.amount === "object" ? payment.amount.value : payment.amount,
+      amount:
+        typeof payment.amount === "object"
+          ? payment.amount.value
+          : payment.amount,
       status: payment.payment_status || payment.status || "pending",
       payment_method: payment.payment_method || data.payment_method,
-      transaction_id: payment.reference_number || payment.transaction_id || data.transaction_id,
-      created_at: payment.created_at || payment.payment_date || new Date().toISOString(),
+      transaction_id:
+        payment.reference_number ||
+        payment.transaction_id ||
+        data.transaction_id,
+      created_at:
+        payment.created_at || payment.payment_date || new Date().toISOString(),
     };
   },
 
   getPayment: async (paymentId: string): Promise<Payment> => {
-    const response = await apiClient.get<Payment>(`/api/v1/payments/${paymentId}`);
+    const response = await apiClient.get<Payment>(
+      `/api/v1/payments/${paymentId}`
+    );
     return response.data;
   },
 };

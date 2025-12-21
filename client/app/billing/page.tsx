@@ -19,18 +19,18 @@ export default function BillingPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
-  
+
   useEffect(() => {
     if (!authApi.isAuthenticated()) {
       router.replace("/login");
       return;
     }
   }, [router]);
-  
+
   if (!authApi.isAuthenticated()) {
     return null;
   }
-  
+
   const { data, isLoading, error: invoiceError } = useInvoices();
   const createPayment = useCreatePayment();
   const { success, error: showError } = useNotificationContext();
@@ -65,16 +65,16 @@ export default function BillingPage() {
     if (statusFilter && inv.status !== statusFilter) {
       return false;
     }
-    
+
     // Search filtering
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
-      const matchesSearch = 
+      const matchesSearch =
         inv.id.toLowerCase().includes(query) ||
         inv.description?.toLowerCase().includes(query);
       if (!matchesSearch) return false;
     }
-    
+
     return true;
   });
 
@@ -94,10 +94,16 @@ export default function BillingPage() {
           amount,
           payment_method: "card",
         });
-        success("Payment Processed", "Your payment has been processed successfully.");
+        success(
+          "Payment Processed",
+          "Your payment has been processed successfully."
+        );
         router.refresh();
       } catch (err: any) {
-        showError("Payment Failed", err.message || "Payment could not be processed. Please try again.");
+        showError(
+          "Payment Failed",
+          err.message || "Payment could not be processed. Please try again."
+        );
       }
     }
   };
@@ -113,7 +119,10 @@ export default function BillingPage() {
   }
 
   if (invoiceError) {
-    const errorMessage = invoiceError instanceof Error ? invoiceError.message : "Failed to load invoices. Please try again.";
+    const errorMessage =
+      invoiceError instanceof Error
+        ? invoiceError.message
+        : "Failed to load invoices. Please try again.";
     return (
       <div className="max-w-[1280px] mx-auto px-6 py-8">
         <ErrorMessage message={errorMessage} />
@@ -135,22 +144,36 @@ export default function BillingPage() {
       thisMonth.setDate(1);
       return invDate >= thisMonth;
     })
-    .reduce((sum, inv) => sum + (typeof inv.total === "number" ? inv.total : inv.total?.value || 0), 0);
+    .reduce(
+      (sum, inv) =>
+        sum +
+        (typeof inv.total === "number" ? inv.total : inv.total?.value || 0),
+      0
+    );
 
   const nextPaymentDue = invoices
     .filter((inv) => inv.status === "issued" || inv.status === "balanced")
-    .sort((a, b) => new Date(a.due_date || a.date || "").getTime() - new Date(b.due_date || b.date || "").getTime())[0];
+    .sort(
+      (a, b) =>
+        new Date(a.due_date || a.date || "").getTime() -
+        new Date(b.due_date || b.date || "").getTime()
+    )[0];
 
   return (
     <div className="max-w-[1280px] mx-auto px-6 py-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Billing & Payments</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Billing & Payments
+          </h1>
           <p className="text-base text-gray-600">Handle billing and payments</p>
         </div>
         <Link href="/billing/invoice/create">
-          <Button variant="primary" className="mt-4 sm:mt-0 bg-orange-600 hover:bg-orange-700">
+          <Button
+            variant="primary"
+            className="mt-4 sm:mt-0 bg-orange-600 hover:bg-orange-700"
+          >
             <Plus className="w-4 h-4" aria-hidden="true" />
             Generate Invoice
           </Button>
@@ -184,8 +207,14 @@ export default function BillingPage() {
           </div>
           {nextPaymentDue ? (
             <>
-              <p className="text-base text-gray-900 mb-1">{formatDate(nextPaymentDue.due_date || nextPaymentDue.date || "")}</p>
-              <p className="text-sm text-gray-600">€{(nextPaymentDue.amount_due || 0).toFixed(2)}</p>
+              <p className="text-base text-gray-900 mb-1">
+                {formatDate(
+                  nextPaymentDue.due_date || nextPaymentDue.date || ""
+                )}
+              </p>
+              <p className="text-sm text-gray-600">
+                €{(nextPaymentDue.amount_due || 0).toFixed(2)}
+              </p>
             </>
           ) : (
             <p className="text-base text-gray-500">No pending payments</p>
@@ -196,22 +225,22 @@ export default function BillingPage() {
       {/* Search Bar */}
       <Card className="mb-6">
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="flex-1 relative">
-            <Search 
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" 
-              aria-hidden="true" 
+          <div className="flex-1 md:flex-[7] relative min-w-0">
+            <Search
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
+              aria-hidden="true"
             />
             <input
               type="text"
-              placeholder="Search invoices by patient, invoice number..."
-              className="input pl-10 w-full"
+              placeholder="Search invoices..."
+              className="input pl-11 w-full"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               aria-label="Search invoices"
             />
           </div>
           <select
-            className="input md:w-48 w-full md:w-auto"
+            className="input md:flex-[3] w-full"
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
             aria-label="Filter by status"
@@ -234,11 +263,21 @@ export default function BillingPage() {
             <table className="w-full border-collapse" role="table">
               <thead>
                 <tr className="border-b border-gray-200 bg-gray-50">
-                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Date</th>
-                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Description</th>
-                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Amount</th>
-                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Status</th>
-                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Actions</th>
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    Date
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    Description
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    Amount
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    Status
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    Actions
+                  </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -251,31 +290,49 @@ export default function BillingPage() {
                       {invoice.description || invoice.notes || "Invoice"}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                      €{(typeof invoice.total === "number" ? invoice.total : invoice.total?.value || 0).toFixed(2)}
+                      €
+                      {(typeof invoice.total === "number"
+                        ? invoice.total
+                        : invoice.total?.value || 0
+                      ).toFixed(2)}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <StatusBadge status={getStatusColor(invoice.status)}>
-                        {invoice.status === "balanced" ? "Paid" :
-                         invoice.status === "issued" ? "Awaiting Payment" :
-                         invoice.status === "cancelled" ? "Cancelled" :
-                         invoice.status}
+                        {invoice.status === "balanced"
+                          ? "Paid"
+                          : invoice.status === "issued"
+                          ? "Awaiting Payment"
+                          : invoice.status === "cancelled"
+                          ? "Cancelled"
+                          : invoice.status}
                       </StatusBadge>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm">
                       <div className="flex gap-2">
                         <Link href={`/billing/${invoice.id}`}>
-                          <Button variant="ghost" className="text-xs">View</Button>
-                        </Link>
-                        {(invoice.status === "issued" || invoice.status === "balanced") && (invoice.amount_due || 0) > 0 && (
-                          <Button
-                            variant="primary"
-                            onClick={() => handlePayNow(invoice.id, invoice.amount_due || 0)}
-                            disabled={createPayment.isPending}
-                            className="text-xs"
-                          >
-                            {createPayment.isPending ? "Processing..." : "Pay Now"}
+                          <Button variant="ghost" className="text-xs">
+                            View
                           </Button>
-                        )}
+                        </Link>
+                        {(invoice.status === "issued" ||
+                          invoice.status === "balanced") &&
+                          (invoice.amount_due || 0) > 0 && (
+                            <Button
+                              variant="primary"
+                              onClick={() =>
+                                handlePayNow(
+                                  invoice.id,
+                                  invoice.amount_due || 0
+                                )
+                              }
+                              disabled={createPayment.isPending}
+                              className="text-xs"
+                            >
+                              {createPayment.isPending
+                                ? "Processing..."
+                                : "Pay Now"}
+                            </Button>
+                          )}
                       </div>
                     </td>
                   </tr>
@@ -285,7 +342,10 @@ export default function BillingPage() {
           </div>
         ) : (
           <div className="p-12 text-center">
-            <Receipt className="w-12 h-12 text-gray-400 mx-auto mb-4" aria-hidden="true" />
+            <Receipt
+              className="w-12 h-12 text-gray-400 mx-auto mb-4"
+              aria-hidden="true"
+            />
             <p className="text-base text-gray-600">No invoices found.</p>
           </div>
         )}

@@ -1,0 +1,501 @@
+invoice_id,patient_id,appointment_id,date,status,total_net,total_gross,account_status,payment_terms,notes
+INV-7042,PAT-8314,APT-8598,2025-10-09,balanced,3108.8,3575.12,active,Net 15,Suspendisse accumsan tortor quis turpis.
+INV-9909,PAT-8303,APT-2039,2024-07-16,draft,4406.4,5067.36,entered-in-error,Net 30,"Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante."
+INV-6267,PAT-2594,APT-5642,2024-04-08,balanced,4038.02,4643.723,active,Net 45,Ut tellus.
+INV-5632,PAT-8539,APT-3953,2024-04-25,issued,4959.11,5702.9765,active,Net 45,In congue.
+INV-7946,PAT-5545,APT-3598,2025-06-09,issued,736.34,846.791,active,Net 45,Nulla mollis molestie lorem.
+INV-6283,PAT-5355,APT-6313,2024-04-20,issued,3838.29,4414.0335,entered-in-error,Due on Receipt,Pellentesque ultrices mattis odio. Donec vitae nisi.
+INV-2532,PAT-3825,APT-3556,2025-11-17,draft,895.66,1030.009,entered-in-error,Due on Receipt,"Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis."
+INV-8015,PAT-1962,APT-5264,2025-11-01,balanced,4522.53,5200.9095,active,Due on Receipt,Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.
+INV-8827,PAT-3360,APT-7530,2025-04-29,issued,3238.17,3723.8955,entered-in-error,Net 15,Vivamus tortor. Duis mattis egestas metus.
+INV-5344,PAT-2474,APT-6639,2025-04-08,balanced,101.49,116.7135,active,Net 30,Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.
+INV-8456,PAT-6026,APT-3307,2024-06-01,issued,845.09,971.8535,inactive,Net 30,Proin interdum mauris non ligula pellentesque ultrices.
+INV-8437,PAT-3938,APT-8877,2024-06-28,issued,2997.45,3447.0675,on-hold,Net 15,Donec quis orci eget orci vehicula condimentum.
+INV-9330,PAT-7823,APT-2263,2025-06-13,issued,3680.2,4232.23,inactive,Due on Receipt,Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.
+INV-5321,PAT-1767,APT-4437,2025-09-01,balanced,2392.83,2751.7545,active,Due on Receipt,"Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc."
+INV-3906,PAT-4581,APT-7737,2025-10-03,balanced,4698.53,5403.3095,entered-in-error,Net 60,In quis justo. Maecenas rhoncus aliquam lacus.
+INV-7799,PAT-7246,APT-5606,2025-05-21,draft,2779.11,3195.9765,inactive,Net 45,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus."
+INV-6789,PAT-2433,APT-1668,2025-02-02,cancelled,2805.28,3226.072,inactive,Net 15,Aliquam non mauris.
+INV-3062,PAT-7562,APT-5521,2024-02-21,issued,2272.97,2613.9155,entered-in-error,Net 45,Maecenas pulvinar lobortis est. Phasellus sit amet erat.
+INV-7717,PAT-7635,APT-2462,2024-01-25,issued,3698.67,4253.4705,active,Net 30,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat."
+INV-7974,PAT-2270,APT-4804,2025-03-09,issued,1644.82,1891.543,inactive,Due on Receipt,"Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci."
+INV-9175,PAT-5012,APT-5146,2024-05-08,cancelled,3245.76,3732.624,entered-in-error,Net 45,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus."
+INV-6081,PAT-3575,APT-9101,2024-04-17,issued,443.0,509.45,active,Due on Receipt,Integer ac leo. Pellentesque ultrices mattis odio.
+INV-6888,PAT-7451,APT-5288,2024-07-11,issued,555.82,639.193,entered-in-error,Net 30,Sed ante. Vivamus tortor. Duis mattis egestas metus.
+INV-7430,PAT-5348,APT-6044,2025-12-19,issued,413.1,475.065,on-hold,Net 15,Vivamus vestibulum sagittis sapien.
+INV-2601,PAT-1963,APT-2947,2024-08-06,issued,1545.67,1777.5205,entered-in-error,Net 15,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+INV-3120,PAT-5517,APT-1459,2025-05-24,issued,2185.08,2512.842,inactive,Net 45,Fusce consequat. Nulla nisl.
+INV-6431,PAT-7087,APT-7215,2025-11-17,issued,2715.96,3123.354,inactive,Net 45,Nulla mollis molestie lorem. Quisque ut erat.
+INV-2939,PAT-7791,APT-7036,2025-06-14,balanced,4013.67,4615.7205,on-hold,Net 30,Nulla facilisi. Cras non velit nec nisi vulputate nonummy.
+INV-5649,PAT-3822,APT-8866,2024-12-25,issued,3544.5,4076.175,on-hold,Net 45,Nunc rhoncus dui vel sem. Sed sagittis.
+INV-6184,PAT-7862,APT-8187,2024-03-19,balanced,1649.22,1896.603,active,Net 45,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo."
+INV-3677,PAT-3691,APT-3904,2025-01-02,draft,2830.66,3255.259,entered-in-error,Net 45,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.
+INV-2736,PAT-3379,APT-7827,2024-06-10,issued,3380.28,3887.322,active,Due on Receipt,Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+INV-7176,PAT-8439,APT-7037,2025-10-06,balanced,4248.69,4885.9935,inactive,Net 60,Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.
+INV-5459,PAT-7602,APT-9946,2024-04-08,issued,4092.76,4706.674,entered-in-error,Due on Receipt,"Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus."
+INV-9627,PAT-9322,APT-3591,2025-11-09,issued,3542.43,4073.7945,on-hold,Net 60,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc."
+INV-2478,PAT-7838,APT-4067,2024-06-21,issued,1059.45,1218.3675,active,Net 60,Etiam justo. Etiam pretium iaculis justo.
+INV-6130,PAT-6321,APT-6605,2025-05-21,issued,772.49,888.3635,active,Due on Receipt,Quisque ut erat.
+INV-8774,PAT-8881,APT-7343,2024-02-01,issued,3412.42,3924.283,inactive,Net 15,Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.
+INV-7678,PAT-3871,APT-4779,2025-04-20,balanced,3381.45,3888.6675,on-hold,Net 45,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices."
+INV-3176,PAT-3318,APT-5522,2024-03-29,issued,3535.09,4065.3535,active,Net 30,Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis.
+INV-7412,PAT-8496,APT-8952,2024-07-31,issued,2313.8,2660.87,inactive,Net 15,Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.
+INV-7031,PAT-1269,APT-5160,2024-08-09,balanced,1051.06,1208.719,active,Net 60,Proin at turpis a pede posuere nonummy. Integer non velit.
+INV-7272,PAT-7223,APT-5436,2024-12-25,issued,1563.16,1797.634,inactive,Net 45,"Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros."
+INV-2114,PAT-7532,APT-3088,2024-02-14,issued,2518.11,2895.8265,inactive,Net 60,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl."
+INV-9144,PAT-3451,APT-9053,2024-10-18,balanced,4611.74,5303.501,inactive,Net 30,Cras pellentesque volutpat dui.
+INV-1805,PAT-7488,APT-2638,2025-04-02,issued,1550.16,1782.684,on-hold,Net 60,Morbi non lectus.
+INV-8859,PAT-9332,APT-5694,2025-06-05,issued,4319.52,4967.448,on-hold,Net 60,Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.
+INV-4485,PAT-8362,APT-1822,2024-01-26,issued,2102.56,2417.944,inactive,Due on Receipt,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus."
+INV-2544,PAT-7053,APT-2098,2024-02-05,issued,4564.06,5248.669,on-hold,Due on Receipt,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante."
+INV-1562,PAT-2280,APT-7878,2025-03-18,issued,2462.52,2831.898,inactive,Net 60,Nunc purus. Phasellus in felis. Donec semper sapien a libero.
+INV-3160,PAT-2911,APT-9781,2025-01-25,balanced,746.96,859.004,active,Net 60,Maecenas ut massa quis augue luctus tincidunt.
+INV-8613,PAT-4105,APT-7056,2024-11-21,issued,2449.51,2816.9365,entered-in-error,Due on Receipt,Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.
+INV-4273,PAT-9567,APT-2590,2024-01-06,issued,1290.51,1484.0865,active,Net 30,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices."
+INV-4853,PAT-2707,APT-6605,2024-03-23,issued,1845.33,2122.1295,active,Net 30,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem."
+INV-6421,PAT-8874,APT-7310,2025-03-02,issued,1127.47,1296.5905,inactive,Due on Receipt,Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.
+INV-4541,PAT-3540,APT-6309,2025-05-24,issued,1929.88,2219.362,on-hold,Net 60,Morbi a ipsum. Integer a nibh. In quis justo.
+INV-5857,PAT-5065,APT-6193,2025-07-17,balanced,237.54,273.171,inactive,Due on Receipt,"Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo."
+INV-3909,PAT-3077,APT-3939,2024-03-30,balanced,255.32,293.618,entered-in-error,Due on Receipt,Nunc rhoncus dui vel sem. Sed sagittis.
+INV-1726,PAT-9862,APT-1530,2024-04-10,issued,3309.61,3806.0515,inactive,Net 30,Aenean lectus. Pellentesque eget nunc.
+INV-2139,PAT-4755,APT-5276,2025-03-19,issued,2176.23,2502.6645,active,Net 15,Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum.
+INV-5394,PAT-3092,APT-1779,2024-05-25,issued,2990.3,3438.845,inactive,Net 45,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."
+INV-1239,PAT-4344,APT-8121,2024-04-21,issued,269.44,309.856,entered-in-error,Net 30,Nulla suscipit ligula in lacus.
+INV-6133,PAT-7399,APT-2969,2025-04-21,balanced,2249.87,2587.3505,on-hold,Net 45,Phasellus in felis. Donec semper sapien a libero.
+INV-8644,PAT-8940,APT-8114,2024-03-19,issued,3542.14,4073.461,active,Net 15,Morbi non quam nec dui luctus rutrum. Nulla tellus.
+INV-6294,PAT-1623,APT-5164,2025-11-21,issued,1509.22,1735.603,active,Net 60,"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque."
+INV-6356,PAT-6326,APT-2132,2025-05-05,issued,457.91,526.5965,active,Due on Receipt,Ut at dolor quis odio consequat varius. Integer ac leo.
+INV-8581,PAT-4910,APT-7289,2024-10-18,issued,1989.03,2287.3845,active,Due on Receipt,Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.
+INV-1621,PAT-7157,APT-4891,2024-03-13,balanced,651.23,748.9145,entered-in-error,Due on Receipt,Integer ac neque. Duis bibendum.
+INV-2164,PAT-7192,APT-3948,2024-08-06,issued,1538.72,1769.528,on-hold,Net 45,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo."
+INV-1209,PAT-1706,APT-2562,2025-06-03,balanced,350.96,403.604,inactive,Due on Receipt,"In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem."
+INV-9649,PAT-5688,APT-7177,2024-04-16,issued,871.54,1002.271,entered-in-error,Net 30,Pellentesque at nulla. Suspendisse potenti.
+INV-5271,PAT-8109,APT-8573,2024-11-06,balanced,2033.9,2338.985,entered-in-error,Net 15,"Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla."
+INV-7538,PAT-1863,APT-1607,2025-01-22,cancelled,4084.7,4697.405,on-hold,Due on Receipt,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus."
+INV-8250,PAT-6260,APT-4801,2025-10-09,issued,1711.27,1967.9605,active,Net 60,Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.
+INV-3219,PAT-9086,APT-8826,2025-01-19,issued,2069.87,2380.3505,entered-in-error,Net 60,Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.
+INV-5593,PAT-5670,APT-5125,2024-01-09,issued,580.17,667.1955,active,Due on Receipt,Etiam justo.
+INV-7521,PAT-1787,APT-2101,2024-05-21,issued,1168.95,1344.2925,active,Net 15,Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.
+INV-7330,PAT-1219,APT-3107,2025-12-25,issued,207.7,238.855,entered-in-error,Net 30,Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+INV-8751,PAT-1825,APT-4717,2025-12-19,issued,4613.4,5305.41,inactive,Net 15,"Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam."
+INV-2750,PAT-2165,APT-4673,2025-04-19,issued,1334.05,1534.1575,active,Net 30,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+INV-4074,PAT-7557,APT-7355,2025-07-13,issued,931.85,1071.6275,inactive,Net 60,Cras non velit nec nisi vulputate nonummy.
+INV-2229,PAT-7468,APT-1410,2025-05-08,balanced,4563.35,5247.8525,on-hold,Net 45,Nullam molestie nibh in lectus.
+INV-9456,PAT-4841,APT-3417,2024-10-17,balanced,3030.76,3485.374,on-hold,Net 30,"Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus."
+INV-6617,PAT-4727,APT-1417,2024-07-05,issued,2639.28,3035.172,on-hold,Net 30,Cras non velit nec nisi vulputate nonummy.
+INV-7614,PAT-2506,APT-9559,2024-04-10,balanced,1189.76,1368.224,active,Net 30,"Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis."
+INV-3643,PAT-2104,APT-9487,2025-06-16,cancelled,704.19,809.8185,entered-in-error,Net 30,Suspendisse ornare consequat lectus.
+INV-1539,PAT-7670,APT-6194,2024-03-07,draft,3445.34,3962.141,inactive,Net 60,Suspendisse potenti.
+INV-9437,PAT-9390,APT-6212,2025-03-13,issued,2786.62,3204.613,inactive,Net 15,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus."
+INV-1973,PAT-3074,APT-1181,2024-03-03,issued,2135.58,2455.917,inactive,Net 30,In hac habitasse platea dictumst.
+INV-1720,PAT-9710,APT-1705,2024-05-17,draft,3081.1,3543.265,inactive,Net 45,"Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+INV-6460,PAT-8747,APT-2568,2024-02-16,issued,4519.53,5197.4595,inactive,Net 15,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis."
+INV-8491,PAT-6937,APT-1763,2025-11-30,issued,2983.01,3430.4615,entered-in-error,Net 15,"Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla."
+INV-2975,PAT-8595,APT-5517,2025-09-20,issued,671.78,772.547,entered-in-error,Net 45,Morbi a ipsum. Integer a nibh.
+INV-5635,PAT-8421,APT-3056,2025-06-01,draft,4010.57,4612.1555,entered-in-error,Net 30,Nullam varius.
+INV-2137,PAT-7132,APT-6670,2025-07-12,issued,3686.32,4239.268,active,Due on Receipt,"Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue."
+INV-5328,PAT-4655,APT-9281,2024-09-06,issued,1022.03,1175.3345,inactive,Net 45,Sed ante. Vivamus tortor.
+INV-3811,PAT-2090,APT-8875,2025-10-23,balanced,4578.99,5265.8385,active,Net 60,Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+INV-8815,PAT-1249,APT-5101,2024-11-17,issued,2063.03,2372.4845,entered-in-error,Due on Receipt,Vivamus tortor. Duis mattis egestas metus.
+INV-5142,PAT-4991,APT-3036,2025-01-03,issued,3328.73,3828.0395,on-hold,Net 30,Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.
+INV-9551,PAT-5558,APT-9078,2024-02-16,issued,66.12,76.038,entered-in-error,Net 15,"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi."
+INV-6207,PAT-8992,APT-8492,2024-10-02,issued,161.63,185.8745,entered-in-error,Due on Receipt,"Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante."
+INV-8144,PAT-5988,APT-8123,2025-01-10,draft,4252.27,4890.1105,inactive,Due on Receipt,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui."
+INV-4386,PAT-6019,APT-8041,2025-02-02,issued,477.55,549.1825,entered-in-error,Net 15,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus."
+INV-6991,PAT-4041,APT-7844,2025-04-07,draft,4972.36,5718.214,active,Net 15,Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.
+INV-3437,PAT-4795,APT-3976,2024-07-24,balanced,4586.99,5275.0385,inactive,Due on Receipt,"Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa."
+INV-1691,PAT-9371,APT-2404,2025-09-29,issued,221.24,254.426,entered-in-error,Net 60,Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.
+INV-7347,PAT-4929,APT-9359,2025-12-18,issued,799.02,918.873,inactive,Net 45,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo."
+INV-1541,PAT-2370,APT-8571,2025-02-02,draft,1947.55,2239.6825,entered-in-error,Net 60,Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum.
+INV-4142,PAT-7087,APT-8771,2025-05-15,issued,3675.57,4226.9055,on-hold,Net 30,Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.
+INV-4427,PAT-1555,APT-3005,2025-11-23,issued,2488.32,2861.568,active,Net 30,Quisque porta volutpat erat.
+INV-9931,PAT-7080,APT-9484,2024-05-20,issued,3126.37,3595.3255,entered-in-error,Net 15,"Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+INV-7786,PAT-9181,APT-6872,2025-05-21,issued,3320.69,3818.7935,on-hold,Net 60,Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.
+INV-2893,PAT-8463,APT-8588,2024-11-30,draft,4226.85,4860.8775,active,Net 30,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo."
+INV-2211,PAT-5103,APT-3173,2024-01-25,issued,3025.75,3479.6125,active,Net 15,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis."
+INV-7552,PAT-1969,APT-1664,2024-02-08,balanced,292.73,336.6395,active,Net 15,"Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla."
+INV-6100,PAT-2254,APT-2088,2024-10-01,issued,4643.0,5339.45,on-hold,Net 15,In hac habitasse platea dictumst.
+INV-5798,PAT-8794,APT-3968,2025-11-27,issued,362.31,416.6565,inactive,Due on Receipt,Phasellus in felis. Donec semper sapien a libero. Nam dui.
+INV-1413,PAT-1212,APT-7853,2025-08-20,issued,273.0,313.95,entered-in-error,Net 45,Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.
+INV-7902,PAT-5203,APT-2594,2024-02-16,balanced,209.82,241.293,active,Due on Receipt,Nam nulla.
+INV-2069,PAT-9999,APT-6700,2024-06-01,issued,1554.69,1787.8935,active,Net 60,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo."
+INV-8198,PAT-4368,APT-8127,2025-09-16,issued,352.36,405.214,active,Net 30,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl."
+INV-5915,PAT-6383,APT-2146,2025-04-13,issued,4126.49,4745.4635,active,Net 30,Aenean fermentum.
+INV-3248,PAT-5000,APT-7571,2025-07-07,draft,4027.91,4632.0965,inactive,Net 60,Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.
+INV-5370,PAT-3124,APT-1805,2024-07-23,issued,613.57,705.6055,active,Due on Receipt,"Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros."
+INV-9264,PAT-8813,APT-4660,2025-10-24,balanced,1584.24,1821.876,active,Net 15,Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.
+INV-2728,PAT-5059,APT-2018,2024-08-24,issued,1485.18,1707.957,inactive,Net 45,Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.
+INV-9445,PAT-2669,APT-1286,2025-08-21,issued,1258.47,1447.2405,inactive,Net 60,"Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat."
+INV-2808,PAT-1998,APT-1274,2024-05-02,balanced,2127.75,2446.9125,inactive,Net 15,Sed ante. Vivamus tortor. Duis mattis egestas metus.
+INV-9490,PAT-2087,APT-7303,2024-03-11,issued,1799.37,2069.2755,on-hold,Net 30,"Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum."
+INV-3796,PAT-4110,APT-3593,2025-07-15,balanced,2724.93,3133.6695,entered-in-error,Net 45,Integer non velit.
+INV-3805,PAT-4305,APT-7166,2025-07-22,balanced,3193.62,3672.663,entered-in-error,Due on Receipt,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla."
+INV-2765,PAT-7220,APT-5648,2024-01-31,draft,412.44,474.306,inactive,Net 30,Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.
+INV-4222,PAT-6823,APT-9224,2024-01-09,issued,1625.98,1869.877,entered-in-error,Net 60,Mauris ullamcorper purus sit amet nulla.
+INV-8981,PAT-8285,APT-1802,2025-10-03,issued,4368.76,5024.074,on-hold,Net 60,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+INV-9902,PAT-9012,APT-9225,2025-08-20,issued,1719.81,1977.7815,inactive,Net 30,Vivamus tortor.
+INV-3025,PAT-8103,APT-7342,2024-08-11,issued,2600.43,2990.4945,on-hold,Net 30,In blandit ultrices enim.
+INV-4502,PAT-4040,APT-3841,2024-10-07,balanced,3787.93,4356.1195,entered-in-error,Net 45,In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+INV-6886,PAT-6324,APT-7081,2025-02-13,issued,3304.25,3799.8875,inactive,Due on Receipt,Nam dui.
+INV-3823,PAT-4127,APT-9013,2025-03-10,issued,4217.45,4850.0675,entered-in-error,Net 45,"Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa."
+INV-2763,PAT-3708,APT-9043,2024-11-12,issued,4779.8,5496.77,entered-in-error,Due on Receipt,Fusce consequat. Nulla nisl.
+INV-1973,PAT-2109,APT-4742,2024-03-17,issued,317.09,364.6535,inactive,Net 15,Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.
+INV-1144,PAT-9235,APT-9579,2025-06-20,issued,2235.24,2570.526,active,Net 45,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc."
+INV-8897,PAT-9120,APT-7886,2024-05-22,issued,349.14,401.511,on-hold,Net 60,Suspendisse potenti. Nullam porttitor lacus at turpis.
+INV-9561,PAT-5828,APT-7833,2025-09-13,issued,1351.81,1554.5815,on-hold,Net 60,"Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem."
+INV-8663,PAT-6414,APT-9530,2024-03-22,issued,2239.84,2575.816,on-hold,Net 45,"In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy."
+INV-5254,PAT-6198,APT-5097,2025-02-01,draft,3939.6,4530.54,on-hold,Net 45,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc."
+INV-5431,PAT-7519,APT-9225,2024-10-04,balanced,2069.69,2380.1435,active,Net 60,Phasellus in felis. Donec semper sapien a libero. Nam dui.
+INV-1877,PAT-6719,APT-6651,2024-05-23,issued,212.84,244.766,active,Net 45,"In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc."
+INV-1401,PAT-5433,APT-1915,2024-07-03,issued,512.13,588.9495,entered-in-error,Net 15,"Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio."
+INV-8918,PAT-6601,APT-8375,2025-09-12,balanced,4146.69,4768.6935,entered-in-error,Due on Receipt,Etiam pretium iaculis justo. In hac habitasse platea dictumst.
+INV-8511,PAT-6520,APT-6855,2024-09-17,balanced,1395.44,1604.756,active,Net 15,Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.
+INV-5577,PAT-2652,APT-5402,2025-07-30,issued,734.98,845.227,inactive,Due on Receipt,"Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique."
+INV-8984,PAT-2960,APT-3043,2025-09-09,balanced,4724.73,5433.4395,active,Due on Receipt,Nulla ac enim.
+INV-7988,PAT-3574,APT-4860,2025-08-04,issued,55.3,63.595,entered-in-error,Net 15,Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.
+INV-7626,PAT-4485,APT-5462,2024-12-28,balanced,672.02,772.823,entered-in-error,Net 45,Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.
+INV-3451,PAT-2857,APT-7139,2024-09-12,issued,3307.44,3803.556,active,Net 30,"Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis."
+INV-7583,PAT-5258,APT-4206,2024-03-27,issued,4608.81,5300.1315,active,Net 45,Donec vitae nisi.
+INV-9936,PAT-3514,APT-3592,2025-04-17,issued,4608.87,5300.2005,entered-in-error,Due on Receipt,Nunc purus. Phasellus in felis.
+INV-4514,PAT-9698,APT-4542,2025-01-05,issued,754.83,868.0545,inactive,Net 30,Pellentesque ultrices mattis odio. Donec vitae nisi.
+INV-5591,PAT-7593,APT-5782,2024-07-22,issued,1288.88,1482.212,entered-in-error,Due on Receipt,Aenean auctor gravida sem.
+INV-3269,PAT-3093,APT-6751,2024-03-09,issued,1085.2,1247.98,entered-in-error,Due on Receipt,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus."
+INV-6176,PAT-1590,APT-3012,2025-10-07,draft,256.1,294.515,entered-in-error,Net 15,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+INV-9440,PAT-7560,APT-2602,2025-04-05,issued,278.69,320.4935,entered-in-error,Net 60,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui."
+INV-8281,PAT-3270,APT-8099,2024-03-11,issued,219.95,252.9425,on-hold,Net 60,"Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla."
+INV-9387,PAT-5365,APT-1403,2025-10-11,draft,1573.49,1809.5135,active,Net 60,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci."
+INV-6571,PAT-4423,APT-3021,2024-03-30,balanced,1716.72,1974.228,active,Net 30,Etiam justo. Etiam pretium iaculis justo.
+INV-7871,PAT-9938,APT-6640,2025-12-29,draft,4239.26,4875.149,entered-in-error,Due on Receipt,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante."
+INV-2674,PAT-7293,APT-2280,2025-05-26,issued,1898.09,2182.8035,entered-in-error,Net 15,Mauris lacinia sapien quis libero.
+INV-4803,PAT-2188,APT-5112,2025-06-20,issued,1005.07,1155.8305,active,Net 15,Nam dui.
+INV-7495,PAT-6863,APT-7018,2025-07-01,issued,1456.81,1675.3315,on-hold,Net 45,Etiam justo.
+INV-2032,PAT-6992,APT-7236,2025-11-23,issued,3660.98,4210.127,inactive,Net 15,"Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
+INV-6085,PAT-1566,APT-2934,2025-06-21,balanced,1399.15,1609.0225,inactive,Net 30,"Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam."
+INV-8351,PAT-5727,APT-3690,2024-07-25,issued,3790.65,4359.2475,on-hold,Net 15,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc."
+INV-5503,PAT-6316,APT-9555,2025-10-09,issued,1515.52,1742.848,on-hold,Net 15,Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.
+INV-8742,PAT-6360,APT-5107,2025-07-31,issued,2455.55,2823.8825,inactive,Net 45,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam."
+INV-7979,PAT-2100,APT-2231,2024-06-15,issued,1236.8,1422.32,on-hold,Net 30,Maecenas rhoncus aliquam lacus.
+INV-8448,PAT-5282,APT-5788,2025-10-02,balanced,396.23,455.6645,active,Net 45,"Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede."
+INV-2749,PAT-9675,APT-1263,2024-09-02,issued,4274.12,4915.238,entered-in-error,Due on Receipt,Suspendisse ornare consequat lectus.
+INV-6882,PAT-6404,APT-7329,2024-08-04,draft,232.45,267.3175,entered-in-error,Net 60,"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque."
+INV-2140,PAT-1353,APT-9279,2025-10-25,draft,3009.35,3460.7525,inactive,Net 30,Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.
+INV-2886,PAT-6784,APT-8557,2025-03-10,issued,2426.39,2790.3485,inactive,Net 30,Integer ac leo. Pellentesque ultrices mattis odio.
+INV-3607,PAT-6296,APT-9883,2025-12-30,draft,1775.6,2041.94,active,Due on Receipt,"Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus."
+INV-7180,PAT-9435,APT-1740,2024-04-25,issued,4870.81,5601.4315,active,Net 30,Donec dapibus. Duis at velit eu est congue elementum.
+INV-1375,PAT-9174,APT-1816,2024-12-28,balanced,1106.73,1272.7395,entered-in-error,Net 15,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus."
+INV-4605,PAT-7068,APT-8989,2024-05-16,issued,4423.08,5086.542,active,Net 45,"Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio."
+INV-3005,PAT-9937,APT-3141,2024-07-29,issued,4541.15,5222.3225,inactive,Net 60,Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+INV-3211,PAT-5178,APT-5307,2024-07-20,cancelled,4327.56,4976.694,on-hold,Net 60,Sed ante. Vivamus tortor. Duis mattis egestas metus.
+INV-1734,PAT-9005,APT-5565,2024-10-16,issued,790.93,909.5695,active,Net 45,"In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat."
+INV-4800,PAT-8621,APT-3228,2025-11-16,issued,1502.6,1727.99,inactive,Due on Receipt,Nulla tellus.
+INV-5443,PAT-2678,APT-5496,2024-10-06,issued,4339.85,4990.8275,entered-in-error,Net 60,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla."
+INV-8718,PAT-9744,APT-2427,2025-03-01,issued,139.12,159.988,inactive,Due on Receipt,Phasellus in felis. Donec semper sapien a libero. Nam dui.
+INV-4672,PAT-2925,APT-9318,2024-06-06,balanced,85.32,98.118,inactive,Net 30,"Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius."
+INV-2958,PAT-8489,APT-6290,2024-08-11,issued,1278.26,1469.999,active,Net 60,"Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus."
+INV-2668,PAT-3129,APT-4118,2025-12-29,issued,2513.99,2891.0885,on-hold,Net 30,"Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla."
+INV-6614,PAT-9187,APT-2544,2025-01-19,issued,353.37,406.3755,entered-in-error,Net 45,"Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat."
+INV-9478,PAT-6330,APT-4230,2024-05-22,balanced,2324.94,2673.681,on-hold,Net 60,"Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci."
+INV-6062,PAT-2938,APT-1521,2024-04-03,balanced,3781.62,4348.863,active,Net 45,In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.
+INV-5072,PAT-5998,APT-5649,2025-10-25,issued,3450.5,3968.075,active,Net 45,"Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam."
+INV-9546,PAT-8601,APT-4089,2025-12-03,issued,774.97,891.2155,entered-in-error,Net 45,Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+INV-6912,PAT-5043,APT-6095,2025-08-29,draft,2097.67,2412.3205,inactive,Net 45,Nullam varius.
+INV-5633,PAT-7458,APT-1282,2024-10-05,issued,4366.81,5021.8315,active,Net 60,Nulla tellus.
+INV-1406,PAT-1325,APT-6534,2025-06-13,balanced,1246.53,1433.5095,entered-in-error,Net 45,Aliquam non mauris.
+INV-7802,PAT-8996,APT-6537,2025-08-17,issued,285.35,328.1525,active,Due on Receipt,Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.
+INV-3358,PAT-3121,APT-4508,2024-03-03,issued,1952.9,2245.835,on-hold,Net 15,Nunc rhoncus dui vel sem. Sed sagittis.
+INV-9468,PAT-5010,APT-4218,2025-09-28,issued,4605.47,5296.2905,inactive,Net 60,Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.
+INV-3959,PAT-7523,APT-2197,2024-11-28,balanced,1884.22,2166.853,on-hold,Net 45,Nunc purus.
+INV-7247,PAT-4881,APT-9638,2024-10-06,issued,491.72,565.478,inactive,Net 45,Cras pellentesque volutpat dui.
+INV-2611,PAT-1616,APT-8666,2025-04-04,balanced,443.98,510.577,on-hold,Net 15,Quisque porta volutpat erat.
+INV-5969,PAT-7820,APT-7433,2024-04-06,issued,118.16,135.884,on-hold,Due on Receipt,Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+INV-2797,PAT-7461,APT-1321,2025-05-12,issued,3561.48,4095.702,active,Net 30,Integer a nibh.
+INV-5196,PAT-5092,APT-1916,2024-04-05,issued,624.72,718.428,on-hold,Net 30,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue."
+INV-7614,PAT-9198,APT-9439,2025-12-13,issued,2020.42,2323.483,entered-in-error,Net 30,Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum.
+INV-4688,PAT-8630,APT-1443,2024-06-10,issued,3346.54,3848.521,entered-in-error,Net 60,Proin eu mi.
+INV-6369,PAT-4390,APT-9494,2024-11-19,draft,1223.22,1406.703,active,Net 15,Mauris ullamcorper purus sit amet nulla.
+INV-4881,PAT-2092,APT-1879,2025-03-08,issued,896.06,1030.469,inactive,Net 45,Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.
+INV-3464,PAT-7113,APT-9544,2025-09-19,issued,4186.45,4814.4175,on-hold,Net 15,Integer ac leo.
+INV-2423,PAT-5305,APT-9908,2024-08-14,issued,268.99,309.3385,entered-in-error,Net 60,Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.
+INV-3979,PAT-2015,APT-9694,2025-08-03,issued,4749.16,5461.534,entered-in-error,Net 30,"Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus."
+INV-5766,PAT-2738,APT-2988,2024-08-10,balanced,3309.71,3806.1665,inactive,Net 60,"Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci."
+INV-1776,PAT-7162,APT-1763,2024-01-11,issued,417.38,479.987,entered-in-error,Net 15,Donec quis orci eget orci vehicula condimentum.
+INV-6949,PAT-2858,APT-9700,2024-05-05,issued,1737.59,1998.2285,entered-in-error,Net 45,Ut tellus.
+INV-6578,PAT-3639,APT-5504,2024-02-23,draft,1579.45,1816.3675,on-hold,Net 30,Suspendisse potenti. In eleifend quam a odio.
+INV-4054,PAT-2356,APT-4342,2024-03-22,balanced,4123.73,4742.2895,entered-in-error,Net 30,Donec semper sapien a libero. Nam dui.
+INV-3068,PAT-5255,APT-7359,2025-02-28,cancelled,1118.3,1286.045,inactive,Due on Receipt,Sed vel enim sit amet nunc viverra dapibus.
+INV-2705,PAT-8019,APT-2453,2025-11-24,issued,1470.19,1690.7185,inactive,Net 45,Quisque porta volutpat erat.
+INV-3333,PAT-2769,APT-5333,2024-01-27,draft,2269.77,2610.2355,inactive,Due on Receipt,Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum.
+INV-7393,PAT-9889,APT-3083,2024-06-03,draft,4087.29,4700.3835,inactive,Due on Receipt,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero."
+INV-4416,PAT-5848,APT-3397,2024-04-23,issued,4419.01,5081.8615,inactive,Net 30,Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+INV-5233,PAT-5877,APT-7140,2025-03-24,issued,2133.62,2453.663,entered-in-error,Net 45,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim."
+INV-6961,PAT-7722,APT-4416,2024-03-13,balanced,91.69,105.4435,inactive,Net 15,Aenean sit amet justo. Morbi ut odio.
+INV-4156,PAT-4734,APT-4704,2025-06-13,issued,989.67,1138.1205,entered-in-error,Net 30,"Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue."
+INV-9006,PAT-3320,APT-7857,2025-05-09,balanced,367.56,422.694,inactive,Net 60,"Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat."
+INV-1820,PAT-1338,APT-7260,2025-03-18,issued,325.54,374.371,active,Net 15,Maecenas pulvinar lobortis est.
+INV-3662,PAT-8191,APT-6108,2024-08-06,draft,1289.37,1482.7755,inactive,Due on Receipt,Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.
+INV-9079,PAT-9064,APT-7741,2024-03-10,issued,1299.57,1494.5055,active,Net 45,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero."
+INV-1350,PAT-3521,APT-7130,2024-06-27,issued,2635.26,3030.549,inactive,Net 15,"Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo."
+INV-9693,PAT-9973,APT-7873,2025-09-25,issued,1272.19,1463.0185,on-hold,Net 45,Pellentesque ultrices mattis odio. Donec vitae nisi.
+INV-4041,PAT-7901,APT-1451,2025-01-23,issued,3616.06,4158.469,on-hold,Due on Receipt,Nam tristique tortor eu pede.
+INV-3450,PAT-3208,APT-6994,2024-04-24,balanced,2216.8,2549.32,inactive,Net 15,Aliquam non mauris.
+INV-3247,PAT-6215,APT-5619,2025-05-19,balanced,2618.17,3010.8955,inactive,Net 30,Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+INV-6466,PAT-8323,APT-8253,2024-09-30,issued,3760.33,4324.3795,entered-in-error,Due on Receipt,"Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl."
+INV-7285,PAT-6371,APT-9310,2024-04-20,issued,2814.0,3236.1,active,Due on Receipt,"Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem."
+INV-6933,PAT-8535,APT-5857,2024-10-01,issued,4890.31,5623.8565,entered-in-error,Net 15,"Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo."
+INV-3853,PAT-4046,APT-5697,2024-10-25,balanced,1041.2,1197.38,active,Due on Receipt,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo."
+INV-1316,PAT-1274,APT-5853,2025-02-02,issued,3895.79,4480.1585,entered-in-error,Net 15,Sed vel enim sit amet nunc viverra dapibus.
+INV-5902,PAT-1167,APT-9916,2024-12-24,issued,88.85,102.1775,inactive,Net 45,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus."
+INV-8628,PAT-7869,APT-8440,2025-01-22,issued,468.54,538.821,on-hold,Net 60,Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+INV-3045,PAT-6410,APT-4258,2024-06-27,cancelled,3123.49,3592.0135,active,Net 60,Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+INV-3952,PAT-2475,APT-8804,2025-05-31,issued,2696.51,3100.9865,entered-in-error,Net 30,Aliquam sit amet diam in magna bibendum imperdiet.
+INV-4173,PAT-1846,APT-7564,2025-01-30,issued,941.28,1082.472,entered-in-error,Due on Receipt,Maecenas tincidunt lacus at velit.
+INV-8230,PAT-5921,APT-1647,2024-04-16,draft,2329.04,2678.396,active,Net 45,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien."
+INV-6656,PAT-5523,APT-7309,2024-12-27,issued,4387.03,5045.0845,inactive,Net 45,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus."
+INV-1258,PAT-3534,APT-8447,2024-02-07,issued,1720.17,1978.1955,on-hold,Net 15,Maecenas rhoncus aliquam lacus.
+INV-2359,PAT-1505,APT-2781,2025-01-21,issued,1594.54,1833.721,entered-in-error,Net 45,Sed accumsan felis. Ut at dolor quis odio consequat varius.
+INV-1912,PAT-6577,APT-8871,2024-09-15,cancelled,3494.05,4018.1575,active,Net 15,Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+INV-1835,PAT-7407,APT-9752,2024-03-03,issued,3644.16,4190.784,active,Net 45,"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi."
+INV-3201,PAT-1903,APT-9959,2025-05-13,issued,1124.97,1293.7155,entered-in-error,Net 15,Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+INV-7727,PAT-7655,APT-5125,2024-11-08,issued,1757.75,2021.4125,entered-in-error,Due on Receipt,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio."
+INV-3217,PAT-3250,APT-8856,2025-12-26,issued,3785.04,4352.796,entered-in-error,Net 45,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem."
+INV-5295,PAT-7495,APT-6659,2024-06-08,issued,4580.52,5267.598,entered-in-error,Due on Receipt,Integer ac neque.
+INV-4821,PAT-7526,APT-8925,2024-08-04,issued,2085.83,2398.7045,inactive,Net 45,"Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus."
+INV-3546,PAT-4623,APT-8341,2024-03-25,issued,4997.94,5747.631,entered-in-error,Net 30,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui."
+INV-6976,PAT-8000,APT-7736,2025-04-06,issued,2143.78,2465.347,inactive,Due on Receipt,"Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue."
+INV-3784,PAT-5666,APT-4616,2024-10-07,issued,2055.68,2364.032,inactive,Net 30,Nunc purus. Phasellus in felis.
+INV-8370,PAT-7853,APT-1754,2024-04-05,issued,1701.27,1956.4605,entered-in-error,Due on Receipt,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue."
+INV-6099,PAT-8526,APT-6811,2024-06-27,issued,1477.35,1698.9525,active,Net 15,Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+INV-2711,PAT-2988,APT-7173,2024-07-27,issued,861.75,991.0125,inactive,Net 45,"Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc."
+INV-3626,PAT-5505,APT-9885,2025-12-20,draft,1796.17,2065.5955,on-hold,Net 60,Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+INV-2534,PAT-4985,APT-4673,2025-11-18,issued,1117.79,1285.4585,inactive,Due on Receipt,"Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh."
+INV-1860,PAT-4786,APT-9627,2025-01-27,draft,4083.44,4695.956,inactive,Net 30,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."
+INV-1327,PAT-5672,APT-9023,2024-05-07,issued,3574.82,4111.043,entered-in-error,Net 30,"Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci."
+INV-7150,PAT-6904,APT-3725,2025-03-04,issued,4500.26,5175.299,inactive,Due on Receipt,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum."
+INV-8170,PAT-6648,APT-7733,2025-01-22,issued,1891.1,2174.765,entered-in-error,Net 45,Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.
+INV-9878,PAT-8777,APT-7930,2024-04-27,issued,967.91,1113.0965,entered-in-error,Due on Receipt,Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.
+INV-8256,PAT-3403,APT-4526,2025-12-01,issued,1488.92,1712.258,inactive,Net 60,Maecenas pulvinar lobortis est.
+INV-4677,PAT-3370,APT-8020,2024-03-08,draft,2354.8,2708.02,entered-in-error,Net 30,"Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique."
+INV-1737,PAT-7420,APT-1681,2024-02-05,balanced,3408.82,3920.143,inactive,Due on Receipt,"Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque."
+INV-6700,PAT-3697,APT-5206,2025-11-03,draft,2143.71,2465.2665,on-hold,Net 30,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis."
+INV-9459,PAT-2143,APT-9151,2025-04-03,draft,855.96,984.354,entered-in-error,Net 45,Fusce posuere felis sed lacus.
+INV-9431,PAT-3945,APT-7583,2024-06-10,issued,1662.54,1911.921,entered-in-error,Net 45,Praesent blandit.
+INV-8725,PAT-1157,APT-9435,2024-09-12,issued,4465.54,5135.371,entered-in-error,Net 30,"Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis."
+INV-1573,PAT-6815,APT-5252,2025-06-24,issued,3970.21,4565.7415,inactive,Due on Receipt,Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.
+INV-3953,PAT-2861,APT-6594,2025-10-11,draft,4502.64,5178.036,entered-in-error,Net 45,Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+INV-9927,PAT-1610,APT-7429,2025-10-17,draft,2160.17,2484.1955,active,Net 30,Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+INV-5613,PAT-4593,APT-3266,2025-11-17,draft,3831.08,4405.742,inactive,Net 30,Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+INV-9858,PAT-2024,APT-8338,2025-10-10,issued,2172.18,2498.007,entered-in-error,Net 60,"Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante."
+INV-2804,PAT-5212,APT-9971,2024-08-09,issued,4777.27,5493.8605,active,Net 45,Vivamus in felis eu sapien cursus vestibulum.
+INV-1324,PAT-6389,APT-8841,2025-12-18,issued,1852.54,2130.421,on-hold,Net 30,Aenean fermentum. Donec ut mauris eget massa tempor convallis.
+INV-2214,PAT-3611,APT-8526,2025-10-16,issued,4320.38,4968.437,entered-in-error,Net 15,"Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo."
+INV-1435,PAT-2004,APT-7674,2024-03-05,balanced,3669.55,4219.9825,active,Net 30,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante."
+INV-2441,PAT-1992,APT-5717,2025-10-06,issued,160.76,184.874,active,Net 45,Mauris lacinia sapien quis libero.
+INV-8674,PAT-4856,APT-3843,2025-09-22,issued,2910.89,3347.5235,active,Net 60,Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+INV-3878,PAT-7220,APT-1465,2024-07-06,issued,346.81,398.8315,inactive,Net 60,In eleifend quam a odio.
+INV-5657,PAT-8104,APT-3349,2024-06-09,issued,4883.52,5616.048,on-hold,Net 15,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui."
+INV-7983,PAT-8237,APT-5086,2024-07-29,issued,345.44,397.256,inactive,Net 15,"In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+INV-5941,PAT-2976,APT-2449,2025-09-28,balanced,708.83,815.1545,on-hold,Net 15,Mauris sit amet eros.
+INV-9237,PAT-3922,APT-8827,2024-04-27,issued,3183.56,3661.094,inactive,Net 60,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus."
+INV-8279,PAT-5192,APT-8861,2024-10-11,balanced,4883.51,5616.0365,entered-in-error,Net 15,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque."
+INV-3723,PAT-8221,APT-3141,2024-09-12,issued,290.0,333.5,entered-in-error,Due on Receipt,"Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante."
+INV-5469,PAT-1426,APT-3312,2024-11-27,issued,1533.19,1763.1685,on-hold,Net 30,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl."
+INV-4709,PAT-1763,APT-6602,2025-10-31,issued,3702.1,4257.415,on-hold,Net 60,"Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc."
+INV-7709,PAT-8735,APT-6704,2024-08-22,issued,3780.1,4347.115,entered-in-error,Due on Receipt,Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.
+INV-8397,PAT-5283,APT-3109,2025-01-12,issued,3420.07,3933.0805,inactive,Net 30,Nam tristique tortor eu pede.
+INV-2653,PAT-9962,APT-2929,2025-06-24,issued,65.07,74.8305,inactive,Net 45,In eleifend quam a odio. In hac habitasse platea dictumst.
+INV-2537,PAT-2753,APT-8148,2025-01-18,balanced,4178.65,4805.4475,on-hold,Due on Receipt,Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.
+INV-1127,PAT-9383,APT-8260,2025-05-12,issued,2181.46,2508.679,active,Net 45,Donec ut dolor.
+INV-1856,PAT-9802,APT-1490,2025-01-04,issued,1452.85,1670.7775,entered-in-error,Net 60,Ut tellus.
+INV-9785,PAT-4740,APT-3555,2024-04-13,issued,3751.43,4314.1445,inactive,Net 15,In quis justo. Maecenas rhoncus aliquam lacus.
+INV-9947,PAT-1450,APT-8005,2024-12-06,issued,699.29,804.1835,entered-in-error,Net 30,Nullam porttitor lacus at turpis.
+INV-6093,PAT-5707,APT-7396,2024-02-06,issued,3116.67,3584.1705,entered-in-error,Due on Receipt,Aenean lectus. Pellentesque eget nunc.
+INV-5476,PAT-8418,APT-6888,2025-08-29,balanced,1678.68,1930.482,entered-in-error,Net 15,"In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat."
+INV-3517,PAT-9413,APT-7478,2025-01-20,issued,2434.24,2799.376,on-hold,Net 15,Morbi ut odio.
+INV-5477,PAT-9605,APT-8985,2024-05-05,draft,1735.9,1996.285,entered-in-error,Net 45,"Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
+INV-1213,PAT-3115,APT-9914,2024-05-04,issued,4496.34,5170.791,inactive,Net 45,Nam tristique tortor eu pede.
+INV-6142,PAT-6808,APT-8515,2025-09-17,balanced,2563.44,2947.956,inactive,Net 45,Vivamus tortor.
+INV-7211,PAT-4380,APT-4104,2024-07-16,balanced,4933.19,5673.1685,on-hold,Net 45,Nullam porttitor lacus at turpis.
+INV-4905,PAT-9082,APT-8164,2024-01-12,issued,307.45,353.5675,inactive,Net 15,"In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum."
+INV-8234,PAT-5625,APT-1175,2024-09-18,issued,2210.27,2541.8105,entered-in-error,Net 60,Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.
+INV-9044,PAT-8211,APT-3987,2025-07-16,issued,1875.49,2156.8135,entered-in-error,Due on Receipt,In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.
+INV-1794,PAT-7475,APT-9867,2024-05-08,issued,2360.88,2715.012,active,Net 45,In hac habitasse platea dictumst.
+INV-3967,PAT-5727,APT-9850,2024-06-17,balanced,742.0,853.3,on-hold,Net 45,"Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat."
+INV-2774,PAT-6119,APT-9264,2024-08-29,issued,3650.97,4198.6155,entered-in-error,Net 60,Nulla ut erat id mauris vulputate elementum. Nullam varius.
+INV-9394,PAT-2744,APT-8791,2024-10-23,issued,3675.84,4227.216,inactive,Net 15,"Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."
+INV-8264,PAT-7064,APT-1736,2024-04-25,issued,4588.57,5276.8555,active,Net 60,Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+INV-2468,PAT-2486,APT-4789,2024-01-25,issued,1027.06,1181.119,inactive,Net 45,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."
+INV-5900,PAT-6708,APT-1298,2024-02-26,issued,3106.26,3572.199,inactive,Net 30,Suspendisse potenti.
+INV-2992,PAT-2655,APT-8027,2025-08-10,balanced,4294.3,4938.445,active,Net 15,"Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo."
+INV-3856,PAT-5788,APT-2074,2024-10-01,balanced,4443.41,5109.9215,active,Net 30,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa."
+INV-2027,PAT-1415,APT-9268,2024-06-21,balanced,4250.22,4887.753,entered-in-error,Net 60,Integer a nibh. In quis justo.
+INV-8083,PAT-8680,APT-3703,2025-02-27,issued,2293.94,2638.031,inactive,Net 60,Duis bibendum.
+INV-2123,PAT-6568,APT-9588,2025-12-28,balanced,4501.05,5176.2075,entered-in-error,Net 45,Phasellus sit amet erat. Nulla tempus.
+INV-6460,PAT-3562,APT-8800,2024-07-07,issued,3875.38,4456.687,on-hold,Net 60,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.
+INV-1945,PAT-6609,APT-5810,2025-09-21,issued,1892.23,2176.0645,active,Net 15,Sed ante. Vivamus tortor. Duis mattis egestas metus.
+INV-6549,PAT-3053,APT-4209,2024-09-05,issued,4967.01,5712.0615,entered-in-error,Net 45,Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.
+INV-2078,PAT-2632,APT-7834,2025-06-22,cancelled,1172.06,1347.869,on-hold,Net 60,"Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
+INV-1435,PAT-8050,APT-5944,2025-03-25,issued,3317.45,3815.0675,on-hold,Net 30,"Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc."
+INV-6643,PAT-2988,APT-3058,2024-05-19,balanced,3336.29,3836.7335,entered-in-error,Net 45,Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.
+INV-2563,PAT-4948,APT-9224,2025-06-15,balanced,1497.36,1721.964,entered-in-error,Net 15,Quisque ut erat.
+INV-9766,PAT-6528,APT-2402,2025-11-18,issued,2353.76,2706.824,entered-in-error,Net 60,Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+INV-9964,PAT-1519,APT-1837,2024-10-17,draft,4393.56,5052.594,entered-in-error,Due on Receipt,Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.
+INV-6476,PAT-2568,APT-1255,2025-04-04,issued,2386.23,2744.1645,inactive,Net 15,Nullam porttitor lacus at turpis.
+INV-9032,PAT-4701,APT-1481,2025-05-20,balanced,1008.91,1160.2465,inactive,Net 45,"Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede."
+INV-6246,PAT-5439,APT-9058,2025-03-13,draft,2662.49,3061.8635,inactive,Due on Receipt,Nulla ut erat id mauris vulputate elementum. Nullam varius.
+INV-7653,PAT-5328,APT-4869,2024-12-27,issued,3125.85,3594.7275,inactive,Net 15,"Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci."
+INV-5785,PAT-5072,APT-5222,2025-10-19,issued,4576.95,5263.4925,inactive,Net 45,In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+INV-3533,PAT-8905,APT-9487,2024-10-06,balanced,1515.76,1743.124,inactive,Net 60,Donec dapibus.
+INV-3583,PAT-5765,APT-9936,2025-03-20,balanced,2254.06,2592.169,inactive,Net 45,Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.
+INV-1281,PAT-7589,APT-7072,2024-11-03,issued,2584.56,2972.244,inactive,Net 45,Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.
+INV-6893,PAT-5457,APT-9225,2024-01-02,issued,2727.88,3137.062,active,Net 30,"Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem."
+INV-3808,PAT-2202,APT-5339,2024-03-05,issued,809.28,930.672,inactive,Net 15,Pellentesque ultrices mattis odio. Donec vitae nisi.
+INV-7395,PAT-5022,APT-1723,2024-02-24,issued,3311.95,3808.7425,on-hold,Net 45,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus."
+INV-7602,PAT-4030,APT-2538,2025-09-09,balanced,4163.08,4787.542,entered-in-error,Net 15,Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.
+INV-5602,PAT-3586,APT-4640,2025-02-26,balanced,4597.51,5287.1365,inactive,Net 30,Etiam pretium iaculis justo. In hac habitasse platea dictumst.
+INV-3530,PAT-3624,APT-5660,2025-11-24,cancelled,4076.16,4687.584,entered-in-error,Due on Receipt,"Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo."
+INV-2329,PAT-1768,APT-2444,2024-01-09,draft,3976.75,4573.2625,active,Net 15,Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+INV-9666,PAT-4078,APT-2414,2024-09-26,issued,1846.43,2123.3945,on-hold,Net 15,"Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla."
+INV-4091,PAT-7417,APT-5589,2024-10-25,issued,2660.13,3059.1495,on-hold,Net 45,"Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
+INV-4038,PAT-2211,APT-6868,2024-05-16,balanced,1780.97,2048.1155,inactive,Net 45,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem."
+INV-3956,PAT-2106,APT-9373,2024-11-06,issued,1993.97,2293.0655,active,Net 45,Duis bibendum.
+INV-6818,PAT-5924,APT-6843,2024-09-19,issued,2709.24,3115.626,on-hold,Net 30,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis."
+INV-7111,PAT-2049,APT-7446,2025-03-15,balanced,1008.39,1159.6485,active,Net 15,Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+INV-2626,PAT-6384,APT-5212,2025-03-08,balanced,1692.21,1946.0415,entered-in-error,Net 60,Suspendisse accumsan tortor quis turpis.
+INV-6656,PAT-8608,APT-1544,2025-09-30,issued,2726.24,3135.176,inactive,Net 60,Fusce consequat. Nulla nisl. Nunc nisl.
+INV-2571,PAT-8873,APT-8716,2025-07-01,issued,1099.12,1263.988,inactive,Net 15,"Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat."
+INV-2251,PAT-3784,APT-4100,2025-01-06,issued,3420.85,3933.9775,active,Due on Receipt,Curabitur convallis.
+INV-7382,PAT-3496,APT-5554,2024-05-01,issued,1524.71,1753.4165,entered-in-error,Due on Receipt,Sed sagittis.
+INV-4778,PAT-3381,APT-8698,2025-03-04,issued,3404.16,3914.784,active,Net 45,"Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula."
+INV-2604,PAT-6092,APT-3174,2024-07-06,issued,1746.32,2008.268,active,Net 30,Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.
+INV-1815,PAT-4361,APT-4765,2024-06-18,issued,504.25,579.8875,inactive,Net 60,In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.
+INV-8313,PAT-8008,APT-6859,2025-05-10,balanced,3411.37,3923.0755,inactive,Net 30,Nulla nisl.
+INV-2943,PAT-9124,APT-6611,2025-08-06,issued,2870.4,3300.96,on-hold,Net 45,Pellentesque ultrices mattis odio.
+INV-7602,PAT-7381,APT-9396,2024-02-11,balanced,1358.49,1562.2635,inactive,Net 45,"Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis."
+INV-2334,PAT-4462,APT-2946,2025-04-18,issued,3267.3,3757.395,inactive,Due on Receipt,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo."
+INV-5101,PAT-1951,APT-3278,2024-02-28,balanced,2432.46,2797.329,active,Net 15,"Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti."
+INV-8542,PAT-4941,APT-9176,2024-12-18,balanced,485.72,558.578,inactive,Net 60,"Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue."
+INV-7613,PAT-2900,APT-8586,2025-06-11,issued,452.64,520.536,entered-in-error,Due on Receipt,Morbi a ipsum. Integer a nibh.
+INV-7781,PAT-9179,APT-2949,2025-07-28,balanced,4217.2,4849.78,inactive,Net 45,"Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo."
+INV-7878,PAT-8766,APT-8348,2025-08-15,issued,1375.01,1581.2615,on-hold,Net 60,Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.
+INV-3931,PAT-5834,APT-5138,2024-03-11,draft,3700.27,4255.3105,inactive,Net 30,Praesent id massa id nisl venenatis lacinia.
+INV-9443,PAT-2699,APT-1993,2025-01-08,cancelled,4522.7,5201.105,entered-in-error,Net 45,Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+INV-8102,PAT-1277,APT-5384,2024-03-30,issued,763.15,877.6225,entered-in-error,Net 45,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+INV-5481,PAT-8785,APT-1955,2024-10-08,draft,2153.21,2476.1915,inactive,Net 30,Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.
+INV-3916,PAT-6520,APT-5372,2025-06-04,issued,4375.34,5031.641,on-hold,Net 15,"Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante."
+INV-7133,PAT-7940,APT-8106,2025-11-02,balanced,857.37,985.9755,active,Net 30,Morbi a ipsum. Integer a nibh. In quis justo.
+INV-1759,PAT-8864,APT-9831,2024-05-16,issued,91.82,105.593,inactive,Net 15,"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi."
+INV-7875,PAT-8330,APT-8437,2025-01-22,issued,303.78,349.347,active,Net 60,Ut tellus. Nulla ut erat id mauris vulputate elementum.
+INV-6325,PAT-7778,APT-7551,2025-12-06,issued,2730.17,3139.6955,entered-in-error,Net 45,Pellentesque at nulla.
+INV-3447,PAT-9773,APT-2365,2024-02-20,issued,1366.41,1571.3715,inactive,Net 45,Maecenas tincidunt lacus at velit.
+INV-5992,PAT-8404,APT-4126,2024-03-26,issued,4605.09,5295.8535,entered-in-error,Net 45,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+INV-8036,PAT-3021,APT-8532,2024-09-12,issued,2068.9,2379.235,entered-in-error,Due on Receipt,Nulla tempus.
+INV-7753,PAT-4323,APT-4539,2024-03-28,issued,3588.02,4126.223,active,Net 30,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus."
+INV-1802,PAT-5720,APT-9456,2024-09-07,issued,1132.58,1302.467,active,Due on Receipt,"Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis."
+INV-2825,PAT-4509,APT-5941,2025-07-09,issued,2977.77,3424.4355,on-hold,Due on Receipt,"Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus."
+INV-7018,PAT-3925,APT-7258,2025-10-09,issued,302.52,347.898,on-hold,Due on Receipt,Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.
+INV-9337,PAT-5137,APT-2833,2024-01-20,issued,3419.79,3932.7585,on-hold,Due on Receipt,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci."
+INV-2778,PAT-6474,APT-3855,2024-02-02,issued,946.22,1088.153,active,Net 45,In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+INV-5541,PAT-7148,APT-5587,2024-10-20,balanced,922.96,1061.404,inactive,Net 15,Nulla ac enim.
+INV-2940,PAT-8051,APT-9421,2025-03-09,issued,1889.9,2173.385,on-hold,Net 60,Integer tincidunt ante vel ipsum.
+INV-6820,PAT-5235,APT-4014,2024-03-03,cancelled,1803.06,2073.519,active,Net 45,Nulla ut erat id mauris vulputate elementum.
+INV-6877,PAT-2303,APT-2193,2025-06-14,balanced,80.06,92.069,inactive,Net 30,"Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum."
+INV-5665,PAT-5788,APT-5498,2025-07-07,issued,1242.07,1428.3805,inactive,Net 45,Morbi a ipsum. Integer a nibh. In quis justo.
+INV-3115,PAT-1425,APT-6835,2024-07-08,issued,4348.99,5001.3385,active,Net 45,Nulla nisl. Nunc nisl.
+INV-9939,PAT-1985,APT-6175,2024-09-15,issued,4018.27,4621.0105,active,Net 60,Suspendisse accumsan tortor quis turpis. Sed ante.
+INV-5509,PAT-6075,APT-9974,2025-06-09,draft,394.9,454.135,entered-in-error,Net 45,"Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem."
+INV-7572,PAT-1236,APT-2553,2025-01-10,issued,2307.78,2653.947,active,Net 60,Pellentesque at nulla. Suspendisse potenti.
+INV-8296,PAT-6225,APT-4358,2025-12-04,issued,1825.52,2099.348,inactive,Net 45,Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.
+INV-8712,PAT-8429,APT-7809,2025-02-19,balanced,2070.35,2380.9025,active,Net 45,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui."
+INV-7458,PAT-1213,APT-9852,2025-08-10,balanced,3656.68,4205.182,on-hold,Net 60,Curabitur convallis.
+INV-7993,PAT-1977,APT-7773,2024-11-24,balanced,4667.81,5367.9815,entered-in-error,Net 60,Nulla ut erat id mauris vulputate elementum. Nullam varius.
+INV-8688,PAT-6543,APT-8866,2024-06-21,balanced,4367.33,5022.4295,on-hold,Due on Receipt,Mauris ullamcorper purus sit amet nulla.
+INV-4349,PAT-5626,APT-3771,2025-06-16,issued,3993.99,4593.0885,inactive,Net 15,"Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque."
+INV-2924,PAT-6278,APT-1249,2024-06-26,issued,4159.21,4783.0915,inactive,Net 30,Nunc nisl.
+INV-7005,PAT-8774,APT-4305,2024-02-26,issued,712.32,819.168,entered-in-error,Net 15,Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.
+INV-6090,PAT-8197,APT-6142,2025-07-04,balanced,1142.93,1314.3695,inactive,Net 15,Morbi a ipsum.
+INV-3867,PAT-1799,APT-3640,2025-08-05,draft,4856.44,5584.906,inactive,Net 60,Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis.
+INV-7026,PAT-2640,APT-7274,2024-07-31,issued,3237.49,3723.1135,on-hold,Net 15,"Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
+INV-1996,PAT-9564,APT-4040,2025-04-06,issued,2229.09,2563.4535,inactive,Net 15,Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+INV-1544,PAT-6449,APT-9817,2025-09-21,issued,4101.31,4716.5065,active,Net 30,"Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque."
+INV-2418,PAT-7877,APT-7863,2024-01-23,draft,231.93,266.7195,active,Net 60,"In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum."
+INV-2835,PAT-2272,APT-5098,2025-03-07,balanced,2068.28,2378.522,active,Net 30,"Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo."
+INV-1125,PAT-4910,APT-8500,2024-12-26,balanced,3498.85,4023.6775,active,Due on Receipt,Aenean sit amet justo. Morbi ut odio.
+INV-5040,PAT-9139,APT-2909,2025-10-21,draft,3362.3,3866.645,entered-in-error,Net 30,"In est risus, auctor sed, tristique in, tempus sit amet, sem."
+INV-4288,PAT-3014,APT-7116,2025-07-31,issued,3970.98,4566.627,inactive,Net 15,Donec posuere metus vitae ipsum. Aliquam non mauris.
+INV-8172,PAT-3987,APT-7710,2025-05-21,draft,4973.9,5719.985,active,Net 15,Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.
+INV-6051,PAT-1185,APT-6683,2025-05-23,issued,1959.75,2253.7125,active,Net 15,Duis bibendum. Morbi non quam nec dui luctus rutrum.
+INV-4022,PAT-5834,APT-2608,2025-04-13,issued,2366.9,2721.935,entered-in-error,Net 60,Integer ac neque. Duis bibendum.
+INV-2247,PAT-9589,APT-7719,2025-09-16,balanced,994.62,1143.813,entered-in-error,Net 15,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue."
+INV-5571,PAT-4772,APT-2415,2024-07-05,issued,4791.17,5509.8455,on-hold,Net 15,Nullam sit amet turpis elementum ligula vehicula consequat.
+INV-8958,PAT-3816,APT-2454,2024-04-29,issued,3977.25,4573.8375,on-hold,Net 60,Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+INV-7142,PAT-7461,APT-4187,2025-01-01,balanced,1135.57,1305.9055,inactive,Net 15,Donec posuere metus vitae ipsum. Aliquam non mauris.
+INV-9534,PAT-4832,APT-7727,2024-03-23,issued,2624.56,3018.244,inactive,Net 15,"Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis."
+INV-2608,PAT-3878,APT-6260,2024-09-16,draft,3704.16,4259.784,entered-in-error,Due on Receipt,"Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat."
+INV-6793,PAT-5949,APT-1599,2025-07-14,issued,968.07,1113.2805,entered-in-error,Due on Receipt,Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.
+INV-6681,PAT-8365,APT-5902,2025-02-05,balanced,4853.1,5581.065,entered-in-error,Net 15,"Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa."
+INV-6131,PAT-8381,APT-9256,2024-01-17,issued,815.09,937.3535,inactive,Net 30,"Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
+INV-3488,PAT-7061,APT-6439,2024-08-05,cancelled,873.13,1004.0995,inactive,Net 60,In congue.
+INV-5867,PAT-8059,APT-3014,2025-09-30,issued,2166.73,2491.7395,entered-in-error,Net 30,Praesent id massa id nisl venenatis lacinia.
+INV-7940,PAT-5343,APT-9416,2025-08-19,issued,1226.57,1410.5555,on-hold,Net 30,Vivamus vel nulla eget eros elementum pellentesque.
+INV-7117,PAT-1590,APT-8335,2024-02-28,balanced,3841.09,4417.2535,active,Net 60,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue."
+INV-6880,PAT-3443,APT-5183,2024-07-01,issued,3113.49,3580.5135,active,Net 30,Fusce consequat. Nulla nisl.
+INV-6131,PAT-5050,APT-4444,2024-06-05,issued,4769.58,5485.017,inactive,Net 60,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum."
+INV-6531,PAT-9593,APT-6745,2025-05-17,balanced,4603.59,5294.1285,inactive,Net 30,Pellentesque at nulla. Suspendisse potenti.
+INV-9843,PAT-4130,APT-6174,2024-11-06,issued,532.34,612.191,entered-in-error,Net 30,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+INV-7586,PAT-3194,APT-6290,2024-07-19,issued,4811.39,5533.0985,active,Net 60,Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+INV-9347,PAT-5764,APT-7131,2024-04-22,issued,2187.4,2515.51,on-hold,Net 30,Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.
+INV-5893,PAT-1806,APT-3476,2025-09-27,issued,4886.27,5619.2105,active,Net 30,In sagittis dui vel nisl. Duis ac nibh.
+INV-3707,PAT-9345,APT-1571,2024-02-28,issued,2872.3,3303.145,inactive,Net 60,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat."
+INV-8269,PAT-8818,APT-4924,2025-03-14,cancelled,4614.37,5306.5255,entered-in-error,Net 45,In hac habitasse platea dictumst.
+INV-2129,PAT-8020,APT-5638,2024-12-10,issued,3900.96,4486.104,active,Net 15,Duis consequat dui nec nisi volutpat eleifend.
+INV-2259,PAT-9087,APT-5457,2025-07-17,issued,2081.76,2394.024,entered-in-error,Net 30,Etiam justo.
+INV-4370,PAT-6971,APT-6482,2024-05-20,issued,4087.57,4700.7055,on-hold,Net 60,"Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante."
+INV-9787,PAT-4365,APT-6650,2024-04-28,issued,1453.18,1671.157,inactive,Net 60,"Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis."
+INV-5601,PAT-1387,APT-8965,2025-02-24,draft,284.55,327.2325,on-hold,Net 45,Donec ut dolor.
+INV-9176,PAT-1553,APT-4873,2025-10-15,balanced,435.28,500.572,on-hold,Net 45,Vestibulum sed magna at nunc commodo placerat. Praesent blandit.
+INV-7032,PAT-1729,APT-3890,2024-05-20,issued,2621.4,3014.61,on-hold,Net 45,Morbi a ipsum. Integer a nibh. In quis justo.
+INV-2471,PAT-1225,APT-6000,2024-03-23,issued,142.89,164.3235,entered-in-error,Net 60,Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.
+INV-5793,PAT-6232,APT-6171,2025-02-16,balanced,1211.22,1392.903,inactive,Net 30,"Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus."
+INV-2578,PAT-8001,APT-4057,2024-03-10,balanced,3553.84,4086.916,active,Net 30,Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim.
+INV-8729,PAT-7300,APT-5378,2025-04-06,issued,2373.98,2730.077,active,Net 15,Pellentesque ultrices mattis odio.
+INV-7471,PAT-1627,APT-8060,2024-06-21,issued,1024.07,1177.6805,on-hold,Net 45,Nullam varius.
+INV-3930,PAT-5911,APT-2195,2025-03-28,issued,2894.46,3328.629,inactive,Net 15,Nulla ut erat id mauris vulputate elementum. Nullam varius.
+INV-3603,PAT-3499,APT-1421,2024-06-26,issued,3531.83,4061.6045,entered-in-error,Net 30,"In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices."
+INV-2667,PAT-2802,APT-1240,2025-02-11,issued,2485.93,2858.8195,inactive,Net 45,Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.
+INV-5483,PAT-4580,APT-6192,2025-06-21,issued,3925.94,4514.831,on-hold,Net 60,Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.
+INV-2523,PAT-3766,APT-7035,2025-07-13,issued,4285.65,4928.4975,on-hold,Net 15,Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+INV-2074,PAT-1615,APT-2911,2025-05-20,issued,4594.0,5283.1,inactive,Due on Receipt,"Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat."
+INV-1585,PAT-8443,APT-1974,2024-08-13,draft,1732.72,1992.628,on-hold,Net 60,Duis at velit eu est congue elementum.
+INV-3178,PAT-1135,APT-3329,2024-02-08,draft,4149.67,4772.1205,entered-in-error,Net 30,Cras non velit nec nisi vulputate nonummy.
+INV-5834,PAT-2243,APT-6495,2024-06-16,balanced,1134.5,1304.675,on-hold,Net 60,Sed ante.
+INV-8132,PAT-1402,APT-4950,2025-04-06,draft,1197.24,1376.826,active,Net 60,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl."
+INV-6578,PAT-3766,APT-1255,2025-05-17,issued,1626.27,1870.2105,inactive,Net 30,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti."
+INV-3215,PAT-4281,APT-9838,2025-11-04,issued,576.06,662.469,inactive,Net 30,Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+INV-6078,PAT-9496,APT-4169,2024-06-26,issued,3198.19,3677.9185,active,Due on Receipt,Duis consequat dui nec nisi volutpat eleifend.
+INV-9644,PAT-2422,APT-8365,2024-08-05,issued,2447.7,2814.855,inactive,Net 45,Nunc rhoncus dui vel sem. Sed sagittis.
+INV-2672,PAT-9758,APT-7721,2024-03-15,issued,1962.97,2257.4155,entered-in-error,Net 15,Integer a nibh. In quis justo.
+INV-7431,PAT-4854,APT-7815,2024-07-18,issued,1706.52,1962.498,active,Net 60,Sed accumsan felis.
+INV-2294,PAT-4620,APT-5758,2025-02-15,issued,2988.43,3436.6945,active,Due on Receipt,Praesent lectus.
+INV-3095,PAT-7141,APT-3030,2025-03-24,draft,188.58,216.867,on-hold,Net 60,"Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
+INV-5561,PAT-7984,APT-8793,2025-06-13,issued,1824.97,2098.7155,entered-in-error,Net 30,"Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum."
+INV-7990,PAT-8133,APT-8987,2024-10-10,issued,1929.76,2219.224,inactive,Due on Receipt,Donec semper sapien a libero. Nam dui.
+INV-5687,PAT-4966,APT-2978,2025-11-18,balanced,2294.18,2638.307,on-hold,Net 60,"Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue."
+INV-4298,PAT-6194,APT-1645,2025-07-07,balanced,3859.46,4438.379,entered-in-error,Net 60,Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.
+INV-9263,PAT-8121,APT-7760,2024-04-30,draft,3005.86,3456.739,on-hold,Due on Receipt,Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+INV-5328,PAT-4264,APT-3534,2025-05-17,issued,4147.49,4769.6135,active,Net 15,"In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem."
+INV-8475,PAT-1369,APT-9817,2024-02-22,balanced,2435.3,2800.595,entered-in-error,Net 60,Etiam justo. Etiam pretium iaculis justo.
+INV-8347,PAT-4837,APT-3395,2025-08-21,issued,3456.17,3974.5955,entered-in-error,Net 30,"Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus."
+INV-5050,PAT-1393,APT-3269,2024-11-02,issued,2315.41,2662.7215,inactive,Due on Receipt,Curabitur convallis.
+INV-6097,PAT-2817,APT-4907,2025-11-07,issued,4691.51,5395.2365,on-hold,Net 30,Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+INV-3804,PAT-8780,APT-9755,2024-12-08,cancelled,1921.67,2209.9205,on-hold,Due on Receipt,Vestibulum sed magna at nunc commodo placerat. Praesent blandit.
+INV-3024,PAT-9627,APT-4105,2024-02-03,issued,1828.68,2102.982,active,Due on Receipt,Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.
+INV-1414,PAT-9684,APT-5257,2025-06-02,issued,1192.91,1371.8465,entered-in-error,Net 45,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue."
+INV-1201,PAT-7450,APT-8295,2024-12-31,balanced,3284.62,3777.313,on-hold,Net 60,Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.
+INV-4804,PAT-3685,APT-9032,2024-10-07,issued,4434.77,5099.9855,inactive,Net 30,"Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo."
+INV-6791,PAT-7877,APT-2012,2025-07-14,balanced,3882.12,4464.438,on-hold,Net 45,Morbi quis tortor id nulla ultrices aliquet.
+INV-3032,PAT-9721,APT-1964,2025-03-11,issued,230.69,265.2935,on-hold,Net 15,"In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc."
+INV-5807,PAT-6301,APT-9751,2025-10-18,issued,3736.56,4297.044,on-hold,Net 45,Morbi non quam nec dui luctus rutrum. Nulla tellus.
+INV-1170,PAT-2888,APT-5741,2025-09-15,cancelled,3581.04,4118.196,inactive,Net 60,In blandit ultrices enim.
+INV-7731,PAT-7630,APT-9759,2024-01-21,issued,1532.45,1762.3175,on-hold,Net 45,In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.
+INV-7554,PAT-3674,APT-3099,2025-08-19,cancelled,1848.54,2125.821,active,Net 15,Nulla tellus.
+INV-2119,PAT-4803,APT-3233,2025-09-09,issued,2424.77,2788.4855,on-hold,Net 45,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.

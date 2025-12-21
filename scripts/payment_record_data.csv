@@ -1,0 +1,251 @@
+payment_id,invoice_id,amount,payment_method,payment_date,status,transaction_id,notes
+PAY-2262,INV-2802,8210.54,insurance,2024-08-04,completed,TXN-15669987,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem."
+PAY-3691,INV-8849,3479.19,credit_card,2024-10-06,completed,TXN-41136124,Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.
+PAY-3531,INV-1245,3070.16,credit_card,2024-02-08,completed,TXN-86656983,"Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue."
+PAY-8076,INV-8032,9476.29,debit_card,2024-11-11,completed,TXN-39262276,Duis aliquam convallis nunc.
+PAY-6605,INV-2937,5786.38,credit_card,2024-06-02,completed,TXN-64679392,"Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa."
+PAY-3434,INV-6850,5654.68,credit_card,2024-07-19,completed,TXN-53625191,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus."
+PAY-6142,INV-9273,9585.16,credit_card,2024-01-26,completed,TXN-99513142,Praesent blandit.
+PAY-4463,INV-7040,6562.44,credit_card,2024-12-20,completed,TXN-17880922,"In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum."
+PAY-9095,INV-9965,5580.2,insurance,2024-06-21,completed,TXN-81637894,Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.
+PAY-9869,INV-3658,5917.9,credit_card,2024-04-04,completed,TXN-25348574,"Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue."
+PAY-2379,INV-9454,4503.94,credit_card,2024-06-26,completed,TXN-12608149,Donec semper sapien a libero.
+PAY-3177,INV-8502,9707.53,debit_card,2024-11-03,completed,TXN-46844026,Donec dapibus.
+PAY-4534,INV-7982,6626.95,debit_card,2024-04-10,completed,TXN-87022670,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla."
+PAY-8767,INV-9339,7690.38,debit_card,2024-02-05,completed,TXN-52281422,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem."
+PAY-7615,INV-8620,5232.3,credit_card,2024-07-22,completed,TXN-47315819,Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.
+PAY-9583,INV-2199,9279.23,debit_card,2024-05-12,completed,TXN-50590221,"Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue."
+PAY-9134,INV-7042,3974.64,credit_card,2024-01-13,pending,TXN-77953333,Donec dapibus.
+PAY-1225,INV-9198,5080.2,credit_card,2024-01-23,pending,TXN-77078570,"Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam."
+PAY-4660,INV-9109,5345.4,debit_card,2024-10-25,completed,TXN-79716109,"Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien."
+PAY-9406,INV-7247,5589.44,credit_card,2024-07-23,completed,TXN-23040518,Integer non velit.
+PAY-4722,INV-6719,6713.8,insurance,2024-05-31,completed,TXN-25515992,"Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus."
+PAY-3921,INV-4128,5680.37,credit_card,2024-06-15,pending,TXN-44573675,"Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo."
+PAY-2423,INV-1794,3753.52,insurance,2024-08-28,completed,TXN-75975906,Morbi a ipsum. Integer a nibh.
+PAY-2963,INV-6534,5488.33,credit_card,2024-06-22,completed,TXN-76645100,"Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum."
+PAY-1415,INV-4114,8232.54,credit_card,2024-09-17,completed,TXN-90805888,Integer ac leo.
+PAY-8107,INV-3290,7557.02,insurance,2024-02-23,completed,TXN-28745513,"Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat."
+PAY-3644,INV-2665,6962.64,credit_card,2024-05-07,completed,TXN-91674233,"Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla."
+PAY-5688,INV-6902,3516.05,insurance,2024-05-09,failed,TXN-31573857,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum."
+PAY-9721,INV-4521,4287.57,insurance,2024-07-27,completed,TXN-36265625,"Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante."
+PAY-8371,INV-4055,8707.09,debit_card,2024-11-06,completed,TXN-29185430,Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.
+PAY-4817,INV-6061,3418.62,insurance,2024-06-01,pending,TXN-58886666,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci."
+PAY-7634,INV-6980,4423.53,credit_card,2024-07-20,completed,TXN-79133134,Nullam varius. Nulla facilisi.
+PAY-8219,INV-8426,5902.61,insurance,2024-03-30,completed,TXN-51074363,Aliquam non mauris. Morbi non lectus.
+PAY-5202,INV-4243,8996.87,insurance,2024-02-04,completed,TXN-71293153,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus."
+PAY-2990,INV-2148,9367.47,credit_card,2024-07-23,completed,TXN-57405229,"Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis."
+PAY-8976,INV-5685,7411.11,credit_card,2024-06-29,completed,TXN-36203205,Nulla tellus. In sagittis dui vel nisl.
+PAY-4724,INV-5758,4986.31,insurance,2024-03-03,completed,TXN-41084450,Curabitur in libero ut massa volutpat convallis.
+PAY-9175,INV-1168,6623.89,credit_card,2024-06-25,completed,TXN-89353381,Ut tellus.
+PAY-8455,INV-7189,6031.21,debit_card,2024-10-09,completed,TXN-75907739,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc."
+PAY-6455,INV-5668,7525.53,insurance,2024-08-14,failed,TXN-30304623,In quis justo. Maecenas rhoncus aliquam lacus.
+PAY-5867,INV-3054,5518.03,credit_card,2024-02-14,completed,TXN-94295601,Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.
+PAY-3826,INV-3900,4560.33,debit_card,2024-07-11,completed,TXN-28522623,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem."
+PAY-9565,INV-7122,4718.45,debit_card,2024-03-25,completed,TXN-28847860,Nam tristique tortor eu pede.
+PAY-9823,INV-8748,7241.67,debit_card,2024-02-04,completed,TXN-20296170,"Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam."
+PAY-4310,INV-7016,5510.58,insurance,2024-12-15,completed,TXN-22295662,"Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam."
+PAY-8648,INV-3951,7157.95,credit_card,2024-12-29,completed,TXN-80360621,Etiam pretium iaculis justo. In hac habitasse platea dictumst.
+PAY-7822,INV-3635,3678.42,credit_card,2024-03-09,pending,TXN-81835049,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque."
+PAY-7314,INV-8826,4553.26,credit_card,2024-09-17,completed,TXN-13914372,"Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."
+PAY-4275,INV-1997,9202.61,credit_card,2024-11-27,completed,TXN-69045070,Nulla mollis molestie lorem.
+PAY-9306,INV-9077,8767.81,insurance,2024-08-09,completed,TXN-22221829,Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.
+PAY-3751,INV-5822,3551.51,debit_card,2024-12-17,completed,TXN-74273365,Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.
+PAY-6119,INV-8424,7534.14,insurance,2024-05-28,completed,TXN-49978306,Suspendisse accumsan tortor quis turpis. Sed ante.
+PAY-6882,INV-8852,5806.13,credit_card,2024-01-01,completed,TXN-61462993,Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.
+PAY-4126,INV-5998,8703.25,credit_card,2024-04-15,pending,TXN-64881645,"Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl."
+PAY-4738,INV-1590,9878.69,debit_card,2024-08-05,completed,TXN-12901684,Nullam molestie nibh in lectus.
+PAY-5221,INV-3711,8253.48,insurance,2024-05-05,completed,TXN-14241594,"In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices."
+PAY-3261,INV-9068,4235.09,credit_card,2024-06-17,completed,TXN-51284939,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam."
+PAY-7852,INV-4670,6791.97,debit_card,2024-12-05,completed,TXN-80100784,Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.
+PAY-6356,INV-7756,7870.19,credit_card,2024-03-02,completed,TXN-22703087,"Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus."
+PAY-6223,INV-5913,8036.82,insurance,2024-08-24,completed,TXN-75988039,Vestibulum rutrum rutrum neque.
+PAY-7725,INV-6498,9537.77,insurance,2024-05-13,completed,TXN-26204668,Ut at dolor quis odio consequat varius. Integer ac leo.
+PAY-3584,INV-7780,6223.03,debit_card,2024-05-31,pending,TXN-63600658,Quisque porta volutpat erat.
+PAY-3740,INV-6451,5778.43,credit_card,2024-12-01,completed,TXN-95216358,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam."
+PAY-4774,INV-1636,8493.32,cash,2024-06-30,completed,TXN-97294375,In quis justo. Maecenas rhoncus aliquam lacus.
+PAY-8793,INV-4006,5004.55,credit_card,2024-06-19,completed,TXN-24442306,Integer a nibh. In quis justo.
+PAY-4649,INV-2545,8404.72,credit_card,2024-04-16,completed,TXN-38550280,"Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis."
+PAY-6426,INV-8483,4935.48,debit_card,2024-05-22,completed,TXN-74484156,"Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis."
+PAY-1875,INV-5950,8762.65,credit_card,2024-01-10,pending,TXN-78987987,Vestibulum ac est lacinia nisi venenatis tristique.
+PAY-4071,INV-8159,9411.08,debit_card,2024-10-02,completed,TXN-19744747,Phasellus in felis.
+PAY-9511,INV-1799,3763.41,credit_card,2024-04-05,completed,TXN-72994413,"In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem."
+PAY-6436,INV-3403,4230.05,debit_card,2024-10-16,completed,TXN-83453813,Sed ante. Vivamus tortor.
+PAY-6700,INV-9779,8385.37,credit_card,2024-05-29,pending,TXN-70537114,"In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc."
+PAY-3640,INV-2827,8172.67,credit_card,2024-12-19,completed,TXN-90925074,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem."
+PAY-2688,INV-7074,5386.59,debit_card,2024-10-19,failed,TXN-35106595,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque."
+PAY-2984,INV-6181,9504.71,debit_card,2024-03-26,completed,TXN-11169308,Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.
+PAY-4904,INV-6088,9200.98,debit_card,2024-01-14,completed,TXN-54749796,Duis ac nibh.
+PAY-7269,INV-7372,6381.6,credit_card,2024-06-18,completed,TXN-94516204,Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.
+PAY-8559,INV-1227,8162.0,credit_card,2024-04-20,completed,TXN-73990791,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+PAY-4541,INV-7960,9717.16,debit_card,2024-09-03,completed,TXN-99004378,"Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo."
+PAY-2295,INV-8245,8808.73,insurance,2024-12-21,pending,TXN-77261568,Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.
+PAY-8794,INV-2499,7367.94,credit_card,2024-07-24,completed,TXN-90349786,Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.
+PAY-3960,INV-2240,7949.08,credit_card,2024-08-03,pending,TXN-19842430,Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+PAY-7346,INV-8774,5240.29,debit_card,2024-10-15,completed,TXN-74826761,"Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue."
+PAY-9493,INV-1346,3756.03,credit_card,2024-09-02,completed,TXN-66424938,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui."
+PAY-3922,INV-8346,6702.73,credit_card,2024-08-04,completed,TXN-67950152,Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.
+PAY-1415,INV-9316,9516.31,credit_card,2024-09-16,completed,TXN-73200033,"In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum."
+PAY-4452,INV-4432,8161.42,credit_card,2024-06-15,completed,TXN-52536392,Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo.
+PAY-4818,INV-9842,9210.01,debit_card,2024-12-06,completed,TXN-56121159,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio."
+PAY-5629,INV-1604,7942.28,credit_card,2024-07-11,completed,TXN-57773341,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue."
+PAY-7307,INV-6731,5728.21,credit_card,2024-06-29,completed,TXN-82039725,Etiam faucibus cursus urna. Ut tellus.
+PAY-3147,INV-8344,5926.91,insurance,2024-01-18,failed,TXN-69542503,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti."
+PAY-3295,INV-9489,9960.57,insurance,2024-01-26,completed,TXN-86009556,In hac habitasse platea dictumst.
+PAY-7055,INV-6098,4979.4,credit_card,2024-11-13,completed,TXN-50532039,Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+PAY-1173,INV-3440,3893.3,credit_card,2024-02-03,completed,TXN-20078392,"Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien."
+PAY-2245,INV-3060,3849.83,credit_card,2024-08-24,failed,TXN-23094679,Pellentesque viverra pede ac diam.
+PAY-7627,INV-4910,7608.72,credit_card,2024-02-28,pending,TXN-48504161,"Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio."
+PAY-9519,INV-9123,6072.81,credit_card,2024-10-14,completed,TXN-84573146,Aliquam non mauris. Morbi non lectus.
+PAY-9400,INV-1210,7798.23,credit_card,2024-01-19,completed,TXN-53321712,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+PAY-8360,INV-8108,4632.63,credit_card,2024-10-10,completed,TXN-19010726,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum."
+PAY-5064,INV-2249,4772.84,credit_card,2024-11-16,completed,TXN-16031435,In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.
+PAY-8726,INV-8568,8124.26,debit_card,2024-07-18,completed,TXN-50294043,"Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis."
+PAY-8675,INV-9833,3294.89,credit_card,2024-10-11,completed,TXN-69190996,Etiam justo. Etiam pretium iaculis justo.
+PAY-9704,INV-3610,7957.44,credit_card,2024-06-02,completed,TXN-31854838,"Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus."
+PAY-8488,INV-7004,5909.0,debit_card,2024-06-15,completed,TXN-44447526,"Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla."
+PAY-8122,INV-7924,7337.33,credit_card,2024-04-25,completed,TXN-43451269,Nulla suscipit ligula in lacus.
+PAY-6624,INV-1469,6496.52,credit_card,2024-02-26,completed,TXN-21170691,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci."
+PAY-5344,INV-2883,9809.32,insurance,2024-02-12,completed,TXN-70625359,Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.
+PAY-1690,INV-9143,7431.47,credit_card,2024-08-08,completed,TXN-94428270,In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.
+PAY-7532,INV-2851,8355.07,credit_card,2024-07-15,completed,TXN-85382339,Duis aliquam convallis nunc.
+PAY-1640,INV-7442,4737.54,insurance,2024-04-18,pending,TXN-60374990,"Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante."
+PAY-5196,INV-2716,3125.42,credit_card,2024-07-26,completed,TXN-86657336,Etiam faucibus cursus urna. Ut tellus.
+PAY-2769,INV-5730,7783.91,credit_card,2024-04-02,completed,TXN-60947634,Etiam faucibus cursus urna.
+PAY-7126,INV-6627,5677.96,credit_card,2024-11-27,completed,TXN-77907686,Proin eu mi.
+PAY-8716,INV-4073,4178.18,debit_card,2024-08-25,completed,TXN-11704276,"Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis."
+PAY-9183,INV-7742,4503.23,credit_card,2024-09-19,completed,TXN-15384147,Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+PAY-7224,INV-6302,4033.56,credit_card,2024-01-18,completed,TXN-23430247,"Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus."
+PAY-8831,INV-7605,7198.66,insurance,2024-12-05,completed,TXN-53138110,"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum."
+PAY-8624,INV-5202,6276.82,insurance,2024-04-28,completed,TXN-59973591,Suspendisse potenti.
+PAY-2149,INV-6181,3132.23,insurance,2024-08-07,completed,TXN-95089212,Aenean lectus.
+PAY-9496,INV-2733,6318.4,cash,2024-11-27,pending,TXN-87745793,Nulla ac enim.
+PAY-2514,INV-7283,6159.21,debit_card,2024-06-06,completed,TXN-83077559,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus."
+PAY-6132,INV-8658,8824.82,credit_card,2024-06-18,completed,TXN-72427007,Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.
+PAY-6404,INV-1500,5550.03,credit_card,2024-10-31,completed,TXN-42261911,"Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem."
+PAY-7481,INV-1754,6004.92,insurance,2024-11-27,completed,TXN-64871320,Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.
+PAY-7487,INV-5618,3721.36,credit_card,2024-06-08,completed,TXN-91703562,"In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl."
+PAY-3463,INV-8869,6683.29,insurance,2024-08-09,completed,TXN-67885122,Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.
+PAY-1851,INV-7305,7541.62,credit_card,2024-08-25,completed,TXN-25517611,"Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
+PAY-8589,INV-7026,3341.38,credit_card,2024-04-15,completed,TXN-11196344,Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+PAY-7697,INV-6003,9123.62,credit_card,2024-01-27,pending,TXN-68918402,Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.
+PAY-9476,INV-9270,4060.02,debit_card,2024-05-31,completed,TXN-25703809,Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.
+PAY-9209,INV-4905,6237.74,insurance,2024-11-03,pending,TXN-83989172,Maecenas pulvinar lobortis est.
+PAY-4803,INV-5991,9327.83,insurance,2024-11-26,completed,TXN-57386069,"Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa."
+PAY-4935,INV-6438,8642.89,credit_card,2024-06-26,completed,TXN-39293861,"Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam."
+PAY-4952,INV-2389,8447.67,debit_card,2024-08-30,completed,TXN-39002758,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis."
+PAY-9711,INV-9743,4826.46,credit_card,2024-11-24,completed,TXN-37499095,Proin eu mi.
+PAY-7348,INV-6123,9266.71,credit_card,2024-10-21,completed,TXN-51722916,Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+PAY-1836,INV-6778,3416.16,credit_card,2024-09-05,completed,TXN-51341156,"Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti."
+PAY-6977,INV-3554,3252.98,credit_card,2024-05-03,completed,TXN-13065804,In quis justo.
+PAY-1221,INV-1751,8680.06,credit_card,2024-01-17,pending,TXN-52066865,Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.
+PAY-7847,INV-9687,8043.25,credit_card,2024-12-24,pending,TXN-44065940,"In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+PAY-4498,INV-3873,6157.2,credit_card,2024-02-09,completed,TXN-70411895,"In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem."
+PAY-9704,INV-3966,8260.63,debit_card,2024-03-13,completed,TXN-30768415,Cras pellentesque volutpat dui.
+PAY-2667,INV-9004,3273.82,credit_card,2024-09-18,pending,TXN-31132347,In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.
+PAY-5493,INV-9065,4861.71,credit_card,2024-01-30,failed,TXN-39183386,Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.
+PAY-6647,INV-5701,5697.82,credit_card,2024-10-10,completed,TXN-72780346,Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+PAY-9658,INV-5323,5968.75,credit_card,2024-08-25,completed,TXN-90187147,"Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus."
+PAY-4237,INV-9203,6550.06,debit_card,2024-10-02,completed,TXN-13709721,Phasellus in felis. Donec semper sapien a libero.
+PAY-5606,INV-6291,7135.56,debit_card,2024-10-31,completed,TXN-90594918,"Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat."
+PAY-1901,INV-7830,5899.9,credit_card,2024-07-03,pending,TXN-51059828,Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.
+PAY-5282,INV-6609,8841.19,insurance,2024-11-29,completed,TXN-96685087,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo."
+PAY-6413,INV-5661,6012.73,credit_card,2024-02-04,completed,TXN-82070892,Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.
+PAY-8550,INV-3602,6266.36,insurance,2024-02-22,completed,TXN-36513777,Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+PAY-6234,INV-7176,5948.53,debit_card,2024-08-06,failed,TXN-66440901,"Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante."
+PAY-6207,INV-4633,6494.17,debit_card,2024-03-05,completed,TXN-16047058,Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.
+PAY-9158,INV-6021,8151.51,debit_card,2024-08-18,completed,TXN-20655760,Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.
+PAY-9952,INV-5500,3572.67,insurance,2024-07-04,completed,TXN-61020748,"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque."
+PAY-4541,INV-8721,3463.87,credit_card,2024-09-28,completed,TXN-95155894,"In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy."
+PAY-3211,INV-7639,9642.78,credit_card,2024-08-14,pending,TXN-99603312,"Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus."
+PAY-3848,INV-9862,3316.55,insurance,2024-08-17,pending,TXN-87303543,"Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo."
+PAY-4406,INV-9827,9907.31,cash,2024-11-13,completed,TXN-43134870,Mauris sit amet eros.
+PAY-3774,INV-3406,9104.31,debit_card,2024-03-02,pending,TXN-91304922,Nunc purus.
+PAY-5470,INV-1207,7167.09,insurance,2024-06-11,completed,TXN-67015807,Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.
+PAY-6753,INV-4669,7614.12,debit_card,2024-06-28,completed,TXN-61780170,Aenean fermentum. Donec ut mauris eget massa tempor convallis.
+PAY-6280,INV-1204,5680.84,credit_card,2024-08-24,completed,TXN-49168925,Suspendisse potenti. In eleifend quam a odio.
+PAY-4728,INV-8381,4487.51,debit_card,2024-12-15,completed,TXN-60500973,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus."
+PAY-7243,INV-9935,5266.71,credit_card,2024-08-08,completed,TXN-19665453,"Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum."
+PAY-6906,INV-9831,6529.33,credit_card,2024-05-18,completed,TXN-66624352,"Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi."
+PAY-2551,INV-4240,5625.3,credit_card,2024-01-15,completed,TXN-46936531,Mauris lacinia sapien quis libero.
+PAY-1690,INV-7867,4847.69,credit_card,2024-08-15,completed,TXN-80113051,Nulla ut erat id mauris vulputate elementum. Nullam varius.
+PAY-3738,INV-1449,9534.55,credit_card,2024-08-30,completed,TXN-92735278,"Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis."
+PAY-4509,INV-9998,4868.79,credit_card,2024-05-08,completed,TXN-47681969,"Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula."
+PAY-2763,INV-1460,9102.52,credit_card,2024-09-30,completed,TXN-30014113,Sed accumsan felis.
+PAY-4504,INV-2652,9983.13,insurance,2024-07-31,completed,TXN-90432786,"Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl."
+PAY-2639,INV-5643,3820.87,debit_card,2024-03-23,completed,TXN-67949650,Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+PAY-4217,INV-4345,7433.41,insurance,2024-05-13,completed,TXN-48586561,In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.
+PAY-5007,INV-3943,7800.12,credit_card,2024-10-06,completed,TXN-93183795,"Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus."
+PAY-6755,INV-8324,7652.54,debit_card,2024-09-17,completed,TXN-84383988,Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.
+PAY-9541,INV-7320,3815.59,insurance,2024-07-02,completed,TXN-75283566,Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.
+PAY-2680,INV-7175,9564.08,debit_card,2024-01-13,completed,TXN-59246843,"Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."
+PAY-3412,INV-8808,7774.16,credit_card,2024-11-02,pending,TXN-62182218,Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.
+PAY-4035,INV-8916,4084.21,credit_card,2024-11-24,completed,TXN-96058137,Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+PAY-2110,INV-2964,8567.54,cash,2024-06-09,completed,TXN-53449958,"Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede."
+PAY-1585,INV-9952,6505.37,credit_card,2024-06-25,completed,TXN-97764970,Duis mattis egestas metus.
+PAY-8061,INV-8537,4504.8,debit_card,2024-07-23,completed,TXN-45576126,Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.
+PAY-7538,INV-7176,4079.23,credit_card,2024-02-23,pending,TXN-13572017,Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor.
+PAY-9508,INV-5472,9395.27,credit_card,2024-10-02,completed,TXN-54559553,Pellentesque viverra pede ac diam.
+PAY-5736,INV-8238,3060.07,insurance,2024-03-19,completed,TXN-74366885,"Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus."
+PAY-4536,INV-1298,5252.72,debit_card,2024-06-29,pending,TXN-83854367,Vestibulum sed magna at nunc commodo placerat.
+PAY-1544,INV-6105,9359.06,credit_card,2024-04-27,completed,TXN-31791157,"In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy."
+PAY-8969,INV-2508,7181.28,debit_card,2024-10-07,completed,TXN-36137230,Nulla ut erat id mauris vulputate elementum. Nullam varius.
+PAY-4525,INV-7722,7618.91,insurance,2024-06-10,failed,TXN-28938693,In congue. Etiam justo.
+PAY-5573,INV-4609,4629.81,credit_card,2024-09-26,pending,TXN-70897535,"Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam."
+PAY-1825,INV-2774,7776.52,debit_card,2024-07-01,failed,TXN-60009585,Nulla ut erat id mauris vulputate elementum.
+PAY-6942,INV-3088,3457.8,cash,2024-01-02,completed,TXN-22124388,"Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat."
+PAY-9683,INV-5177,9960.85,credit_card,2024-08-07,completed,TXN-45235785,Morbi quis tortor id nulla ultrices aliquet.
+PAY-8769,INV-5518,5732.44,cash,2024-03-03,pending,TXN-86861542,Curabitur convallis.
+PAY-3389,INV-8225,6455.87,debit_card,2024-09-19,completed,TXN-56634937,Vestibulum ac est lacinia nisi venenatis tristique.
+PAY-7733,INV-7384,3151.23,credit_card,2024-04-27,completed,TXN-40727883,Proin risus. Praesent lectus.
+PAY-2034,INV-8259,6910.19,credit_card,2024-03-30,completed,TXN-57240334,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc."
+PAY-8914,INV-2862,4500.7,debit_card,2024-03-28,completed,TXN-55206175,Duis bibendum.
+PAY-7381,INV-9456,3337.71,cash,2024-07-21,pending,TXN-36528376,Duis aliquam convallis nunc.
+PAY-1640,INV-4243,8174.09,insurance,2024-02-12,completed,TXN-92115996,"Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat."
+PAY-2330,INV-2899,7791.17,debit_card,2024-06-03,completed,TXN-76496945,Ut at dolor quis odio consequat varius. Integer ac leo.
+PAY-2142,INV-4695,5559.54,debit_card,2024-06-05,pending,TXN-15082379,Aenean fermentum. Donec ut mauris eget massa tempor convallis.
+PAY-3722,INV-8126,7458.63,insurance,2024-03-10,pending,TXN-13692226,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque."
+PAY-4043,INV-4698,6682.84,credit_card,2024-03-31,completed,TXN-95437361,In eleifend quam a odio. In hac habitasse platea dictumst.
+PAY-9563,INV-7617,8725.79,debit_card,2024-10-01,completed,TXN-88152876,Suspendisse accumsan tortor quis turpis. Sed ante.
+PAY-8321,INV-2368,3136.07,insurance,2024-08-19,completed,TXN-39182181,"Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat."
+PAY-2159,INV-1180,7576.7,credit_card,2024-02-27,completed,TXN-94463220,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio."
+PAY-3399,INV-7967,6268.51,debit_card,2024-02-17,pending,TXN-98461092,Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.
+PAY-2302,INV-9628,4548.94,debit_card,2024-03-03,pending,TXN-24282945,Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+PAY-6099,INV-7574,6162.47,credit_card,2024-05-22,pending,TXN-51845106,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl."
+PAY-2940,INV-4821,3008.66,credit_card,2024-07-09,pending,TXN-63000656,Cras in purus eu magna vulputate luctus.
+PAY-1883,INV-4099,6146.74,insurance,2024-05-25,completed,TXN-41537158,"Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem."
+PAY-9518,INV-2046,4152.27,cash,2024-09-20,completed,TXN-87212325,Proin eu mi. Nulla ac enim.
+PAY-2999,INV-6480,3173.78,credit_card,2024-04-04,completed,TXN-23883196,"Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum."
+PAY-2499,INV-3296,4963.07,credit_card,2024-01-05,completed,TXN-20523510,Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti.
+PAY-5813,INV-4513,7437.32,insurance,2024-11-07,completed,TXN-23510208,"Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula."
+PAY-4391,INV-8700,7781.55,credit_card,2024-07-22,completed,TXN-66717595,Morbi a ipsum. Integer a nibh.
+PAY-4330,INV-3934,6281.89,debit_card,2024-10-23,completed,TXN-80426530,Aenean fermentum.
+PAY-1766,INV-1471,4233.74,credit_card,2024-03-17,completed,TXN-39390153,Integer ac leo. Pellentesque ultrices mattis odio.
+PAY-6738,INV-2591,4115.49,cash,2024-03-22,completed,TXN-68583162,"Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis."
+PAY-1243,INV-9786,7768.43,insurance,2024-02-28,pending,TXN-83098758,Aenean auctor gravida sem.
+PAY-6288,INV-7934,5226.21,credit_card,2024-12-17,completed,TXN-60239872,"Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis."
+PAY-3488,INV-2401,5047.96,debit_card,2024-05-11,completed,TXN-89885052,Donec dapibus.
+PAY-3097,INV-9200,8029.94,credit_card,2024-01-14,completed,TXN-28083225,"Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis."
+PAY-5786,INV-8030,6068.29,credit_card,2024-11-13,completed,TXN-66497312,"Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo."
+PAY-7259,INV-6479,3141.63,credit_card,2024-03-09,completed,TXN-16026423,Mauris ullamcorper purus sit amet nulla.
+PAY-7583,INV-2033,5062.16,credit_card,2024-08-28,completed,TXN-64089675,"Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis."
+PAY-8650,INV-2419,9248.54,insurance,2024-12-16,pending,TXN-42461330,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum."
+PAY-3177,INV-5686,6094.4,insurance,2024-11-03,completed,TXN-64693124,"Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede."
+PAY-4029,INV-9585,3105.91,debit_card,2024-10-21,completed,TXN-59271950,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc."
+PAY-2455,INV-3828,9247.05,insurance,2024-01-17,completed,TXN-95808135,Nulla ut erat id mauris vulputate elementum.
+PAY-9780,INV-6864,8048.75,debit_card,2024-09-19,completed,TXN-48385311,"Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula."
+PAY-3021,INV-9182,3459.25,insurance,2024-11-28,completed,TXN-57162775,"Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam."
+PAY-4290,INV-3368,3016.35,insurance,2024-06-29,completed,TXN-61961358,Phasellus sit amet erat. Nulla tempus.
+PAY-8426,INV-7428,6518.38,insurance,2024-09-11,completed,TXN-18037183,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem."
+PAY-8974,INV-2152,5590.87,insurance,2024-08-01,pending,TXN-31530170,Donec posuere metus vitae ipsum. Aliquam non mauris.
+PAY-3294,INV-4203,4663.64,credit_card,2024-02-24,pending,TXN-93910664,Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.
+PAY-3322,INV-1229,6337.17,credit_card,2024-12-03,completed,TXN-28455766,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue."
+PAY-6082,INV-1118,7073.92,insurance,2024-05-02,completed,TXN-67052890,Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+PAY-6218,INV-2291,3718.47,debit_card,2024-08-22,completed,TXN-28636895,Morbi porttitor lorem id ligula.
+PAY-8546,INV-6715,7478.8,insurance,2024-02-14,completed,TXN-13727854,Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor.
+PAY-9252,INV-8776,9071.27,debit_card,2024-03-14,failed,TXN-32117924,Sed ante. Vivamus tortor. Duis mattis egestas metus.
+PAY-5116,INV-2962,7502.76,debit_card,2024-03-12,completed,TXN-38571680,In hac habitasse platea dictumst. Etiam faucibus cursus urna.
+PAY-5595,INV-5673,9713.13,debit_card,2024-12-23,failed,TXN-92478714,Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.
+PAY-2284,INV-7983,6606.75,credit_card,2024-06-08,completed,TXN-99051366,Integer ac leo.
+PAY-9333,INV-2549,6065.33,credit_card,2024-11-10,completed,TXN-89329720,"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi."
+PAY-9604,INV-8953,7009.14,debit_card,2024-04-20,completed,TXN-80916631,Proin eu mi. Nulla ac enim.
+PAY-9164,INV-5383,4685.37,credit_card,2024-01-17,completed,TXN-92265523,"Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus."

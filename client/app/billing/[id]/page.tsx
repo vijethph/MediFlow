@@ -83,9 +83,22 @@ export default function InvoiceDetailPage() {
     }
   };
 
-  const totalAmount = typeof invoice.total === "number" 
-    ? invoice.total 
-    : invoice.total?.value || 0;
+  // Helper function to extract numeric value from Decimal/Money object
+  const extractValue = (val: any): number => {
+    if (val === null || val === undefined) return 0;
+    if (typeof val === "number") return val;
+    if (typeof val === "string") return parseFloat(val) || 0;
+    if (typeof val === "object" && val !== null && val.value !== undefined) {
+      return typeof val.value === "number"
+        ? val.value
+        : parseFloat(String(val.value)) || 0;
+    }
+    return 0;
+  };
+
+  const totalAmount = extractValue(
+    invoice.total || invoice.total_gross_amount || invoice.totalGross
+  );
 
   const handlePayNow = async () => {
     if (confirm(`Pay €${totalAmount.toFixed(2)} for this invoice?`)) {
@@ -95,10 +108,16 @@ export default function InvoiceDetailPage() {
           amount: totalAmount,
           payment_method: "card",
         });
-        success("Payment Processed", "Your payment has been processed successfully.");
+        success(
+          "Payment Processed",
+          "Your payment has been processed successfully."
+        );
         router.refresh();
       } catch (err: any) {
-        showError("Payment Failed", err.message || "Payment could not be processed. Please try again.");
+        showError(
+          "Payment Failed",
+          err.message || "Payment could not be processed. Please try again."
+        );
       }
     }
   };
@@ -116,14 +135,19 @@ export default function InvoiceDetailPage() {
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Invoice #{invoice.id.slice(0, 8)}</h1>
+              <h1 className="text-3xl font-bold text-gray-900">
+                Invoice #{invoice.id.slice(0, 8)}
+              </h1>
               <p className="text-sm text-gray-600 mt-1">Invoice Details</p>
             </div>
             <StatusBadge status={getStatusColor(invoice.status)}>
-              {invoice.status === "balanced" ? "Paid" :
-               invoice.status === "issued" ? "Awaiting Payment" :
-               invoice.status === "cancelled" ? "Cancelled" :
-               invoice.status}
+              {invoice.status === "balanced"
+                ? "Paid"
+                : invoice.status === "issued"
+                ? "Awaiting Payment"
+                : invoice.status === "cancelled"
+                ? "Cancelled"
+                : invoice.status}
             </StatusBadge>
           </div>
 
@@ -162,19 +186,28 @@ export default function InvoiceDetailPage() {
             <div>
               <p className="text-sm text-gray-600 mb-3">Line Items</p>
               <div className="space-y-2">
-                {invoice.line_items.map((item, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                    <div>
-                      <p className="font-medium text-gray-900">{item.description || "Item"}</p>
-                      <p className="text-sm text-gray-600">
-                        {item.quantity} × €{typeof item.unit_price === "number" ? item.unit_price : item.unit_price?.value || 0}
+                {invoice.line_items.map((item, index) => {
+                  const unitPrice = extractValue(item.unit_price);
+                  const lineTotal = extractValue(item.line_total);
+                  return (
+                    <div
+                      key={index}
+                      className="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
+                    >
+                      <div>
+                        <p className="font-medium text-gray-900">
+                          {item.description || "Item"}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          {item.quantity} × €{unitPrice.toFixed(2)}
+                        </p>
+                      </div>
+                      <p className="font-semibold text-gray-900">
+                        €{lineTotal.toFixed(2)}
                       </p>
                     </div>
-                    <p className="font-semibold text-gray-900">
-                      €{typeof item.line_total === "number" ? item.line_total : item.line_total?.value || 0}
-                    </p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}
@@ -185,7 +218,9 @@ export default function InvoiceDetailPage() {
                 <DollarSign className="w-6 h-6 text-blue-600" />
                 <div>
                   <p className="text-sm text-gray-600">Total Amount</p>
-                  <p className="text-3xl font-bold text-blue-900">€{totalAmount.toFixed(2)}</p>
+                  <p className="text-3xl font-bold text-blue-900">
+                    €{totalAmount.toFixed(2)}
+                  </p>
                 </div>
               </div>
             </div>

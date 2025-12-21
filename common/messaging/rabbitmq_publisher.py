@@ -4,6 +4,7 @@ RabbitMQ Publisher for Publishing Events using aio-pika.
 This module provides utilities for publishing events to RabbitMQ asynchronously.
 """
 
+import asyncio
 import json
 import os
 from typing import Any, Dict
@@ -123,8 +124,6 @@ def publish_event_sync(routing_key: str, event_data: Dict[str, Any]) -> None:
     :param routing_key: Routing key for the event
     :param event_data: Event payload
     """
-    import asyncio
-
     try:
         loop = asyncio.get_event_loop()
         if loop.is_running():

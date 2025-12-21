@@ -9,8 +9,10 @@ from typing import Generator
 from sqlalchemy import create_engine, text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import Session, sessionmaker
+import time
 
 from config import get_settings
+from common.logging.logger_config import get_logger
 
 
 settings = get_settings()
@@ -58,9 +60,6 @@ def init_db() -> None:
     Creates all tables defined in models.
     Retries connection if database is not ready yet.
     """
-    import time
-    from common.logging import get_logger
-
     logger = get_logger(__name__)
     max_retries = 15
     retry_delay = 3

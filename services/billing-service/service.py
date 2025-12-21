@@ -40,7 +40,11 @@ logger = get_logger(__name__)
 
 
 @retry_on_api_error(
-    max_attempts=3, exceptions=(httpx.RequestError, httpx.HTTPStatusError)
+    max_attempts=3,
+    exceptions=(httpx.RequestError, httpx.HTTPStatusError),
+    circuit_breaker_name="patient-service",
+    failure_threshold=5,
+    recovery_timeout=60.0,
 )
 async def verify_patient_exists(patient_id: str, jwt_token: str) -> bool:
     """
@@ -73,7 +77,11 @@ async def verify_patient_exists(patient_id: str, jwt_token: str) -> bool:
 
 
 @retry_on_api_error(
-    max_attempts=3, exceptions=(httpx.RequestError, httpx.HTTPStatusError)
+    max_attempts=3,
+    exceptions=(httpx.RequestError, httpx.HTTPStatusError),
+    circuit_breaker_name="appointment-service",
+    failure_threshold=5,
+    recovery_timeout=60.0,
 )
 async def get_appointment_details(
     appointment_id: str, jwt_token: str

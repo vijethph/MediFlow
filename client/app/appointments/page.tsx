@@ -18,14 +18,14 @@ export default function AppointmentsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
-  
+
   useEffect(() => {
     if (!authApi.isAuthenticated()) {
       router.replace("/login");
       return;
     }
   }, [router]);
-  
+
   if (!authApi.isAuthenticated()) {
     return null;
   }
@@ -81,17 +81,17 @@ export default function AppointmentsPage() {
         return false;
       }
     }
-    
+
     // Search filtering
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
-      const matchesSearch = 
+      const matchesSearch =
         apt.description?.toLowerCase().includes(query) ||
         apt.location?.toLowerCase().includes(query) ||
         apt.practitioner_id?.toLowerCase().includes(query);
       if (!matchesSearch) return false;
     }
-    
+
     return true;
   });
 
@@ -101,7 +101,10 @@ export default function AppointmentsPage() {
   const endIndex = startIndex + itemsPerPage;
 
   // Apply pagination
-  const paginatedAppointments = filteredAppointments.slice(startIndex, endIndex);
+  const paginatedAppointments = filteredAppointments.slice(
+    startIndex,
+    endIndex
+  );
 
   if (isLoading) {
     return (
@@ -124,26 +127,28 @@ export default function AppointmentsPage() {
   // Use a stable date reference to avoid hydration mismatches
   const today = new Date();
   const todayDateString = today.toDateString();
-  
+
   // Calculate counts from the full appointments list (before filtering)
   const todayCount = appointments.filter(
     (apt) =>
       new Date(apt.start).toDateString() === todayDateString &&
-      (apt.status === "booked" || apt.status === "pending" || apt.status === "proposed")
+      (apt.status === "booked" ||
+        apt.status === "pending" ||
+        apt.status === "proposed")
   ).length;
 
-  const thisWeekCount = appointments.filter(
-    (apt) => {
-      const aptDate = new Date(apt.start);
-      const weekFromNow = new Date(today);
-      weekFromNow.setDate(today.getDate() + 7);
-      return (
-        aptDate >= today &&
-        aptDate <= weekFromNow &&
-        (apt.status === "booked" || apt.status === "pending" || apt.status === "proposed")
-      );
-    }
-  ).length;
+  const thisWeekCount = appointments.filter((apt) => {
+    const aptDate = new Date(apt.start);
+    const weekFromNow = new Date(today);
+    weekFromNow.setDate(today.getDate() + 7);
+    return (
+      aptDate >= today &&
+      aptDate <= weekFromNow &&
+      (apt.status === "booked" ||
+        apt.status === "pending" ||
+        apt.status === "proposed")
+    );
+  }).length;
 
   // Count all pending-like statuses (pending, proposed)
   const pendingCount = appointments.filter(
@@ -155,8 +160,12 @@ export default function AppointmentsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">My Appointments</h1>
-          <p className="text-base text-gray-600">Schedule and manage your appointments</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            My Appointments
+          </h1>
+          <p className="text-base text-gray-600">
+            Schedule and manage your appointments
+          </p>
         </div>
         <Link href="/appointments/book">
           <Button variant="primary" className="mt-4 sm:mt-0">
@@ -183,7 +192,9 @@ export default function AppointmentsPage() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-gray-600 mb-1">This Week</p>
-              <p className="text-3xl font-bold text-gray-900">{thisWeekCount}</p>
+              <p className="text-3xl font-bold text-gray-900">
+                {thisWeekCount}
+              </p>
             </div>
             <div className="p-4 bg-blue-100 rounded-xl">
               <Calendar className="w-8 h-8 text-blue-600" aria-hidden="true" />
@@ -206,22 +217,22 @@ export default function AppointmentsPage() {
       {/* Search Bar */}
       <Card className="mb-6">
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="flex-1 relative min-w-0">
-            <Search 
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" 
-              aria-hidden="true" 
+          <div className="flex-1 md:flex-[7] relative min-w-0">
+            <Search
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
+              aria-hidden="true"
             />
             <input
               type="text"
               placeholder="Search appointments..."
-              className="input pl-10 w-full"
+              className="input pl-11 w-full"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               aria-label="Search appointments"
             />
           </div>
           <select
-            className="input md:w-40 w-full shrink-0"
+            className="input md:flex-[3] w-full"
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
             aria-label="Filter by status"
@@ -245,40 +256,58 @@ export default function AppointmentsPage() {
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-3">
                     <div>
-                      <p className="text-2xl font-bold text-gray-900">{formatDate(appointment.start)}</p>
-                      <p className="text-lg text-gray-700">{formatTime(appointment.start)}</p>
+                      <p className="text-2xl font-bold text-gray-900">
+                        {formatDate(appointment.start)}
+                      </p>
+                      <p className="text-lg text-gray-700">
+                        {formatTime(appointment.start)}
+                      </p>
                     </div>
                     <StatusBadge status={getStatusColor(appointment.status)}>
-                      {appointment.status === "booked" ? "Confirmed" : 
-                       appointment.status === "pending" || appointment.status === "proposed" ? "Pending Confirmation" :
-                       appointment.status === "fulfilled" ? "Completed" :
-                       appointment.status === "cancelled" ? "Cancelled" :
-                       appointment.status}
+                      {appointment.status === "booked"
+                        ? "Confirmed"
+                        : appointment.status === "pending" ||
+                          appointment.status === "proposed"
+                        ? "Pending Confirmation"
+                        : appointment.status === "fulfilled"
+                        ? "Completed"
+                        : appointment.status === "cancelled"
+                        ? "Cancelled"
+                        : appointment.status}
                     </StatusBadge>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-base text-gray-600">
                     {appointment.practitioner_id && (
                       <div className="flex items-center gap-2">
-                        <User className="w-4 h-4 text-gray-400" aria-hidden="true" />
+                        <User
+                          className="w-4 h-4 text-gray-400"
+                          aria-hidden="true"
+                        />
                         <span>Dr. {appointment.practitioner_id}</span>
                       </div>
                     )}
                     {appointment.location && (
                       <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-gray-400" aria-hidden="true" />
+                        <MapPin
+                          className="w-4 h-4 text-gray-400"
+                          aria-hidden="true"
+                        />
                         <span>{appointment.location}</span>
                       </div>
                     )}
                   </div>
                   {appointment.description && (
-                    <p className="text-sm text-gray-500 mt-2">{appointment.description}</p>
+                    <p className="text-sm text-gray-500 mt-2">
+                      {appointment.description}
+                    </p>
                   )}
                 </div>
                 <div className="flex gap-2">
                   <Link href={`/appointments/${appointment.id}`}>
                     <Button variant="secondary">View Details</Button>
                   </Link>
-                  {(appointment.status === "pending" || appointment.status === "proposed") && (
+                  {(appointment.status === "pending" ||
+                    appointment.status === "proposed") && (
                     <Link href={`/appointments/${appointment.id}/reschedule`}>
                       <Button variant="secondary">Reschedule</Button>
                     </Link>
@@ -291,7 +320,10 @@ export default function AppointmentsPage() {
       ) : (
         <Card>
           <div className="text-center py-12">
-            <Calendar className="w-12 h-12 text-gray-400 mx-auto mb-4" aria-hidden="true" />
+            <Calendar
+              className="w-12 h-12 text-gray-400 mx-auto mb-4"
+              aria-hidden="true"
+            />
             <p className="text-base text-gray-600 mb-4">
               No appointments scheduled. Book your first appointment.
             </p>

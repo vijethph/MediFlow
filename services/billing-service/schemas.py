@@ -63,8 +63,6 @@ class InvoiceLineItemCreate(BaseModel):
     def validate_line_total(self) -> "InvoiceLineItemCreate":
         """Validate line total matches quantity * unit_price."""
         if self.quantity and self.unit_price and self.line_total:
-            from decimal import Decimal
-
             expected_total = Decimal(str(self.quantity)) * Decimal(
                 str(self.unit_price.value)
             )

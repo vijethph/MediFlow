@@ -58,9 +58,11 @@ services:
       POSTGRES_PASSWORD: ${PATIENT_DB_PASSWORD:-patient_secure_password}
       POSTGRES_DB: patient_db
       PGDATA: /var/lib/postgresql/data/pgdata
+      SEED_DATA: ${SEED_DATA:-true}
     volumes:
       - patient-db-data:/var/lib/postgresql/data
       - ./scripts/init_patient_db.sh:/docker-entrypoint-initdb.d/init_patient_db.sh
+      - ./scripts/patient_data.csv:/scripts/patient_data.csv:ro
     ports:
       - "5433:5432"
     networks:
@@ -122,9 +124,11 @@ services:
       POSTGRES_PASSWORD: ${APPOINTMENT_DB_PASSWORD:-appointment_secure_password}
       POSTGRES_DB: appointment_db
       PGDATA: /var/lib/postgresql/data/pgdata
+      SEED_DATA: ${SEED_DATA:-true}
     volumes:
       - appointment-db-data:/var/lib/postgresql/data
       - ./scripts/init_appointment_db.sh:/docker-entrypoint-initdb.d/init_appointment_db.sh
+      - ./scripts/appointment_data.csv:/scripts/appointment_data.csv:ro
     ports:
       - "5434:5432"
     networks:
@@ -177,15 +181,18 @@ services:
   # PRESCRIPTION/CLINICAL SERVICE
 
   prescription-db:
-    image: mongo:6
+    image: mongo:8.2
     container_name: healthcare-prescription-db
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME:-admin}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-mongo_secure_password}
       MONGO_INITDB_DATABASE: prescription_db
+      SEED_DATA: ${SEED_DATA:-true}
     volumes:
       - prescription-db-data:/data/db
       - ./scripts/init_prescription_db.js:/docker-entrypoint-initdb.d/init_prescription_db.js
+      - ./scripts/prescription_data.csv:/docker-entrypoint-initdb.d/prescription_data.csv:ro
+      - ./scripts/medication_data.csv:/docker-entrypoint-initdb.d/medication_data.csv:ro
     ports:
       - "27017:27017"
     networks:
@@ -247,9 +254,14 @@ services:
       POSTGRES_PASSWORD: ${BILLING_DB_PASSWORD:-billing_secure_password}
       POSTGRES_DB: billing_db
       PGDATA: /var/lib/postgresql/data/pgdata
+      SEED_DATA: ${SEED_DATA:-true}
     volumes:
       - billing-db-data:/var/lib/postgresql/data
       - ./scripts/init_billing_db.sh:/docker-entrypoint-initdb.d/init_billing_db.sh:ro
+      - ./scripts/invoice_data.csv:/scripts/invoice_data.csv:ro
+      - ./scripts/invoice_line_item_data.csv:/scripts/invoice_line_item_data.csv:ro
+      - ./scripts/payment_record_data.csv:/scripts/payment_record_data.csv:ro
+      - ./scripts/insurance_claim_data.csv:/scripts/insurance_claim_data.csv:ro
     ports:
       - "5432:5432"
     networks:

@@ -8,6 +8,7 @@ import uuid
 from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional
 
+from jose import jwt
 from sqlalchemy import func, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
@@ -46,8 +47,6 @@ def create_access_token(data: Dict[str, Any], expires_delta: timedelta) -> str:
     :param expires_delta: Token expiration time delta
     :return: Encoded JWT token
     """
-    from jose import jwt
-
     to_encode = data.copy()
     expire = datetime.utcnow() + expires_delta
     to_encode.update({"exp": expire, "sub": data.get("patient_id", "")})
