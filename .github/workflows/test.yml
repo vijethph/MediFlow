@@ -3,16 +3,10 @@ name: Unit Tests
 on:
   push:
     branches:
-      [
-        "main",
-        "client",
-        "patient-service",
-        "appointment-service",
-        "prescription-service",
-        "billing-service",
-      ]
+      - "**"
   pull_request:
     branches: ["main"]
+    types: [opened, synchronize, reopened]
 
 jobs:
   test-patient-service:
