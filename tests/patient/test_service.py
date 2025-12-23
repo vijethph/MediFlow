@@ -67,7 +67,8 @@ class TestPatientService:
 
     def test_get_patient_by_email_success(self, db_session, sample_patient):
         """Test retrieving patient by email."""
-        patient = service.get_patient_by_email(db_session, "john.doe@example.com")
+        patient_email = sample_patient.telecom[0]["value"]
+        patient = service.get_patient_by_email(db_session, patient_email)
 
         assert patient is not None
         assert patient.id == sample_patient.id
@@ -140,9 +141,8 @@ class TestPatientService:
 
     def test_authenticate_patient_success(self, db_session, sample_patient):
         """Test successful patient authentication."""
-        patient, token = service.authenticate_patient(
-            db_session, "john.doe@example.com"
-        )
+        patient_email = sample_patient.telecom[0]["value"]
+        patient, token = service.authenticate_patient(db_session, patient_email)
 
         assert patient.id == sample_patient.id
         assert token is not None
@@ -153,13 +153,31 @@ class TestPatientService:
         with pytest.raises(PatientNotFoundError):
             service.authenticate_patient(db_session, "nonexistent@example.com")
 
-    def test_authenticate_patient_inactive(self, db_session, sample_patient):
+    def test_authenticate_patient_inactive(self, db_session):
         """Test authenticating inactive patient."""
-        sample_patient.active = False
-        db_session.commit()
+        from models import Patient
+        from datetime import date, datetime, timezone
+        import uuid
+
+        inactive_email = f"inactive-{uuid.uuid4().hex[:8]}@example.com"
+        inactive_patient = Patient(
+            patient_id=f"PAT-INACTIVE-{uuid.uuid4().hex[:8].upper()}",
+            resource_type="Patient",
+            active=False,
+            name=[{"use": "official", "family": "Inactive", "given": ["Test"]}],
+            telecom=[{"system": "email", "value": inactive_email, "use": "home"}],
+            gender="male",
+            birth_date=date(1990, 1, 1),
+            meta={
+                "versionId": "1",
+                "lastUpdated": datetime.now(timezone.utc).isoformat(),
+            },
+        )
+        db_session.add(inactive_patient)
+        db_session.flush()
 
         with pytest.raises(ValidationError):
-            service.authenticate_patient(db_session, "john.doe@example.com")
+            service.authenticate_patient(db_session, inactive_email)
 
     def test_create_access_token(self):
         """Test JWT access token creation."""

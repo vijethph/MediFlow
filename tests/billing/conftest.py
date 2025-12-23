@@ -28,8 +28,10 @@ from database import Base, get_db
 from main import app
 
 
-# Test Database URL
-TEST_DATABASE_URL = "postgresql://postgres:postgres@localhost:5432/billing_test_db"
+TEST_DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://postgres:billing_secure_password@localhost:5432/billing_test_db",
+)
 
 
 @pytest.fixture(scope="session")

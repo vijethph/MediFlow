@@ -26,8 +26,11 @@ from database import get_database
 from main import app
 
 
-TEST_MONGO_URL = "mongodb://localhost:27017/"
-TEST_DATABASE_NAME = "prescription_test_db"
+TEST_MONGO_URL = os.getenv(
+    "MONGO_URL",
+    "mongodb://admin:mongo_secure_password@localhost:27017/prescription_test_db?authSource=admin",
+)
+TEST_DATABASE_NAME = os.getenv("MONGO_DATABASE", "prescription_test_db")
 
 
 @pytest.fixture(scope="session")

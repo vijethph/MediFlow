@@ -28,7 +28,10 @@ from database import Base, get_db
 from main import app
 
 
-TEST_DATABASE_URL = "postgresql://postgres:postgres@localhost:5432/appointment_test_db"
+TEST_DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://postgres:appointment_secure_password@localhost:5434/appointment_test_db",
+)
 
 
 @pytest.fixture(scope="session")
@@ -44,19 +47,44 @@ def engine():
     Base.metadata.drop_all(bind=test_engine)
 
 
+@pytest.fixture(scope="function", autouse=True)
+def mock_publish_event():
+    """
+    Mock async publish_event to prevent runtime warnings in sync tests.
+
+    :return: Mock publish_event function
+    """
+    from unittest.mock import patch
+
+    def mock_sync_publish(*args, **kwargs):
+        return None
+
+    with patch(
+        "common.messaging.publish_event_sync", side_effect=mock_sync_publish
+    ) as mock:
+        yield mock
+
+
 @pytest.fixture(scope="function")
 def db_session(engine):
     """
-    Create database session for tests.
+    Create database session for tests with transaction rollback for isolation.
 
     :param engine: Database engine
     :return: Database session
     """
-    TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-    session = TestingSessionLocal()
+    connection = engine.connect()
+    transaction = connection.begin()
+    testing_session_local = sessionmaker(
+        autocommit=False, autoflush=False, bind=connection
+    )
+    session = testing_session_local()
+
     yield session
-    session.rollback()
+
     session.close()
+    transaction.rollback()
+    connection.close()
 
 
 @pytest.fixture(scope="function")
@@ -75,6 +103,33 @@ def client(db_session):
             pass
 
     app.dependency_overrides[get_db] = override_get_db
+    with TestClient(app) as test_client:
+        yield test_client
+    app.dependency_overrides.clear()
+
+
+@pytest.fixture(scope="function")
+def authenticated_client(db_session, mock_user):
+    """
+    Create FastAPI test client with mocked authentication.
+
+    :param db_session: Database session
+    :param mock_user: Mock user data
+    :return: Test client with authentication
+    """
+    from dependencies import require_authentication
+
+    def override_get_db():
+        try:
+            yield db_session
+        finally:
+            pass
+
+    async def override_auth():
+        return mock_user
+
+    app.dependency_overrides[get_db] = override_get_db
+    app.dependency_overrides[require_authentication] = override_auth
     with TestClient(app) as test_client:
         yield test_client
     app.dependency_overrides.clear()

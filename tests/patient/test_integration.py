@@ -153,9 +153,7 @@ class TestPatientWorkflow:
         # Mock authentication by overriding dependency
         from unittest.mock import patch
 
-        with patch(
-            "services.patient_service.dependencies.require_authentication"
-        ) as mock_auth:
+        with patch("dependencies.require_authentication") as mock_auth:
             mock_auth.return_value = {"sub": "pat-123", "email": "test@test.com"}
 
             # Get first page
@@ -228,53 +226,38 @@ class TestPatientValidation:
 
         assert response.status_code == 422
 
-    def test_update_patient_invalid_data(self, client, sample_patient):
+    def test_update_patient_invalid_data(self, authenticated_client, sample_patient):
         """Test updating patient with invalid data."""
-        from unittest.mock import patch
+        response = authenticated_client.put(
+            f"/api/v1/patients/{sample_patient.patient_id}",
+            json={"birth_date": "invalid-date"},
+            headers={"Authorization": "Bearer test_token"},
+        )
 
-        with patch(
-            "services.patient_service.dependencies.require_authentication"
-        ) as mock_auth:
-            mock_auth.return_value = {"sub": "pat-123", "email": "test@test.com"}
-
-            response = client.put(
-                f"/api/v1/patients/{sample_patient.patient_id}",
-                json={"birth_date": "invalid-date"},
-                headers={"Authorization": "Bearer test_token"},
-            )
-
-            assert response.status_code == 422
+        assert response.status_code == 422
 
 
 class TestConcurrency:
     """Tests for concurrent operations."""
 
-    def test_concurrent_patient_updates(self, client, sample_patient, db_session):
+    def test_concurrent_patient_updates(
+        self, authenticated_client, sample_patient, db_session
+    ):
         """Test concurrent updates to same patient."""
-        from unittest.mock import patch
+        response1 = authenticated_client.put(
+            f"/api/v1/patients/{sample_patient.patient_id}",
+            json={"marital_status": "married"},
+            headers={"Authorization": "Bearer test_token"},
+        )
 
-        with patch(
-            "services.patient_service.dependencies.require_authentication"
-        ) as mock_auth:
-            mock_auth.return_value = {"sub": "pat-123", "email": "test@test.com"}
+        response2 = authenticated_client.put(
+            f"/api/v1/patients/{sample_patient.patient_id}",
+            json={"marital_status": "divorced"},
+            headers={"Authorization": "Bearer test_token"},
+        )
 
-            # First update
-            response1 = client.put(
-                f"/api/v1/patients/{sample_patient.patient_id}",
-                json={"marital_status": "married"},
-                headers={"Authorization": "Bearer test_token"},
-            )
+        assert response1.status_code == 200
+        assert response2.status_code == 200
 
-            # Second update
-            response2 = client.put(
-                f"/api/v1/patients/{sample_patient.patient_id}",
-                json={"marital_status": "divorced"},
-                headers={"Authorization": "Bearer test_token"},
-            )
-
-            assert response1.status_code == 200
-            assert response2.status_code == 200
-
-            # Verify final state
-            db_session.refresh(sample_patient)
-            assert sample_patient.marital_status == "divorced"
+        db_session.refresh(sample_patient)
+        assert sample_patient.marital_status == "divorced"
