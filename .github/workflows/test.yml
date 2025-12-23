@@ -172,7 +172,7 @@ jobs:
           - 27017:27017
         env:
           MONGO_INITDB_ROOT_USERNAME: admin
-          MONGO_INITDB_ROOT_PASSWORD: password
+          MONGO_INITDB_ROOT_PASSWORD: mongo_secure_password
         options: >-
           --health-cmd "mongosh --eval 'db.adminCommand({ ping: 1 })'"
           --health-interval 10s
@@ -221,8 +221,8 @@ jobs:
 
       - name: Run prescription service tests
         env:
-          MONGODB_URL: mongodb://admin:password@localhost:27017/
-          MONGODB_DB_NAME: prescription_test_db
+          MONGO_URL: mongodb://admin:mongo_secure_password@localhost:27017/prescription_test_db?authSource=admin
+          MONGO_DATABASE: prescription_test_db
           REDIS_URL: redis://localhost:6379
           RABBITMQ_URL: amqp://guest:guest@localhost:5672/
           JWT_SECRET: test-secret-key-for-ci
