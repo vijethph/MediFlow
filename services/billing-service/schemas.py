@@ -199,6 +199,12 @@ class InvoiceResponse(BaseModel):
             return str(v)
         return v
 
+    @field_validator("meta", mode="before")
+    @classmethod
+    def handle_none_meta(cls, v):
+        """Convert None to empty dict for meta field."""
+        return v if v is not None else {}
+
     class Config:
         from_attributes = True
         json_schema_extra = {

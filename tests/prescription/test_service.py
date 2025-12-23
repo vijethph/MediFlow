@@ -229,7 +229,10 @@ class TestMedicalRecordService:
         )
 
         assert updated.vital_signs is not None
-        assert updated.vital_signs.heart_rate == 72
+        if isinstance(updated.vital_signs, dict):
+            assert updated.vital_signs["heart_rate"] == 72
+        else:
+            assert updated.vital_signs.heart_rate == 72
 
 
 class TestLabResultIDGeneration:

@@ -8,6 +8,7 @@ import os
 import sys
 from datetime import date, datetime, timezone
 from decimal import Decimal
+from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 from fastapi.testclient import TestClient
@@ -83,6 +84,37 @@ def client(db_session):
     app.dependency_overrides.clear()
 
 
+@pytest.fixture(scope="function")
+def authenticated_client(db_session, mock_user):
+    """
+    Create authenticated FastAPI test client.
+
+    Uses dependency_overrides to bypass authentication for testing.
+
+    :param db_session: Database session
+    :param mock_user: Mock user data
+    :return: Authenticated test client
+    """
+    from dependencies import require_authentication
+
+    def override_get_db():
+        try:
+            yield db_session
+        finally:
+            pass
+
+    def override_auth():
+        return mock_user
+
+    app.dependency_overrides[get_db] = override_get_db
+    app.dependency_overrides[require_authentication] = override_auth
+
+    with TestClient(app) as test_client:
+        yield test_client
+
+    app.dependency_overrides.clear()
+
+
 @pytest.fixture
 def mock_jwt_token():
     """
@@ -107,6 +139,37 @@ def mock_user():
         "patient_id": "pat-123",
         "token": "mock_token",
     }
+
+
+@pytest.fixture(autouse=True)
+def mock_publish_event(monkeypatch):
+    """
+    Mock publish_event for messaging tests.
+
+    Automatically applied to all tests to prevent RabbitMQ connection attempts.
+
+    :param monkeypatch: Pytest monkeypatch fixture
+    :return: AsyncMock for publish_event
+    """
+    mock = AsyncMock(return_value=None)
+
+    # Mock at service module level where it's imported
+    try:
+        import service
+
+        monkeypatch.setattr(service, "publish_event", mock)
+    except (ImportError, AttributeError):
+        pass
+
+    # Also mock at common.messaging level as fallback
+    try:
+        import common.messaging
+
+        monkeypatch.setattr(common.messaging, "publish_event", mock)
+    except (ImportError, AttributeError):
+        pass
+
+    return mock
 
 
 @pytest.fixture
@@ -209,8 +272,8 @@ def sample_claim_create():
         insurer_name="Test Insurance Co",
         policy_number="POL-123456",
         created_date=datetime.now(timezone.utc),
-        billable_period_start=datetime.now(timezone.utc),
-        billable_period_end=datetime.now(timezone.utc),
+        billable_period_start=datetime.now(timezone.utc).date(),
+        billable_period_end=datetime.now(timezone.utc).date(),
         items=[
             schemas.ClaimItemCreate(
                 sequence=1,
