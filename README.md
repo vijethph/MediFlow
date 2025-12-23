@@ -245,7 +245,7 @@ npm install
 
 # Create environment file
 cat > .env.local << EOF
-NEXT_PUBLIC_API_URL=http://localhost:8000
+NEXT_PUBLIC_API_URL=http://localhost:41075
 EOF
 
 # Start development server
