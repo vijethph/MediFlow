@@ -7,7 +7,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/vijethph/MediFlow?color=yellow&style=flat-square)](https://github.com/vijethph/MediFlow/stargazers)
 [![GitHub license](https://img.shields.io/github/license/vijethph/MediFlow?style=flat-square)](https://github.com/vijethph/MediFlow/blob/master/LICENSE)
 
-[![Test and Coverage](https://github.com/vijethph/MediFlow/actions/workflows/test-coverage.yml/badge.svg)](https://github.com/vijethph/MediFlow/actions/workflows/test-coverage.yml)
+[![Unit Tests](https://github.com/vijethph/MediFlow/actions/workflows/test.yml/badge.svg)](https://github.com/vijethph/MediFlow/actions/workflows/test.yml)
+[![Build and Push Docker Images](https://github.com/vijethph/MediFlow/actions/workflows/build.yml/badge.svg)](https://github.com/vijethph/MediFlow/actions/workflows/build.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=vijethph_MediFlow&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=vijethph_MediFlow)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=vijethph_MediFlow&metric=bugs)](https://sonarcloud.io/summary/new_code?id=vijethph_MediFlow)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=vijethph_MediFlow&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=vijethph_MediFlow)
@@ -15,6 +16,7 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=vijethph_MediFlow&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=vijethph_MediFlow)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=vijethph_MediFlow&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=vijethph_MediFlow)
 [![Known Vulnerabilities](https://snyk.io/test/github/vijethph/MediFlow/badge.svg)](https://snyk.io/test/github/vijethph/MediFlow)
+[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-dark.svg)](https://sonarcloud.io/summary/new_code?id=vijethph_MediFlow)
 
 <div align="center">
   <a href="https://github.com/vijethph/MediFlow">
@@ -85,26 +87,13 @@ This is a **distributed healthcare management system** built with 4 independent 
 - Prometheus + Grafana for metrics and monitoring
 - FHIR R4-compatible schemas (Patient, Appointment, Invoice, MedicationRequest resources)
 
-See [Architecture Decision Records](docs/adr) for detailed trade-off analysis.    
-
-## Project Report and Video
-
-The full project report is available in the root folder: [Project Report](MediFlowReport.pdf)   
-Watch the video showcasing the project here:     
-
-[Project Demo Video](https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE4blrBgRb5rHcqcVn8.OGhG3Sa4Z9UAOcaQ?startTime=1765910669000)    
-```
-https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE4blrBgRb5rHcqcVn8.OGhG3Sa4Z9UAOcaQ?startTime=1765910669000
-```
-
-**Passcode**: `=8+*&l97`
+See [Architecture Decision Records](docs/adr) for detailed trade-off analysis.
 
 ### Project Report and Video
 
 The full project report is available in the root folder: [Project Report](MediFlowReport.pdf)
-Watch the video showcasing the project here:
 
-[Project Demo Video](https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE4blrBgRb5rHcqcVn8.OGhG3Sa4Z9UAOcaQ?startTime=1765910669000)
+Watch the video showcasing the project here: [Project Demo Video](https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE4blrBgRb5rHcqcVn8.OGhG3Sa4Z9UAOcaQ?startTime=1765910669000)
 
 ```
 https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE4blrBgRb5rHcqcVn8.OGhG3Sa4Z9UAOcaQ?startTime=1765910669000
@@ -140,6 +129,8 @@ https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE
 - **State Management**: React Query (TanStack Query)
 - **Validation**: Zod schemas
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Getting Started
 
 ### Recommended Deployment Approach
@@ -172,6 +163,8 @@ Choose one deployment method:
 - Minikube 1.30+
 - kubectl 1.27+
 - 4GB RAM minimum
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Installation
 
@@ -406,6 +399,8 @@ kubectl delete namespace healthcare
 minikube stop
 ```
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Usage
 
 ### Common Operations
@@ -501,6 +496,8 @@ kubectl port-forward -n healthcare svc/grafana 3000:3000
 - `e2e_test_all_services.sh` - Comprehensive end-to-end API testing
 - `test_k8s_deployment.sh` - Verify Kubernetes deployment health
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Project Structure
 
 ```
@@ -546,6 +543,8 @@ mediflow/
 └── Pipfile                     # Python dependencies
 ```
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Contributing
 
 This is an academic project for COMP41720. For educational purposes:
@@ -561,6 +560,8 @@ This is an academic project for COMP41720. For educational purposes:
 ## License
 
 Distributed under the Apache 2.0 License. See `LICENSE` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Contact
 
@@ -586,3 +587,5 @@ If you like this project, please ⭐ this repo and share it with others 👍
 - [FHIR R4 Specification](https://www.hl7.org/fhir/) - Healthcare data standards
 - [Kong API Gateway](https://konghq.com/) - Cloud-native API gateway
 - [Best-README-Template](https://github.com/othneildrew/Best-README-Template) - README structure
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
