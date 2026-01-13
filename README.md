@@ -1,13 +1,67 @@
-<div align="center">
-  <h1>MediFlow - a Healthcare Patient Management System</h1>
+<a id="readme-top"></a>
 
-  <p>
+[![Status](https://img.shields.io/badge/status-active-success.svg?style=flat-square&logo=kubernetes)]()
+[![GitHub issues](https://img.shields.io/github/issues/vijethph/MediFlow?style=flat-square)](https://github.com/vijethph/MediFlow/issues)
+[![Contributors](https://img.shields.io/github/contributors/vijethph/MediFlow?style=flat-square)](https://github.com/vijethph/MediFlow/graphs/contributors)
+[![GitHub forks](https://img.shields.io/github/forks/vijethph/MediFlow?color=blue&style=flat-square)](https://github.com/vijethph/MediFlow/network)
+[![GitHub stars](https://img.shields.io/github/stars/vijethph/MediFlow?color=yellow&style=flat-square)](https://github.com/vijethph/MediFlow/stargazers)
+[![GitHub license](https://img.shields.io/github/license/vijethph/MediFlow?style=flat-square)](https://github.com/vijethph/MediFlow/blob/master/LICENSE)
+
+[![Test and Coverage](https://github.com/vijethph/MediFlow/actions/workflows/test-coverage.yml/badge.svg)](https://github.com/vijethph/MediFlow/actions/workflows/test-coverage.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=vijethph_MediFlow&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=vijethph_MediFlow)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=vijethph_MediFlow&metric=bugs)](https://sonarcloud.io/summary/new_code?id=vijethph_MediFlow)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=vijethph_MediFlow&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=vijethph_MediFlow)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=vijethph_MediFlow&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=vijethph_MediFlow)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=vijethph_MediFlow&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=vijethph_MediFlow)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=vijethph_MediFlow&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=vijethph_MediFlow)
+[![Known Vulnerabilities](https://snyk.io/test/github/vijethph/MediFlow/badge.svg)](https://snyk.io/test/github/vijethph/MediFlow)
+
+<div align="center">
+  <a href="https://github.com/vijethph/MediFlow">
+    <img src="docs/health.png" alt="Logo" width="120" height="120" align="center">
+  </a>
+
+  <h2 align="center">MediFlow - a Healthcare Patient Management System</h2>
+
+  <p align="center">
     MediFlow is a distributed microservices-based healthcare platform managing patient records, appointments, prescriptions, and billing with FHIR R4 compatibility considerations.
+    <br />
+    <br />
+    <a href="https://github.com/vijethph/MediFlow/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/vijethph/MediFlow/issues">Request Feature</a>
   </p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 </div>
+
+<!-- TABLE OF CONTENTS -->
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#project-report-and-video">Project Report and Video</a></li>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#recommended-deployment-approach">Recommended Deployment Approach</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#project-structure">Project Structure</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
 ## About The Project
 
@@ -33,7 +87,7 @@ This is a **distributed healthcare management system** built with 4 independent 
 
 See [Architecture Decision Records](docs/adr) for detailed trade-off analysis.
 
-## Project Report and Video
+### Project Report and Video
 
 The full project report is available in the root folder: [Project Report](MediFlowReport.pdf)
 Watch the video showcasing the project here:
@@ -46,52 +100,7 @@ https://ucd-ie.zoom.us/rec/share/Yc8NpASAfmOKLYOz_atM08eou5LPjVTW9lii7JNetPJmiuE
 
 **Passcode**: `=8+*&l97`
 
-### Project Structure
-
-```
-mediflow/
-├── client/                     # Next.js 14 frontend (port 3001)
-├── services/                   # Microservices
-│   ├── patient-service/        # Patient management (port 8001)
-│   ├── appointment-service/    # Appointment scheduling (port 8002)
-│   ├── prescription-service/   # Medication records (port 8003)
-│   └── billing-service/        # Invoicing & payments (port 8004)
-├── common/                     # Shared libraries
-│   ├── auth/                   # JWT validation
-│   ├── logging/                # structlog configuration
-│   ├── messaging/              # RabbitMQ publisher/consumer
-│   ├── exceptions/             # Custom exceptions
-│   ├── middleware/             # Error handlers
-│   ├── models/                 # Shared Pydantic types
-│   └── utils/                  # Retry logic, helpers
-├── kubernetes/                 # K8s manifests
-│   ├── namespace.yaml
-│   ├── infrastructure/         # RabbitMQ, Redis, Prometheus, Grafana, Kong
-│   ├── patient-service/        # Patient service K8s resources
-│   ├── appointment-service/
-│   ├── prescription-service/
-│   └── billing-service/
-├── monitoring/                 # Observability stack
-│   ├── prometheus/             # Metrics collection (recording rules, alerts)
-│   └── grafana/                # Dashboards & provisioning
-├── scripts/                    # Automation scripts
-│   ├── docker_manage.sh        # Docker Compose management
-│   ├── k8s_manage.sh           # Kubernetes deployment
-│   ├── e2e_test_all_services.sh # End-to-end testing
-│   ├── test_k8s_deployment.sh  # K8s deployment verification
-│   └── init_*_db.*             # Database initialization
-├── tests/                      # Test suites
-│   ├── patient/
-│   ├── appointment/
-│   ├── prescription/
-│   └── billing/
-├── docs/                       # Documentation & ADRs
-├── kong/                       # Kong API Gateway config
-├── docker-compose.yml          # Full stack orchestration
-└── Pipfile                     # Python dependencies
-```
-
-## Built With
+### Built With
 
 **Core Stack:**
 
@@ -480,6 +489,51 @@ kubectl port-forward -n healthcare svc/grafana 3000:3000
 - `e2e_test_all_services.sh` - Comprehensive end-to-end API testing
 - `test_k8s_deployment.sh` - Verify Kubernetes deployment health
 
+## Project Structure
+
+```
+mediflow/
+├── client/                     # Next.js 14 frontend (port 3001)
+├── services/                   # Microservices
+│   ├── patient-service/        # Patient management (port 8001)
+│   ├── appointment-service/    # Appointment scheduling (port 8002)
+│   ├── prescription-service/   # Medication records (port 8003)
+│   └── billing-service/        # Invoicing & payments (port 8004)
+├── common/                     # Shared libraries
+│   ├── auth/                   # JWT validation
+│   ├── logging/                # structlog configuration
+│   ├── messaging/              # RabbitMQ publisher/consumer
+│   ├── exceptions/             # Custom exceptions
+│   ├── middleware/             # Error handlers
+│   ├── models/                 # Shared Pydantic types
+│   └── utils/                  # Retry logic, helpers
+├── kubernetes/                 # K8s manifests
+│   ├── namespace.yaml
+│   ├── infrastructure/         # RabbitMQ, Redis, Prometheus, Grafana, Kong
+│   ├── patient-service/        # Patient service K8s resources
+│   ├── appointment-service/
+│   ├── prescription-service/
+│   └── billing-service/
+├── monitoring/                 # Observability stack
+│   ├── prometheus/             # Metrics collection (recording rules, alerts)
+│   └── grafana/                # Dashboards & provisioning
+├── scripts/                    # Automation scripts
+│   ├── docker_manage.sh        # Docker Compose management
+│   ├── k8s_manage.sh           # Kubernetes deployment
+│   ├── e2e_test_all_services.sh # End-to-end testing
+│   ├── test_k8s_deployment.sh  # K8s deployment verification
+│   └── init_*_db.*             # Database initialization
+├── tests/                      # Test suites
+│   ├── patient/
+│   ├── appointment/
+│   ├── prescription/
+│   └── billing/
+├── docs/                       # Documentation & ADRs
+├── kong/                       # Kong API Gateway config
+├── docker-compose.yml          # Full stack orchestration
+└── Pipfile                     # Python dependencies
+```
+
 ## Contributing
 
 This is an academic project for COMP41720. For educational purposes:
@@ -498,7 +552,21 @@ Distributed under the Apache 2.0 License. See `LICENSE` for more information.
 
 ## Contact
 
+Vijeth P H - [@vijethph](https://github.com/vijethph)
+
+Akshay C U - [@AkshayCu-Codes](https://github.com/AkshayCu-Codes)
+
+Sai Deep Kandra - [@Saideep-23](https://github.com/Saideep-23)
+
+Lakshmi Kiran C M - [@lakshmikirancm](https://github.com/lakshmikirancm)
+
 Project Link: [https://github.com/vijethph/mediflow](https://github.com/vijethph/mediflow)
+
+### Thank You!
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+
+If you like this project, please ⭐ this repo and share it with others 👍
 
 ## Acknowledgments
 
