@@ -225,7 +225,7 @@ def update_prescription(
     update_dict = {"updated_at": datetime.now(timezone.utc)}
 
     if prescription_data.status:
-        update_dict["status"] = prescription_data.status.value
+        update_dict["status"] = prescription_data.status
 
     if prescription_data.notes is not None:
         update_dict["notes"] = prescription_data.notes
@@ -243,7 +243,7 @@ def update_prescription(
             {
                 "prescription_id": prescription_id,
                 "patient_id": prescription.patient_id,
-                "new_status": prescription_data.status.value,
+                "new_status": prescription_data.status,
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             },
         )
@@ -308,7 +308,7 @@ def create_medical_record(
         {
             "record_id": record_id,
             "patient_id": record_data.patient_id,
-            "record_type": record_data.record_type.value,
+            "record_type": record_data.record_type,
             "timestamp": datetime.now(timezone.utc).isoformat(),
         },
     )
@@ -507,7 +507,7 @@ def update_lab_result(
     update_dict = {"updated_at": datetime.now(timezone.utc)}
 
     if result_data.status:
-        update_dict["status"] = result_data.status.value
+        update_dict["status"] = result_data.status
 
     if result_data.interpretation:
         update_dict["interpretation"] = result_data.interpretation

@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..",
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
-from prometheus_client import Counter, Histogram, make_asgi_app
+from prometheus_client import Counter, Gauge, Histogram, make_asgi_app
 from sqlalchemy import text
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
@@ -28,6 +28,7 @@ from common.middleware import (
     http_exception_handler,
     validation_exception_handler,
 )
+from common.utils.circuit_breaker import CircuitState, get_all_circuit_breakers
 from config import get_settings
 from database import engine, init_db
 
@@ -48,6 +49,24 @@ REQUEST_LATENCY = Histogram(
     "billing_service_request_duration_seconds",
     "HTTP request latency",
     ["method", "endpoint"],
+)
+
+CIRCUIT_BREAKER_STATE = Gauge(
+    "circuit_breaker_state",
+    "Circuit breaker state (0=closed, 1=half_open, 2=open)",
+    ["circuit_name"],
+)
+
+CIRCUIT_BREAKER_FAILURES = Counter(
+    "circuit_breaker_failures_total",
+    "Total circuit breaker failures",
+    ["circuit_name"],
+)
+
+CIRCUIT_BREAKER_SUCCESSES = Counter(
+    "circuit_breaker_successes_total",
+    "Total circuit breaker successes",
+    ["circuit_name"],
 )
 
 
@@ -141,6 +160,27 @@ metrics_app = make_asgi_app()
 app.mount("/metrics", metrics_app)
 
 
+def update_circuit_breaker_metrics():
+    """Update Prometheus metrics for all circuit breakers."""
+    state_mapping = {
+        CircuitState.CLOSED: 0,
+        CircuitState.HALF_OPEN: 1,
+        CircuitState.OPEN: 2,
+    }
+
+    for name, breaker in get_all_circuit_breakers().items():
+        stats = breaker.get_stats()
+        CIRCUIT_BREAKER_STATE.labels(circuit_name=name).set(
+            state_mapping.get(breaker.state, 0)
+        )
+        CIRCUIT_BREAKER_FAILURES.labels(circuit_name=name)._value.set(
+            stats["failure_count"]
+        )
+        CIRCUIT_BREAKER_SUCCESSES.labels(circuit_name=name)._value.set(
+            stats["success_count"]
+        )
+
+
 @app.get("/", tags=["Root"])
 def root():
     """
@@ -161,9 +201,8 @@ async def health_check():
     """
     Health check endpoint.
 
-    :return: Service health status
+    :return: Service health status with circuit breaker states
     """
-    # Check database connection
     try:
         with engine.connect() as conn:
             conn.execute(text("SELECT 1"))
@@ -171,7 +210,6 @@ async def health_check():
     except Exception:
         db_status = "disconnected"
 
-    # Check RabbitMQ connection with timeout
     rabbitmq_status = "disconnected"
     try:
         publisher = RabbitMQPublisher()
@@ -183,11 +221,23 @@ async def health_check():
     except Exception:
         rabbitmq_status = "disconnected"
 
+    circuit_breakers = {}
+    for name, breaker in get_all_circuit_breakers().items():
+        stats = breaker.get_stats()
+        circuit_breakers[name] = {
+            "state": stats["state"],
+            "failure_count": stats["failure_count"],
+            "success_count": stats["success_count"],
+        }
+
+    update_circuit_breaker_metrics()
+
     return {
         "service": "billing-service",
         "status": "healthy",
         "database": db_status,
         "rabbitmq": rabbitmq_status,
+        "circuit_breakers": circuit_breakers,
     }
 
 

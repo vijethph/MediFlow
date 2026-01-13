@@ -7,7 +7,6 @@ This module tests REST API endpoints.
 import os
 import sys
 from datetime import date
-from unittest.mock import patch
 
 import pytest
 
@@ -97,24 +96,42 @@ class TestPatientEndpoints:
 
         assert response.status_code == 404
 
-    def test_login_patient_inactive(self, client, sample_patient, db_session):
+    def test_login_patient_inactive(self, client, db_session):
         """Test login with inactive patient."""
-        sample_patient.active = False
-        db_session.commit()
+        from models import Patient
+        from datetime import datetime, timezone
+        import uuid
+
+        inactive_patient_email = f"inactive-{uuid.uuid4().hex[:8]}@example.com"
+
+        inactive_patient = Patient(
+            patient_id=f"PAT-INACTIVE-{uuid.uuid4().hex[:8].upper()}",
+            resource_type="Patient",
+            active=False,
+            name=[{"use": "official", "family": "Inactive", "given": ["Test"]}],
+            telecom=[
+                {"system": "email", "value": inactive_patient_email, "use": "home"}
+            ],
+            gender="male",
+            birth_date=date(1990, 1, 1),
+            meta={
+                "versionId": "1",
+                "lastUpdated": datetime.now(timezone.utc).isoformat(),
+            },
+        )
+        db_session.add(inactive_patient)
+        db_session.flush()
 
         response = client.post(
             "/api/v1/patients/login",
-            json={"email": "john.doe@example.com"},
+            json={"email": inactive_patient_email},
         )
 
         assert response.status_code == 403
 
-    @patch("services.patient_service.dependencies.require_authentication")
-    def test_get_patient_success(self, mock_auth, client, sample_patient, mock_user):
+    def test_get_patient_success(self, authenticated_client, sample_patient):
         """Test retrieving patient by ID."""
-        mock_auth.return_value = mock_user
-
-        response = client.get(
+        response = authenticated_client.get(
             f"/api/v1/patients/{sample_patient.patient_id}",
             headers={"Authorization": "Bearer test_token"},
         )
@@ -124,24 +141,18 @@ class TestPatientEndpoints:
         assert data["id"] == sample_patient.patient_id
         assert data["resource_type"] == "Patient"
 
-    @patch("services.patient_service.dependencies.require_authentication")
-    def test_get_patient_not_found(self, mock_auth, client, mock_user):
+    def test_get_patient_not_found(self, authenticated_client):
         """Test retrieving non-existent patient."""
-        mock_auth.return_value = mock_user
-
-        response = client.get(
+        response = authenticated_client.get(
             "/api/v1/patients/PAT-NOTFOUND",
             headers={"Authorization": "Bearer test_token"},
         )
 
         assert response.status_code == 404
 
-    @patch("services.patient_service.dependencies.require_authentication")
-    def test_list_patients(self, mock_auth, client, sample_patient_list, mock_user):
+    def test_list_patients(self, authenticated_client, sample_patient_list):
         """Test listing patients."""
-        mock_auth.return_value = mock_user
-
-        response = client.get(
+        response = authenticated_client.get(
             "/api/v1/patients/",
             headers={"Authorization": "Bearer test_token"},
         )
@@ -151,14 +162,9 @@ class TestPatientEndpoints:
         assert data["total"] >= 5
         assert len(data["items"]) >= 5
 
-    @patch("services.patient_service.dependencies.require_authentication")
-    def test_list_patients_pagination(
-        self, mock_auth, client, sample_patient_list, mock_user
-    ):
+    def test_list_patients_pagination(self, authenticated_client, sample_patient_list):
         """Test listing patients with pagination."""
-        mock_auth.return_value = mock_user
-
-        response = client.get(
+        response = authenticated_client.get(
             "/api/v1/patients/?skip=2&limit=2",
             headers={"Authorization": "Bearer test_token"},
         )
@@ -169,17 +175,14 @@ class TestPatientEndpoints:
         assert data["limit"] == 2
         assert len(data["items"]) == 2
 
-    @patch("services.patient_service.dependencies.require_authentication")
-    def test_update_patient(self, mock_auth, client, sample_patient, mock_user):
+    def test_update_patient(self, authenticated_client, sample_patient):
         """Test updating patient."""
-        mock_auth.return_value = mock_user
-
         update_data = {
             "telecom": [{"system": "phone", "value": "+1-555-9999", "use": "work"}],
             "marital_status": "married",
         }
 
-        response = client.put(
+        response = authenticated_client.put(
             f"/api/v1/patients/{sample_patient.patient_id}",
             json=update_data,
             headers={"Authorization": "Bearer test_token"},
@@ -189,14 +192,11 @@ class TestPatientEndpoints:
         data = response.json()
         assert data["marital_status"] == "married"
 
-    @patch("services.patient_service.dependencies.require_authentication")
-    def test_update_patient_not_found(self, mock_auth, client, mock_user):
+    def test_update_patient_not_found(self, authenticated_client):
         """Test updating non-existent patient."""
-        mock_auth.return_value = mock_user
-
         update_data = {"marital_status": "married"}
 
-        response = client.put(
+        response = authenticated_client.put(
             "/api/v1/patients/PAT-NOTFOUND",
             json=update_data,
             headers={"Authorization": "Bearer test_token"},
@@ -204,24 +204,18 @@ class TestPatientEndpoints:
 
         assert response.status_code == 404
 
-    @patch("services.patient_service.dependencies.require_authentication")
-    def test_delete_patient(self, mock_auth, client, sample_patient, mock_user):
+    def test_delete_patient(self, authenticated_client, sample_patient):
         """Test deleting patient."""
-        mock_auth.return_value = mock_user
-
-        response = client.delete(
+        response = authenticated_client.delete(
             f"/api/v1/patients/{sample_patient.patient_id}",
             headers={"Authorization": "Bearer test_token"},
         )
 
         assert response.status_code == 204
 
-    @patch("services.patient_service.dependencies.require_authentication")
-    def test_delete_patient_not_found(self, mock_auth, client, mock_user):
+    def test_delete_patient_not_found(self, authenticated_client):
         """Test deleting non-existent patient."""
-        mock_auth.return_value = mock_user
-
-        response = client.delete(
+        response = authenticated_client.delete(
             "/api/v1/patients/PAT-NOTFOUND",
             headers={"Authorization": "Bearer test_token"},
         )

@@ -45,11 +45,11 @@ class PrescriptionCreate(BaseModel):
     doctor_name: str = Field(..., min_length=1, max_length=200)
     doctor_id: Optional[str] = None
     appointment_id: Optional[str] = None
-    
+
     medications: List[MedicationCreate] = Field(..., min_length=1)
     diagnosis: str = Field(..., min_length=1, max_length=1000)
     notes: Optional[str] = Field(None, max_length=2000)
-    
+
     lab_tests_ordered: Optional[List[str]] = None
     follow_up_required: bool = False
     follow_up_days: Optional[int] = Field(None, ge=1, le=365)
@@ -84,6 +84,9 @@ class PrescriptionUpdate(BaseModel):
     status: Optional[PrescriptionStatus] = None
     notes: Optional[str] = Field(None, max_length=2000)
 
+    class Config:
+        use_enum_values = True
+
 
 class PrescriptionResponse(BaseModel):
     """Schema for prescription response."""
@@ -94,19 +97,19 @@ class PrescriptionResponse(BaseModel):
     doctor_name: str
     doctor_id: Optional[str]
     appointment_id: Optional[str]
-    
+
     medications: List[Medication]
     diagnosis: str
     notes: Optional[str]
-    
+
     status: PrescriptionStatus
     prescribed_date: datetime
     valid_until: Optional[datetime]
-    
+
     lab_tests_ordered: Optional[List[str]]
     follow_up_required: bool
     follow_up_days: Optional[int]
-    
+
     meta: Dict[str, Any]
     created_at: datetime
     updated_at: datetime
@@ -148,12 +151,12 @@ class MedicalRecordCreate(BaseModel):
     record_type: MedicalRecordType
     title: str = Field(..., min_length=1, max_length=300)
     description: str = Field(..., min_length=1)
-    
+
     doctor_name: str = Field(..., min_length=1, max_length=200)
     doctor_id: Optional[str] = None
     appointment_id: Optional[str] = None
     prescription_id: Optional[str] = None
-    
+
     vital_signs: Optional[VitalSigns] = None
     symptoms: Optional[List[str]] = None
     diagnosis_codes: Optional[List[str]] = None
@@ -195,17 +198,17 @@ class MedicalRecordResponse(BaseModel):
     record_type: MedicalRecordType
     title: str
     description: str
-    
+
     doctor_name: str
     doctor_id: Optional[str]
     appointment_id: Optional[str]
     prescription_id: Optional[str]
-    
+
     vital_signs: Optional[Dict[str, Any]]
     symptoms: Optional[List[str]]
     diagnosis_codes: Optional[List[str]]
     attachments: Optional[List[Dict[str, str]]]
-    
+
     meta: Dict[str, Any]
     created_at: datetime
     updated_at: datetime
@@ -246,18 +249,18 @@ class LabResultCreate(BaseModel):
     patient_id: str = Field(..., min_length=1)
     test_panel_name: str = Field(..., min_length=1, max_length=200)
     test_category: str = Field(..., min_length=1, max_length=100)
-    
+
     tests: List[LabTestCreate] = Field(..., min_length=1)
-    
+
     ordering_doctor: str = Field(..., min_length=1, max_length=200)
     performing_lab: str = Field(..., min_length=1, max_length=200)
-    
+
     test_date: datetime
     result_date: datetime
-    
+
     interpretation: Optional[str] = Field(None, max_length=2000)
     critical_results: bool = False
-    
+
     appointment_id: Optional[str] = None
     prescription_id: Optional[str] = None
 
@@ -299,6 +302,9 @@ class LabResultUpdate(BaseModel):
     status: Optional[LabResultStatus] = None
     interpretation: Optional[str] = Field(None, max_length=2000)
 
+    class Config:
+        use_enum_values = True
+
 
 class LabResultResponse(BaseModel):
     """Schema for lab result response."""
@@ -308,23 +314,23 @@ class LabResultResponse(BaseModel):
     patient_id: str
     test_panel_name: str
     test_category: str
-    
+
     tests: List[LabTest]
-    
+
     ordering_doctor: str
     performing_lab: str
-    
+
     test_date: datetime
     result_date: datetime
     status: LabResultStatus
-    
+
     interpretation: Optional[str]
     critical_results: bool
-    
+
     appointment_id: Optional[str]
     prescription_id: Optional[str]
     attachments: Optional[List[Dict[str, str]]]
-    
+
     meta: Dict[str, Any]
     created_at: datetime
     updated_at: datetime

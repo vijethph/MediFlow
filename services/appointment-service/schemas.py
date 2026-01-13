@@ -200,7 +200,7 @@ class AppointmentResponse(BaseModel):
     comment: Optional[str] = None
     participant: List[AppointmentParticipant]
     location: Optional[str] = None
-    meta: Dict[str, Any] = Field(default_factory=dict)
+    meta: Optional[Dict[str, Any]] = Field(default_factory=dict)
     created_at: datetime
     updated_at: datetime
 
@@ -210,6 +210,14 @@ class AppointmentResponse(BaseModel):
         """Convert UUID to string."""
         if hasattr(v, "hex"):
             return str(v)
+        return v
+
+    @field_validator("meta", mode="before")
+    @classmethod
+    def ensure_meta_dict(cls, v):
+        """Ensure meta is a dict, converting None to empty dict."""
+        if v is None:
+            return {}
         return v
 
     class Config:

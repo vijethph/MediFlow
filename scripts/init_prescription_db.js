@@ -3,12 +3,9 @@
 
 print("Initializing Prescription Service Database...");
 
-// Switch to prescription database
 db = db.getSiblingDB("prescription_db");
 
-// Create collections with validation if they don't exist
 try {
-  // Prescriptions collection
   db.createCollection("prescriptions", {
     validator: {
       $jsonSchema: {
@@ -17,7 +14,7 @@ try {
           "prescription_id",
           "patient_id",
           "doctor_name",
-          "prescription_date",
+          "prescribed_date",
         ],
         properties: {
           prescription_id: {
@@ -32,7 +29,7 @@ try {
             bsonType: "string",
             description: "Prescribing doctor name",
           },
-          prescription_date: {
+          prescribed_date: {
             bsonType: "date",
             description: "Date of prescription",
           },
@@ -51,16 +48,14 @@ try {
     },
   });
 
-  // Create indexes
   db.prescriptions.createIndex({ prescription_id: 1 }, { unique: true });
   db.prescriptions.createIndex({ patient_id: 1 });
-  db.prescriptions.createIndex({ prescription_date: -1 });
+  db.prescriptions.createIndex({ prescribed_date: -1 });
   db.prescriptions.createIndex({ status: 1 });
 
   print("Prescriptions collection created with indexes");
 } catch (e) {
   if (e.code !== 48) {
-    // Collection already exists
     print("Error creating prescriptions collection: " + e);
   } else {
     print("Prescriptions collection already exists");
@@ -68,7 +63,6 @@ try {
 }
 
 try {
-  // Lab Results collection
   db.createCollection("lab_results", {
     validator: {
       $jsonSchema: {
@@ -107,7 +101,6 @@ try {
     },
   });
 
-  // Create indexes
   db.lab_results.createIndex({ result_id: 1 }, { unique: true });
   db.lab_results.createIndex({ patient_id: 1 });
   db.lab_results.createIndex({ result_date: -1 });
@@ -116,7 +109,6 @@ try {
   print("Lab Results collection created with indexes");
 } catch (e) {
   if (e.code !== 48) {
-    // Collection already exists
     print("Error creating lab_results collection: " + e);
   } else {
     print("Lab Results collection already exists");
@@ -124,7 +116,6 @@ try {
 }
 
 try {
-  // Medical Records collection
   db.createCollection("medical_records", {
     validator: {
       $jsonSchema: {
@@ -159,7 +150,6 @@ try {
     },
   });
 
-  // Create indexes
   db.medical_records.createIndex({ record_id: 1 }, { unique: true });
   db.medical_records.createIndex({ patient_id: 1 });
   db.medical_records.createIndex({ record_date: -1 });
@@ -168,20 +158,131 @@ try {
   print("Medical Records collection created with indexes");
 } catch (e) {
   if (e.code !== 48) {
-    // Collection already exists
     print("Error creating medical_records collection: " + e);
   } else {
     print("Medical Records collection already exists");
   }
 }
 
-// Optional: Seed data for development
 if (process.env.SEED_DATA === "true") {
-  print("Seeding development data...");
+  print("Seeding prescription data from CSV files...");
 
-  // Add sample data here if needed
+  const prescriptionFile = "/docker-entrypoint-initdb.d/prescription_data.csv";
+  const medicationFile = "/docker-entrypoint-initdb.d/medication_data.csv";
 
-  print("Seed data inserted.");
+  try {
+    const prescriptionLines = cat(prescriptionFile).split("\n");
+    const medicationLines = cat(medicationFile).split("\n");
+
+    const prescriptionHeaders = prescriptionLines[0].split(",");
+    const medicationHeaders = medicationLines[0].split(",");
+
+    const prescriptionData = [];
+    for (let i = 1; i < prescriptionLines.length; i++) {
+      if (!prescriptionLines[i].trim()) continue;
+
+      const csvLine = prescriptionLines[i];
+      const values = [];
+      let currentValue = "";
+      let insideQuotes = false;
+
+      for (let j = 0; j < csvLine.length; j++) {
+        const char = csvLine[j];
+        if (char === '"') {
+          insideQuotes = !insideQuotes;
+        } else if (char === "," && !insideQuotes) {
+          values.push(currentValue.trim());
+          currentValue = "";
+        } else {
+          currentValue += char;
+        }
+      }
+      values.push(currentValue.trim());
+
+      const prescription = {
+        prescription_id: values[0] || "",
+        patient_id: values[1] || "",
+        appointment_id: values[2] || null,
+        doctor_name: values[3] || "",
+        doctor_id: values[4] || null,
+        diagnosis: values[5] || "",
+        status: values[6] || "active",
+        prescribed_date: values[7] ? new Date(values[7]) : new Date(),
+        valid_until: values[8] ? new Date(values[8]) : null,
+        follow_up_required: values[9] === "true" || values[9] === "TRUE",
+        follow_up_days: values[10] ? parseInt(values[10]) : null,
+        notes: values[11] || null,
+      };
+
+      prescriptionData.push(prescription);
+    }
+
+    const medicationMap = {};
+    for (let i = 1; i < medicationLines.length; i++) {
+      if (!medicationLines[i].trim()) continue;
+
+      const csvLine = medicationLines[i];
+      const values = [];
+      let currentValue = "";
+      let insideQuotes = false;
+
+      for (let j = 0; j < csvLine.length; j++) {
+        const char = csvLine[j];
+        if (char === '"') {
+          insideQuotes = !insideQuotes;
+        } else if (char === "," && !insideQuotes) {
+          values.push(currentValue.trim());
+          currentValue = "";
+        } else {
+          currentValue += char;
+        }
+      }
+      values.push(currentValue.trim());
+
+      const prescriptionId = values[1] || "";
+      const medication = {
+        medication_name: values[2] || "",
+        dosage: values[3] || "",
+        frequency: values[4] || "once_daily",
+        duration_days: values[5] ? parseInt(values[5]) : 30,
+        quantity: values[6] ? parseInt(values[6]) : null,
+        instructions: values[7] || null,
+      };
+
+      if (!medicationMap[prescriptionId]) {
+        medicationMap[prescriptionId] = [];
+      }
+      medicationMap[prescriptionId].push(medication);
+    }
+
+    let insertedCount = 0;
+    for (const prescription of prescriptionData) {
+      const medications = medicationMap[prescription.prescription_id] || [];
+      prescription.medications = medications;
+      prescription.meta = {};
+      prescription.created_at = new Date();
+      prescription.updated_at = new Date();
+
+      try {
+        db.prescriptions.insertOne(prescription);
+        insertedCount++;
+      } catch (e) {
+        if (e.code !== 11000) {
+          print(
+            "Error inserting prescription " +
+              prescription.prescription_id +
+              ": " +
+              e
+          );
+        }
+      }
+    }
+
+    print(insertedCount + " prescriptions inserted");
+  } catch (e) {
+    print("Error loading CSV files: " + e);
+    print("Make sure CSV files are mounted in /docker-entrypoint-initdb.d/");
+  }
 }
 
 print("Prescription Service database initialization complete!");

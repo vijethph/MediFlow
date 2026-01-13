@@ -10,7 +10,10 @@ import { Input } from "@/components/ui/Input";
 import { LoadingSpinner } from "@/components/ui/LoadingSpinner";
 import { useCreateInvoice } from "@/lib/hooks/useBilling";
 import { authApi } from "@/lib/api/auth";
-import { invoiceCreateSchema, type InvoiceCreateFormData } from "@/lib/validations";
+import {
+  invoiceCreateSchema,
+  type InvoiceCreateFormData,
+} from "@/lib/validations";
 import { useNotificationContext } from "@/components/providers/NotificationProvider";
 import { Plus, Trash2, DollarSign } from "lucide-react";
 
@@ -37,7 +40,10 @@ export default function CreateInvoicePage() {
     },
   });
 
-  const { fields, append, remove } = useFieldArray({ control, name: "line_items" });
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "line_items",
+  });
   const lineItems = watch("line_items");
 
   useEffect(() => {
@@ -50,16 +56,19 @@ export default function CreateInvoicePage() {
   }, [router]);
 
   useEffect(() => {
-    if (lineItems) {
+    if (lineItems && lineItems.length > 0) {
       const total = lineItems.reduce((sum, item) => {
-        const quantity = item.quantity || 0;
-        const unitPrice = item.unit_price || 0;
-        return sum + (quantity * unitPrice);
+        const quantity = Number(item.quantity) || 0;
+        const unitPrice = Number(item.unit_price) || 0;
+        return sum + quantity * unitPrice;
       }, 0);
       setCalculatedTotal(total);
-      setValue("total", total);
+      setValue("total", total, { shouldValidate: true });
+    } else {
+      setCalculatedTotal(0);
+      setValue("total", 0, { shouldValidate: true });
     }
-  }, [lineItems, setValue]);
+  }, [JSON.stringify(lineItems), setValue]);
 
   if (isChecking || !isAuthenticated) {
     return null;
@@ -69,7 +78,9 @@ export default function CreateInvoicePage() {
     try {
       const patientId = authApi.getPatientId();
       if (!patientId) {
-        setFormError("root", { message: "Patient ID not found. Please log in again." });
+        setFormError("root", {
+          message: "Patient ID not found. Please log in again.",
+        });
         return;
       }
 
@@ -78,11 +89,17 @@ export default function CreateInvoicePage() {
         subject: patientId,
       });
 
-      success("Invoice Created", "Your invoice has been generated successfully.");
+      success(
+        "Invoice Created",
+        "Your invoice has been generated successfully."
+      );
       router.push("/billing");
       router.refresh();
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : "Failed to create invoice. Please try again.";
+      const errorMessage =
+        err instanceof Error
+          ? err.message
+          : "Failed to create invoice. Please try again.";
       setFormError("root", { message: errorMessage });
       showError("Error", errorMessage);
     }
@@ -91,7 +108,9 @@ export default function CreateInvoicePage() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-8">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Generate New Invoice</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          Generate New Invoice
+        </h1>
         <p className="text-gray-600">Create a new invoice with line items</p>
       </div>
 
@@ -118,7 +137,9 @@ export default function CreateInvoicePage() {
             {fields.map((field, index) => (
               <Card key={field.id} className="mb-4 p-4 bg-gray-50">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-semibold text-gray-900">Item {index + 1}</h3>
+                  <h3 className="font-semibold text-gray-900">
+                    Item {index + 1}
+                  </h3>
                   {fields.length > 1 && (
                     <Button
                       type="button"
@@ -142,7 +163,9 @@ export default function CreateInvoicePage() {
                     label="Quantity"
                     type="number"
                     required
-                    {...register(`line_items.${index}.quantity`, { valueAsNumber: true })}
+                    {...register(`line_items.${index}.quantity`, {
+                      valueAsNumber: true,
+                    })}
                     error={errors.line_items?.[index]?.quantity?.message}
                   />
                   <Input
@@ -150,13 +173,19 @@ export default function CreateInvoicePage() {
                     type="number"
                     step="0.01"
                     required
-                    {...register(`line_items.${index}.unit_price`, { valueAsNumber: true })}
+                    {...register(`line_items.${index}.unit_price`, {
+                      valueAsNumber: true,
+                    })}
                     error={errors.line_items?.[index]?.unit_price?.message}
                   />
                 </div>
                 {lineItems?.[index] && (
                   <p className="text-sm text-gray-600 mt-2">
-                    Subtotal: €{((lineItems[index].quantity || 0) * (lineItems[index].unit_price || 0)).toFixed(2)}
+                    Subtotal: €
+                    {(
+                      (lineItems[index].quantity || 0) *
+                      (lineItems[index].unit_price || 0)
+                    ).toFixed(2)}
                   </p>
                 )}
               </Card>
@@ -164,7 +193,9 @@ export default function CreateInvoicePage() {
             <Button
               type="button"
               variant="outline"
-              onClick={() => append({ description: "", quantity: 1, unit_price: 0 })}
+              onClick={() =>
+                append({ description: "", quantity: 1, unit_price: 0 })
+              }
             >
               <Plus className="w-4 h-4" />
               Add Line Item
@@ -174,7 +205,9 @@ export default function CreateInvoicePage() {
           <div className="p-4 bg-blue-50 border border-blue-200 rounded-md">
             <div className="flex items-center justify-between">
               <span className="font-semibold text-gray-900">Total Amount:</span>
-              <span className="text-2xl font-bold text-blue-900">€{calculatedTotal.toFixed(2)}</span>
+              <span className="text-2xl font-bold text-blue-900">
+                €{calculatedTotal.toFixed(2)}
+              </span>
             </div>
           </div>
 

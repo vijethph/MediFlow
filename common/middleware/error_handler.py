@@ -49,9 +49,14 @@ def validation_exception_handler(request: Request, exc: RequestValidationError):
     :param exc: Validation error
     :return: JSON response with validation error details
     """
+    errors = exc.errors()
+    for error in errors:
+        if "ctx" in error and "error" in error["ctx"]:
+            error["ctx"]["error"] = str(error["ctx"]["error"])
+
     logger.warning(
         "validation_error",
-        errors=exc.errors(),
+        errors=errors,
         body=exc.body,
         path=request.url.path,
     )
@@ -60,7 +65,7 @@ def validation_exception_handler(request: Request, exc: RequestValidationError):
         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
         content={
             "error": "ValidationError",
-            "detail": exc.errors(),
+            "detail": errors,
             "body": exc.body,
             "path": str(request.url.path),
         },

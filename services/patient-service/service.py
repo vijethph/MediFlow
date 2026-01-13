@@ -8,6 +8,7 @@ import uuid
 from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional
 
+from jose import jwt
 from sqlalchemy import func, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
@@ -20,7 +21,7 @@ from common.exceptions import (
     ValidationError,
 )
 from common.logging import get_logger
-from common.messaging import publish_event
+from common.messaging import publish_event_sync
 from config import get_settings
 
 
@@ -46,8 +47,6 @@ def create_access_token(data: Dict[str, Any], expires_delta: timedelta) -> str:
     :param expires_delta: Token expiration time delta
     :return: Encoded JWT token
     """
-    from jose import jwt
-
     to_encode = data.copy()
     expire = datetime.utcnow() + expires_delta
     to_encode.update({"exp": expire, "sub": data.get("patient_id", "")})
@@ -121,7 +120,7 @@ def create_patient(db: Session, patient_data: schemas.PatientCreate) -> models.P
 
         logger.info("patient_created", patient_id=patient_id)
 
-        publish_event(
+        publish_event_sync(
             "patient.created",
             {
                 "patient_id": patient_id,
@@ -159,15 +158,22 @@ def get_patient_by_id(db: Session, patient_id: str) -> models.Patient:
     return patient
 
 
-def get_patient_by_email(db: Session, email: str) -> Optional[models.Patient]:
+def get_patient_by_email(
+    db: Session, email: str, include_inactive: bool = False
+) -> Optional[models.Patient]:
     """
     Get patient by email address.
 
     :param db: Database session
     :param email: Email address
+    :param include_inactive: Whether to include inactive patients
     :return: Patient record or None
     """
-    patients = db.query(models.Patient).filter(models.Patient.active == True).all()
+    query = db.query(models.Patient)
+    if not include_inactive:
+        query = query.filter(models.Patient.active == True)
+
+    patients = query.all()
 
     for patient in patients:
         if patient.telecom:
@@ -250,7 +256,7 @@ def update_patient(
 
         logger.info("patient_updated", patient_id=patient_id)
 
-        publish_event(
+        publish_event_sync(
             "patient.updated",
             {
                 "patient_id": patient_id,
@@ -286,7 +292,7 @@ def delete_patient(db: Session, patient_id: str) -> bool:
 
     logger.info("patient_deleted", patient_id=patient_id)
 
-    publish_event(
+    publish_event_sync(
         "patient.deleted",
         {
             "patient_id": patient_id,
@@ -317,7 +323,7 @@ def authenticate_patient(db: Session, email: str) -> tuple[models.Patient, str]:
     :return: Tuple of (patient, access_token)
     :raises PatientNotFoundError: If patient not found or inactive
     """
-    db_patient = get_patient_by_email(db, email)
+    db_patient = get_patient_by_email(db, email, include_inactive=True)
 
     if not db_patient:
         raise PatientNotFoundError(f"email={email}")

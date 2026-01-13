@@ -435,8 +435,11 @@ $RECYCLE.BIN/
 .github/instructions/snyk_rules.instructions.md
 
 # custom files that will be ignored later
-.github/
+.github/instructions/
+.github/prompts/
 *.txt
 **/*.md
 !README.md
 !docs/adr/*.md
+scripts/run_local_tests.sh
+settings.json

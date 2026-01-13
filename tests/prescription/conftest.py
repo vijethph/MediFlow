@@ -7,6 +7,7 @@ This module provides shared fixtures for testing MongoDB-based prescription serv
 import os
 import sys
 from datetime import datetime, timedelta, timezone
+from unittest.mock import AsyncMock
 
 import pytest
 from fastapi.testclient import TestClient
@@ -26,8 +27,11 @@ from database import get_database
 from main import app
 
 
-TEST_MONGO_URL = "mongodb://localhost:27017/"
-TEST_DATABASE_NAME = "prescription_test_db"
+TEST_MONGO_URL = os.getenv(
+    "MONGO_URL",
+    "mongodb://admin:mongo_secure_password@localhost:27017/prescription_test_db?authSource=admin",
+)
+TEST_DATABASE_NAME = os.getenv("MONGO_DATABASE", "prescription_test_db")
 
 
 @pytest.fixture(scope="session")
@@ -76,6 +80,34 @@ def client(test_db):
     app.dependency_overrides.clear()
 
 
+@pytest.fixture(scope="function")
+def authenticated_client(test_db, mock_user):
+    """
+    Create authenticated FastAPI test client.
+
+    Uses dependency_overrides to bypass authentication for testing.
+
+    :param test_db: Test database
+    :param mock_user: Mock user data
+    :return: Authenticated test client
+    """
+    from dependencies import require_authentication
+
+    def override_get_db():
+        return test_db
+
+    def override_auth():
+        return mock_user
+
+    app.dependency_overrides[get_database] = override_get_db
+    app.dependency_overrides[require_authentication] = override_auth
+
+    with TestClient(app) as test_client:
+        yield test_client
+
+    app.dependency_overrides.clear()
+
+
 @pytest.fixture
 def mock_jwt_token():
     """
@@ -99,6 +131,27 @@ def mock_user():
         "role": "doctor",
         "token": "test_token_value",
     }
+
+
+@pytest.fixture
+def mock_verify(monkeypatch):
+    """
+    Mock verify_patient_exists function.
+
+    :param monkeypatch: Pytest monkeypatch fixture
+    :return: AsyncMock for verify_patient_exists
+    """
+    mock = AsyncMock(return_value=True)
+
+    # Mock at service module level
+    try:
+        import service
+
+        monkeypatch.setattr(service, "verify_patient_exists", mock)
+    except (ImportError, AttributeError):
+        pass
+
+    return mock
 
 
 @pytest.fixture
@@ -249,7 +302,7 @@ def sample_lab_test():
         result_value="Normal",
         unit="cells/mcL",
         reference_range="4000-11000",
-        abnormal_flag=False,
+        abnormal_flag="N",
     )
 
 
@@ -302,3 +355,36 @@ def sample_lab_result_update():
         status=models.LabResultStatus.FINAL,
         interpretation="Final results confirmed - all normal",
     )
+
+
+@pytest.fixture(autouse=True)
+def mock_publish_event(monkeypatch):
+    """
+    Mock publish_event_sync for messaging tests.
+
+    Automatically applied to all tests to prevent RabbitMQ connection attempts.
+
+    :param monkeypatch: Pytest monkeypatch fixture
+    :return: Mock for publish_event_sync
+    """
+    from unittest.mock import MagicMock
+
+    mock = MagicMock(return_value=None)
+
+    # Mock at the service module level where it's imported
+    try:
+        import service
+
+        monkeypatch.setattr(service, "publish_event_sync", mock)
+    except (ImportError, AttributeError):
+        pass
+
+    # Also mock at common.messaging level as fallback
+    try:
+        import common.messaging
+
+        monkeypatch.setattr(common.messaging, "publish_event_sync", mock)
+    except (ImportError, AttributeError):
+        pass
+
+    return mock

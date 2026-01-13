@@ -63,8 +63,6 @@ class InvoiceLineItemCreate(BaseModel):
     def validate_line_total(self) -> "InvoiceLineItemCreate":
         """Validate line total matches quantity * unit_price."""
         if self.quantity and self.unit_price and self.line_total:
-            from decimal import Decimal
-
             expected_total = Decimal(str(self.quantity)) * Decimal(
                 str(self.unit_price.value)
             )
@@ -200,6 +198,12 @@ class InvoiceResponse(BaseModel):
         if hasattr(v, "hex"):
             return str(v)
         return v
+
+    @field_validator("meta", mode="before")
+    @classmethod
+    def handle_none_meta(cls, v):
+        """Convert None to empty dict for meta field."""
+        return v if v is not None else {}
 
     class Config:
         from_attributes = True

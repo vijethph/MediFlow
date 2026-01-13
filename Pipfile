@@ -28,6 +28,8 @@ pytest-cov = "*"
 pydantic = "*"
 passlib = {extras = ["bcrypt"], version = "*"}
 slowapi = "*"
+psycopg2-binary = "*"
+motor = "*"
 
 [dev-packages]
 pylint = "*"

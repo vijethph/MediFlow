@@ -1,0 +1,501 @@
+medication_id,prescription_id,medication_name,dosage,frequency,duration_days,quantity,instructions
+PAY-9503,RX-4767,Atorvastatin,850mg,once_daily,41,41,Take before bedtime
+PAY-1595,RX-7305,Lisinopril,5mg,twice_daily,21,86,
+PAY-1400,RX-5339,Metformin,850mg,twice_daily,10,24,Take on empty stomach
+PAY-4271,RX-5155,Atorvastatin,10mg,as_needed,72,12,Take on empty stomach
+PAY-9774,RX-3441,Atorvastatin,500mg,twice_daily,44,10,Take with water
+PAY-5712,RX-3240,Lisinopril,20mg,as_needed,42,20,Take on empty stomach
+PAY-7578,RX-1590,Omeprazole,500mg,once_daily,68,22,
+PAY-3182,RX-8881,Omeprazole,20mg,once_daily,40,37,
+PAY-8156,RX-4579,Gabapentin,10mg,once_daily,22,71,Take with food
+PAY-9293,RX-9433,Gabapentin,500mg,twice_daily,58,15,Take with water
+PAY-1543,RX-1232,Metformin,500mg,twice_daily,87,20,Take before bedtime
+PAY-8289,RX-5446,Gabapentin,200mg,once_daily,20,96,
+PAY-9367,RX-8845,Atorvastatin,850mg,once_daily,67,28,Take on empty stomach
+PAY-5487,RX-5080,Metformin,850mg,as_needed,80,13,Take with water
+PAY-1157,RX-4966,Ibuprofen,850mg,three_times_daily,51,93,Take with water
+PAY-6822,RX-6423,Gabapentin,850mg,once_daily,75,41,Take before bedtime
+PAY-3391,RX-3437,Ibuprofen,10mg,once_daily,70,19,Take with water
+PAY-9540,RX-7959,Lisinopril,500mg,as_needed,52,61,Take before bedtime
+PAY-4982,RX-9478,Lisinopril,200mg,once_daily,36,66,Take with water
+PAY-8640,RX-1513,Gabapentin,850mg,as_needed,29,56,Take with water
+PAY-8099,RX-5366,Ibuprofen,10mg,twice_daily,63,95,
+PAY-2200,RX-5620,Alprazolam,5mg,three_times_daily,78,91,
+PAY-3819,RX-9830,Ibuprofen,200mg,once_daily,90,51,
+PAY-6072,RX-6107,Lisinopril,200mg,once_daily,83,80,
+PAY-1632,RX-4087,Omeprazole,200mg,once_daily,16,67,Take with food
+PAY-5470,RX-8904,Gabapentin,20mg,twice_daily,26,56,Take before bedtime
+PAY-7587,RX-2666,Ibuprofen,5mg,once_daily,54,85,Take on empty stomach
+PAY-7083,RX-2921,Lisinopril,200mg,twice_daily,87,100,
+PAY-1459,RX-8869,Metformin,20mg,as_needed,40,46,Take with water
+PAY-3239,RX-8090,Amoxicillin,20mg,three_times_daily,49,49,Take with food
+PAY-5949,RX-2523,Omeprazole,10mg,three_times_daily,29,86,
+PAY-7180,RX-4163,Ibuprofen,500mg,once_daily,29,32,
+PAY-7834,RX-4307,Gabapentin,20mg,twice_daily,64,75,Take on empty stomach
+PAY-6393,RX-3549,Atorvastatin,850mg,once_daily,41,34,Take with water
+PAY-5074,RX-3063,Atorvastatin,10mg,as_needed,17,52,
+PAY-8409,RX-4037,Metformin,200mg,three_times_daily,59,48,Take with food
+PAY-4265,RX-1467,Metformin,10mg,once_daily,71,87,
+PAY-5736,RX-8383,Metformin,5mg,once_daily,18,29,Take before bedtime
+PAY-5627,RX-8978,Omeprazole,5mg,once_daily,28,57,Take before bedtime
+PAY-2982,RX-9607,Omeprazole,850mg,as_needed,77,88,Take on empty stomach
+PAY-4008,RX-1217,Omeprazole,200mg,twice_daily,19,84,
+PAY-3562,RX-9235,Atorvastatin,5mg,once_daily,78,55,Take on empty stomach
+PAY-4235,RX-2658,Gabapentin,10mg,once_daily,36,48,Take with food
+PAY-1182,RX-3256,Alprazolam,20mg,twice_daily,28,56,Take with food
+PAY-7562,RX-5859,Lisinopril,500mg,twice_daily,17,59,Take with water
+PAY-6467,RX-9655,Lisinopril,20mg,three_times_daily,56,23,
+PAY-9154,RX-3282,Omeprazole,5mg,three_times_daily,16,58,Take with food
+PAY-4416,RX-2490,Lisinopril,850mg,three_times_daily,20,56,Take on empty stomach
+PAY-3597,RX-6529,Atorvastatin,200mg,three_times_daily,38,71,Take on empty stomach
+PAY-7334,RX-3279,Omeprazole,10mg,three_times_daily,37,75,Take on empty stomach
+PAY-7567,RX-1357,Amoxicillin,20mg,three_times_daily,44,36,Take with water
+PAY-4660,RX-1459,Lisinopril,5mg,once_daily,31,98,
+PAY-7529,RX-3878,Gabapentin,500mg,as_needed,8,31,Take with water
+PAY-7010,RX-8818,Alprazolam,200mg,once_daily,43,80,Take with water
+PAY-1183,RX-7743,Amoxicillin,10mg,three_times_daily,72,93,Take before bedtime
+PAY-6740,RX-3795,Alprazolam,200mg,three_times_daily,74,38,Take before bedtime
+PAY-4128,RX-2329,Ibuprofen,10mg,as_needed,76,40,
+PAY-6331,RX-8594,Atorvastatin,500mg,three_times_daily,33,31,
+PAY-8800,RX-6918,Ibuprofen,20mg,as_needed,48,18,Take with water
+PAY-2726,RX-4298,Alprazolam,200mg,as_needed,71,33,Take with water
+PAY-7541,RX-3230,Alprazolam,500mg,twice_daily,67,19,Take with water
+PAY-7812,RX-8435,Alprazolam,500mg,as_needed,78,44,
+PAY-3584,RX-6262,Metformin,5mg,twice_daily,74,88,
+PAY-6368,RX-8201,Amoxicillin,5mg,once_daily,81,43,Take with food
+PAY-8343,RX-1712,Omeprazole,5mg,three_times_daily,86,47,
+PAY-3986,RX-8076,Lisinopril,20mg,twice_daily,73,97,Take with water
+PAY-4582,RX-1342,Gabapentin,500mg,twice_daily,89,75,
+PAY-5476,RX-9652,Metformin,10mg,as_needed,73,79,
+PAY-1333,RX-2751,Gabapentin,500mg,once_daily,56,66,
+PAY-3647,RX-3544,Atorvastatin,5mg,as_needed,25,100,Take with water
+PAY-3748,RX-3610,Atorvastatin,500mg,once_daily,78,18,
+PAY-4421,RX-8446,Amoxicillin,5mg,as_needed,50,77,Take with food
+PAY-2560,RX-7617,Atorvastatin,500mg,as_needed,86,35,
+PAY-5482,RX-3715,Gabapentin,10mg,twice_daily,58,71,
+PAY-3484,RX-5812,Omeprazole,10mg,once_daily,80,36,Take on empty stomach
+PAY-2796,RX-9045,Alprazolam,850mg,twice_daily,66,32,
+PAY-9689,RX-3290,Metformin,200mg,twice_daily,72,32,Take with water
+PAY-1325,RX-5286,Omeprazole,500mg,as_needed,58,53,Take before bedtime
+PAY-9252,RX-4375,Omeprazole,20mg,once_daily,38,81,Take with food
+PAY-8633,RX-8821,Metformin,850mg,twice_daily,25,67,Take with food
+PAY-3188,RX-6453,Metformin,5mg,three_times_daily,52,87,Take on empty stomach
+PAY-7078,RX-9955,Atorvastatin,20mg,twice_daily,90,61,Take with food
+PAY-4604,RX-8667,Alprazolam,5mg,as_needed,51,46,Take before bedtime
+PAY-1275,RX-5334,Amoxicillin,10mg,three_times_daily,22,77,Take on empty stomach
+PAY-7265,RX-3700,Amoxicillin,200mg,three_times_daily,78,54,Take before bedtime
+PAY-1509,RX-8366,Omeprazole,20mg,once_daily,27,38,Take before bedtime
+PAY-3066,RX-4793,Metformin,10mg,as_needed,76,10,Take with water
+PAY-3332,RX-6040,Alprazolam,10mg,as_needed,23,44,Take with food
+PAY-7873,RX-6885,Atorvastatin,200mg,three_times_daily,89,87,
+PAY-9596,RX-6593,Amoxicillin,850mg,once_daily,75,27,Take with food
+PAY-2535,RX-3158,Atorvastatin,500mg,as_needed,28,93,
+PAY-4212,RX-3967,Lisinopril,850mg,once_daily,81,81,Take before bedtime
+PAY-9701,RX-9410,Alprazolam,850mg,once_daily,30,79,Take on empty stomach
+PAY-6566,RX-9103,Omeprazole,200mg,three_times_daily,77,84,
+PAY-1158,RX-3918,Ibuprofen,500mg,as_needed,22,22,
+PAY-1447,RX-9079,Alprazolam,500mg,as_needed,61,84,
+PAY-2451,RX-5260,Lisinopril,850mg,once_daily,34,86,
+PAY-7923,RX-7192,Atorvastatin,10mg,as_needed,76,56,Take with water
+PAY-3540,RX-9977,Atorvastatin,5mg,as_needed,21,38,Take before bedtime
+PAY-8404,RX-9604,Gabapentin,500mg,three_times_daily,51,92,Take on empty stomach
+PAY-9996,RX-6214,Amoxicillin,20mg,twice_daily,17,92,
+PAY-8068,RX-2330,Metformin,850mg,three_times_daily,65,47,Take with water
+PAY-9637,RX-3006,Alprazolam,200mg,as_needed,60,99,Take before bedtime
+PAY-3169,RX-9555,Amoxicillin,200mg,three_times_daily,59,66,Take with water
+PAY-3525,RX-1559,Metformin,850mg,once_daily,25,61,Take on empty stomach
+PAY-4166,RX-1722,Atorvastatin,10mg,as_needed,39,50,
+PAY-3413,RX-4059,Metformin,10mg,once_daily,51,50,Take on empty stomach
+PAY-7469,RX-4589,Omeprazole,10mg,twice_daily,84,98,
+PAY-6410,RX-8430,Ibuprofen,200mg,three_times_daily,30,60,
+PAY-7241,RX-7979,Lisinopril,850mg,three_times_daily,67,71,Take on empty stomach
+PAY-1966,RX-2868,Ibuprofen,20mg,three_times_daily,37,55,Take with food
+PAY-6783,RX-5462,Lisinopril,10mg,three_times_daily,26,97,
+PAY-5642,RX-3969,Atorvastatin,20mg,twice_daily,14,77,Take before bedtime
+PAY-1587,RX-1187,Gabapentin,200mg,three_times_daily,61,79,Take before bedtime
+PAY-8445,RX-1144,Gabapentin,10mg,twice_daily,80,58,Take with water
+PAY-4900,RX-4775,Ibuprofen,850mg,twice_daily,60,65,Take before bedtime
+PAY-4409,RX-3391,Lisinopril,850mg,as_needed,13,87,Take before bedtime
+PAY-6552,RX-1871,Atorvastatin,500mg,twice_daily,72,52,
+PAY-2029,RX-6027,Gabapentin,500mg,three_times_daily,10,38,Take before bedtime
+PAY-5830,RX-7176,Omeprazole,20mg,as_needed,21,11,Take with water
+PAY-5984,RX-2183,Metformin,500mg,as_needed,47,26,Take before bedtime
+PAY-3474,RX-2287,Amoxicillin,20mg,twice_daily,25,32,Take before bedtime
+PAY-5458,RX-7411,Amoxicillin,20mg,twice_daily,20,49,Take on empty stomach
+PAY-6697,RX-3630,Gabapentin,850mg,once_daily,87,50,Take on empty stomach
+PAY-7414,RX-4859,Amoxicillin,5mg,three_times_daily,15,87,Take on empty stomach
+PAY-8839,RX-9798,Gabapentin,850mg,three_times_daily,40,40,Take with food
+PAY-6157,RX-2418,Amoxicillin,10mg,twice_daily,19,13,Take on empty stomach
+PAY-7793,RX-5469,Gabapentin,5mg,as_needed,79,77,
+PAY-7238,RX-2382,Amoxicillin,10mg,twice_daily,23,62,
+PAY-9480,RX-5649,Ibuprofen,5mg,three_times_daily,45,81,Take with water
+PAY-4520,RX-7475,Omeprazole,200mg,three_times_daily,55,87,
+PAY-4002,RX-4176,Ibuprofen,500mg,as_needed,67,16,Take on empty stomach
+PAY-2086,RX-7506,Omeprazole,850mg,once_daily,13,32,Take with water
+PAY-7501,RX-5217,Gabapentin,500mg,as_needed,12,12,
+PAY-8839,RX-4783,Gabapentin,200mg,as_needed,23,51,Take on empty stomach
+PAY-9302,RX-7482,Amoxicillin,5mg,once_daily,59,64,Take before bedtime
+PAY-9115,RX-7331,Atorvastatin,10mg,as_needed,43,89,Take on empty stomach
+PAY-9813,RX-7684,Alprazolam,10mg,twice_daily,57,76,Take with water
+PAY-8581,RX-3824,Omeprazole,500mg,twice_daily,35,19,Take with water
+PAY-8467,RX-8549,Metformin,20mg,twice_daily,88,51,
+PAY-4084,RX-4459,Ibuprofen,5mg,once_daily,12,80,Take before bedtime
+PAY-4593,RX-7153,Lisinopril,20mg,once_daily,36,77,
+PAY-2698,RX-1151,Amoxicillin,10mg,twice_daily,70,21,Take with water
+PAY-3037,RX-7017,Amoxicillin,10mg,as_needed,22,74,Take before bedtime
+PAY-7381,RX-1837,Ibuprofen,5mg,once_daily,23,41,Take with food
+PAY-3555,RX-4884,Atorvastatin,500mg,three_times_daily,47,78,Take with food
+PAY-2138,RX-3090,Lisinopril,20mg,as_needed,33,74,Take with water
+PAY-1115,RX-3335,Lisinopril,500mg,three_times_daily,73,23,Take before bedtime
+PAY-8666,RX-7705,Atorvastatin,10mg,as_needed,14,41,Take with water
+PAY-2979,RX-5321,Gabapentin,10mg,three_times_daily,66,72,Take on empty stomach
+PAY-2781,RX-5266,Amoxicillin,500mg,three_times_daily,30,32,Take with food
+PAY-7154,RX-7635,Ibuprofen,10mg,as_needed,85,75,Take with water
+PAY-5210,RX-1263,Lisinopril,850mg,as_needed,66,39,Take with food
+PAY-3022,RX-7855,Gabapentin,500mg,three_times_daily,88,40,
+PAY-6585,RX-8160,Gabapentin,10mg,twice_daily,41,35,Take before bedtime
+PAY-7177,RX-1483,Gabapentin,850mg,three_times_daily,86,42,
+PAY-4168,RX-5758,Ibuprofen,10mg,once_daily,61,55,Take before bedtime
+PAY-5855,RX-4263,Lisinopril,10mg,three_times_daily,88,49,
+PAY-9907,RX-2664,Ibuprofen,850mg,as_needed,60,25,Take on empty stomach
+PAY-9185,RX-1874,Gabapentin,500mg,as_needed,73,86,Take on empty stomach
+PAY-6820,RX-9005,Ibuprofen,10mg,twice_daily,76,32,Take on empty stomach
+PAY-8307,RX-4349,Amoxicillin,10mg,as_needed,56,60,Take on empty stomach
+PAY-8062,RX-7634,Atorvastatin,5mg,twice_daily,80,53,Take with water
+PAY-1331,RX-4752,Atorvastatin,10mg,three_times_daily,13,90,
+PAY-2113,RX-9259,Omeprazole,10mg,twice_daily,38,80,Take with food
+PAY-1678,RX-5717,Atorvastatin,850mg,twice_daily,69,64,Take before bedtime
+PAY-2252,RX-8773,Alprazolam,200mg,as_needed,24,38,Take with water
+PAY-9464,RX-1534,Ibuprofen,20mg,twice_daily,39,93,
+PAY-7970,RX-7347,Atorvastatin,5mg,once_daily,90,87,Take before bedtime
+PAY-5834,RX-1572,Gabapentin,200mg,as_needed,8,37,Take on empty stomach
+PAY-4534,RX-5960,Alprazolam,200mg,three_times_daily,18,46,
+PAY-7625,RX-3989,Metformin,500mg,once_daily,64,73,Take with food
+PAY-4442,RX-5121,Ibuprofen,850mg,as_needed,28,40,Take with water
+PAY-8369,RX-7140,Atorvastatin,850mg,twice_daily,40,58,Take on empty stomach
+PAY-8081,RX-8698,Omeprazole,10mg,once_daily,24,89,Take with food
+PAY-4425,RX-3100,Omeprazole,10mg,as_needed,36,74,Take on empty stomach
+PAY-6048,RX-9997,Ibuprofen,20mg,once_daily,23,81,Take on empty stomach
+PAY-9580,RX-9813,Ibuprofen,500mg,twice_daily,55,79,Take with food
+PAY-8793,RX-6681,Omeprazole,200mg,once_daily,60,70,
+PAY-6349,RX-2898,Amoxicillin,850mg,once_daily,27,19,
+PAY-7341,RX-5344,Metformin,850mg,as_needed,58,65,Take with water
+PAY-5867,RX-6261,Metformin,850mg,twice_daily,65,80,
+PAY-5053,RX-5576,Metformin,5mg,once_daily,20,17,
+PAY-9971,RX-7809,Ibuprofen,5mg,as_needed,80,44,Take with food
+PAY-9710,RX-7112,Omeprazole,20mg,twice_daily,30,67,Take on empty stomach
+PAY-4354,RX-6138,Alprazolam,850mg,twice_daily,30,86,
+PAY-5480,RX-7531,Ibuprofen,10mg,as_needed,82,55,Take on empty stomach
+PAY-6147,RX-4546,Metformin,20mg,once_daily,19,62,Take with food
+PAY-3863,RX-3304,Metformin,10mg,as_needed,37,32,Take with food
+PAY-4479,RX-5292,Metformin,10mg,once_daily,53,86,
+PAY-4028,RX-8594,Amoxicillin,20mg,twice_daily,47,90,
+PAY-4679,RX-4516,Amoxicillin,5mg,as_needed,33,36,Take with food
+PAY-8615,RX-1658,Lisinopril,500mg,twice_daily,87,84,
+PAY-6451,RX-6672,Omeprazole,200mg,twice_daily,17,50,
+PAY-9092,RX-9787,Alprazolam,200mg,twice_daily,29,17,Take with water
+PAY-9483,RX-1625,Metformin,5mg,once_daily,83,29,Take before bedtime
+PAY-2813,RX-7772,Ibuprofen,20mg,once_daily,52,71,Take before bedtime
+PAY-3238,RX-5385,Lisinopril,850mg,as_needed,36,37,Take before bedtime
+PAY-9972,RX-5573,Omeprazole,20mg,three_times_daily,77,78,Take before bedtime
+PAY-7934,RX-1250,Metformin,20mg,once_daily,26,56,
+PAY-8463,RX-4588,Atorvastatin,850mg,once_daily,36,30,Take before bedtime
+PAY-6281,RX-9627,Atorvastatin,10mg,once_daily,44,61,
+PAY-9481,RX-7083,Omeprazole,500mg,as_needed,36,15,Take before bedtime
+PAY-2925,RX-5172,Amoxicillin,10mg,as_needed,74,45,
+PAY-9175,RX-9425,Omeprazole,850mg,twice_daily,10,80,
+PAY-4802,RX-5807,Omeprazole,850mg,once_daily,79,14,Take with water
+PAY-4936,RX-9402,Atorvastatin,5mg,once_daily,54,69,Take on empty stomach
+PAY-5723,RX-1317,Lisinopril,5mg,twice_daily,70,95,Take with food
+PAY-9193,RX-9111,Amoxicillin,5mg,three_times_daily,45,95,Take before bedtime
+PAY-3711,RX-7961,Amoxicillin,5mg,twice_daily,34,33,Take with water
+PAY-5628,RX-6428,Metformin,20mg,three_times_daily,38,55,
+PAY-6951,RX-3949,Ibuprofen,5mg,three_times_daily,63,98,
+PAY-2942,RX-4796,Atorvastatin,850mg,once_daily,13,78,
+PAY-4130,RX-9296,Lisinopril,10mg,once_daily,82,21,
+PAY-1510,RX-3547,Alprazolam,850mg,once_daily,65,46,Take on empty stomach
+PAY-8770,RX-4598,Lisinopril,10mg,once_daily,82,27,Take with water
+PAY-6612,RX-3150,Metformin,20mg,twice_daily,27,36,
+PAY-4948,RX-7951,Metformin,850mg,twice_daily,8,72,Take before bedtime
+PAY-4520,RX-7069,Metformin,10mg,three_times_daily,57,30,Take with water
+PAY-3875,RX-7302,Omeprazole,850mg,once_daily,80,92,Take with water
+PAY-5851,RX-9529,Atorvastatin,850mg,once_daily,14,46,Take before bedtime
+PAY-4370,RX-6521,Gabapentin,850mg,once_daily,21,43,Take before bedtime
+PAY-5660,RX-5658,Amoxicillin,10mg,three_times_daily,50,32,Take before bedtime
+PAY-1527,RX-7341,Alprazolam,5mg,once_daily,62,52,Take with food
+PAY-4158,RX-6234,Atorvastatin,500mg,three_times_daily,76,62,Take with water
+PAY-8827,RX-6718,Ibuprofen,850mg,three_times_daily,12,35,Take with food
+PAY-7823,RX-5490,Ibuprofen,20mg,three_times_daily,81,92,Take with food
+PAY-4046,RX-7405,Amoxicillin,10mg,as_needed,49,25,Take before bedtime
+PAY-6769,RX-6842,Lisinopril,200mg,three_times_daily,84,88,Take on empty stomach
+PAY-4766,RX-1277,Gabapentin,5mg,three_times_daily,34,28,Take before bedtime
+PAY-6028,RX-2667,Ibuprofen,850mg,three_times_daily,58,15,Take before bedtime
+PAY-9044,RX-7452,Omeprazole,10mg,twice_daily,61,34,Take with water
+PAY-3059,RX-7404,Gabapentin,20mg,three_times_daily,77,57,
+PAY-5127,RX-6763,Alprazolam,200mg,once_daily,73,49,Take with food
+PAY-8927,RX-9580,Omeprazole,20mg,as_needed,32,73,Take on empty stomach
+PAY-1950,RX-1345,Omeprazole,10mg,twice_daily,90,20,Take before bedtime
+PAY-7541,RX-3240,Atorvastatin,5mg,once_daily,48,72,Take before bedtime
+PAY-3707,RX-4043,Lisinopril,850mg,three_times_daily,15,15,Take on empty stomach
+PAY-2836,RX-7899,Amoxicillin,850mg,three_times_daily,35,80,
+PAY-9232,RX-2418,Atorvastatin,200mg,three_times_daily,42,25,
+PAY-9278,RX-7058,Ibuprofen,850mg,three_times_daily,46,98,
+PAY-9221,RX-3774,Alprazolam,200mg,once_daily,50,55,Take with water
+PAY-7715,RX-2883,Metformin,10mg,once_daily,27,89,Take with water
+PAY-7540,RX-7862,Alprazolam,20mg,once_daily,29,73,Take with water
+PAY-1713,RX-1478,Omeprazole,5mg,three_times_daily,24,50,Take with food
+PAY-1692,RX-3219,Ibuprofen,10mg,as_needed,76,39,Take before bedtime
+PAY-9263,RX-7098,Lisinopril,500mg,twice_daily,36,45,Take on empty stomach
+PAY-9074,RX-8204,Ibuprofen,200mg,once_daily,73,61,Take on empty stomach
+PAY-4723,RX-5467,Metformin,850mg,as_needed,65,84,
+PAY-8017,RX-9468,Gabapentin,850mg,as_needed,56,53,
+PAY-4385,RX-3782,Metformin,500mg,once_daily,33,23,Take on empty stomach
+PAY-1701,RX-4316,Alprazolam,850mg,twice_daily,8,86,Take with water
+PAY-4533,RX-4194,Metformin,20mg,three_times_daily,48,38,Take with water
+PAY-8465,RX-6082,Atorvastatin,5mg,as_needed,48,66,Take with food
+PAY-7707,RX-8281,Gabapentin,20mg,once_daily,89,29,Take before bedtime
+PAY-6061,RX-6077,Gabapentin,5mg,twice_daily,43,41,Take before bedtime
+PAY-1786,RX-6461,Amoxicillin,200mg,once_daily,38,52,
+PAY-3535,RX-1462,Gabapentin,10mg,as_needed,25,37,Take with water
+PAY-4704,RX-2136,Omeprazole,20mg,three_times_daily,10,11,Take with water
+PAY-9842,RX-2262,Gabapentin,5mg,three_times_daily,65,40,Take before bedtime
+PAY-2387,RX-9335,Omeprazole,200mg,as_needed,79,46,Take with water
+PAY-4513,RX-8839,Amoxicillin,10mg,once_daily,38,39,Take before bedtime
+PAY-1190,RX-6885,Amoxicillin,850mg,twice_daily,35,21,Take with water
+PAY-9208,RX-8162,Amoxicillin,20mg,once_daily,27,100,Take before bedtime
+PAY-6762,RX-8831,Amoxicillin,10mg,as_needed,17,100,
+PAY-9203,RX-5652,Ibuprofen,500mg,twice_daily,67,90,Take with food
+PAY-2829,RX-2469,Omeprazole,20mg,once_daily,87,65,Take before bedtime
+PAY-5502,RX-2469,Alprazolam,500mg,twice_daily,67,88,Take before bedtime
+PAY-9819,RX-9554,Amoxicillin,20mg,three_times_daily,37,43,Take with food
+PAY-6800,RX-9920,Metformin,20mg,once_daily,45,64,Take with water
+PAY-1503,RX-8566,Amoxicillin,20mg,three_times_daily,69,35,Take before bedtime
+PAY-5955,RX-3635,Ibuprofen,200mg,twice_daily,83,52,Take with water
+PAY-4432,RX-2159,Ibuprofen,20mg,three_times_daily,44,45,Take before bedtime
+PAY-2739,RX-7478,Atorvastatin,5mg,three_times_daily,32,24,
+PAY-1219,RX-6777,Atorvastatin,20mg,twice_daily,33,40,
+PAY-1378,RX-2373,Ibuprofen,5mg,once_daily,42,47,Take with food
+PAY-5264,RX-4216,Alprazolam,850mg,twice_daily,14,70,Take on empty stomach
+PAY-5063,RX-1896,Metformin,5mg,once_daily,53,90,
+PAY-9642,RX-5801,Alprazolam,500mg,as_needed,33,78,Take with water
+PAY-4463,RX-3931,Amoxicillin,200mg,as_needed,36,64,Take before bedtime
+PAY-6579,RX-2227,Amoxicillin,20mg,as_needed,70,95,Take with water
+PAY-6662,RX-8973,Atorvastatin,20mg,three_times_daily,37,53,Take on empty stomach
+PAY-8288,RX-7477,Ibuprofen,5mg,twice_daily,42,23,Take on empty stomach
+PAY-1672,RX-5936,Metformin,20mg,as_needed,31,90,
+PAY-2047,RX-8634,Omeprazole,200mg,as_needed,76,16,Take before bedtime
+PAY-2049,RX-7460,Gabapentin,10mg,as_needed,19,71,
+PAY-8966,RX-7292,Amoxicillin,20mg,once_daily,45,17,Take before bedtime
+PAY-7226,RX-3633,Amoxicillin,20mg,once_daily,26,45,Take with water
+PAY-3270,RX-4685,Amoxicillin,10mg,as_needed,43,95,Take with food
+PAY-8606,RX-8810,Omeprazole,500mg,twice_daily,16,14,
+PAY-5472,RX-1317,Lisinopril,200mg,twice_daily,84,70,Take on empty stomach
+PAY-6683,RX-2603,Amoxicillin,10mg,three_times_daily,61,97,Take on empty stomach
+PAY-3200,RX-1508,Ibuprofen,10mg,three_times_daily,12,83,Take before bedtime
+PAY-7462,RX-8217,Atorvastatin,500mg,twice_daily,59,29,Take before bedtime
+PAY-2459,RX-8748,Metformin,850mg,twice_daily,87,66,
+PAY-5197,RX-8551,Omeprazole,200mg,as_needed,58,62,Take before bedtime
+PAY-1768,RX-7981,Metformin,200mg,once_daily,21,71,
+PAY-4662,RX-5401,Metformin,200mg,twice_daily,32,35,
+PAY-3161,RX-6222,Atorvastatin,10mg,once_daily,71,32,
+PAY-5974,RX-6654,Amoxicillin,850mg,once_daily,30,53,Take with food
+PAY-5627,RX-4044,Amoxicillin,5mg,as_needed,79,35,Take with water
+PAY-9870,RX-7787,Ibuprofen,5mg,twice_daily,54,24,Take with food
+PAY-2372,RX-2643,Omeprazole,850mg,once_daily,40,96,Take before bedtime
+PAY-2345,RX-1871,Ibuprofen,10mg,three_times_daily,79,49,
+PAY-6190,RX-4752,Lisinopril,500mg,three_times_daily,12,31,Take on empty stomach
+PAY-6863,RX-9223,Ibuprofen,20mg,once_daily,16,73,Take on empty stomach
+PAY-9711,RX-5965,Ibuprofen,500mg,as_needed,53,57,Take on empty stomach
+PAY-6044,RX-7915,Lisinopril,10mg,once_daily,25,42,Take on empty stomach
+PAY-9459,RX-7312,Metformin,5mg,three_times_daily,89,55,Take with food
+PAY-8677,RX-5727,Metformin,850mg,twice_daily,59,18,Take before bedtime
+PAY-2472,RX-9650,Omeprazole,500mg,as_needed,16,99,Take on empty stomach
+PAY-1282,RX-9599,Metformin,850mg,three_times_daily,44,71,Take with water
+PAY-8829,RX-4246,Ibuprofen,20mg,twice_daily,54,75,Take with water
+PAY-9507,RX-9619,Gabapentin,500mg,three_times_daily,87,96,Take with food
+PAY-9156,RX-5430,Metformin,500mg,as_needed,73,67,Take before bedtime
+PAY-9293,RX-2659,Alprazolam,200mg,twice_daily,79,78,Take with water
+PAY-4793,RX-4349,Lisinopril,850mg,three_times_daily,22,70,Take with water
+PAY-3387,RX-8819,Amoxicillin,200mg,once_daily,62,40,
+PAY-5547,RX-4025,Omeprazole,5mg,twice_daily,85,43,Take on empty stomach
+PAY-5480,RX-7226,Lisinopril,500mg,as_needed,41,98,
+PAY-7719,RX-5509,Metformin,850mg,twice_daily,49,73,Take with food
+PAY-1332,RX-4296,Amoxicillin,850mg,once_daily,82,50,
+PAY-4375,RX-4778,Omeprazole,500mg,three_times_daily,35,93,Take on empty stomach
+PAY-8255,RX-5996,Gabapentin,5mg,as_needed,81,24,
+PAY-1951,RX-3112,Amoxicillin,20mg,once_daily,85,76,
+PAY-2518,RX-5207,Alprazolam,5mg,twice_daily,70,51,Take on empty stomach
+PAY-5493,RX-7801,Omeprazole,200mg,twice_daily,48,67,
+PAY-2885,RX-3257,Amoxicillin,10mg,twice_daily,24,28,Take on empty stomach
+PAY-2220,RX-4655,Amoxicillin,200mg,as_needed,58,40,Take before bedtime
+PAY-9666,RX-8875,Alprazolam,200mg,three_times_daily,68,63,Take on empty stomach
+PAY-5454,RX-1504,Atorvastatin,10mg,twice_daily,31,65,Take with food
+PAY-3411,RX-1785,Lisinopril,850mg,as_needed,15,33,Take with water
+PAY-4313,RX-4146,Lisinopril,10mg,as_needed,71,81,Take with water
+PAY-7872,RX-4406,Atorvastatin,200mg,three_times_daily,75,28,Take on empty stomach
+PAY-3644,RX-3123,Alprazolam,20mg,once_daily,28,75,
+PAY-9413,RX-3065,Alprazolam,200mg,twice_daily,84,12,Take before bedtime
+PAY-5954,RX-4320,Alprazolam,500mg,once_daily,13,11,Take with food
+PAY-4806,RX-2056,Amoxicillin,20mg,as_needed,26,52,
+PAY-1821,RX-4182,Atorvastatin,20mg,once_daily,15,54,Take on empty stomach
+PAY-7198,RX-1940,Omeprazole,500mg,twice_daily,34,74,Take with food
+PAY-5560,RX-7567,Ibuprofen,20mg,once_daily,28,16,Take with water
+PAY-2854,RX-1733,Atorvastatin,850mg,once_daily,37,40,Take with food
+PAY-8961,RX-2910,Ibuprofen,20mg,once_daily,41,17,Take on empty stomach
+PAY-6025,RX-3685,Alprazolam,5mg,three_times_daily,73,69,Take with water
+PAY-5219,RX-4108,Gabapentin,20mg,three_times_daily,7,98,Take before bedtime
+PAY-3392,RX-4562,Omeprazole,20mg,as_needed,41,45,Take with food
+PAY-4090,RX-8680,Ibuprofen,20mg,as_needed,53,99,Take on empty stomach
+PAY-3687,RX-9936,Ibuprofen,200mg,three_times_daily,45,96,Take on empty stomach
+PAY-6064,RX-8021,Metformin,200mg,twice_daily,86,10,
+PAY-6096,RX-8839,Gabapentin,10mg,once_daily,68,78,Take with food
+PAY-9872,RX-8275,Metformin,500mg,twice_daily,40,17,Take with water
+PAY-8542,RX-3514,Ibuprofen,20mg,once_daily,64,86,Take before bedtime
+PAY-5618,RX-1560,Lisinopril,850mg,once_daily,54,91,Take with food
+PAY-9461,RX-4591,Metformin,500mg,twice_daily,68,100,Take with water
+PAY-6123,RX-9396,Metformin,5mg,three_times_daily,38,23,
+PAY-2211,RX-1761,Gabapentin,850mg,once_daily,71,75,
+PAY-7972,RX-2943,Metformin,10mg,twice_daily,90,33,Take with food
+PAY-4756,RX-2426,Gabapentin,5mg,twice_daily,44,96,
+PAY-4022,RX-4802,Metformin,200mg,as_needed,28,54,Take with food
+PAY-6051,RX-5392,Gabapentin,5mg,once_daily,25,36,Take with water
+PAY-6553,RX-1616,Lisinopril,850mg,once_daily,90,22,Take before bedtime
+PAY-7247,RX-4558,Metformin,850mg,as_needed,71,56,Take with water
+PAY-3356,RX-8420,Gabapentin,5mg,three_times_daily,87,51,Take before bedtime
+PAY-9081,RX-7038,Atorvastatin,5mg,once_daily,52,30,
+PAY-7835,RX-3454,Metformin,20mg,once_daily,69,33,Take before bedtime
+PAY-5258,RX-7503,Amoxicillin,20mg,once_daily,20,50,Take before bedtime
+PAY-6672,RX-5210,Gabapentin,200mg,as_needed,51,65,Take with water
+PAY-6593,RX-7171,Omeprazole,500mg,as_needed,65,13,
+PAY-7372,RX-6526,Atorvastatin,200mg,three_times_daily,27,19,
+PAY-8145,RX-3943,Metformin,500mg,as_needed,41,14,Take before bedtime
+PAY-5933,RX-7468,Gabapentin,5mg,twice_daily,9,53,Take on empty stomach
+PAY-5912,RX-5834,Lisinopril,200mg,three_times_daily,9,50,Take with water
+PAY-4130,RX-8211,Atorvastatin,500mg,twice_daily,45,32,Take with food
+PAY-8800,RX-4882,Lisinopril,200mg,once_daily,30,57,Take before bedtime
+PAY-8050,RX-4273,Lisinopril,20mg,as_needed,16,29,Take with water
+PAY-9794,RX-2877,Omeprazole,10mg,as_needed,8,77,Take on empty stomach
+PAY-9824,RX-5081,Omeprazole,500mg,as_needed,64,68,
+PAY-9297,RX-4987,Lisinopril,10mg,once_daily,28,42,
+PAY-6089,RX-2119,Lisinopril,5mg,once_daily,66,25,
+PAY-4281,RX-5455,Amoxicillin,500mg,once_daily,59,84,
+PAY-2192,RX-2754,Amoxicillin,850mg,twice_daily,13,19,Take before bedtime
+PAY-2295,RX-5147,Amoxicillin,850mg,three_times_daily,23,50,Take before bedtime
+PAY-7798,RX-2807,Ibuprofen,10mg,three_times_daily,51,40,Take on empty stomach
+PAY-8020,RX-2824,Atorvastatin,5mg,twice_daily,60,77,Take with food
+PAY-9762,RX-1153,Alprazolam,20mg,once_daily,66,94,Take with water
+PAY-6271,RX-5024,Amoxicillin,200mg,as_needed,22,87,
+PAY-9402,RX-6997,Amoxicillin,10mg,three_times_daily,16,15,
+PAY-2326,RX-7519,Alprazolam,5mg,as_needed,86,47,Take with water
+PAY-7206,RX-1150,Gabapentin,850mg,three_times_daily,53,28,
+PAY-2653,RX-6820,Amoxicillin,850mg,as_needed,27,70,Take on empty stomach
+PAY-4008,RX-9661,Gabapentin,5mg,once_daily,26,42,
+PAY-9032,RX-5480,Atorvastatin,500mg,three_times_daily,82,14,Take with food
+PAY-2584,RX-6915,Gabapentin,5mg,three_times_daily,72,44,Take with water
+PAY-2258,RX-7311,Alprazolam,500mg,three_times_daily,82,35,
+PAY-7432,RX-8141,Metformin,500mg,once_daily,25,20,Take on empty stomach
+PAY-1212,RX-6113,Atorvastatin,850mg,as_needed,56,97,Take with water
+PAY-2900,RX-1655,Gabapentin,850mg,once_daily,38,66,
+PAY-5079,RX-2081,Ibuprofen,20mg,once_daily,55,86,Take with water
+PAY-4613,RX-3006,Gabapentin,200mg,once_daily,80,12,Take on empty stomach
+PAY-2006,RX-4142,Lisinopril,5mg,once_daily,80,51,
+PAY-5047,RX-1834,Alprazolam,5mg,three_times_daily,24,82,
+PAY-9674,RX-7476,Lisinopril,500mg,twice_daily,38,29,Take with water
+PAY-1463,RX-4464,Alprazolam,5mg,three_times_daily,60,69,
+PAY-8250,RX-2282,Ibuprofen,5mg,as_needed,7,87,Take with water
+PAY-6635,RX-9925,Gabapentin,850mg,once_daily,10,63,
+PAY-5392,RX-5232,Lisinopril,500mg,three_times_daily,8,93,Take on empty stomach
+PAY-9932,RX-2845,Amoxicillin,200mg,three_times_daily,12,77,
+PAY-2239,RX-5306,Atorvastatin,850mg,as_needed,44,69,Take with water
+PAY-6506,RX-3169,Alprazolam,500mg,once_daily,18,28,Take with food
+PAY-7347,RX-6267,Ibuprofen,200mg,twice_daily,80,20,Take with water
+PAY-1878,RX-3990,Atorvastatin,500mg,once_daily,64,91,Take with food
+PAY-6200,RX-2315,Lisinopril,200mg,as_needed,8,36,Take on empty stomach
+PAY-4549,RX-3747,Ibuprofen,10mg,once_daily,64,91,
+PAY-7771,RX-7840,Alprazolam,500mg,as_needed,80,36,Take before bedtime
+PAY-5157,RX-5747,Omeprazole,10mg,three_times_daily,21,10,
+PAY-6253,RX-3426,Atorvastatin,850mg,once_daily,7,99,Take with water
+PAY-6400,RX-2396,Omeprazole,20mg,twice_daily,21,79,
+PAY-3970,RX-7267,Omeprazole,850mg,as_needed,51,65,Take on empty stomach
+PAY-6402,RX-1765,Amoxicillin,20mg,twice_daily,38,24,
+PAY-3116,RX-3740,Alprazolam,200mg,twice_daily,33,94,
+PAY-5942,RX-9511,Metformin,5mg,twice_daily,36,15,Take on empty stomach
+PAY-9588,RX-3638,Lisinopril,200mg,once_daily,28,31,Take with food
+PAY-4092,RX-1976,Alprazolam,10mg,twice_daily,36,40,
+PAY-1671,RX-5092,Atorvastatin,200mg,twice_daily,60,59,Take with food
+PAY-6650,RX-5316,Ibuprofen,20mg,three_times_daily,24,17,Take on empty stomach
+PAY-9500,RX-3249,Amoxicillin,200mg,once_daily,23,33,Take before bedtime
+PAY-5113,RX-3707,Gabapentin,850mg,three_times_daily,14,84,Take before bedtime
+PAY-8285,RX-9802,Ibuprofen,850mg,once_daily,69,21,
+PAY-5172,RX-6225,Lisinopril,5mg,as_needed,35,18,Take with water
+PAY-8719,RX-8868,Lisinopril,200mg,once_daily,18,81,Take with food
+PAY-7299,RX-9625,Atorvastatin,5mg,as_needed,62,52,
+PAY-5830,RX-1599,Gabapentin,10mg,as_needed,31,11,Take before bedtime
+PAY-3922,RX-7245,Omeprazole,10mg,twice_daily,65,11,Take before bedtime
+PAY-6934,RX-9821,Lisinopril,200mg,as_needed,9,26,Take with food
+PAY-4443,RX-9838,Ibuprofen,500mg,as_needed,77,83,
+PAY-7969,RX-9361,Metformin,200mg,once_daily,78,59,Take with food
+PAY-4713,RX-4778,Alprazolam,10mg,three_times_daily,57,35,Take before bedtime
+PAY-3675,RX-8356,Amoxicillin,10mg,once_daily,71,99,Take with food
+PAY-3786,RX-8624,Ibuprofen,500mg,once_daily,31,39,Take on empty stomach
+PAY-8940,RX-8539,Omeprazole,200mg,twice_daily,70,62,
+PAY-8782,RX-5584,Atorvastatin,200mg,twice_daily,37,89,
+PAY-7869,RX-5297,Omeprazole,10mg,as_needed,38,85,Take on empty stomach
+PAY-4791,RX-4360,Ibuprofen,200mg,as_needed,22,58,Take before bedtime
+PAY-6600,RX-4531,Gabapentin,500mg,twice_daily,17,88,
+PAY-3138,RX-3692,Omeprazole,20mg,as_needed,81,98,Take before bedtime
+PAY-9990,RX-9037,Omeprazole,5mg,twice_daily,14,94,Take with food
+PAY-6762,RX-8101,Omeprazole,20mg,as_needed,40,34,
+PAY-1476,RX-7093,Amoxicillin,500mg,as_needed,88,95,Take with food
+PAY-2584,RX-6207,Omeprazole,10mg,twice_daily,85,96,Take with water
+PAY-3158,RX-6404,Omeprazole,200mg,three_times_daily,64,10,Take before bedtime
+PAY-3004,RX-5890,Gabapentin,5mg,three_times_daily,59,45,
+PAY-5484,RX-5650,Amoxicillin,500mg,as_needed,84,55,
+PAY-2888,RX-8325,Omeprazole,500mg,once_daily,12,74,Take with water
+PAY-4645,RX-5608,Gabapentin,10mg,twice_daily,17,17,Take before bedtime
+PAY-4298,RX-2103,Metformin,20mg,three_times_daily,53,77,Take before bedtime
+PAY-4132,RX-1508,Alprazolam,500mg,as_needed,24,16,Take on empty stomach
+PAY-1600,RX-3211,Lisinopril,10mg,once_daily,41,94,
+PAY-7906,RX-5826,Metformin,10mg,twice_daily,46,12,Take with food
+PAY-3521,RX-3349,Ibuprofen,500mg,once_daily,31,14,
+PAY-9441,RX-8184,Lisinopril,10mg,three_times_daily,64,22,Take before bedtime
+PAY-7782,RX-7860,Atorvastatin,500mg,three_times_daily,45,41,Take before bedtime
+PAY-9312,RX-7826,Alprazolam,200mg,three_times_daily,57,89,
+PAY-3257,RX-5702,Omeprazole,500mg,as_needed,13,10,Take before bedtime
+PAY-5048,RX-6481,Ibuprofen,5mg,as_needed,80,42,Take before bedtime
+PAY-3845,RX-7801,Metformin,10mg,three_times_daily,61,94,Take before bedtime
+PAY-2732,RX-7334,Lisinopril,10mg,three_times_daily,67,25,Take with water
+PAY-3659,RX-3595,Metformin,500mg,as_needed,28,32,Take on empty stomach
+PAY-9022,RX-2612,Gabapentin,10mg,three_times_daily,65,86,
+PAY-6610,RX-9498,Amoxicillin,5mg,three_times_daily,22,64,
+PAY-1857,RX-9060,Gabapentin,10mg,twice_daily,78,43,Take with water
+PAY-4427,RX-1791,Atorvastatin,200mg,once_daily,26,11,Take with food
+PAY-4943,RX-4006,Gabapentin,10mg,three_times_daily,67,79,
+PAY-5781,RX-7947,Atorvastatin,850mg,three_times_daily,61,56,Take with water
+PAY-4591,RX-5260,Alprazolam,20mg,three_times_daily,8,45,
+PAY-5746,RX-3346,Omeprazole,10mg,as_needed,76,90,Take with water
+PAY-6462,RX-6061,Ibuprofen,20mg,once_daily,27,30,
+PAY-1299,RX-1582,Lisinopril,850mg,once_daily,28,55,
+PAY-9057,RX-8977,Metformin,10mg,once_daily,44,100,Take before bedtime
+PAY-8060,RX-2452,Metformin,200mg,once_daily,87,47,Take before bedtime
+PAY-6439,RX-3607,Alprazolam,200mg,twice_daily,9,24,Take with food
+PAY-3131,RX-8414,Ibuprofen,5mg,twice_daily,51,23,Take on empty stomach
+PAY-2825,RX-1268,Lisinopril,200mg,as_needed,33,53,
+PAY-8594,RX-5157,Omeprazole,10mg,three_times_daily,62,99,Take with food
+PAY-7093,RX-2876,Amoxicillin,5mg,once_daily,14,77,Take before bedtime
+PAY-9576,RX-8366,Ibuprofen,20mg,twice_daily,17,99,Take with food
+PAY-5604,RX-8021,Metformin,5mg,as_needed,7,60,
+PAY-1642,RX-1262,Amoxicillin,200mg,three_times_daily,60,55,Take before bedtime
+PAY-2302,RX-8347,Alprazolam,200mg,three_times_daily,80,14,Take before bedtime
+PAY-9035,RX-3778,Alprazolam,500mg,as_needed,30,59,
+PAY-5095,RX-1706,Alprazolam,20mg,as_needed,86,50,Take with food
+PAY-3523,RX-6051,Gabapentin,850mg,twice_daily,24,75,Take on empty stomach
+PAY-5924,RX-4246,Amoxicillin,500mg,as_needed,67,94,Take with water
+PAY-1306,RX-3781,Amoxicillin,850mg,twice_daily,22,20,Take with water
+PAY-8041,RX-3935,Gabapentin,10mg,twice_daily,79,58,Take before bedtime
+PAY-1363,RX-3589,Omeprazole,20mg,as_needed,89,66,
+PAY-3714,RX-5972,Omeprazole,850mg,three_times_daily,44,100,
+PAY-5229,RX-2428,Atorvastatin,10mg,once_daily,80,57,Take before bedtime
+PAY-9751,RX-5606,Alprazolam,200mg,twice_daily,48,23,Take before bedtime
+PAY-3942,RX-9826,Metformin,5mg,twice_daily,26,50,
+PAY-8330,RX-5014,Omeprazole,10mg,as_needed,80,17,

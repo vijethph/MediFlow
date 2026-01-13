@@ -1,0 +1,1525 @@
+appointment_id,patient_id,practitioner_name,practitioner_id,status,specialty,service_category,start_datetime,duration_minutes,location,appointment_type,reason,notes,cancellation_reason
+APT-5344,PAT-6757,Dr. Maria Garcia,DOC-005,fulfilled,Psychiatry,therapy,2023-04-11,96,Exam Room B,in-person,Post-op Check,"Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+APT-4387,PAT-5877,Dr. James Wilson,DOC-003,booked,Neurology,consultation,2026-06-18,68,Room 201,telemedicine,Pre-op Evaluation,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
+
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",Patient canceled
+APT-6581,PAT-7545,Dr. Emily Rodriguez,DOC-004,booked,Psychiatry,immunization,2025-10-10,66,Room 101,in-person,Medication Review,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
+
+In congue. Etiam justo. Etiam pretium iaculis justo.",
+APT-9078,PAT-8745,Dr. Emily Rodriguez,DOC-004,fulfilled,Neurology,procedure,2024-12-20,102,Room 201,in-person,Medication Review,"Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",Clinician unavailable
+APT-9816,PAT-2604,Dr. Emily Rodriguez,DOC-005,fulfilled,Dermatology,diagnostic,2026-06-15,64,Virtual,in-person,Medication Review,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+APT-5853,PAT-6721,Dr. Michael Chen,DOC-003,fulfilled,Neurology,follow-up,2026-08-21,115,Room 201,in-person,Follow-up Visit,"Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+
+Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
+
+Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+APT-9412,PAT-6452,Dr. Michael Chen,DOC-004,booked,Psychiatry,procedure,2024-11-29,58,Exam Room A,in-person,Lab Results Discussion,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
+
+Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+APT-2105,PAT-3852,Dr. Maria Garcia,DOC-004,no-show,General Practice,therapy,2023-03-10,25,Exam Room B,in-person,Annual Checkup,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+
+Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+APT-3544,PAT-6498,Dr. James Wilson,DOC-004,booked,Neurology,immunization,2024-06-06,67,Room 102,telemedicine,Lab Results Discussion,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+APT-4518,PAT-9140,Dr. Emily Rodriguez,DOC-005,booked,Dermatology,immunization,2023-04-16,76,Virtual,in-person,Medication Review,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",Emergency
+APT-9639,PAT-3216,Dr. Sarah Johnson,DOC-003,fulfilled,Psychiatry,consultation,2023-01-11,118,Exam Room B,in-person,Symptom Assessment,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+
+Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+APT-8672,PAT-1229,Dr. Maria Garcia,DOC-005,fulfilled,Dermatology,procedure,2025-04-30,113,Virtual,in-person,Follow-up Visit,"Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+APT-6921,PAT-2507,Dr. Michael Chen,DOC-003,fulfilled,Psychiatry,procedure,2025-04-15,95,Room 102,in-person,Annual Checkup,Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.,Weather
+APT-1122,PAT-8013,Dr. Michael Chen,DOC-001,fulfilled,Cardiology,follow-up,2024-06-27,46,Room 101,in-person,Medication Review,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+
+Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",Emergency
+APT-7261,PAT-4383,Dr. Michael Chen,DOC-004,booked,Psychiatry,follow-up,2023-08-17,117,Room 201,in-person,Follow-up Visit,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+
+Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+APT-2787,PAT-8651,Dr. Emily Rodriguez,DOC-003,canceled,Orthopedics,follow-up,2026-03-05,15,Room 202,in-person,Follow-up Visit,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+APT-8787,PAT-8406,Dr. Emily Rodriguez,DOC-005,fulfilled,Pediatrics,follow-up,2026-11-19,63,Room 202,in-person,Medication Review,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+APT-7308,PAT-6240,Dr. James Wilson,DOC-003,canceled,General Practice,follow-up,2026-09-13,109,Virtual,telemedicine,Annual Checkup,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+APT-7478,PAT-5296,Dr. Michael Chen,DOC-004,fulfilled,Pediatrics,diagnostic,2025-05-25,118,Room 102,in-person,Pre-op Evaluation,"In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+
+Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+APT-7843,PAT-1585,Dr. Maria Garcia,DOC-002,booked,Orthopedics,procedure,2024-06-27,90,Room 101,in-person,Follow-up Visit,Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.,Insurance issue
+APT-5806,PAT-7733,Dr. Michael Chen,DOC-002,booked,General Practice,therapy,2026-07-03,106,Room 202,home visit,Annual Checkup,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+APT-2982,PAT-9375,Dr. James Wilson,DOC-005,rescheduled,Dermatology,therapy,2025-03-23,52,Room 202,in-person,Medication Review,"Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
+
+Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",Patient canceled
+APT-3074,PAT-9086,Dr. Maria Garcia,DOC-001,rescheduled,Cardiology,procedure,2025-06-06,59,Room 102,in-person,Lab Results Discussion,Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.,
+APT-3722,PAT-2812,Dr. Emily Rodriguez,DOC-004,booked,Oncology,consultation,2025-10-13,50,Room 202,in-person,Medication Review,"Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+APT-3229,PAT-1235,Dr. James Wilson,DOC-003,canceled,Cardiology,follow-up,2023-09-02,65,Room 201,home visit,Annual Checkup,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
+
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",Scheduling conflict
+APT-8657,PAT-3779,Dr. Sarah Johnson,DOC-005,canceled,Neurology,procedure,2026-01-19,27,Exam Room A,in-person,Symptom Assessment,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
+
+Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",Provider unavailable
+APT-7618,PAT-4640,Dr. Michael Chen,DOC-002,booked,General Practice,procedure,2025-08-11,33,Exam Room A,home visit,Post-op Check,"In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+
+Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+APT-6749,PAT-2994,Dr. Emily Rodriguez,DOC-001,booked,Pediatrics,follow-up,2026-10-24,117,Exam Room B,in-person,Lab Results Discussion,Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.,
+APT-8918,PAT-3614,Dr. Emily Rodriguez,DOC-004,booked,Dermatology,consultation,2024-10-11,21,Exam Room A,in-person,Post-op Check,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+APT-1565,PAT-7633,Dr. James Wilson,DOC-004,booked,Psychiatry,immunization,2025-08-23,72,Room 102,in-person,Annual Checkup,"Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+
+Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+APT-4686,PAT-5464,Dr. Maria Garcia,DOC-003,canceled,Pediatrics,procedure,2025-04-27,83,Virtual,in-person,Lab Results Discussion,"Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+APT-5547,PAT-9481,Dr. Sarah Johnson,DOC-005,fulfilled,Orthopedics,follow-up,2026-09-09,101,Room 102,telemedicine,Follow-up Visit,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
+
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+APT-3390,PAT-9016,Dr. Sarah Johnson,DOC-004,booked,Cardiology,consultation,2023-09-13,69,Room 201,in-person,Lab Results Discussion,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",Scheduling conflict
+APT-3741,PAT-9501,Dr. Michael Chen,DOC-004,no-show,Orthopedics,procedure,2025-08-30,114,Virtual,in-person,Annual Checkup,"Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",Emergency
+APT-9491,PAT-5445,Dr. James Wilson,DOC-002,rescheduled,Neurology,diagnostic,2023-12-01,80,Room 201,in-person,Follow-up Visit,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",Insurance issue
+APT-1669,PAT-2155,Dr. Maria Garcia,DOC-003,booked,General Practice,consultation,2026-05-16,97,Exam Room B,in-person,Post-op Check,"In congue. Etiam justo. Etiam pretium iaculis justo.
+
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+APT-5057,PAT-2561,Dr. Michael Chen,DOC-001,fulfilled,Cardiology,therapy,2023-08-08,16,Room 201,in-person,Follow-up Visit,"Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+APT-3166,PAT-3146,Dr. James Wilson,DOC-002,booked,Pediatrics,therapy,2024-07-03,70,Virtual,in-person,Annual Checkup,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.",
+APT-5542,PAT-9067,Dr. Emily Rodriguez,DOC-005,booked,Orthopedics,immunization,2025-04-17,26,Exam Room B,in-person,Post-op Check,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+
+Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+APT-8841,PAT-8940,Dr. Michael Chen,DOC-004,fulfilled,Cardiology,procedure,2024-03-26,70,Exam Room A,in-person,Symptom Assessment,"Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
+
+In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+APT-8493,PAT-9182,Dr. Michael Chen,DOC-003,booked,Oncology,diagnostic,2025-08-05,103,Room 201,telemedicine,Medication Review,"Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",No transportation
+APT-3657,PAT-5946,Dr. Sarah Johnson,DOC-004,fulfilled,Dermatology,consultation,2023-11-28,110,Virtual,home visit,Symptom Assessment,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.,
+APT-2692,PAT-1774,Dr. Michael Chen,DOC-005,fulfilled,Oncology,follow-up,2023-07-09,74,Room 202,telemedicine,Symptom Assessment,"Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+
+In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+APT-6376,PAT-7925,Dr. Emily Rodriguez,DOC-004,no-show,Neurology,consultation,2025-09-07,84,Room 201,in-person,Symptom Assessment,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
+
+Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+APT-6812,PAT-9696,Dr. Emily Rodriguez,DOC-004,fulfilled,Orthopedics,immunization,2023-07-14,100,Room 102,in-person,Medication Review,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.",
+APT-9403,PAT-4819,Dr. Maria Garcia,DOC-004,booked,Oncology,consultation,2024-05-03,94,Room 101,in-person,Pre-op Evaluation,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+APT-8214,PAT-2465,Dr. James Wilson,DOC-003,booked,Neurology,consultation,2026-04-29,103,Room 102,in-person,Symptom Assessment,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",Patient canceled
+APT-3027,PAT-3381,Dr. Emily Rodriguez,DOC-001,rescheduled,General Practice,diagnostic,2023-11-29,20,Virtual,telemedicine,Annual Checkup,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+APT-1910,PAT-8215,Dr. Sarah Johnson,DOC-003,booked,Neurology,procedure,2023-04-18,62,Exam Room B,in-person,Lab Results Discussion,"Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+APT-6605,PAT-4499,Dr. Michael Chen,DOC-003,booked,Orthopedics,follow-up,2024-04-24,27,Room 101,in-person,Annual Checkup,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",Clinician unavailable
+APT-2698,PAT-8181,Dr. Sarah Johnson,DOC-003,booked,Oncology,consultation,2024-04-30,71,Room 102,in-person,Symptom Assessment,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.,
+APT-6383,PAT-8373,Dr. Sarah Johnson,DOC-003,booked,Orthopedics,immunization,2026-06-22,50,Room 101,home visit,Post-op Check,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+APT-6607,PAT-5427,Dr. Maria Garcia,DOC-001,booked,Psychiatry,follow-up,2025-01-17,54,Room 201,in-person,Annual Checkup,"In congue. Etiam justo. Etiam pretium iaculis justo.
+
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",Provider unavailable
+APT-7519,PAT-3751,Dr. Michael Chen,DOC-002,booked,Cardiology,therapy,2026-12-16,88,Room 102,in-person,Lab Results Discussion,Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.,N/A
+APT-9748,PAT-8730,Dr. Sarah Johnson,DOC-001,fulfilled,Neurology,consultation,2025-10-24,103,Room 201,in-person,Annual Checkup,"Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+
+Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",N/A
+APT-2958,PAT-8347,Dr. Maria Garcia,DOC-002,booked,Pediatrics,immunization,2026-12-16,87,Room 202,in-person,Medication Review,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
+
+Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+APT-3673,PAT-8790,Dr. Michael Chen,DOC-003,fulfilled,Orthopedics,procedure,2026-07-01,77,Room 202,in-person,Lab Results Discussion,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+APT-8817,PAT-4141,Dr. Sarah Johnson,DOC-005,no-show,Pediatrics,follow-up,2026-07-20,73,Room 102,telemedicine,Post-op Check,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+APT-7937,PAT-9942,Dr. Maria Garcia,DOC-001,booked,Neurology,diagnostic,2025-01-13,49,Exam Room A,in-person,Symptom Assessment,Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.,
+APT-3132,PAT-5876,Dr. Emily Rodriguez,DOC-001,booked,Cardiology,diagnostic,2026-09-11,91,Exam Room B,telemedicine,Symptom Assessment,"Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+
+In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+APT-4068,PAT-9129,Dr. Michael Chen,DOC-003,booked,Pediatrics,therapy,2023-10-10,57,Room 102,in-person,Medication Review,"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+APT-3813,PAT-1204,Dr. Emily Rodriguez,DOC-001,fulfilled,Cardiology,follow-up,2026-02-23,100,Room 201,in-person,Post-op Check,In congue. Etiam justo. Etiam pretium iaculis justo.,Insurance issue
+APT-6817,PAT-1136,Dr. Emily Rodriguez,DOC-003,booked,Cardiology,therapy,2023-07-15,39,Room 201,home visit,Annual Checkup,"Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+APT-7473,PAT-3675,Dr. Maria Garcia,DOC-004,fulfilled,Oncology,diagnostic,2024-06-27,22,Room 201,in-person,Lab Results Discussion,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+APT-3803,PAT-3269,Dr. Sarah Johnson,DOC-003,fulfilled,Psychiatry,therapy,2025-10-17,84,Room 101,home visit,Post-op Check,Sed ante. Vivamus tortor. Duis mattis egestas metus.,No transportation
+APT-5856,PAT-4473,Dr. Maria Garcia,DOC-001,canceled,Pediatrics,procedure,2024-07-15,102,Room 102,in-person,Medication Review,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+
+Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+APT-7416,PAT-5848,Dr. James Wilson,DOC-001,fulfilled,General Practice,diagnostic,2026-08-20,109,Exam Room A,in-person,Post-op Check,"Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
+
+Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",Patient canceled
+APT-1730,PAT-8847,Dr. Maria Garcia,DOC-004,rescheduled,Pediatrics,consultation,2023-02-15,38,Room 102,in-person,Post-op Check,"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",N/A
+APT-1503,PAT-9742,Dr. Michael Chen,DOC-002,canceled,Cardiology,immunization,2025-05-09,102,Room 202,home visit,Annual Checkup,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",Emergency
+APT-8282,PAT-6510,Dr. Sarah Johnson,DOC-001,fulfilled,Oncology,immunization,2023-03-03,23,Room 201,in-person,Lab Results Discussion,"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+APT-5111,PAT-6246,Dr. Sarah Johnson,DOC-002,booked,Dermatology,diagnostic,2026-11-16,48,Room 101,home visit,Post-op Check,Phasellus in felis. Donec semper sapien a libero. Nam dui.,N/A
+APT-6151,PAT-6523,Dr. James Wilson,DOC-003,booked,General Practice,procedure,2025-04-30,94,Room 201,in-person,Follow-up Visit,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+APT-4757,PAT-2184,Dr. Michael Chen,DOC-002,booked,Pediatrics,procedure,2024-01-26,69,Room 101,in-person,Post-op Check,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.
+
+Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
+
+Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+APT-4130,PAT-9434,Dr. Maria Garcia,DOC-003,booked,General Practice,diagnostic,2024-10-24,113,Room 202,in-person,Medication Review,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+APT-1145,PAT-8103,Dr. Michael Chen,DOC-003,canceled,Pediatrics,follow-up,2023-07-10,98,Room 101,home visit,Medication Review,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+
+Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+APT-4924,PAT-3779,Dr. Michael Chen,DOC-001,booked,Cardiology,consultation,2026-08-11,24,Exam Room B,telemedicine,Pre-op Evaluation,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+
+Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",Scheduling conflict
+APT-2865,PAT-5041,Dr. Sarah Johnson,DOC-005,booked,Orthopedics,therapy,2026-02-20,119,Room 201,in-person,Lab Results Discussion,"Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
+
+Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",Provider unavailable
+APT-6093,PAT-5008,Dr. Emily Rodriguez,DOC-001,canceled,Pediatrics,diagnostic,2025-10-16,58,Exam Room A,in-person,Post-op Check,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
+
+Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+APT-2174,PAT-7239,Dr. James Wilson,DOC-004,fulfilled,Cardiology,consultation,2024-04-10,17,Room 101,telemedicine,Follow-up Visit,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
+
+Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+APT-3122,PAT-5179,Dr. Emily Rodriguez,DOC-002,fulfilled,Psychiatry,follow-up,2024-03-09,94,Room 201,in-person,Pre-op Evaluation,"Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+APT-5977,PAT-6844,Dr. Sarah Johnson,DOC-002,booked,Orthopedics,therapy,2023-10-09,62,Exam Room A,in-person,Medication Review,"Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+APT-3621,PAT-4275,Dr. Michael Chen,DOC-005,fulfilled,Dermatology,immunization,2026-05-21,75,Room 201,in-person,Annual Checkup,"Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",Clinician unavailable
+APT-7302,PAT-2251,Dr. Emily Rodriguez,DOC-004,fulfilled,Cardiology,immunization,2025-11-14,107,Room 202,in-person,Pre-op Evaluation,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+APT-8153,PAT-6615,Dr. Sarah Johnson,DOC-005,booked,Orthopedics,procedure,2025-04-10,62,Virtual,in-person,Pre-op Evaluation,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.",No transportation
+APT-7863,PAT-9807,Dr. Maria Garcia,DOC-004,booked,Cardiology,diagnostic,2025-02-24,120,Room 202,home visit,Lab Results Discussion,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
+
+Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+APT-4812,PAT-2019,Dr. James Wilson,DOC-003,booked,Dermatology,immunization,2025-03-12,47,Virtual,in-person,Post-op Check,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+APT-4431,PAT-1163,Dr. James Wilson,DOC-002,booked,Oncology,therapy,2023-01-28,17,Room 202,home visit,Medication Review,Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.,
+APT-8633,PAT-5805,Dr. Sarah Johnson,DOC-001,booked,Orthopedics,diagnostic,2023-07-19,22,Virtual,home visit,Lab Results Discussion,"Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
+
+Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
+
+In congue. Etiam justo. Etiam pretium iaculis justo.",
+APT-7911,PAT-7374,Dr. James Wilson,DOC-005,canceled,Psychiatry,therapy,2024-08-23,38,Room 102,telemedicine,Follow-up Visit,"Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+
+Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
+
+Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+APT-7982,PAT-8972,Dr. Emily Rodriguez,DOC-001,no-show,Psychiatry,procedure,2023-03-12,113,Exam Room A,telemedicine,Annual Checkup,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+APT-9671,PAT-4224,Dr. Michael Chen,DOC-002,canceled,Neurology,follow-up,2023-10-08,112,Room 202,in-person,Post-op Check,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",Scheduling conflict
+APT-6332,PAT-7538,Dr. Emily Rodriguez,DOC-002,fulfilled,Dermatology,procedure,2023-08-03,35,Room 202,in-person,Annual Checkup,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+
+In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+APT-4537,PAT-7879,Dr. Sarah Johnson,DOC-004,fulfilled,Pediatrics,procedure,2026-08-20,48,Exam Room A,in-person,Annual Checkup,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
+
+Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",Scheduling conflict
+APT-2769,PAT-5315,Dr. James Wilson,DOC-002,fulfilled,Cardiology,follow-up,2024-06-23,86,Virtual,home visit,Symptom Assessment,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+APT-8820,PAT-9416,Dr. James Wilson,DOC-001,rescheduled,Neurology,immunization,2023-11-10,90,Room 202,home visit,Pre-op Evaluation,Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.,
+APT-2461,PAT-1596,Dr. Emily Rodriguez,DOC-004,fulfilled,Psychiatry,consultation,2026-01-01,29,Room 102,in-person,Symptom Assessment,"Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+APT-6168,PAT-3178,Dr. Sarah Johnson,DOC-004,no-show,Cardiology,follow-up,2026-07-26,92,Exam Room A,home visit,Follow-up Visit,"Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
+
+Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",No transportation
+APT-2772,PAT-1928,Dr. Michael Chen,DOC-003,canceled,Dermatology,procedure,2026-05-05,46,Room 201,home visit,Post-op Check,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
+
+Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+APT-8726,PAT-8313,Dr. James Wilson,DOC-005,fulfilled,Dermatology,consultation,2024-09-11,90,Virtual,in-person,Follow-up Visit,Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.,
+APT-1276,PAT-7270,Dr. Maria Garcia,DOC-004,no-show,Cardiology,immunization,2026-01-05,96,Virtual,in-person,Follow-up Visit,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",Insurance issue
+APT-8891,PAT-7905,Dr. James Wilson,DOC-001,fulfilled,Neurology,follow-up,2025-03-31,79,Room 102,in-person,Follow-up Visit,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
+
+Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",Scheduling conflict
+APT-7456,PAT-1959,Dr. Emily Rodriguez,DOC-002,fulfilled,Pediatrics,follow-up,2026-01-28,68,Room 101,in-person,Symptom Assessment,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+APT-8976,PAT-7210,Dr. Emily Rodriguez,DOC-005,fulfilled,Pediatrics,diagnostic,2026-02-03,91,Virtual,in-person,Annual Checkup,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+APT-2951,PAT-1276,Dr. Michael Chen,DOC-003,booked,Pediatrics,procedure,2026-09-12,29,Room 101,in-person,Post-op Check,Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.,
+APT-9839,PAT-1222,Dr. Sarah Johnson,DOC-001,booked,General Practice,consultation,2023-12-23,50,Virtual,in-person,Pre-op Evaluation,"Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+APT-9991,PAT-7812,Dr. Sarah Johnson,DOC-004,booked,Cardiology,therapy,2025-06-09,79,Room 101,telemedicine,Medication Review,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+APT-7320,PAT-8340,Dr. Sarah Johnson,DOC-001,fulfilled,Cardiology,consultation,2025-03-31,67,Room 102,in-person,Post-op Check,"Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+APT-6954,PAT-3644,Dr. Sarah Johnson,DOC-003,fulfilled,Orthopedics,consultation,2026-03-28,57,Exam Room A,in-person,Symptom Assessment,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
+
+In congue. Etiam justo. Etiam pretium iaculis justo.",
+APT-3269,PAT-1865,Dr. Maria Garcia,DOC-003,booked,Dermatology,therapy,2024-12-05,68,Virtual,home visit,Lab Results Discussion,"In congue. Etiam justo. Etiam pretium iaculis justo.
+
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",Scheduling conflict
+APT-4653,PAT-3204,Dr. Maria Garcia,DOC-001,booked,Cardiology,consultation,2024-03-27,17,Room 101,in-person,Annual Checkup,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+APT-4798,PAT-8283,Dr. James Wilson,DOC-004,fulfilled,General Practice,therapy,2026-08-08,38,Exam Room A,in-person,Medication Review,"In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+APT-4944,PAT-3206,Dr. James Wilson,DOC-002,no-show,Dermatology,therapy,2023-12-25,42,Room 202,in-person,Follow-up Visit,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",Patient canceled
+APT-6567,PAT-1480,Dr. Maria Garcia,DOC-003,booked,Pediatrics,follow-up,2025-05-14,77,Room 201,in-person,Medication Review,"Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",Provider unavailable
+APT-6084,PAT-9087,Dr. Maria Garcia,DOC-001,fulfilled,General Practice,procedure,2026-06-22,59,Room 202,in-person,Symptom Assessment,"In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",Insurance issue
+APT-8001,PAT-7456,Dr. Sarah Johnson,DOC-004,fulfilled,General Practice,consultation,2026-05-12,43,Exam Room A,in-person,Lab Results Discussion,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
+
+In congue. Etiam justo. Etiam pretium iaculis justo.
+
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",Weather
+APT-7062,PAT-1350,Dr. Michael Chen,DOC-004,canceled,Cardiology,consultation,2024-08-19,68,Room 201,telemedicine,Pre-op Evaluation,Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.,
+APT-5174,PAT-5946,Dr. Sarah Johnson,DOC-001,fulfilled,Orthopedics,therapy,2023-01-20,42,Exam Room B,in-person,Medication Review,"In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+
+Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+APT-6887,PAT-6831,Dr. Maria Garcia,DOC-001,fulfilled,Oncology,immunization,2024-04-12,91,Room 201,in-person,Medication Review,Phasellus in felis. Donec semper sapien a libero. Nam dui.,Scheduling conflict
+APT-9660,PAT-7795,Dr. James Wilson,DOC-002,fulfilled,Dermatology,follow-up,2026-06-05,73,Room 202,in-person,Follow-up Visit,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",No transportation
+APT-8203,PAT-1328,Dr. Emily Rodriguez,DOC-002,fulfilled,General Practice,consultation,2026-04-05,51,Room 101,in-person,Follow-up Visit,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
+
+Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+APT-7046,PAT-8598,Dr. Sarah Johnson,DOC-003,booked,Pediatrics,immunization,2023-10-15,96,Room 202,telemedicine,Post-op Check,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.,
+APT-7443,PAT-5423,Dr. Maria Garcia,DOC-001,fulfilled,General Practice,immunization,2026-07-15,73,Room 201,in-person,Lab Results Discussion,"Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+APT-3018,PAT-6072,Dr. James Wilson,DOC-001,booked,Oncology,follow-up,2023-03-25,92,Exam Room A,in-person,Lab Results Discussion,"In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",No transportation
+APT-1243,PAT-8355,Dr. Michael Chen,DOC-001,booked,Oncology,consultation,2025-06-04,15,Room 201,in-person,Lab Results Discussion,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
+
+Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+APT-2861,PAT-8916,Dr. Maria Garcia,DOC-004,booked,Oncology,consultation,2026-07-06,56,Room 102,in-person,Pre-op Evaluation,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
+
+Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
+
+Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+APT-5512,PAT-3553,Dr. Emily Rodriguez,DOC-005,canceled,Neurology,therapy,2026-02-16,82,Room 201,in-person,Annual Checkup,"Fusce consequat. Nulla nisl. Nunc nisl.
+
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+
+In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+APT-9066,PAT-3930,Dr. Maria Garcia,DOC-004,canceled,Cardiology,therapy,2024-07-28,48,Exam Room B,in-person,Annual Checkup,"Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+APT-8507,PAT-5791,Dr. Emily Rodriguez,DOC-004,rescheduled,Oncology,immunization,2023-12-04,32,Exam Room B,home visit,Follow-up Visit,"Fusce consequat. Nulla nisl. Nunc nisl.
+
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+
+In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+APT-8083,PAT-5762,Dr. James Wilson,DOC-002,booked,Oncology,therapy,2024-06-20,48,Room 102,in-person,Annual Checkup,Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.,
+APT-1900,PAT-9037,Dr. Maria Garcia,DOC-004,fulfilled,Neurology,procedure,2024-10-24,61,Room 201,in-person,Follow-up Visit,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+APT-7529,PAT-4778,Dr. Michael Chen,DOC-001,fulfilled,Cardiology,consultation,2026-07-26,30,Exam Room B,home visit,Lab Results Discussion,Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.,
+APT-2243,PAT-6273,Dr. Maria Garcia,DOC-001,booked,Pediatrics,procedure,2023-05-30,91,Room 202,home visit,Pre-op Evaluation,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+
+Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
+
+Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+APT-5024,PAT-3891,Dr. James Wilson,DOC-001,fulfilled,Cardiology,therapy,2026-06-03,29,Room 102,in-person,Annual Checkup,Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.,Scheduling conflict
+APT-4098,PAT-8726,Dr. Sarah Johnson,DOC-002,canceled,Dermatology,follow-up,2026-03-21,101,Room 201,in-person,Symptom Assessment,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+APT-1561,PAT-8541,Dr. Sarah Johnson,DOC-004,fulfilled,Orthopedics,therapy,2026-10-21,42,Exam Room B,home visit,Lab Results Discussion,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
+
+Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+APT-6094,PAT-7055,Dr. Emily Rodriguez,DOC-003,fulfilled,Dermatology,procedure,2023-07-03,108,Room 201,home visit,Follow-up Visit,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.,Weather
+APT-9741,PAT-5508,Dr. Emily Rodriguez,DOC-003,booked,General Practice,consultation,2023-02-20,109,Room 201,in-person,Annual Checkup,"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+APT-4166,PAT-7240,Dr. James Wilson,DOC-004,booked,Oncology,diagnostic,2024-09-06,16,Room 201,in-person,Annual Checkup,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
+
+Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+APT-7620,PAT-2207,Dr. Emily Rodriguez,DOC-004,fulfilled,Oncology,consultation,2023-05-06,61,Room 102,home visit,Post-op Check,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.",
+APT-8812,PAT-8042,Dr. Emily Rodriguez,DOC-005,fulfilled,Orthopedics,therapy,2024-04-11,26,Exam Room B,in-person,Pre-op Evaluation,"Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
+
+Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+APT-6301,PAT-1826,Dr. Michael Chen,DOC-003,booked,Neurology,immunization,2026-07-08,22,Room 101,in-person,Medication Review,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+APT-7787,PAT-6955,Dr. Emily Rodriguez,DOC-004,booked,Oncology,immunization,2026-05-17,62,Exam Room A,in-person,Lab Results Discussion,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+APT-6482,PAT-4914,Dr. Maria Garcia,DOC-001,booked,Dermatology,consultation,2025-02-01,23,Room 102,in-person,Follow-up Visit,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+
+In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+APT-3259,PAT-3590,Dr. Sarah Johnson,DOC-001,fulfilled,Cardiology,procedure,2025-10-26,41,Room 101,in-person,Pre-op Evaluation,"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",Patient canceled
+APT-9206,PAT-5443,Dr. James Wilson,DOC-001,canceled,Orthopedics,diagnostic,2024-05-20,57,Room 101,in-person,Follow-up Visit,Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.,Emergency
+APT-5606,PAT-8040,Dr. Michael Chen,DOC-003,fulfilled,Orthopedics,therapy,2023-07-24,93,Room 102,in-person,Symptom Assessment,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+APT-2655,PAT-7095,Dr. Emily Rodriguez,DOC-004,booked,Cardiology,follow-up,2024-06-21,107,Exam Room B,in-person,Follow-up Visit,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+
+Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+APT-9030,PAT-6650,Dr. Michael Chen,DOC-001,booked,Oncology,therapy,2026-04-24,35,Exam Room B,home visit,Annual Checkup,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
+
+Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
+
+In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+APT-8152,PAT-7150,Dr. Michael Chen,DOC-001,booked,Pediatrics,consultation,2026-12-20,27,Exam Room B,in-person,Pre-op Evaluation,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+
+Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+APT-2648,PAT-7560,Dr. Sarah Johnson,DOC-003,booked,Dermatology,diagnostic,2026-02-11,59,Room 102,in-person,Follow-up Visit,Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.,Weather
+APT-8869,PAT-5688,Dr. Sarah Johnson,DOC-002,booked,General Practice,therapy,2024-03-09,40,Exam Room B,telemedicine,Follow-up Visit,Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.,
+APT-8969,PAT-1944,Dr. Michael Chen,DOC-003,fulfilled,Pediatrics,diagnostic,2026-01-12,78,Exam Room B,home visit,Follow-up Visit,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.",Insurance issue
+APT-2450,PAT-4960,Dr. Michael Chen,DOC-004,booked,Pediatrics,follow-up,2023-02-18,114,Room 202,home visit,Medication Review,"Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+
+In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+APT-7853,PAT-9008,Dr. Michael Chen,DOC-003,fulfilled,Orthopedics,follow-up,2025-07-24,91,Room 201,in-person,Annual Checkup,Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.,
+APT-7234,PAT-2193,Dr. Maria Garcia,DOC-001,no-show,Cardiology,consultation,2023-08-08,119,Exam Room B,in-person,Follow-up Visit,"Fusce consequat. Nulla nisl. Nunc nisl.
+
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+APT-6805,PAT-6559,Dr. Maria Garcia,DOC-002,fulfilled,Dermatology,procedure,2024-02-14,23,Room 201,in-person,Post-op Check,"Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
+
+Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+
+Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",Provider unavailable
+APT-8899,PAT-9358,Dr. James Wilson,DOC-004,booked,Dermatology,follow-up,2025-01-31,87,Room 202,in-person,Symptom Assessment,Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.,
+APT-6349,PAT-8587,Dr. Maria Garcia,DOC-005,booked,Neurology,procedure,2024-02-14,37,Room 201,in-person,Medication Review,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+
+Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",Weather
+APT-3602,PAT-9864,Dr. Michael Chen,DOC-005,booked,Oncology,therapy,2025-11-11,23,Room 202,in-person,Annual Checkup,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.",Emergency
+APT-6543,PAT-7945,Dr. James Wilson,DOC-003,fulfilled,Cardiology,consultation,2023-03-14,85,Room 101,in-person,Medication Review,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+APT-6986,PAT-4149,Dr. Sarah Johnson,DOC-003,fulfilled,Pediatrics,therapy,2026-04-23,69,Exam Room A,home visit,Annual Checkup,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.
+
+Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
+
+Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+APT-8738,PAT-7576,Dr. Sarah Johnson,DOC-002,fulfilled,Cardiology,diagnostic,2025-04-29,86,Virtual,home visit,Annual Checkup,"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+APT-3051,PAT-2822,Dr. Michael Chen,DOC-002,booked,Oncology,therapy,2024-03-28,57,Room 101,in-person,Pre-op Evaluation,"In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+APT-8266,PAT-4841,Dr. James Wilson,DOC-005,booked,Dermatology,immunization,2026-12-28,46,Exam Room B,in-person,Annual Checkup,In congue. Etiam justo. Etiam pretium iaculis justo.,No transportation
+APT-4873,PAT-8549,Dr. James Wilson,DOC-005,fulfilled,Oncology,consultation,2024-12-14,85,Room 101,home visit,Lab Results Discussion,Fusce consequat. Nulla nisl. Nunc nisl.,
+APT-6095,PAT-8832,Dr. Maria Garcia,DOC-005,booked,Psychiatry,immunization,2025-03-01,91,Room 102,home visit,Annual Checkup,"Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+
+Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.",Provider unavailable
+APT-9402,PAT-6969,Dr. Emily Rodriguez,DOC-004,booked,Neurology,consultation,2026-03-02,17,Room 201,telemedicine,Post-op Check,Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.,Patient canceled
+APT-6475,PAT-2017,Dr. Maria Garcia,DOC-004,fulfilled,Neurology,therapy,2026-05-22,106,Virtual,in-person,Follow-up Visit,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
+
+Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",Insurance issue
+APT-4419,PAT-1162,Dr. Sarah Johnson,DOC-002,fulfilled,Neurology,consultation,2024-05-17,71,Room 101,home visit,Annual Checkup,"In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+APT-4807,PAT-8702,Dr. James Wilson,DOC-005,booked,Dermatology,follow-up,2023-04-03,34,Exam Room A,in-person,Pre-op Evaluation,"Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+APT-4548,PAT-1462,Dr. James Wilson,DOC-005,fulfilled,General Practice,follow-up,2025-07-03,101,Room 202,home visit,Annual Checkup,"Fusce consequat. Nulla nisl. Nunc nisl.
+
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+
+In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",No transportation
+APT-9380,PAT-3984,Dr. Sarah Johnson,DOC-004,rescheduled,General Practice,consultation,2025-11-15,63,Exam Room A,in-person,Pre-op Evaluation,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.",
+APT-9824,PAT-5712,Dr. Michael Chen,DOC-005,booked,Orthopedics,consultation,2023-02-17,37,Room 201,in-person,Lab Results Discussion,"Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
+
+In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",Patient canceled
+APT-8264,PAT-5951,Dr. Sarah Johnson,DOC-003,canceled,Dermatology,diagnostic,2025-09-21,63,Room 202,in-person,Lab Results Discussion,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+APT-4736,PAT-9657,Dr. Emily Rodriguez,DOC-005,booked,Orthopedics,immunization,2024-11-17,57,Room 101,in-person,Follow-up Visit,"Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+APT-2993,PAT-9277,Dr. Emily Rodriguez,DOC-001,fulfilled,General Practice,immunization,2025-10-10,35,Room 102,telemedicine,Annual Checkup,Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.,
+APT-1618,PAT-6679,Dr. Maria Garcia,DOC-005,booked,Neurology,therapy,2023-06-03,103,Room 201,home visit,Lab Results Discussion,Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.,
+APT-1910,PAT-4627,Dr. Emily Rodriguez,DOC-001,booked,Oncology,consultation,2024-12-24,82,Exam Room A,in-person,Post-op Check,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+
+Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",Patient canceled
+APT-4780,PAT-5268,Dr. Michael Chen,DOC-002,booked,Dermatology,diagnostic,2023-06-25,52,Exam Room A,in-person,Medication Review,"Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+APT-6911,PAT-1820,Dr. Michael Chen,DOC-001,no-show,Neurology,consultation,2026-03-31,37,Exam Room B,home visit,Post-op Check,"Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+
+Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+APT-2692,PAT-9596,Dr. Sarah Johnson,DOC-004,canceled,Pediatrics,procedure,2026-04-10,106,Virtual,telemedicine,Symptom Assessment,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+
+In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",N/A
+APT-5395,PAT-2548,Dr. Emily Rodriguez,DOC-005,booked,Psychiatry,therapy,2025-12-30,40,Exam Room B,in-person,Post-op Check,"Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+
+Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+
+Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+APT-3295,PAT-3998,Dr. James Wilson,DOC-005,booked,Cardiology,consultation,2026-04-15,99,Room 101,in-person,Post-op Check,Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.,
+APT-4906,PAT-8247,Dr. James Wilson,DOC-003,booked,Psychiatry,consultation,2026-05-20,79,Virtual,in-person,Pre-op Evaluation,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+APT-9452,PAT-8186,Dr. James Wilson,DOC-004,canceled,Oncology,diagnostic,2024-01-04,108,Virtual,home visit,Follow-up Visit,"Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+APT-8489,PAT-8369,Dr. Michael Chen,DOC-002,fulfilled,Dermatology,follow-up,2024-02-22,97,Room 101,in-person,Medication Review,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",Emergency
+APT-7884,PAT-7607,Dr. Emily Rodriguez,DOC-003,no-show,Neurology,immunization,2024-07-13,98,Room 201,home visit,Pre-op Evaluation,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+APT-5475,PAT-3487,Dr. James Wilson,DOC-002,booked,Neurology,procedure,2026-07-20,34,Room 201,telemedicine,Post-op Check,"Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
+
+Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+APT-3285,PAT-5372,Dr. Sarah Johnson,DOC-001,booked,Cardiology,diagnostic,2024-12-01,16,Virtual,in-person,Post-op Check,"In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+APT-6621,PAT-8399,Dr. Emily Rodriguez,DOC-005,booked,General Practice,consultation,2025-05-04,65,Exam Room A,in-person,Symptom Assessment,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",Provider unavailable
+APT-9350,PAT-2860,Dr. Maria Garcia,DOC-005,booked,Pediatrics,consultation,2026-01-17,94,Room 101,in-person,Follow-up Visit,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+APT-8640,PAT-3202,Dr. Emily Rodriguez,DOC-004,booked,Psychiatry,diagnostic,2023-11-24,84,Exam Room B,in-person,Medication Review,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
+
+Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
+
+Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+APT-5286,PAT-9029,Dr. James Wilson,DOC-004,booked,Orthopedics,procedure,2026-03-20,74,Room 102,in-person,Medication Review,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+APT-4736,PAT-8249,Dr. Michael Chen,DOC-003,booked,General Practice,diagnostic,2023-11-24,113,Room 202,in-person,Follow-up Visit,"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+
+Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+APT-3708,PAT-9867,Dr. Sarah Johnson,DOC-004,booked,Cardiology,follow-up,2024-01-16,36,Room 202,telemedicine,Symptom Assessment,"Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
+
+Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",Patient canceled
+APT-1718,PAT-2720,Dr. Emily Rodriguez,DOC-005,rescheduled,Pediatrics,follow-up,2025-07-31,87,Room 102,telemedicine,Post-op Check,"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
+
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
+
+Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+APT-1448,PAT-1847,Dr. Michael Chen,DOC-002,booked,Dermatology,procedure,2023-07-28,82,Room 201,in-person,Symptom Assessment,In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.,Insurance issue
+APT-5824,PAT-2142,Dr. Maria Garcia,DOC-002,booked,General Practice,follow-up,2025-06-12,100,Exam Room B,in-person,Post-op Check,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",N/A
+APT-7592,PAT-3107,Dr. James Wilson,DOC-002,fulfilled,Psychiatry,immunization,2026-08-30,28,Room 202,telemedicine,Symptom Assessment,"Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+APT-5201,PAT-8839,Dr. James Wilson,DOC-005,booked,Orthopedics,consultation,2025-05-03,53,Room 201,in-person,Pre-op Evaluation,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+APT-8926,PAT-2617,Dr. Sarah Johnson,DOC-004,rescheduled,General Practice,consultation,2023-03-10,16,Exam Room A,in-person,Symptom Assessment,Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.,
+APT-8480,PAT-8157,Dr. James Wilson,DOC-003,fulfilled,Oncology,therapy,2024-09-24,37,Exam Room B,in-person,Pre-op Evaluation,"Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
+
+In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+APT-6443,PAT-9458,Dr. Michael Chen,DOC-001,fulfilled,Pediatrics,therapy,2023-05-31,24,Room 202,home visit,Follow-up Visit,Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.,
+APT-5247,PAT-3316,Dr. Michael Chen,DOC-001,fulfilled,Oncology,consultation,2024-01-18,83,Room 102,home visit,Medication Review,Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.,
+APT-6436,PAT-2589,Dr. James Wilson,DOC-005,fulfilled,Dermatology,immunization,2024-08-03,114,Exam Room A,in-person,Follow-up Visit,In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.,
+APT-6692,PAT-6738,Dr. James Wilson,DOC-004,booked,Cardiology,therapy,2023-06-21,63,Exam Room A,telemedicine,Lab Results Discussion,"In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",Emergency
+APT-2974,PAT-8906,Dr. James Wilson,DOC-003,fulfilled,Neurology,diagnostic,2025-04-15,17,Room 201,telemedicine,Medication Review,"Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
+
+Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",Insurance issue
+APT-7242,PAT-4201,Dr. Michael Chen,DOC-003,canceled,Pediatrics,diagnostic,2024-03-07,36,Room 201,in-person,Medication Review,Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.,
+APT-2728,PAT-4684,Dr. Sarah Johnson,DOC-005,booked,General Practice,immunization,2024-04-03,29,Virtual,in-person,Annual Checkup,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+APT-1732,PAT-2848,Dr. Sarah Johnson,DOC-004,canceled,Cardiology,follow-up,2023-04-22,49,Room 201,home visit,Pre-op Evaluation,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",No transportation
+APT-9624,PAT-7735,Dr. Emily Rodriguez,DOC-002,fulfilled,Pediatrics,diagnostic,2026-03-03,112,Exam Room B,in-person,Lab Results Discussion,"Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.",Clinician unavailable
+APT-8103,PAT-7440,Dr. James Wilson,DOC-005,booked,Psychiatry,follow-up,2024-10-08,113,Exam Room A,home visit,Lab Results Discussion,"Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+
+Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+APT-6614,PAT-5599,Dr. James Wilson,DOC-005,fulfilled,General Practice,procedure,2024-12-28,82,Exam Room B,in-person,Annual Checkup,"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
+
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+APT-1296,PAT-6268,Dr. Sarah Johnson,DOC-002,booked,Dermatology,immunization,2025-01-11,19,Exam Room A,in-person,Pre-op Evaluation,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+APT-6472,PAT-9670,Dr. Sarah Johnson,DOC-002,fulfilled,Orthopedics,diagnostic,2025-06-16,75,Room 101,in-person,Annual Checkup,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+APT-2336,PAT-2509,Dr. James Wilson,DOC-003,booked,Oncology,consultation,2026-12-05,65,Virtual,in-person,Follow-up Visit,"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+APT-7194,PAT-6134,Dr. Maria Garcia,DOC-003,fulfilled,Psychiatry,follow-up,2025-07-24,15,Exam Room B,in-person,Lab Results Discussion,"Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+APT-1392,PAT-9691,Dr. Maria Garcia,DOC-001,fulfilled,General Practice,procedure,2024-11-09,120,Room 102,in-person,Medication Review,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+APT-8286,PAT-7952,Dr. Emily Rodriguez,DOC-005,fulfilled,Dermatology,consultation,2026-02-03,89,Room 202,telemedicine,Symptom Assessment,Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.,
+APT-3745,PAT-4712,Dr. Sarah Johnson,DOC-001,booked,Cardiology,procedure,2026-05-08,105,Room 202,home visit,Symptom Assessment,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.
+
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",Insurance issue
+APT-8339,PAT-8706,Dr. Michael Chen,DOC-004,rescheduled,Cardiology,follow-up,2024-05-17,79,Room 102,in-person,Post-op Check,"In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+APT-8150,PAT-5079,Dr. Maria Garcia,DOC-001,fulfilled,Psychiatry,therapy,2024-03-03,27,Room 101,in-person,Follow-up Visit,"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
+
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
+
+Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+APT-7832,PAT-5022,Dr. Sarah Johnson,DOC-002,booked,Psychiatry,procedure,2024-07-10,47,Room 102,in-person,Lab Results Discussion,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+APT-9954,PAT-9416,Dr. Maria Garcia,DOC-002,fulfilled,Oncology,diagnostic,2025-11-15,57,Room 202,telemedicine,Pre-op Evaluation,"Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+APT-6920,PAT-2660,Dr. James Wilson,DOC-001,fulfilled,Neurology,follow-up,2024-03-24,43,Room 201,in-person,Lab Results Discussion,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
+
+Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+APT-1906,PAT-7449,Dr. James Wilson,DOC-002,canceled,Neurology,follow-up,2024-07-12,108,Room 102,in-person,Follow-up Visit,"Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+
+Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+APT-6379,PAT-5081,Dr. James Wilson,DOC-004,booked,Orthopedics,immunization,2025-05-05,72,Virtual,home visit,Follow-up Visit,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
+APT-5559,PAT-1265,Dr. Michael Chen,DOC-003,fulfilled,Dermatology,consultation,2024-11-07,28,Exam Room B,in-person,Lab Results Discussion,Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.,Clinician unavailable
+APT-3746,PAT-5034,Dr. James Wilson,DOC-001,fulfilled,Pediatrics,diagnostic,2024-11-27,43,Exam Room B,home visit,Annual Checkup,"Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
+
+Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+APT-9690,PAT-6672,Dr. James Wilson,DOC-002,fulfilled,Psychiatry,consultation,2023-06-12,79,Room 202,telemedicine,Lab Results Discussion,"Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",Weather
+APT-2021,PAT-2657,Dr. Michael Chen,DOC-001,fulfilled,Cardiology,diagnostic,2026-08-01,73,Virtual,in-person,Post-op Check,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+APT-3112,PAT-7090,Dr. Michael Chen,DOC-001,booked,General Practice,diagnostic,2023-05-02,95,Room 101,in-person,Symptom Assessment,"In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+APT-8224,PAT-2454,Dr. Michael Chen,DOC-005,booked,Orthopedics,consultation,2023-01-05,94,Room 202,home visit,Post-op Check,In congue. Etiam justo. Etiam pretium iaculis justo.,Insurance issue
+APT-4461,PAT-1334,Dr. Michael Chen,DOC-001,booked,Neurology,therapy,2025-03-15,94,Room 102,in-person,Pre-op Evaluation,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
+
+Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+APT-2164,PAT-8624,Dr. Michael Chen,DOC-003,booked,Cardiology,follow-up,2025-09-02,105,Room 201,in-person,Symptom Assessment,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
+
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+APT-2881,PAT-8838,Dr. Emily Rodriguez,DOC-005,booked,Neurology,consultation,2025-02-25,117,Exam Room A,in-person,Post-op Check,Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.,
+APT-8281,PAT-2404,Dr. Michael Chen,DOC-005,fulfilled,Dermatology,immunization,2026-09-10,76,Room 201,in-person,Annual Checkup,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
+
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+APT-5272,PAT-6030,Dr. Maria Garcia,DOC-001,fulfilled,Pediatrics,therapy,2024-03-16,103,Virtual,home visit,Pre-op Evaluation,"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+
+Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",Scheduling conflict
+APT-2552,PAT-8545,Dr. Maria Garcia,DOC-003,rescheduled,General Practice,procedure,2023-01-10,104,Exam Room B,in-person,Pre-op Evaluation,"Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+APT-6807,PAT-9023,Dr. Sarah Johnson,DOC-005,canceled,Dermatology,therapy,2025-06-22,62,Room 101,home visit,Annual Checkup,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.
+
+Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",Clinician unavailable
+APT-2713,PAT-9249,Dr. James Wilson,DOC-005,fulfilled,Cardiology,immunization,2024-02-14,37,Room 102,in-person,Annual Checkup,"Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+
+Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+
+Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+APT-8215,PAT-8949,Dr. Sarah Johnson,DOC-004,booked,Orthopedics,procedure,2026-02-04,78,Room 202,in-person,Post-op Check,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.",
+APT-8778,PAT-9682,Dr. James Wilson,DOC-004,no-show,Dermatology,follow-up,2026-11-16,107,Exam Room A,in-person,Lab Results Discussion,"Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+APT-2180,PAT-7525,Dr. Michael Chen,DOC-003,booked,Oncology,diagnostic,2026-02-14,63,Exam Room A,home visit,Follow-up Visit,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.",Emergency
+APT-7433,PAT-6449,Dr. Emily Rodriguez,DOC-002,booked,Pediatrics,consultation,2026-06-09,22,Exam Room A,home visit,Pre-op Evaluation,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+APT-6103,PAT-6945,Dr. Michael Chen,DOC-003,booked,Cardiology,diagnostic,2024-05-21,84,Virtual,telemedicine,Medication Review,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+APT-8977,PAT-5707,Dr. Emily Rodriguez,DOC-004,booked,Cardiology,therapy,2026-07-11,101,Room 201,in-person,Pre-op Evaluation,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+
+Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+APT-5716,PAT-6592,Dr. Sarah Johnson,DOC-002,booked,Pediatrics,diagnostic,2025-03-20,64,Room 101,telemedicine,Lab Results Discussion,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+APT-7844,PAT-5680,Dr. Michael Chen,DOC-002,fulfilled,General Practice,diagnostic,2023-08-10,104,Room 102,in-person,Pre-op Evaluation,"Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+APT-5126,PAT-9699,Dr. James Wilson,DOC-001,canceled,Orthopedics,immunization,2026-10-13,31,Room 201,in-person,Post-op Check,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+APT-6424,PAT-9908,Dr. Sarah Johnson,DOC-003,booked,Psychiatry,immunization,2026-11-17,102,Room 202,home visit,Medication Review,"Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
+
+Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
+
+In congue. Etiam justo. Etiam pretium iaculis justo.",
+APT-3838,PAT-9499,Dr. James Wilson,DOC-002,booked,Psychiatry,immunization,2026-11-10,57,Room 101,in-person,Follow-up Visit,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.",
+APT-8495,PAT-6318,Dr. James Wilson,DOC-003,canceled,Neurology,consultation,2023-08-22,95,Virtual,in-person,Annual Checkup,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.",Weather
+APT-4450,PAT-1763,Dr. Maria Garcia,DOC-003,fulfilled,Dermatology,therapy,2023-11-06,62,Room 102,home visit,Post-op Check,Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.,
+APT-9381,PAT-6857,Dr. James Wilson,DOC-003,canceled,General Practice,procedure,2026-01-09,16,Exam Room A,home visit,Post-op Check,Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.,
+APT-4104,PAT-5056,Dr. Michael Chen,DOC-005,booked,General Practice,follow-up,2026-04-27,51,Virtual,in-person,Post-op Check,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+
+Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",N/A
+APT-1912,PAT-4018,Dr. James Wilson,DOC-004,fulfilled,Orthopedics,therapy,2026-05-26,26,Room 201,home visit,Post-op Check,"Fusce consequat. Nulla nisl. Nunc nisl.
+
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+
+In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+APT-6922,PAT-8860,Dr. Maria Garcia,DOC-004,fulfilled,Psychiatry,consultation,2025-03-21,115,Exam Room A,home visit,Medication Review,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",Emergency
+APT-9334,PAT-2027,Dr. Sarah Johnson,DOC-004,booked,Psychiatry,procedure,2023-07-15,54,Room 101,in-person,Pre-op Evaluation,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",Insurance issue
+APT-5180,PAT-5571,Dr. Sarah Johnson,DOC-001,fulfilled,Orthopedics,immunization,2024-08-27,111,Room 201,in-person,Medication Review,"Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+APT-4907,PAT-1211,Dr. James Wilson,DOC-001,fulfilled,Psychiatry,immunization,2026-03-13,21,Room 101,in-person,Annual Checkup,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",Emergency
+APT-3545,PAT-7396,Dr. Maria Garcia,DOC-004,rescheduled,Oncology,diagnostic,2025-06-03,95,Room 102,in-person,Post-op Check,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+APT-9672,PAT-4095,Dr. Emily Rodriguez,DOC-001,fulfilled,Oncology,consultation,2023-10-10,51,Exam Room B,in-person,Medication Review,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+
+Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
+
+Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+APT-3414,PAT-9238,Dr. Maria Garcia,DOC-002,fulfilled,Orthopedics,procedure,2023-08-27,43,Exam Room B,in-person,Annual Checkup,"Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
+
+Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+APT-5430,PAT-9623,Dr. Maria Garcia,DOC-002,fulfilled,Psychiatry,consultation,2025-07-13,53,Room 202,in-person,Follow-up Visit,"Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+
+Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.",
+APT-8511,PAT-8049,Dr. Sarah Johnson,DOC-005,booked,Oncology,procedure,2023-03-04,110,Room 201,in-person,Pre-op Evaluation,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+APT-6128,PAT-7307,Dr. James Wilson,DOC-003,booked,Oncology,immunization,2024-12-31,86,Room 202,in-person,Medication Review,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
+
+Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+APT-7443,PAT-4750,Dr. Emily Rodriguez,DOC-002,fulfilled,Neurology,therapy,2025-12-06,91,Room 102,in-person,Symptom Assessment,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
+
+Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
+
+In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+APT-8232,PAT-4099,Dr. James Wilson,DOC-003,booked,Psychiatry,follow-up,2026-08-07,28,Room 102,telemedicine,Symptom Assessment,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
+
+In congue. Etiam justo. Etiam pretium iaculis justo.
+
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+APT-9508,PAT-7125,Dr. Emily Rodriguez,DOC-004,booked,Orthopedics,immunization,2025-01-23,39,Room 101,in-person,Medication Review,"Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+APT-6739,PAT-5481,Dr. James Wilson,DOC-002,fulfilled,Pediatrics,consultation,2025-08-07,19,Room 202,home visit,Lab Results Discussion,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
+
+In congue. Etiam justo. Etiam pretium iaculis justo.",
+APT-1603,PAT-6739,Dr. James Wilson,DOC-004,booked,Oncology,immunization,2024-08-30,42,Room 202,in-person,Lab Results Discussion,"Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
+
+Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",Emergency
+APT-5841,PAT-7484,Dr. Maria Garcia,DOC-001,fulfilled,Oncology,consultation,2024-09-28,108,Room 202,in-person,Post-op Check,"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
+
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+APT-6046,PAT-5260,Dr. Maria Garcia,DOC-005,booked,Neurology,immunization,2025-03-22,65,Room 102,home visit,Pre-op Evaluation,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",No transportation
+APT-2253,PAT-8042,Dr. Sarah Johnson,DOC-003,booked,General Practice,follow-up,2025-01-05,113,Exam Room B,in-person,Medication Review,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+
+Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+APT-3619,PAT-3826,Dr. James Wilson,DOC-003,rescheduled,Dermatology,immunization,2024-03-07,31,Exam Room B,home visit,Pre-op Evaluation,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",Emergency
+APT-9222,PAT-7452,Dr. Emily Rodriguez,DOC-001,booked,Neurology,therapy,2026-01-31,104,Exam Room B,in-person,Annual Checkup,"Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+
+In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+APT-2148,PAT-4028,Dr. Emily Rodriguez,DOC-002,booked,Pediatrics,consultation,2023-07-22,100,Room 201,in-person,Medication Review,"Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+APT-8452,PAT-2834,Dr. James Wilson,DOC-002,booked,Neurology,therapy,2024-02-25,77,Exam Room A,in-person,Symptom Assessment,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+APT-6583,PAT-4033,Dr. Maria Garcia,DOC-003,booked,Neurology,diagnostic,2025-08-01,117,Room 202,in-person,Follow-up Visit,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.
+
+Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
+
+Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+APT-8855,PAT-4141,Dr. Sarah Johnson,DOC-003,rescheduled,Orthopedics,consultation,2026-09-06,43,Room 202,in-person,Post-op Check,"Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+
+Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",No transportation
+APT-1674,PAT-7825,Dr. Emily Rodriguez,DOC-003,fulfilled,Cardiology,diagnostic,2024-11-27,30,Exam Room B,in-person,Symptom Assessment,Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.,
+APT-6322,PAT-7062,Dr. James Wilson,DOC-002,fulfilled,Oncology,therapy,2023-05-11,114,Room 201,home visit,Pre-op Evaluation,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",No transportation
+APT-4862,PAT-1458,Dr. Sarah Johnson,DOC-001,no-show,Oncology,immunization,2023-11-30,78,Room 201,in-person,Pre-op Evaluation,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",N/A
+APT-4970,PAT-8391,Dr. Michael Chen,DOC-001,booked,Psychiatry,consultation,2025-04-01,68,Virtual,in-person,Symptom Assessment,Fusce consequat. Nulla nisl. Nunc nisl.,
+APT-7537,PAT-6630,Dr. Emily Rodriguez,DOC-001,fulfilled,Dermatology,diagnostic,2025-07-17,61,Room 101,telemedicine,Follow-up Visit,"Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
+APT-9144,PAT-1140,Dr. Sarah Johnson,DOC-003,booked,Psychiatry,follow-up,2023-12-14,48,Room 102,in-person,Symptom Assessment,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.
+
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+APT-9690,PAT-6348,Dr. Maria Garcia,DOC-004,booked,General Practice,procedure,2023-09-19,88,Exam Room A,in-person,Follow-up Visit,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
+
+Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+APT-1852,PAT-3194,Dr. Michael Chen,DOC-002,canceled,Orthopedics,follow-up,2024-04-07,28,Room 202,home visit,Medication Review,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
+
+Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",No transportation
+APT-6438,PAT-2051,Dr. Emily Rodriguez,DOC-003,booked,Psychiatry,diagnostic,2023-10-12,35,Exam Room A,in-person,Medication Review,Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.,
+APT-3149,PAT-2139,Dr. Emily Rodriguez,DOC-004,rescheduled,Orthopedics,therapy,2024-07-05,108,Room 202,in-person,Follow-up Visit,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
+
+Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+APT-6297,PAT-4272,Dr. Michael Chen,DOC-001,fulfilled,Pediatrics,diagnostic,2023-11-03,75,Virtual,in-person,Medication Review,Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.,
+APT-4444,PAT-4832,Dr. Maria Garcia,DOC-001,booked,Cardiology,consultation,2025-04-07,34,Room 202,in-person,Post-op Check,"Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
+
+Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+APT-3815,PAT-2223,Dr. Sarah Johnson,DOC-004,booked,Cardiology,follow-up,2026-04-12,93,Exam Room A,in-person,Symptom Assessment,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+
+Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+APT-5409,PAT-1932,Dr. Michael Chen,DOC-005,fulfilled,Dermatology,consultation,2024-12-01,82,Room 202,in-person,Medication Review,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",No transportation
+APT-5780,PAT-5102,Dr. Michael Chen,DOC-003,booked,Psychiatry,diagnostic,2026-10-28,111,Room 201,in-person,Lab Results Discussion,"Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
+
+Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+
+Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+APT-2111,PAT-7475,Dr. Michael Chen,DOC-001,no-show,Psychiatry,procedure,2024-11-18,112,Exam Room A,in-person,Follow-up Visit,Fusce consequat. Nulla nisl. Nunc nisl.,
+APT-7393,PAT-4453,Dr. Sarah Johnson,DOC-001,fulfilled,Cardiology,immunization,2025-11-02,24,Room 201,in-person,Annual Checkup,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
+
+Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+APT-8489,PAT-7559,Dr. Michael Chen,DOC-003,booked,Cardiology,immunization,2024-07-14,26,Room 101,home visit,Follow-up Visit,"Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
+
+Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+APT-6874,PAT-3783,Dr. Michael Chen,DOC-002,fulfilled,Orthopedics,follow-up,2023-05-21,80,Exam Room A,in-person,Annual Checkup,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+APT-7480,PAT-7931,Dr. Michael Chen,DOC-003,rescheduled,Orthopedics,therapy,2024-07-25,103,Room 102,in-person,Lab Results Discussion,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+APT-2497,PAT-4499,Dr. Emily Rodriguez,DOC-004,fulfilled,Dermatology,procedure,2024-08-07,45,Virtual,home visit,Pre-op Evaluation,"Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
+
+Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+APT-3405,PAT-4344,Dr. Sarah Johnson,DOC-002,booked,Neurology,follow-up,2026-01-26,81,Virtual,in-person,Lab Results Discussion,"Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+
+In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",Patient canceled
+APT-8954,PAT-3169,Dr. Sarah Johnson,DOC-003,canceled,Psychiatry,immunization,2025-05-27,16,Room 102,home visit,Medication Review,Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.,
+APT-2029,PAT-1543,Dr. James Wilson,DOC-003,booked,Orthopedics,diagnostic,2023-08-19,22,Room 101,in-person,Follow-up Visit,Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.,
+APT-2688,PAT-8039,Dr. Emily Rodriguez,DOC-004,booked,Cardiology,consultation,2024-08-16,61,Room 102,in-person,Lab Results Discussion,"In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+
+Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+APT-9079,PAT-4081,Dr. Sarah Johnson,DOC-002,booked,Neurology,immunization,2025-09-01,60,Exam Room B,in-person,Annual Checkup,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+
+Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+APT-6637,PAT-3000,Dr. Sarah Johnson,DOC-001,booked,Dermatology,consultation,2023-03-29,38,Exam Room A,in-person,Post-op Check,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.,N/A
+APT-7488,PAT-3790,Dr. Emily Rodriguez,DOC-001,canceled,Dermatology,procedure,2025-11-30,20,Room 101,in-person,Lab Results Discussion,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",Provider unavailable
+APT-6937,PAT-7510,Dr. Sarah Johnson,DOC-005,booked,General Practice,consultation,2024-04-19,73,Room 202,in-person,Lab Results Discussion,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+APT-8536,PAT-1969,Dr. Maria Garcia,DOC-005,no-show,Psychiatry,diagnostic,2024-08-18,106,Room 201,in-person,Follow-up Visit,"Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
+APT-5314,PAT-8586,Dr. Emily Rodriguez,DOC-005,fulfilled,Pediatrics,immunization,2026-11-06,31,Room 202,home visit,Lab Results Discussion,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.
+
+Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
+
+Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",Emergency
+APT-1545,PAT-5976,Dr. Sarah Johnson,DOC-002,fulfilled,Oncology,follow-up,2025-08-28,89,Room 101,in-person,Symptom Assessment,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.,Scheduling conflict
+APT-5302,PAT-4065,Dr. Sarah Johnson,DOC-001,booked,Neurology,therapy,2023-07-11,102,Room 102,in-person,Annual Checkup,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+APT-6282,PAT-7635,Dr. Maria Garcia,DOC-004,fulfilled,General Practice,diagnostic,2024-06-13,94,Room 102,in-person,Annual Checkup,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+APT-7129,PAT-8124,Dr. James Wilson,DOC-001,booked,Psychiatry,consultation,2023-02-08,34,Room 201,home visit,Post-op Check,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+APT-5607,PAT-4831,Dr. Sarah Johnson,DOC-004,fulfilled,Orthopedics,procedure,2026-01-14,45,Room 101,in-person,Pre-op Evaluation,Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.,Clinician unavailable
+APT-9696,PAT-8565,Dr. Sarah Johnson,DOC-005,booked,Orthopedics,diagnostic,2025-05-23,19,Exam Room A,in-person,Post-op Check,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",Emergency
+APT-9146,PAT-8196,Dr. Sarah Johnson,DOC-004,rescheduled,Pediatrics,diagnostic,2026-11-21,57,Room 101,in-person,Symptom Assessment,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+APT-6844,PAT-1688,Dr. Emily Rodriguez,DOC-005,canceled,Dermatology,procedure,2025-06-14,112,Virtual,in-person,Symptom Assessment,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
+
+Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+APT-6702,PAT-6374,Dr. James Wilson,DOC-002,booked,Pediatrics,therapy,2023-10-15,103,Exam Room A,in-person,Symptom Assessment,"Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+APT-2917,PAT-7118,Dr. Maria Garcia,DOC-002,canceled,Psychiatry,consultation,2024-04-24,96,Exam Room A,in-person,Post-op Check,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+APT-4962,PAT-5838,Dr. Maria Garcia,DOC-003,booked,Cardiology,therapy,2025-05-11,106,Exam Room B,telemedicine,Pre-op Evaluation,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+APT-7919,PAT-4318,Dr. James Wilson,DOC-002,booked,Oncology,consultation,2023-10-24,84,Room 102,telemedicine,Follow-up Visit,"Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+APT-4881,PAT-3212,Dr. Maria Garcia,DOC-005,no-show,Neurology,diagnostic,2026-08-28,58,Room 201,home visit,Post-op Check,Fusce consequat. Nulla nisl. Nunc nisl.,
+APT-4593,PAT-7888,Dr. Emily Rodriguez,DOC-004,booked,Cardiology,immunization,2025-12-30,25,Exam Room B,in-person,Symptom Assessment,"Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+
+Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+APT-4319,PAT-8877,Dr. Sarah Johnson,DOC-005,booked,Dermatology,therapy,2023-05-02,32,Exam Room A,in-person,Medication Review,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",Scheduling conflict
+APT-2131,PAT-2520,Dr. Emily Rodriguez,DOC-004,booked,Psychiatry,consultation,2025-04-22,98,Room 202,in-person,Annual Checkup,"Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
+
+Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+APT-2958,PAT-8115,Dr. Sarah Johnson,DOC-004,booked,Orthopedics,therapy,2024-01-23,29,Room 101,in-person,Pre-op Evaluation,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+APT-8688,PAT-7372,Dr. Maria Garcia,DOC-001,no-show,Psychiatry,procedure,2024-03-18,64,Room 201,home visit,Annual Checkup,"In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+APT-6248,PAT-2052,Dr. Michael Chen,DOC-005,fulfilled,Psychiatry,procedure,2025-05-14,106,Room 102,home visit,Follow-up Visit,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+APT-6230,PAT-8879,Dr. Maria Garcia,DOC-002,booked,Oncology,immunization,2026-03-06,24,Room 102,in-person,Lab Results Discussion,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",No transportation
+APT-5488,PAT-3757,Dr. Michael Chen,DOC-005,booked,Cardiology,consultation,2026-04-19,100,Room 202,in-person,Medication Review,"Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",No transportation
+APT-5294,PAT-3134,Dr. James Wilson,DOC-001,booked,Orthopedics,immunization,2026-08-11,110,Room 102,home visit,Annual Checkup,"Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+APT-7529,PAT-4999,Dr. Sarah Johnson,DOC-001,booked,General Practice,diagnostic,2026-01-22,16,Exam Room B,in-person,Annual Checkup,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.",
+APT-2038,PAT-5724,Dr. Emily Rodriguez,DOC-005,canceled,Orthopedics,diagnostic,2025-02-14,118,Room 201,in-person,Pre-op Evaluation,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+
+Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+APT-1471,PAT-9533,Dr. Sarah Johnson,DOC-003,booked,Orthopedics,follow-up,2026-11-12,21,Room 202,in-person,Lab Results Discussion,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",Provider unavailable
+APT-5744,PAT-9434,Dr. Sarah Johnson,DOC-004,booked,General Practice,follow-up,2026-10-28,30,Room 202,in-person,Follow-up Visit,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
+
+Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",Patient canceled
+APT-8014,PAT-8622,Dr. Emily Rodriguez,DOC-005,booked,Oncology,therapy,2024-11-23,51,Room 201,in-person,Pre-op Evaluation,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",Clinician unavailable
+APT-8174,PAT-8205,Dr. James Wilson,DOC-002,booked,Pediatrics,diagnostic,2024-02-06,120,Virtual,in-person,Medication Review,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",N/A
+APT-4268,PAT-4176,Dr. Emily Rodriguez,DOC-005,booked,Psychiatry,immunization,2024-09-04,71,Room 102,in-person,Annual Checkup,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",Patient canceled
+APT-5397,PAT-4730,Dr. Sarah Johnson,DOC-004,booked,Psychiatry,diagnostic,2024-05-03,76,Room 102,in-person,Post-op Check,Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.,
+APT-9962,PAT-9636,Dr. Michael Chen,DOC-004,canceled,General Practice,immunization,2025-10-20,84,Room 201,in-person,Annual Checkup,In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.,
+APT-2262,PAT-4058,Dr. Michael Chen,DOC-002,fulfilled,Neurology,follow-up,2026-10-30,24,Exam Room A,in-person,Medication Review,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+
+Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",Patient canceled
+APT-8872,PAT-9006,Dr. James Wilson,DOC-002,rescheduled,Oncology,procedure,2025-07-15,52,Virtual,in-person,Symptom Assessment,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
+
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",Emergency
+APT-2852,PAT-2455,Dr. Sarah Johnson,DOC-002,booked,Neurology,procedure,2026-06-26,42,Exam Room B,home visit,Medication Review,In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.,
+APT-4813,PAT-7315,Dr. James Wilson,DOC-003,booked,Cardiology,diagnostic,2024-09-16,80,Exam Room A,telemedicine,Annual Checkup,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
+
+Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
+
+Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+APT-5950,PAT-6666,Dr. Emily Rodriguez,DOC-001,booked,Cardiology,therapy,2026-02-28,84,Room 201,in-person,Lab Results Discussion,Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.,
+APT-5242,PAT-3598,Dr. James Wilson,DOC-003,fulfilled,Oncology,diagnostic,2025-06-01,69,Room 102,in-person,Annual Checkup,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+
+Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+APT-7369,PAT-5658,Dr. Michael Chen,DOC-003,rescheduled,Psychiatry,consultation,2024-11-20,60,Room 101,in-person,Follow-up Visit,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+
+Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+APT-5248,PAT-5988,Dr. Emily Rodriguez,DOC-002,booked,Cardiology,therapy,2024-06-20,115,Virtual,in-person,Annual Checkup,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+APT-7016,PAT-8640,Dr. Maria Garcia,DOC-003,booked,Orthopedics,procedure,2026-02-27,22,Room 202,home visit,Pre-op Evaluation,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",Scheduling conflict
+APT-4344,PAT-8170,Dr. Maria Garcia,DOC-002,booked,Pediatrics,procedure,2023-11-22,95,Exam Room B,in-person,Symptom Assessment,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+APT-1188,PAT-6025,Dr. Emily Rodriguez,DOC-005,booked,Oncology,therapy,2023-12-04,78,Room 202,in-person,Medication Review,"Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
+
+Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",Weather
+APT-6011,PAT-1151,Dr. James Wilson,DOC-002,booked,Cardiology,procedure,2023-04-27,86,Room 101,in-person,Annual Checkup,"Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
+
+Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+
+Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",Patient canceled
+APT-6070,PAT-9113,Dr. Maria Garcia,DOC-005,rescheduled,Psychiatry,immunization,2023-10-29,89,Virtual,in-person,Post-op Check,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
+
+Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+APT-4399,PAT-3362,Dr. Sarah Johnson,DOC-003,booked,Pediatrics,immunization,2024-10-15,72,Exam Room B,in-person,Follow-up Visit,"Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
+APT-2324,PAT-8273,Dr. Sarah Johnson,DOC-004,booked,Pediatrics,procedure,2023-09-04,33,Exam Room A,home visit,Lab Results Discussion,"Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
+
+In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+APT-8171,PAT-2993,Dr. James Wilson,DOC-002,booked,Dermatology,follow-up,2023-04-03,49,Room 101,in-person,Follow-up Visit,"Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
+
+Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+APT-5696,PAT-1533,Dr. Michael Chen,DOC-005,fulfilled,Psychiatry,follow-up,2023-04-23,42,Exam Room B,telemedicine,Pre-op Evaluation,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+
+Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+APT-1773,PAT-7979,Dr. Emily Rodriguez,DOC-004,fulfilled,Pediatrics,therapy,2025-02-03,49,Room 202,in-person,Follow-up Visit,Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.,
+APT-8951,PAT-2318,Dr. Sarah Johnson,DOC-003,fulfilled,Neurology,follow-up,2024-05-13,46,Exam Room A,home visit,Annual Checkup,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",Patient canceled
+APT-4276,PAT-6525,Dr. Emily Rodriguez,DOC-003,canceled,Dermatology,immunization,2025-04-09,104,Room 201,home visit,Lab Results Discussion,"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+APT-9127,PAT-7697,Dr. Emily Rodriguez,DOC-005,fulfilled,Orthopedics,diagnostic,2024-05-20,61,Exam Room B,telemedicine,Follow-up Visit,"Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+APT-6875,PAT-4193,Dr. Emily Rodriguez,DOC-004,booked,Psychiatry,immunization,2026-11-25,111,Room 102,home visit,Symptom Assessment,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",N/A
+APT-5578,PAT-4072,Dr. Michael Chen,DOC-004,booked,Cardiology,therapy,2024-06-26,52,Room 202,in-person,Symptom Assessment,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+APT-7909,PAT-6534,Dr. James Wilson,DOC-005,fulfilled,Psychiatry,follow-up,2024-04-01,72,Virtual,in-person,Pre-op Evaluation,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+
+Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+APT-1182,PAT-7190,Dr. James Wilson,DOC-005,booked,Pediatrics,consultation,2023-01-12,113,Virtual,telemedicine,Lab Results Discussion,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",Scheduling conflict
+APT-1400,PAT-1213,Dr. James Wilson,DOC-003,booked,General Practice,consultation,2026-07-01,18,Room 101,in-person,Medication Review,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+
+Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+
+In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",Emergency
+APT-4287,PAT-6820,Dr. Michael Chen,DOC-003,fulfilled,Psychiatry,diagnostic,2026-08-09,70,Exam Room A,telemedicine,Follow-up Visit,"Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.
+
+Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",Provider unavailable
+APT-2402,PAT-8656,Dr. Sarah Johnson,DOC-001,booked,Oncology,diagnostic,2025-12-22,57,Room 102,in-person,Post-op Check,"Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.",Weather
+APT-2549,PAT-3587,Dr. Michael Chen,DOC-003,booked,Pediatrics,consultation,2025-10-05,113,Room 202,in-person,Post-op Check,"Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+APT-5512,PAT-8232,Dr. Sarah Johnson,DOC-004,booked,Cardiology,therapy,2024-01-27,118,Room 102,home visit,Pre-op Evaluation,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+
+Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",Clinician unavailable
+APT-8091,PAT-8004,Dr. Michael Chen,DOC-004,fulfilled,General Practice,follow-up,2023-06-26,53,Room 102,home visit,Medication Review,"Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",Provider unavailable
+APT-7527,PAT-3187,Dr. Sarah Johnson,DOC-003,booked,Orthopedics,therapy,2025-01-29,45,Room 102,in-person,Pre-op Evaluation,"In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+
+Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+APT-9681,PAT-9711,Dr. James Wilson,DOC-003,rescheduled,Neurology,immunization,2024-01-26,21,Virtual,telemedicine,Lab Results Discussion,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
+
+Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",Emergency
+APT-8349,PAT-1424,Dr. Michael Chen,DOC-005,fulfilled,Oncology,immunization,2025-06-27,59,Exam Room A,in-person,Post-op Check,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+APT-7950,PAT-3583,Dr. James Wilson,DOC-004,fulfilled,Cardiology,diagnostic,2025-12-19,21,Room 202,in-person,Post-op Check,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+
+Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",Weather
+APT-2901,PAT-7620,Dr. Maria Garcia,DOC-002,booked,Psychiatry,immunization,2024-02-22,98,Room 201,home visit,Post-op Check,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+APT-2266,PAT-1240,Dr. Michael Chen,DOC-001,booked,Psychiatry,therapy,2025-02-04,85,Exam Room B,in-person,Lab Results Discussion,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+APT-5936,PAT-4884,Dr. James Wilson,DOC-002,fulfilled,Cardiology,therapy,2023-09-29,39,Room 102,in-person,Follow-up Visit,Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.,
+APT-2430,PAT-2831,Dr. Sarah Johnson,DOC-002,fulfilled,Oncology,consultation,2023-12-07,28,Exam Room B,home visit,Lab Results Discussion,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
+
+Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+APT-3089,PAT-7021,Dr. Maria Garcia,DOC-005,canceled,Dermatology,follow-up,2023-08-20,92,Room 201,telemedicine,Annual Checkup,Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.,
+APT-7240,PAT-9135,Dr. Sarah Johnson,DOC-004,booked,Orthopedics,diagnostic,2024-11-15,108,Room 202,home visit,Annual Checkup,"Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+
+Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+
+Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+APT-3551,PAT-8397,Dr. James Wilson,DOC-002,booked,Orthopedics,immunization,2026-10-24,53,Exam Room A,in-person,Follow-up Visit,Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.,
+APT-9142,PAT-8677,Dr. Emily Rodriguez,DOC-003,booked,Oncology,immunization,2026-03-25,18,Room 102,in-person,Pre-op Evaluation,"Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+APT-3268,PAT-8770,Dr. Maria Garcia,DOC-002,booked,Oncology,consultation,2024-12-21,20,Room 202,in-person,Pre-op Evaluation,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.
+
+In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+APT-2570,PAT-9854,Dr. Emily Rodriguez,DOC-003,canceled,Cardiology,consultation,2024-11-11,40,Virtual,in-person,Symptom Assessment,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+
+Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+APT-7865,PAT-3598,Dr. Michael Chen,DOC-002,canceled,General Practice,follow-up,2025-04-07,18,Room 102,telemedicine,Follow-up Visit,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
+
+Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+APT-3416,PAT-7155,Dr. Michael Chen,DOC-001,booked,Dermatology,follow-up,2026-02-01,22,Virtual,in-person,Annual Checkup,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+APT-1174,PAT-8243,Dr. Sarah Johnson,DOC-004,fulfilled,Oncology,immunization,2024-07-05,114,Room 101,in-person,Lab Results Discussion,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",Emergency
+APT-4118,PAT-6507,Dr. Michael Chen,DOC-001,booked,Cardiology,immunization,2024-05-31,37,Exam Room A,telemedicine,Follow-up Visit,"Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+
+Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+APT-1333,PAT-9360,Dr. Emily Rodriguez,DOC-004,booked,Psychiatry,consultation,2025-07-19,35,Room 102,in-person,Medication Review,Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.,
+APT-3909,PAT-7811,Dr. Maria Garcia,DOC-002,booked,Pediatrics,immunization,2024-05-10,29,Exam Room A,in-person,Post-op Check,"Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+APT-5640,PAT-9322,Dr. Sarah Johnson,DOC-005,fulfilled,Neurology,immunization,2025-07-05,43,Room 101,in-person,Annual Checkup,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+APT-2938,PAT-8812,Dr. Emily Rodriguez,DOC-003,fulfilled,Oncology,follow-up,2026-10-08,21,Room 201,in-person,Medication Review,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+APT-9727,PAT-3520,Dr. James Wilson,DOC-002,booked,General Practice,diagnostic,2023-06-29,83,Room 101,in-person,Symptom Assessment,"Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
+
+Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.",Provider unavailable
+APT-5938,PAT-8512,Dr. James Wilson,DOC-002,booked,Cardiology,procedure,2026-07-24,99,Room 102,in-person,Pre-op Evaluation,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+
+Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+APT-6990,PAT-2729,Dr. Michael Chen,DOC-001,booked,Dermatology,immunization,2025-05-05,44,Virtual,in-person,Pre-op Evaluation,"Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
+APT-5920,PAT-8908,Dr. Maria Garcia,DOC-005,booked,General Practice,immunization,2026-05-15,63,Exam Room A,in-person,Post-op Check,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+APT-3914,PAT-3193,Dr. Emily Rodriguez,DOC-005,fulfilled,Cardiology,follow-up,2024-07-31,78,Exam Room A,home visit,Symptom Assessment,"Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
+
+Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",Emergency
+APT-1943,PAT-8710,Dr. Maria Garcia,DOC-004,booked,Dermatology,therapy,2026-09-16,20,Virtual,in-person,Pre-op Evaluation,"Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+
+Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+
+Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+APT-8748,PAT-4946,Dr. Maria Garcia,DOC-001,fulfilled,Cardiology,therapy,2026-06-08,79,Room 102,in-person,Lab Results Discussion,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+APT-2473,PAT-9062,Dr. Maria Garcia,DOC-001,booked,Cardiology,immunization,2024-02-21,73,Exam Room B,home visit,Medication Review,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+APT-5367,PAT-8290,Dr. Maria Garcia,DOC-004,canceled,General Practice,consultation,2025-06-09,34,Room 102,in-person,Annual Checkup,"Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
+
+Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+APT-9310,PAT-7177,Dr. Michael Chen,DOC-001,booked,Psychiatry,follow-up,2024-12-28,78,Exam Room B,in-person,Follow-up Visit,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+APT-4524,PAT-4929,Dr. Maria Garcia,DOC-003,booked,General Practice,immunization,2024-10-17,21,Virtual,telemedicine,Post-op Check,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+APT-7936,PAT-8313,Dr. Emily Rodriguez,DOC-004,no-show,Oncology,follow-up,2025-01-04,71,Room 101,in-person,Lab Results Discussion,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
+
+Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+APT-5599,PAT-9753,Dr. Michael Chen,DOC-001,booked,Oncology,therapy,2025-03-12,89,Room 201,home visit,Post-op Check,"Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+APT-3377,PAT-8274,Dr. Emily Rodriguez,DOC-003,canceled,General Practice,consultation,2024-05-13,23,Exam Room A,home visit,Annual Checkup,"In congue. Etiam justo. Etiam pretium iaculis justo.
+
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+APT-9614,PAT-2084,Dr. Emily Rodriguez,DOC-003,booked,Psychiatry,consultation,2023-02-05,94,Exam Room A,in-person,Annual Checkup,"Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+
+In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",Weather
+APT-9176,PAT-5398,Dr. Emily Rodriguez,DOC-004,fulfilled,Orthopedics,procedure,2026-04-18,93,Room 102,in-person,Follow-up Visit,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+APT-1389,PAT-9113,Dr. Maria Garcia,DOC-004,booked,Psychiatry,consultation,2026-07-30,111,Room 101,in-person,Annual Checkup,"Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+APT-8236,PAT-9413,Dr. Maria Garcia,DOC-005,canceled,Orthopedics,therapy,2024-03-28,49,Room 201,telemedicine,Pre-op Evaluation,Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.,
+APT-8676,PAT-3407,Dr. Sarah Johnson,DOC-001,booked,Oncology,consultation,2024-10-19,79,Room 101,in-person,Symptom Assessment,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+
+Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+APT-7471,PAT-7564,Dr. James Wilson,DOC-004,no-show,Psychiatry,diagnostic,2024-05-03,35,Exam Room A,in-person,Medication Review,"Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+APT-6197,PAT-2727,Dr. Emily Rodriguez,DOC-003,booked,Psychiatry,consultation,2026-12-25,76,Room 202,in-person,Medication Review,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
+
+Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+APT-3337,PAT-3240,Dr. Michael Chen,DOC-005,rescheduled,Orthopedics,consultation,2024-08-31,34,Exam Room B,in-person,Post-op Check,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+
+Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+APT-2412,PAT-5846,Dr. Michael Chen,DOC-004,fulfilled,General Practice,immunization,2024-08-23,17,Exam Room B,in-person,Pre-op Evaluation,Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.,
+APT-3703,PAT-3581,Dr. Emily Rodriguez,DOC-004,canceled,Dermatology,immunization,2023-10-10,15,Exam Room A,telemedicine,Annual Checkup,"In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+APT-1940,PAT-8927,Dr. James Wilson,DOC-002,fulfilled,Neurology,procedure,2026-06-27,24,Exam Room B,in-person,Post-op Check,"Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+APT-8464,PAT-4768,Dr. Michael Chen,DOC-004,fulfilled,Psychiatry,immunization,2026-04-14,40,Room 201,in-person,Pre-op Evaluation,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
+
+Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+APT-4555,PAT-6881,Dr. Maria Garcia,DOC-005,fulfilled,Psychiatry,consultation,2023-03-11,21,Room 101,in-person,Medication Review,"Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+APT-8257,PAT-9767,Dr. Emily Rodriguez,DOC-003,fulfilled,Oncology,immunization,2023-09-24,40,Room 202,in-person,Medication Review,"In congue. Etiam justo. Etiam pretium iaculis justo.
+
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",Weather
+APT-2380,PAT-5278,Dr. Sarah Johnson,DOC-003,booked,Pediatrics,consultation,2023-06-14,59,Exam Room B,in-person,Lab Results Discussion,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",Weather
+APT-7324,PAT-6486,Dr. Michael Chen,DOC-005,rescheduled,Psychiatry,procedure,2026-04-29,19,Exam Room B,in-person,Medication Review,"Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
+
+Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+
+Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+APT-1277,PAT-8056,Dr. James Wilson,DOC-001,fulfilled,Psychiatry,follow-up,2024-03-31,98,Room 202,in-person,Lab Results Discussion,Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.,
+APT-8302,PAT-5696,Dr. Sarah Johnson,DOC-004,canceled,Cardiology,procedure,2023-08-01,24,Room 202,in-person,Medication Review,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
+
+Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
+
+Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",Emergency
+APT-2632,PAT-7107,Dr. Emily Rodriguez,DOC-001,fulfilled,General Practice,procedure,2023-01-09,53,Exam Room A,in-person,Lab Results Discussion,Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.,Weather
+APT-9698,PAT-7842,Dr. Michael Chen,DOC-005,booked,Oncology,therapy,2026-01-09,99,Room 101,in-person,Follow-up Visit,"Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+
+Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.",
+APT-6224,PAT-8068,Dr. Maria Garcia,DOC-005,booked,Pediatrics,immunization,2023-09-04,26,Exam Room B,in-person,Pre-op Evaluation,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+APT-1159,PAT-5917,Dr. James Wilson,DOC-003,canceled,Oncology,therapy,2026-09-06,22,Room 202,in-person,Pre-op Evaluation,"Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+APT-6773,PAT-4956,Dr. James Wilson,DOC-003,fulfilled,Oncology,procedure,2024-04-21,46,Room 101,in-person,Annual Checkup,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.
+
+Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+APT-3289,PAT-5299,Dr. Sarah Johnson,DOC-002,canceled,Dermatology,immunization,2026-01-20,38,Room 201,telemedicine,Follow-up Visit,"In congue. Etiam justo. Etiam pretium iaculis justo.
+
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+APT-6181,PAT-4305,Dr. James Wilson,DOC-001,booked,General Practice,follow-up,2025-02-25,44,Exam Room A,in-person,Lab Results Discussion,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+APT-9345,PAT-2618,Dr. Michael Chen,DOC-005,fulfilled,Oncology,procedure,2025-07-24,48,Virtual,in-person,Post-op Check,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+APT-8439,PAT-1227,Dr. Emily Rodriguez,DOC-003,fulfilled,Dermatology,consultation,2024-04-09,37,Exam Room A,home visit,Symptom Assessment,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+
+Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+APT-3243,PAT-5937,Dr. Sarah Johnson,DOC-005,canceled,Neurology,consultation,2026-06-22,108,Exam Room B,telemedicine,Post-op Check,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",Emergency
+APT-6326,PAT-1501,Dr. Sarah Johnson,DOC-001,booked,Neurology,procedure,2023-01-25,83,Exam Room B,in-person,Annual Checkup,"Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+APT-4386,PAT-7358,Dr. Sarah Johnson,DOC-001,canceled,Psychiatry,consultation,2023-12-07,26,Exam Room B,home visit,Pre-op Evaluation,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
+
+Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+APT-1604,PAT-5645,Dr. James Wilson,DOC-002,fulfilled,Orthopedics,immunization,2025-03-30,65,Room 201,telemedicine,Lab Results Discussion,"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",Clinician unavailable
+APT-7065,PAT-2805,Dr. Michael Chen,DOC-002,booked,Cardiology,follow-up,2026-02-20,75,Room 202,in-person,Post-op Check,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",Scheduling conflict
+APT-3668,PAT-3084,Dr. Emily Rodriguez,DOC-004,booked,Psychiatry,immunization,2026-12-20,20,Exam Room A,in-person,Medication Review,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",Patient canceled
+APT-3021,PAT-2228,Dr. James Wilson,DOC-002,fulfilled,General Practice,therapy,2025-12-27,18,Virtual,home visit,Medication Review,Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.,
+APT-5139,PAT-3048,Dr. Sarah Johnson,DOC-002,booked,Neurology,therapy,2023-02-03,108,Room 202,home visit,Annual Checkup,Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.,
+APT-7894,PAT-4840,Dr. James Wilson,DOC-001,booked,Pediatrics,follow-up,2026-07-07,53,Exam Room B,home visit,Medication Review,"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+
+Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+APT-3622,PAT-9043,Dr. Michael Chen,DOC-002,canceled,Oncology,therapy,2023-10-09,65,Room 102,home visit,Annual Checkup,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
+
+In congue. Etiam justo. Etiam pretium iaculis justo.
+
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+APT-2182,PAT-5043,Dr. Sarah Johnson,DOC-001,fulfilled,Orthopedics,procedure,2025-08-14,55,Room 202,in-person,Lab Results Discussion,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+APT-7076,PAT-8558,Dr. Maria Garcia,DOC-005,fulfilled,Cardiology,consultation,2024-05-24,51,Room 101,home visit,Medication Review,"Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
+
+Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+
+Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+APT-9187,PAT-3880,Dr. Emily Rodriguez,DOC-001,booked,General Practice,immunization,2026-08-24,112,Room 202,telemedicine,Post-op Check,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+APT-7635,PAT-9086,Dr. Michael Chen,DOC-005,fulfilled,Dermatology,therapy,2025-04-29,76,Virtual,in-person,Symptom Assessment,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+APT-6040,PAT-4604,Dr. Michael Chen,DOC-002,fulfilled,Dermatology,immunization,2025-12-23,83,Virtual,in-person,Lab Results Discussion,"In congue. Etiam justo. Etiam pretium iaculis justo.
+
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+
+Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",Clinician unavailable
+APT-5929,PAT-5118,Dr. James Wilson,DOC-005,booked,General Practice,follow-up,2025-11-29,99,Room 101,in-person,Medication Review,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.,
+APT-2095,PAT-5492,Dr. Maria Garcia,DOC-001,fulfilled,Pediatrics,procedure,2026-12-30,74,Exam Room B,in-person,Pre-op Evaluation,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
+
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+APT-1159,PAT-2730,Dr. Sarah Johnson,DOC-002,booked,Cardiology,follow-up,2026-01-09,23,Room 102,in-person,Symptom Assessment,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",Provider unavailable
+APT-3458,PAT-6810,Dr. Maria Garcia,DOC-002,booked,Neurology,diagnostic,2026-03-12,58,Exam Room B,in-person,Follow-up Visit,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+
+Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+
+In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+APT-2872,PAT-3443,Dr. Emily Rodriguez,DOC-004,booked,Oncology,consultation,2025-02-25,100,Exam Room A,home visit,Post-op Check,"Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",Clinician unavailable
+APT-4634,PAT-4214,Dr. Michael Chen,DOC-001,rescheduled,Pediatrics,diagnostic,2024-05-29,37,Room 202,in-person,Post-op Check,"Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
+
+Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.",
+APT-9607,PAT-4874,Dr. Emily Rodriguez,DOC-005,booked,Oncology,therapy,2026-04-09,116,Room 101,in-person,Lab Results Discussion,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+APT-5173,PAT-8497,Dr. Maria Garcia,DOC-004,booked,Psychiatry,immunization,2023-10-21,111,Room 202,home visit,Medication Review,Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.,
+APT-5568,PAT-7613,Dr. Sarah Johnson,DOC-005,canceled,Dermatology,immunization,2024-08-23,92,Room 101,in-person,Medication Review,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+APT-5911,PAT-3653,Dr. Michael Chen,DOC-002,fulfilled,Orthopedics,diagnostic,2023-07-23,19,Room 202,home visit,Symptom Assessment,"Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",Scheduling conflict
+APT-2494,PAT-6424,Dr. Emily Rodriguez,DOC-002,booked,Orthopedics,follow-up,2025-07-23,117,Exam Room B,in-person,Lab Results Discussion,"Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
+
+In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",Patient canceled
+APT-5732,PAT-6992,Dr. Maria Garcia,DOC-001,rescheduled,Orthopedics,consultation,2024-03-27,99,Room 102,in-person,Lab Results Discussion,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+APT-9635,PAT-5764,Dr. Emily Rodriguez,DOC-003,booked,Psychiatry,follow-up,2023-09-08,28,Virtual,in-person,Medication Review,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.,Clinician unavailable
+APT-8477,PAT-7239,Dr. Emily Rodriguez,DOC-003,canceled,Neurology,follow-up,2025-04-27,37,Room 101,home visit,Follow-up Visit,Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.,N/A
+APT-3652,PAT-9643,Dr. Maria Garcia,DOC-004,fulfilled,Neurology,diagnostic,2023-02-22,93,Exam Room B,telemedicine,Annual Checkup,"Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+APT-8282,PAT-4173,Dr. James Wilson,DOC-005,booked,Orthopedics,consultation,2024-04-10,58,Virtual,home visit,Post-op Check,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.",
+APT-1629,PAT-4548,Dr. Maria Garcia,DOC-001,fulfilled,Oncology,consultation,2026-12-07,108,Room 102,in-person,Pre-op Evaluation,"Fusce consequat. Nulla nisl. Nunc nisl.
+
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",Provider unavailable
+APT-2057,PAT-6733,Dr. Sarah Johnson,DOC-003,fulfilled,Orthopedics,diagnostic,2023-11-18,54,Room 202,in-person,Pre-op Evaluation,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+APT-9574,PAT-7435,Dr. Emily Rodriguez,DOC-003,booked,Pediatrics,follow-up,2026-12-25,70,Room 201,in-person,Follow-up Visit,"Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+APT-5691,PAT-1970,Dr. Emily Rodriguez,DOC-003,booked,General Practice,immunization,2026-10-26,114,Room 101,in-person,Medication Review,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+APT-2247,PAT-5943,Dr. Maria Garcia,DOC-005,booked,Neurology,therapy,2023-03-06,75,Exam Room B,in-person,Follow-up Visit,Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.,
+APT-8995,PAT-7174,Dr. James Wilson,DOC-004,booked,Neurology,diagnostic,2026-03-14,74,Room 101,in-person,Lab Results Discussion,"Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+APT-3730,PAT-1202,Dr. Emily Rodriguez,DOC-004,booked,Oncology,consultation,2024-12-17,33,Exam Room A,in-person,Lab Results Discussion,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
+
+Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+APT-4380,PAT-4829,Dr. Michael Chen,DOC-004,fulfilled,Dermatology,consultation,2023-01-27,47,Room 201,telemedicine,Pre-op Evaluation,"Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
+
+Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+
+Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",Emergency
+APT-6954,PAT-7726,Dr. Michael Chen,DOC-004,canceled,Neurology,diagnostic,2024-02-23,80,Exam Room A,in-person,Medication Review,Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.,
+APT-2326,PAT-3266,Dr. Maria Garcia,DOC-005,fulfilled,Dermatology,consultation,2025-04-11,99,Room 201,home visit,Pre-op Evaluation,"Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+
+Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+APT-6641,PAT-7419,Dr. Maria Garcia,DOC-004,booked,Oncology,therapy,2024-02-13,40,Room 101,in-person,Medication Review,Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.,
+APT-5776,PAT-7196,Dr. Michael Chen,DOC-005,fulfilled,Cardiology,immunization,2024-09-02,119,Virtual,in-person,Pre-op Evaluation,"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+APT-7035,PAT-9447,Dr. Sarah Johnson,DOC-002,fulfilled,Pediatrics,therapy,2023-01-08,57,Room 101,home visit,Medication Review,Fusce consequat. Nulla nisl. Nunc nisl.,Weather
+APT-2952,PAT-4110,Dr. James Wilson,DOC-002,fulfilled,Neurology,diagnostic,2023-04-10,83,Room 201,in-person,Post-op Check,"Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
+APT-6778,PAT-1969,Dr. Sarah Johnson,DOC-005,booked,Psychiatry,procedure,2025-01-14,62,Room 202,in-person,Post-op Check,"Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.
+
+In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+
+Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+APT-9635,PAT-5475,Dr. Emily Rodriguez,DOC-005,booked,Cardiology,immunization,2024-06-09,75,Room 101,home visit,Medication Review,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.,
+APT-7821,PAT-4965,Dr. Maria Garcia,DOC-003,booked,General Practice,follow-up,2025-12-10,20,Exam Room B,in-person,Medication Review,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.
+
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+APT-7010,PAT-7395,Dr. Sarah Johnson,DOC-003,canceled,Neurology,diagnostic,2026-09-15,90,Room 101,home visit,Post-op Check,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.
+
+Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.
+
+Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+APT-3325,PAT-7983,Dr. Maria Garcia,DOC-004,rescheduled,Neurology,procedure,2026-06-17,17,Room 202,in-person,Symptom Assessment,"Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.
+
+Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+APT-3404,PAT-8317,Dr. James Wilson,DOC-001,canceled,Orthopedics,therapy,2025-09-12,60,Room 101,in-person,Medication Review,"Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+APT-8442,PAT-6211,Dr. Emily Rodriguez,DOC-003,canceled,Orthopedics,follow-up,2023-09-29,26,Exam Room A,in-person,Lab Results Discussion,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",No transportation
+APT-5887,PAT-3227,Dr. Maria Garcia,DOC-002,booked,Dermatology,procedure,2023-10-16,63,Room 102,in-person,Post-op Check,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+
+Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+APT-6373,PAT-5478,Dr. Maria Garcia,DOC-004,booked,Pediatrics,diagnostic,2024-03-06,15,Room 101,in-person,Lab Results Discussion,"Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+
+Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+APT-2955,PAT-7514,Dr. Maria Garcia,DOC-002,booked,Cardiology,therapy,2023-11-20,72,Exam Room B,home visit,Medication Review,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",No transportation
+APT-5064,PAT-1117,Dr. Maria Garcia,DOC-001,booked,Psychiatry,procedure,2026-10-21,22,Virtual,in-person,Follow-up Visit,"Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",No transportation
+APT-6551,PAT-6872,Dr. Emily Rodriguez,DOC-005,booked,Oncology,consultation,2026-01-16,41,Room 102,in-person,Annual Checkup,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+
+Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+
+In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+APT-7262,PAT-2957,Dr. Emily Rodriguez,DOC-002,fulfilled,Oncology,follow-up,2024-02-27,69,Exam Room B,in-person,Lab Results Discussion,"Fusce consequat. Nulla nisl. Nunc nisl.
+
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",No transportation
+APT-4360,PAT-7411,Dr. Sarah Johnson,DOC-005,booked,Orthopedics,procedure,2025-07-10,47,Exam Room A,in-person,Pre-op Evaluation,"Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+
+Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+APT-1361,PAT-2909,Dr. Sarah Johnson,DOC-003,booked,Pediatrics,diagnostic,2024-10-23,68,Exam Room B,in-person,Lab Results Discussion,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.",
+APT-1258,PAT-3513,Dr. Emily Rodriguez,DOC-002,no-show,Cardiology,therapy,2024-06-21,104,Room 102,in-person,Symptom Assessment,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+
+Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",Patient canceled
+APT-5030,PAT-1451,Dr. Maria Garcia,DOC-003,fulfilled,Dermatology,immunization,2026-11-06,37,Room 202,in-person,Medication Review,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.
+
+Fusce consequat. Nulla nisl. Nunc nisl.
+
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",Emergency
+APT-5649,PAT-6122,Dr. Sarah Johnson,DOC-002,fulfilled,Dermatology,immunization,2024-06-13,19,Room 102,in-person,Lab Results Discussion,Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.,
